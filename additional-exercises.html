@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to Matrices | PO12Q: Seminar Companion</title>
-  <meta name="description" content="Introduction to Matrices | PO12Q: Seminar Companion" />
+  <title>Additional Exercises | PO12Q: Seminar Companion</title>
+  <meta name="description" content="Additional Exercises | PO12Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to Matrices | PO12Q: Seminar Companion" />
+  <meta property="og:title" content="Additional Exercises | PO12Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Matrices | PO12Q: Seminar Companion" />
+  <meta name="twitter:title" content="Additional Exercises | PO12Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="worksheet-week-2.html"/>
-<link rel="next" href="worksheet-week-3.html"/>
+<link rel="prev" href="worksheet-week-7.html"/>
+<link rel="next" href="worksheet-week-8.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -283,176 +283,134 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-matrices" class="section level1 unnumbered hasAnchor">
-<h1>Introduction to Matrices<a href="introduction-to-matrices.html#introduction-to-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="what-is-a-matrix" class="section level2 unnumbered hasAnchor">
-<h2>What is a Matrix?<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a><a href="introduction-to-matrices.html#what-is-a-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The word “matrix” generally conjures up levels of horror in students which even Stephen King would be struggling to match<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. And I have to admit that I have not always been best friends with them myself, either. But they are useful, and in their ability to convey a large amount of information in a structured and logical way, they are even beautiful. Because at the end of the day, a matrix is nothing more than a list.</p>
-<p>In the lecture I introduced you to the concept of the Population Regression Function (PRF) which can be written as:</p>
-<p><span class="math display">\[\begin{equation}
-y_{i} = \beta_{0} + \beta_{1} x_{i} + \epsilon_{i}
-\end{equation}\]</span></p>
-<p>If we wanted to write out this equation for every observation in our data set, it would look something like this:</p>
-<p><span class="math display">\[\begin{align*}
-    y_{1} &amp;= \beta_{0} + \beta_{1} x_{1} + \epsilon_{1} \\
-    y_{2} &amp;= \beta_{0} + \beta_{1} x_{2} + \epsilon_{2} \\
-    &amp;\vdots \\
-    y_{n} &amp;= \beta_{0} + \beta_{1} x_{n} + \epsilon_{n}
-\end{align*}\]</span></p>
-<p>This is incredibly wasteful, as it unnecessarily repeats notation. What we could do instead is to create a list which has as many columns as there are unique elements in these equations (since they all have the same structure), and only note the numeric values which actually change. And there you have a matrix:</p>
-<p><img src="main_files/figure-html/unnamed-chunk-30-1.png" width="514" /></p>
-<p>Whilst this is what we will be using matrices for next week, let us leave regression aside for now, and focus on working with matrices more generally. We will now be using these two sample matrices:</p>
-<p><span class="math display">\[\begin{equation*}
-    A
-    =
-    \begin{bmatrix}
-        1 &amp; 7 &amp; 3\\
-        9 &amp; 5 &amp; 4\\
-    \end{bmatrix}
-    \hspace{0.75cm}
-    B
-    =
-    \begin{bmatrix}
-    6 &amp; 3 &amp; 8 &amp; 2 \\
-    3 &amp; 2 &amp; 1 &amp; 4 \\
-    1 &amp; 5 &amp; 3 &amp; 9 \\
-    \end{bmatrix}
-\end{equation*}\]</span></p>
+<div id="additional-exercises" class="section level1 unnumbered hasAnchor">
+<h1>Additional Exercises<a href="additional-exercises.html#additional-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="load-packages-and-data" class="section level2 unnumbered hasAnchor">
+<h2>Load Packages and data<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a><a href="additional-exercises.html#load-packages-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages:</p>
+<ol style="list-style-type: decimal">
+<li><code>haven</code></li>
+<li><code>ggplot2</code></li>
+<li><code>stargazer</code></li>
+</ol>
+<p>Set working directory and load the data. The file is on Moodle. It’s called simd.csv and it’s the “Scottish Index of Multiple Deprivation”. More details here: <a href="https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/" class="uri">https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/</a></p>
+<p><strong>Hint:</strong> Remember that the WD is the folder where you stored the data set and where all the outputs will be saved</p>
+<p><strong>Hint2:</strong> Note, the data is a .csv file</p>
 </div>
-<div id="matrix-notation" class="section level2 unnumbered hasAnchor">
-<h2>Matrix Notation<a href="introduction-to-matrices.html#matrix-notation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can refer to individual elements of a matrix by stating the name of the matrix, and then in the index first the row, followed by the column (you might recognise this logic from R – this is because it is the same). With respect to matrix A, for example, the value in the first row and first column (1) would be referred to as</p>
-<p><span class="math inline">\(A_{11}=1\)</span></p>
-<p>The number in the first row, but second column would be referred to as</p>
-<p><span class="math inline">\(A_{12}=7\)</span></p>
+<div id="inspect-your-data" class="section level2 unnumbered hasAnchor">
+<h2>Inspect your data<a href="additional-exercises.html#inspect-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here you can use several basic functions. The dataset does not contain too many variables, so you can start by using <code>names()</code>, <code>str()</code>, <code>dim()</code>, etc.</p>
 </div>
-<div id="calculating-with-matrices" class="section level2 unnumbered hasAnchor">
-<h2>Calculating with Matrices<a href="introduction-to-matrices.html#calculating-with-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will only need to multiply and divide matrices on this module, so let’s cover these operations now.</p>
-<div id="multiplying-matrices" class="section level3 unnumbered hasAnchor">
-<h3>Multiplying Matrices<a href="introduction-to-matrices.html#multiplying-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To show you how this is done, I will multiply matrix A with matrix B and record the results in a new matrix called C.</p>
-<p><span class="math display">\[\begin{equation*}
-    A \times B = C
-    =
-    \begin{bmatrix}
-    1 &amp; 7 &amp; 3\\
-    9 &amp; 5 &amp; 4\\
-    \end{bmatrix}
-    \times
-    \begin{bmatrix}
-    6 &amp; 3 &amp; 8 &amp; 2 \\
-    3 &amp; 2 &amp; 1 &amp; 4 \\
-    1 &amp; 5 &amp; 3 &amp; 9 \\
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    30 &amp; 32 &amp; 24 &amp;  51\\
-    73 &amp; 57 &amp;  89 &amp;  74\\
-    \end{bmatrix}
-\end{equation*}\]</span></p>
-<p>In order to calculate a new element <span class="math inline">\(C_{i,j}\)</span>, we multiply the elements of the <span class="math inline">\(i^{th}\)</span> row of A with the elements of the <span class="math inline">\(j^{th}\)</span> column of B. We then add together these so-called inner products in order to arrive at <span class="math inline">\(C_{i,j}\)</span>. Let me give you some examples in which I have set the values from matrix A in bold to make the process more transparent.</p>
-<p><span class="math inline">\(C_{11}=\textbf{1}\times6+\textbf{7}\times3+\textbf{3}\times1=30\)</span></p>
-<p><span class="math inline">\(C_{12}=\textbf{1}\times3+\textbf{7}\times2+\textbf{3}\times5=32\)</span></p>
-<p><span class="math inline">\(C_{21}=\textbf{9}\times6+\textbf{5}\times3+\textbf{4}\times1=73\)</span></p>
-<p>I have prepared a short video taking you through this process step by step. I would encourage you to watch it now. You might have to sign in with your university credentials.</p>
-<iframe style="border: none;" src="https://web.microsoftstream.com/embed/video/7da163d6-877a-4f11-8b20-01fca577062c?autoplay=false&amp;showinfo=true" width="640" height="360" allowfullscreen="allowfullscreen">
-</iframe>
+<div id="preliminary-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Preliminary Analysis<a href="additional-exercises.html#preliminary-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that you have a preliminary idea of the structure of the dataset, you can select two variables and test a possible relationship. The topic today is bivariate linear regression analysis, so remember that the outcome variable needs to be continuous.</p>
+<p>Let’s say we want to look at the relationship between alcohol consumption and mortality rate (yes, not a
+very funny topic, but interesting nonetheless). The two variables are, respectively, alcohol and mortality
+(rather intuitive this time).</p>
+<p>Now, formulate the working (alternative) and the null hypothesis. Write them down.</p>
+<p><strong>H<span class="math inline">\(\pmb{_0}\)</span>:</strong></p>
+<p><strong>H<span class="math inline">\(\pmb{_1}\)</span>:</strong></p>
+<p>Which is your dependent variable?</p>
+<p>Run a frequency table on the mortality variable. What is the level of measurement?</p>
+<p>Do the same for the other variable. And guess what is the level of measurement.</p>
 </div>
-<div id="dividing-matrices" class="section level3 unnumbered hasAnchor">
-<h3>Dividing Matrices<a href="introduction-to-matrices.html#dividing-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In order to be able to divide by an entire matrix, we take its inverse, and then multiply with the inverse. We do the same in the non-matrix world. For example, if we wanted to divide 6 by 3, this is the same as multiplying 6 with <span class="math inline">\(\frac{1}{3}\)</span>, the inverse of 3. Sadly, inverting a matrix is not quite as straightforward as this. In fact, it is one of the most challenging operations you can do with a matrix. Luckily, the inversion of a 2 by 2 matrix (which is what we will be using) is still possible without a degree in algebra. The inverse <span class="math inline">\(D^{-1}\)</span> of a 2 by 2 matrix <span class="math inline">\(D\)</span> is defined as</p>
-<p><span class="math display">\[\begin{equation*}
-    D^{-1} =
-    \begin{bmatrix}
-        a &amp; b \\
-        c &amp; d \\
-    \end{bmatrix}^{-1}
-    =
-    \frac{1}{ad-bc}
-    \begin{bmatrix}
-        d &amp; -b \\
-        -c &amp; a \\
-    \end{bmatrix}^{-1}
-\end{equation*}\]</span></p>
-<p>Thus, to arrive at the inverse of a 2 by 2 matrix, we first have to form the fraction in front of it. This takes as its denominator the difference between the products of the diagonal elements. We also refer to the denominator as the <em>determinant</em> of the matrix. In a second step – now in the matrix itself – we swap a and d, and set a minus sign in front of b and c.</p>
-<p>Once again, there is a video on this:</p>
-<iframe style="border: none;" src="https://web.microsoftstream.com/embed/video/d4bd17f4-ff96-461f-bcc1-9ac70473e7c4?autoplay=false&amp;showinfo=true" width="640" height="360" allowfullscreen="allowfullscreen">
-</iframe>
+<div id="visualisation" class="section level2 unnumbered hasAnchor">
+<h2>Visualisation<a href="additional-exercises.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s start with the visualisation of the relationship between the two variables. What is the best way to visualise the relationship considering the level of measurement of our variables?</p>
+<p><strong>Hint:</strong> Probably a scatterplot, right? So, use a scatterplot to visualise the relationship and add the regression line.</p>
+<p>You can use <code>ggplot</code>, but also the standard <code>plot()</code> function.</p>
+<p>Improve the graph by:</p>
+<ol style="list-style-type: decimal">
+<li>Adding a regression line.</li>
+<li>Adding up a relevant title, also possibly a subtitle.</li>
+<li>Adding axes labels and making them readable.</li>
+<li>Remove the grid in the background.</li>
+</ol>
+<p><img src="main_files/figure-html/unnamed-chunk-44-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>If you have done everything correctly, you should see that the dots are rather concentrated in the bottom left corner of the scatterplot with some outliers far away from the cloud of our data. It is not a big deal, but we might want to get rid of the outliers and this way improve our visualisation.</p>
+<p>There are several ways to do that, of course. But let’s say we want to transform our variables, excluding all values over a certain point. For instance, we want to exclude the values above 750 of our alcohol variable and above 500 for our mortality variable. How would you do that?</p>
+<p><strong><em>Hint:</em></strong> <em>there are several solutions. One could be, creating a new datset subsetting the original. Another solution could be again, creating a new variable telling R to transform all the values above our treshold in
+NA (missing values). Try to find an apply the appropriate code. Use Google if necessary, it helps a lot.</em></p>
 </div>
+<div id="visualisation-2.0" class="section level2 unnumbered hasAnchor">
+<h2>Visualisation 2.0<a href="additional-exercises.html#visualisation-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now, visualise the relationship using the new variables. What can you see?</p>
+<p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code>geom_point()</code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see: https:
+//www.rdocumentation.org/packages/ggplot2/versions/3.4.0/topics/geom_point).</p>
+<p>Also, you can draw a vertical and horizontal line corresponding to the mean of your variables using <code>geom_hline</code> and <code>geom_vline</code>. You can thus check if the regression line passes through the mean of X and Y. (see: <a href="https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline" class="uri">https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline</a>).</p>
 </div>
-<div id="special-matrices" class="section level2 unnumbered hasAnchor">
-<h2>Special Matrices<a href="introduction-to-matrices.html#special-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are two types of matrices we will be using which hold special, useful properties. This is the transpose of a matrix, and the so-called identity matrix.</p>
-<div id="transposing-matrices" class="section level3 unnumbered hasAnchor">
-<h3>Transposing Matrices<a href="introduction-to-matrices.html#transposing-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Another important operation is transposing a matrix, which turns rows into columns and columns into rows. We denote a transposed matrix with an apostrophe. Transposing matrix <span class="math inline">\(A\)</span> into matrix <span class="math inline">\(A^\prime\)</span> gives us:</p>
-<p><span class="math display">\[\begin{equation*}
-    A
-    =
-    \begin{bmatrix}
-    1 &amp; 7 &amp; 3\\
-    9 &amp; 5 &amp; 4\\
-    \end{bmatrix}
-    \hspace{0.75cm}
-    A^\prime
-    =
-    \begin{bmatrix}
-    1 &amp; 9 \\
-    7 &amp; 5 \\
-    3 &amp; 4 \\
-    \end{bmatrix}
-\end{equation*}\]</span></p>
-<p>You guessed it, here is a video on transposing matrices:</p>
-<iframe style="border: none;" src="https://web.microsoftstream.com/embed/video/a2a57584-d332-423f-93d4-eb18d14b1cab?autoplay=false&amp;showinfo=true" width="640" height="360" allowfullscreen="allowfullscreen">
-</iframe>
+<div id="saving-the-scatterplot" class="section level2 unnumbered hasAnchor">
+<h2>Saving the Scatterplot<a href="additional-exercises.html#saving-the-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can also save a graph as .png, .JPG (even .pdf) that you can then import in a word document. Although there are many way to use your R output, saving a graph might be sometimes useful.</p>
+<p>Use the function <code>ggsave()</code> to save your scatterplot. Again, there are tons of examples online, google it.</p>
+<p><strong>Hint:</strong> You first need to store the graph in an object.</p>
+<p><strong>Hint 2:</strong> The file will end up in your working directory</p>
+<div style="page-break-after: always;"></div>
 </div>
-<div id="the-identity-matrix" class="section level3 unnumbered hasAnchor">
-<h3>The Identity Matrix<a href="introduction-to-matrices.html#the-identity-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There is only one last thing left to show you before we can embark on using matrices for deriving and estimating our regression coefficients. And that is the so-called identity matrix <span class="math inline">\(I\)</span>. This matrix is always square, has the value 1 on all diagonal elements, and zeros otherwise. If a matrix is multiplied with <span class="math inline">\(I\)</span>, we receive the original matrix. For example let</p>
-<p><span class="math display">\[\begin{equation*}
-    I
-    =
-    \begin{bmatrix}
-    1 &amp; 0 &amp; 0\\
-    0 &amp; 1 &amp; 0\\
-    0 &amp; 0 &amp; 1\\
-    \end{bmatrix}
-\end{equation*}\]</span></p>
-<p>If we multiply I with matrix B we receive</p>
-<p><span class="math display">\[\begin{equation*}
-    I \times B
-    =
-    \begin{bmatrix}
-    1 &amp; 0 &amp; 0\\
-    0 &amp; 1 &amp; 0\\
-    0 &amp; 0 &amp; 1\\
-    \end{bmatrix}
-    \times
-    \begin{bmatrix}
-    6 &amp; 3 &amp; 8 &amp; 2 \\
-    3 &amp; 2 &amp; 1 &amp; 4 \\
-    1 &amp; 5 &amp; 3 &amp; 9 \\
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    6 &amp; 3 &amp; 8 &amp; 2 \\
-    3 &amp; 2 &amp; 1 &amp; 4 \\
-    1 &amp; 5 &amp; 3 &amp; 9 \\
-    \end{bmatrix}
-\end{equation*}\]</span></p>
-<p>This feature will be important in the derivation of estimators next week, where we will make use of the fact that a matrix multiplied with its inverse results in an identity matrix. For example <span class="math inline">\(A \times A^{-1} = I\)</span>.</p>
-<p>You can check this process out in this video:</p>
-<iframe style="border: none;" src="https://web.microsoftstream.com/embed/video/4137d704-15d1-44a6-bdeb-aa5c5ca17061?autoplay=false&amp;showinfo=true" width="640" height="360" allowfullscreen="allowfullscreen">
-</iframe>
+<div id="regression-analysis-yes-finally" class="section level2 unnumbered hasAnchor">
+<h2>Regression Analysis (yes, finally)<a href="additional-exercises.html#regression-analysis-yes-finally" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now we can finally run a linear regression with mortality as the outcome variable and alcohol as the predictor using the <code>lm()</code> function. Store the results in an object called model and visualise the regression output using <code>summary()</code>. Use the reduced data set without outliers.</p>
+<pre><code>
+Call:
+lm(formula = mortality ~ alcohol, data = simred)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-122.69  -22.52   -4.71   17.27  377.77 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 78.155160   0.619648  126.13   &lt;2e-16 ***
+alcohol      0.208270   0.004476   46.53   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 35.61 on 6956 degrees of freedom
+Multiple R-squared:  0.2374,    Adjusted R-squared:  0.2373 
+F-statistic:  2165 on 1 and 6956 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
+<pre><code>$coefficients
+              Estimate  Std. Error   t value Pr(&gt;|t|)
+(Intercept) 78.1551599 0.619648419 126.12823        0
+alcohol      0.2082697 0.004476011  46.53021        0</code></pre>
+</div>
+<div id="interpretation" class="section level2 unnumbered hasAnchor">
+<h2>Interpretation<a href="additional-exercises.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Interpret the results, starting with model evaluation.</p>
+<ol style="list-style-type: decimal">
+<li>Is the p-value of the F-statistics statistically significant? We will be discussing this in our following
+lectures.</li>
+<li>How much variation in the outcome variable does the model explain? What does this tell us about the model?</li>
+<li>What’s the value of the slope? What does it mean?</li>
+<li>What’s the value of the regression coefficient? How do we interpret it? Is it statistically significant? What does it mean in practice?</li>
+<li>Interpret the results (in plain language) referring to the hypothesis you formulated above.</li>
+</ol>
+</div>
+<div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
+<h2>Exporting the Results<a href="additional-exercises.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try and export the table.</p>
+<p><strong>Hint 1:</strong> The function needs to contain, in order: the name of the R object where you stored the regression results,
+the option <code>header=F</code> to suppress the annoying immortalisation of the author, the option <code>type="html"</code>, and the option <code>out="documentname.doc"</code> which places a word document with that file name in your working directory.</p>
+<p><strong>Hint 2:</strong> Remember that Google is your best friend when you learn to code. And after that as well. No one actually remembers all the functions and all their argument. The secret is to know how to google the things you need.</p>
+<p>You can improve the table in many ways. For example, you need to replace the variable names with the variable labels, You could add a name of the model and suppress unneeded statistics (see <a href="https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list" class="uri">https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list</a>).</p>
+</div>
+<div id="comparing-models" class="section level2 unnumbered hasAnchor">
+<h2>Comparing models<a href="additional-exercises.html#comparing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can now run another regression model with a different independent variable. Can you compare your original model with the new one? How? How do you know which independent variable is doing a better job in explaining your dependent variable?</p>
+</div>
+<div id="solutions-5" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="additional-exercises.html#solutions-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a>.</p>
+
 </div>
 </div>
-</div>
+
+
+
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>This material is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="introduction-to-matrices.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>He is by far my favourite author. If you haven’t, already, read IT.<a href="introduction-to-matrices.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<ol start="10">
+<li id="fn10"><p>These exercises were originally written by Oleksiy Bondarenko who taught the module in 2022/23. I have slightly altered them in subsequent years.<a href="additional-exercises.html#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -460,8 +418,8 @@ y_{i} = \beta_{0} + \beta_{1} x_{i} + \epsilon_{i}
           </div>
         </div>
       </div>
-<a href="worksheet-week-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="worksheet-week-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="worksheet-week-7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="worksheet-week-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
