@@ -337,29 +337,34 @@ div.csl-indent {
 <div id="regression-in-r" class="section level2 unnumbered hasAnchor">
 <h2>Regression in R<a href="worksheet-week-4.html#regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li><p>Load the data set from Excel.</p></li>
-<li><p>Run the regression in R as follows:</p></li>
+<li>Load the data set from Excel.</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="worksheet-week-4.html#cb10-1" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
-<span id="cb10-2"><a href="worksheet-week-4.html#cb10-2" tabindex="-1"></a><span class="fu">summary</span>(regression)</span>
-<span id="cb10-3"><a href="worksheet-week-4.html#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="worksheet-week-4.html#cb10-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb10-5"><a href="worksheet-week-4.html#cb10-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
-<span id="cb10-6"><a href="worksheet-week-4.html#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="worksheet-week-4.html#cb10-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb10-8"><a href="worksheet-week-4.html#cb10-8" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
-<span id="cb10-9"><a href="worksheet-week-4.html#cb10-9" tabindex="-1"></a><span class="sc">-</span><span class="fl">652.25</span> <span class="sc">-</span><span class="fl">102.92</span>    <span class="fl">6.53</span>  <span class="fl">142.21</span>  <span class="fl">584.39</span> </span>
-<span id="cb10-10"><a href="worksheet-week-4.html#cb10-10" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="worksheet-week-4.html#cb10-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb10-12"><a href="worksheet-week-4.html#cb10-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb10-13"><a href="worksheet-week-4.html#cb10-13" tabindex="-1"></a>(Intercept)  <span class="sc">-</span><span class="fl">53.092</span>    <span class="fl">304.716</span>  <span class="sc">-</span><span class="fl">0.174</span> <span class="fl">0.866011</span>    </span>
-<span id="cb10-14"><a href="worksheet-week-4.html#cb10-14" tabindex="-1"></a>age           <span class="fl">39.695</span>      <span class="fl">7.325</span>   <span class="fl">5.419</span> <span class="fl">0.000631</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb10-15"><a href="worksheet-week-4.html#cb10-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb10-16"><a href="worksheet-week-4.html#cb10-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb10-17"><a href="worksheet-week-4.html#cb10-17" tabindex="-1"></a></span>
-<span id="cb10-18"><a href="worksheet-week-4.html#cb10-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">335.3</span> on <span class="dv">8</span> degrees of freedom</span>
-<span id="cb10-19"><a href="worksheet-week-4.html#cb10-19" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7859</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7592</span> </span>
-<span id="cb10-20"><a href="worksheet-week-4.html#cb10-20" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">29.37</span> on <span class="dv">1</span> and <span class="dv">8</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">0.0006314</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="worksheet-week-4.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb15-2"><a href="worksheet-week-4.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="worksheet-week-4.html#cb15-3" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;files/Week 4/PO12Q_4.xlsx&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Run the regression in R as follows:</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="worksheet-week-4.html#cb16-1" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
+<span id="cb16-2"><a href="worksheet-week-4.html#cb16-2" tabindex="-1"></a><span class="fu">summary</span>(regression)</span>
+<span id="cb16-3"><a href="worksheet-week-4.html#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="worksheet-week-4.html#cb16-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb16-5"><a href="worksheet-week-4.html#cb16-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
+<span id="cb16-6"><a href="worksheet-week-4.html#cb16-6" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="worksheet-week-4.html#cb16-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb16-8"><a href="worksheet-week-4.html#cb16-8" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
+<span id="cb16-9"><a href="worksheet-week-4.html#cb16-9" tabindex="-1"></a><span class="sc">-</span><span class="fl">652.25</span> <span class="sc">-</span><span class="fl">102.92</span>    <span class="fl">6.53</span>  <span class="fl">142.21</span>  <span class="fl">584.39</span> </span>
+<span id="cb16-10"><a href="worksheet-week-4.html#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="worksheet-week-4.html#cb16-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb16-12"><a href="worksheet-week-4.html#cb16-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb16-13"><a href="worksheet-week-4.html#cb16-13" tabindex="-1"></a>(Intercept)  <span class="sc">-</span><span class="fl">53.092</span>    <span class="fl">304.716</span>  <span class="sc">-</span><span class="fl">0.174</span> <span class="fl">0.866011</span>    </span>
+<span id="cb16-14"><a href="worksheet-week-4.html#cb16-14" tabindex="-1"></a>age           <span class="fl">39.695</span>      <span class="fl">7.325</span>   <span class="fl">5.419</span> <span class="fl">0.000631</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb16-15"><a href="worksheet-week-4.html#cb16-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb16-16"><a href="worksheet-week-4.html#cb16-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb16-17"><a href="worksheet-week-4.html#cb16-17" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="worksheet-week-4.html#cb16-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">335.3</span> on <span class="dv">8</span> degrees of freedom</span>
+<span id="cb16-19"><a href="worksheet-week-4.html#cb16-19" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7859</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7592</span> </span>
+<span id="cb16-20"><a href="worksheet-week-4.html#cb16-20" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">29.37</span> on <span class="dv">1</span> and <span class="dv">8</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">0.0006314</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Check your results from the first section.</li>
 <li>Interpret the coefficients.</li>

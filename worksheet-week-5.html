@@ -339,29 +339,29 @@ div.csl-indent {
 <li>Build the SRF and interpret the coefficients.</li>
 <li>Assess and interpret model fit, using “Multiple R-squared” which is equivalent to the R<span class="math inline">\(^2\)</span> we discussed in the lecture.</li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="worksheet-week-5.html#cb11-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;files/Week 5/WDI_PO12Q.csv&quot;</span>)</span>
-<span id="cb11-2"><a href="worksheet-week-5.html#cb11-2" tabindex="-1"></a><span class="fu">attach</span>(wdi)</span>
-<span id="cb11-3"><a href="worksheet-week-5.html#cb11-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeexp <span class="sc">~</span> gdppc)</span>
-<span id="cb11-4"><a href="worksheet-week-5.html#cb11-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
-<span id="cb11-5"><a href="worksheet-week-5.html#cb11-5" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="worksheet-week-5.html#cb11-6" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb11-7"><a href="worksheet-week-5.html#cb11-7" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> lifeexp <span class="sc">~</span> gdppc)</span>
-<span id="cb11-8"><a href="worksheet-week-5.html#cb11-8" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="worksheet-week-5.html#cb11-9" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb11-10"><a href="worksheet-week-5.html#cb11-10" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
-<span id="cb11-11"><a href="worksheet-week-5.html#cb11-11" tabindex="-1"></a><span class="sc">-</span><span class="fl">17.445</span>  <span class="sc">-</span><span class="fl">3.260</span>   <span class="fl">1.545</span>   <span class="fl">4.760</span>   <span class="fl">8.969</span> </span>
-<span id="cb11-12"><a href="worksheet-week-5.html#cb11-12" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="worksheet-week-5.html#cb11-13" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb11-14"><a href="worksheet-week-5.html#cb11-14" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb11-15"><a href="worksheet-week-5.html#cb11-15" tabindex="-1"></a>(Intercept) <span class="fl">6.815e+01</span>  <span class="fl">5.797e-01</span>  <span class="fl">117.56</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb11-16"><a href="worksheet-week-5.html#cb11-16" tabindex="-1"></a>gdppc       <span class="fl">2.619e-04</span>  <span class="fl">2.515e-05</span>   <span class="fl">10.41</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb11-17"><a href="worksheet-week-5.html#cb11-17" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb11-18"><a href="worksheet-week-5.html#cb11-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb11-19"><a href="worksheet-week-5.html#cb11-19" tabindex="-1"></a></span>
-<span id="cb11-20"><a href="worksheet-week-5.html#cb11-20" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">6.129</span> on <span class="dv">167</span> degrees of freedom</span>
-<span id="cb11-21"><a href="worksheet-week-5.html#cb11-21" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb11-22"><a href="worksheet-week-5.html#cb11-22" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
-<span id="cb11-23"><a href="worksheet-week-5.html#cb11-23" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="worksheet-week-5.html#cb17-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;files/Week 5/WDI_PO12Q.csv&quot;</span>)</span>
+<span id="cb17-2"><a href="worksheet-week-5.html#cb17-2" tabindex="-1"></a><span class="fu">attach</span>(wdi)</span>
+<span id="cb17-3"><a href="worksheet-week-5.html#cb17-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeexp <span class="sc">~</span> gdppc)</span>
+<span id="cb17-4"><a href="worksheet-week-5.html#cb17-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb17-5"><a href="worksheet-week-5.html#cb17-5" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="worksheet-week-5.html#cb17-6" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb17-7"><a href="worksheet-week-5.html#cb17-7" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> lifeexp <span class="sc">~</span> gdppc)</span>
+<span id="cb17-8"><a href="worksheet-week-5.html#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="worksheet-week-5.html#cb17-9" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb17-10"><a href="worksheet-week-5.html#cb17-10" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
+<span id="cb17-11"><a href="worksheet-week-5.html#cb17-11" tabindex="-1"></a><span class="sc">-</span><span class="fl">17.445</span>  <span class="sc">-</span><span class="fl">3.260</span>   <span class="fl">1.545</span>   <span class="fl">4.760</span>   <span class="fl">8.969</span> </span>
+<span id="cb17-12"><a href="worksheet-week-5.html#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="worksheet-week-5.html#cb17-13" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb17-14"><a href="worksheet-week-5.html#cb17-14" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb17-15"><a href="worksheet-week-5.html#cb17-15" tabindex="-1"></a>(Intercept) <span class="fl">6.815e+01</span>  <span class="fl">5.797e-01</span>  <span class="fl">117.56</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb17-16"><a href="worksheet-week-5.html#cb17-16" tabindex="-1"></a>gdppc       <span class="fl">2.619e-04</span>  <span class="fl">2.515e-05</span>   <span class="fl">10.41</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb17-17"><a href="worksheet-week-5.html#cb17-17" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb17-18"><a href="worksheet-week-5.html#cb17-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb17-19"><a href="worksheet-week-5.html#cb17-19" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="worksheet-week-5.html#cb17-20" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">6.129</span> on <span class="dv">167</span> degrees of freedom</span>
+<span id="cb17-21"><a href="worksheet-week-5.html#cb17-21" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb17-22"><a href="worksheet-week-5.html#cb17-22" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
+<span id="cb17-23"><a href="worksheet-week-5.html#cb17-23" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
 <p>You can also extract specific blocks of the output table by placing brackets [] after the <code>summary()</code> function. For example <code>summary()[1]</code>. Try to extract the block containing model fit, like this:</p>
 <pre><code>$r.squared
 [1] 0.3936356</code></pre>
