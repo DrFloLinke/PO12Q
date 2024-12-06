@@ -252,7 +252,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="additional-exercises.html"><a href="additional-exercises.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
 <li class="part"><span><b>Week 8</b></span></li>
-<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html"><i class="fa fa-check"></i>Worksheet Week 8</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html"><i class="fa fa-check"></i>Worksheet Week 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html#self-assessment-questions-6"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html#solutions-6"><i class="fa fa-check"></i>Solutions</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html#homework-1"><i class="fa fa-check"></i>Homework</a></li>
+</ul></li>
 <li class="part"><span><b>Week 9</b></span></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html"><i class="fa fa-check"></i>Worksheet Week 9</a></li>
 <li class="part"><span><b>Week 10</b></span></li>
@@ -260,9 +267,9 @@ div.csl-indent {
 <li class="part"><span><b>Downloads</b></span></li>
 <li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html"><i class="fa fa-check"></i>Downloads</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="downloads.html"><a href="downloads.html#documents"><i class="fa fa-check"></i><b>0.1</b> Documents</a></li>
-<li class="chapter" data-level="0.2" data-path="downloads.html"><a href="downloads.html#data-sets"><i class="fa fa-check"></i><b>0.2</b> Data Sets</a></li>
-<li class="chapter" data-level="0.3" data-path="downloads.html"><a href="downloads.html#r-scripts"><i class="fa fa-check"></i><b>0.3</b> R Scripts</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#documents"><i class="fa fa-check"></i>Documents</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#data-sets"><i class="fa fa-check"></i>Data Sets</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#r-scripts"><i class="fa fa-check"></i>R Scripts</a></li>
 </ul></li>
 <li class="part"><span><b>Bibliography</b></span></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
@@ -285,11 +292,1136 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="worksheet-week-8" class="section level1 unnumbered hasAnchor">
 <h1>Worksheet Week 8<a href="worksheet-week-8.html#worksheet-week-8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-assessment-questions-6" class="section level2 unnumbered hasAnchor">
+<h2>Self-Assessment Questions<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a><a href="worksheet-week-8.html#self-assessment-questions-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Compare bivariate regression and multiple regression.</li>
+<li>Give an example of the relationship in which you could apply multiple linear regression.</li>
+<li>How do you interpret partial slope coefficients?</li>
+<li>How do you interpret adjusted R-Squared in regression analysis?</li>
+</ol>
+</div>
+<div id="multiple-regression-in-r-guided-example" class="section level2 unnumbered hasAnchor">
+<h2>Multiple Regression in R – Guided Example<a href="worksheet-week-8.html#multiple-regression-in-r-guided-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Use the data set “WDI_PO12Q.dta” from Moodle. Data are taken from <span class="citation">World Bank (2020)</span> and <span class="citation">Marshall &amp; Gurr (2020)</span>.</p></li>
+<li><p>Put it into an appropriate working directory for this seminar and create a dedicated and save it into the same working directory.</p></li>
+<li><p>Import the data set into R:</p></li>
+<li><p>Once again, here is the overview of the variables available and their respective label in Table <span class="math inline">\(\ref{tbl:variables}\)</span>:</p></li>
+</ul>
+<p><img src="main_files/figure-html/unnamed-chunk-51-1.png" width="758" /></p>
+<ul>
+<li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
+</ul>
+<pre><code>
+Call:
+lm(formula = gdppc ~ lifeexp, data = wdi)
 
+Residuals:
+   Min     1Q Median     3Q    Max 
+-18457  -9877  -4187   4963  78242 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -94306.8    10406.7  -9.062 3.33e-16 ***
+lifeexp       1503.2      144.4  10.412  &lt; 2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 14690 on 167 degrees of freedom
+  (26 observations deleted due to missingness)
+Multiple R-squared:  0.3936,    Adjusted R-squared:   0.39 
+F-statistic: 108.4 on 1 and 167 DF,  p-value: &lt; 2.2e-16</code></pre>
+<ul>
+<li>Interpret the coefficients.</li>
+<li>Now we use a different regressor, say “Urban population (% of total)”.</li>
+</ul>
+<pre><code>
+Call:
+lm(formula = gdppc ~ urban, data = wdi)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-28588 -10681  -3110   6863 152303 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -16983.43    3872.34  -4.386 1.98e-05 ***
+urban          542.03      61.74   8.779 1.42e-15 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 19120 on 176 degrees of freedom
+  (17 observations deleted due to missingness)
+Multiple R-squared:  0.3045,    Adjusted R-squared:  0.3006 
+F-statistic: 77.07 on 1 and 176 DF,  p-value: 1.417e-15</code></pre>
+<ul>
+<li>Interpret the coefficients.</li>
+<li>If we want to assess the influence of both independent variables together, we type:</li>
+</ul>
+<pre><code>
+Call:
+lm(formula = gdppc ~ lifeexp + urban, data = wdi)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-22570  -8825  -2143   5594  74445 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -74786.14   10690.13  -6.996 6.17e-11 ***
+lifeexp       1012.17     172.70   5.861 2.41e-08 ***
+urban          273.74      59.13   4.629 7.37e-06 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 13860 on 166 degrees of freedom
+  (26 observations deleted due to missingness)
+Multiple R-squared:  0.463, Adjusted R-squared:  0.4565 
+F-statistic: 71.55 on 2 and 166 DF,  p-value: &lt; 2.2e-16</code></pre>
+<ul>
+<li>Interpret the coefficients.</li>
+<li>Because I am nice, I am producing an overview of all three regressions in the following table:</li>
+</ul>
+ 
+ 
+<center>
+<table style="text-align:center">
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+per capita GDP
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Life Expectancy
+</td>
+<td>
+1,503.211<sup>***</sup>
+</td>
+<td>
+</td>
+<td>
+1,012.168<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(144.371)
+</td>
+<td>
+</td>
+<td>
+(172.696)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Urbanisation
+</td>
+<td>
+</td>
+<td>
+542.033<sup>***</sup>
+</td>
+<td>
+273.735<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(61.743)
+</td>
+<td>
+(59.134)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-94,306.810<sup>***</sup>
+</td>
+<td>
+-16,983.430<sup>***</sup>
+</td>
+<td>
+-74,786.150<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(10,406.730)
+</td>
+<td>
+(3,872.336)
+</td>
+<td>
+(10,690.130)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+169
+</td>
+<td>
+178
+</td>
+<td>
+169
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.394
+</td>
+<td>
+0.305
+</td>
+<td>
+0.463
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.390
+</td>
+<td>
+0.301
+</td>
+<td>
+0.456
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+</center>
+<p> 
+ </p>
+<ul>
+<li>How have the slope coefficients changed? Why?</li>
+<li>Which model explains the level of GDP best? Why?</li>
+<li>Specify the SRF for Model 3, paying special attention to notation.</li>
+<li>Now assume, we want to know whether education has a bearing on the level of GDP. We call:</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="worksheet-week-8.html#cb20-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<p>and also add it to the joint model:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="worksheet-week-8.html#cb21-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<p>This should lead to these results:</p>
+ 
+ 
+<center>
+<table style="text-align:center">
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="5">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="5" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="5">
+per capita GDP
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+</tr>
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Life Expectancy
+</td>
+<td>
+1,503.211<sup>***</sup>
+</td>
+<td>
+</td>
+<td>
+1,012.168<sup>***</sup>
+</td>
+<td>
+</td>
+<td>
+973.985<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(144.371)
+</td>
+<td>
+</td>
+<td>
+(172.696)
+</td>
+<td>
+</td>
+<td>
+(411.375)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Urbanisation
+</td>
+<td>
+</td>
+<td>
+542.033<sup>***</sup>
+</td>
+<td>
+273.735<sup>***</sup>
+</td>
+<td>
+</td>
+<td>
+227.126<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(61.743)
+</td>
+<td>
+(59.134)
+</td>
+<td>
+</td>
+<td>
+(83.427)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Literacy
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+258.407<sup>**</sup>
+</td>
+<td>
+-221.731
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(97.381)
+</td>
+<td>
+(142.455)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-94,306.810<sup>***</sup>
+</td>
+<td>
+-16,983.430<sup>***</sup>
+</td>
+<td>
+-74,786.150<sup>***</sup>
+</td>
+<td>
+-12,967.000
+</td>
+<td>
+-55,246.840<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(10,406.730)
+</td>
+<td>
+(3,872.336)
+</td>
+<td>
+(10,690.130)
+</td>
+<td>
+(8,529.810)
+</td>
+<td>
+(19,311.130)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+169
+</td>
+<td>
+178
+</td>
+<td>
+169
+</td>
+<td>
+40
+</td>
+<td>
+39
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.394
+</td>
+<td>
+0.305
+</td>
+<td>
+0.463
+</td>
+<td>
+0.156
+</td>
+<td>
+0.497
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.390
+</td>
+<td>
+0.301
+</td>
+<td>
+0.456
+</td>
+<td>
+0.134
+</td>
+<td>
+0.454
+</td>
+</tr>
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="5" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+</center>
+<p> 
+ </p>
+<ul>
+<li>In Model 5 the coefficient for “Literacy” has turned insignificant. Reproduce the results in Table 4 to find out which variable takes away the significance.</li>
+</ul>
+ 
+ 
+<center>
+<table style="text-align:center">
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+per capita GDP
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Literacy
+</td>
+<td>
+258.407<sup>**</sup>
+</td>
+<td>
+-223.305
+</td>
+<td>
+28.390
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(97.381)
+</td>
+<td>
+(154.620)
+</td>
+<td>
+(99.706)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Life Expectancy
+</td>
+<td>
+</td>
+<td>
+1,483.785<sup>***</sup>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(397.567)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Urbanisation
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+315.375<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(77.633)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-12,967.000
+</td>
+<td>
+-77,851.340<sup>***</sup>
+</td>
+<td>
+-12,399.610<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(8,529.810)
+</td>
+<td>
+(18,924.060)
+</td>
+<td>
+(7,189.937)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+40
+</td>
+<td>
+39
+</td>
+<td>
+40
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.156
+</td>
+<td>
+0.390
+</td>
+<td>
+0.417
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.134
+</td>
+<td>
+0.357
+</td>
+<td>
+0.385
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+</center>
+<p> 
+ </p>
+<ul>
+<li><p>What can we conclude from this investigation?</p></li>
+<li><p>Does the variable <code>infant</code> have the same effect? What do you conclude from this?</p></li>
+<li><p>Which measurement explains GDP better, <code>life</code> or <code>infant</code>?</p></li>
+</ul>
+ 
+ 
+<center>
+<table style="text-align:center">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+per capita GDP
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Life Expectancy
+</td>
+<td>
+1,503.211<sup>***</sup>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(144.371)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Infant Mortality
+</td>
+<td>
+</td>
+<td>
+-524.111<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(73.885)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-94,306.810<sup>***</sup>
+</td>
+<td>
+26,467.130<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(10,406.730)
+</td>
+<td>
+(2,257.385)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+169
+</td>
+<td>
+178
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.394
+</td>
+<td>
+0.222
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.390
+</td>
+<td>
+0.218
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+</center>
+<p> 
+ </p>
+</div>
+<div id="multiple-regression-in-r-independent-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Multiple Regression in R – Independent Analysis<a href="worksheet-week-8.html#multiple-regression-in-r-independent-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Before you start with these, please pause and let Flo know that you are done. We will compare notes on your answers up to this point, to make sure that you are on the right track for the independent exercises.</em></p>
+<ol style="list-style-type: decimal">
+<li>Use the <code>wdi</code> data frame. Set <code>polity5</code> as the dependent variable, and choose three sensible variables which you believe could influence democracy. Note that the Polity V Score codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy).</li>
+<li>State the null- and alternative hypotheses for each of the independent variables chosen.</li>
+<li>Plot two of the bivariate models in a scatter plot (black points) with fitted regression line (in red). Use base R, or <code>ggplot</code>. Does the direction of influence agree with your hypotheses?</li>
+<li>Run all possible regression models. Put the results into a suitable table, noting the p-values of each coefficient in the brackets underneath. Try all different combinations of your variables to see which of the three is the best to explain democracy.</li>
+<li>Specify the Sample Regression Function (SRF) for models 1, 4, and 7.</li>
+<li>Interpret the intercept and one of the slope coefficients in models 1, 4, and 7.</li>
+<li>Interpret the model fit measure for models 1, 4, and 7.</li>
+<li>What do we conclude with respect to the hypotheses stated in Exercise 2 from this analysis?</li>
+<li>Collate a PowerPoint (Keynote) presentation with one slide for each of the preceding eight points. We will discuss this in Week 9.</li>
+</ol>
+</div>
+<div id="solutions-6" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="worksheet-week-8.html#solutions-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a>.</p>
+</div>
+<div id="homework-1" class="section level2 unnumbered hasAnchor">
+<h2>Homework<a href="worksheet-week-8.html#homework-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For next week, please</p>
+<ol style="list-style-type: decimal">
+<li>Finish the independent exercises.</li>
+<li>Read one of the following two articles:
+<ul>
+<li>Arat, Zehra. 1988. “Democracy and Economic Development: Modernization Theory Revisited”. Comparative Politics 21(1): 21-36.</li>
+<li>Heger, Lindsay, and Idean Salehyan. 2007. “Ruthless Rulers: Coalition Size and the Severity of Civil Conflict.” International Studies Quarterly 51(2): 385-403.</li>
+</ul></li>
+</ol>
+<p>Identify the following components:</p>
+<ul>
+<li>Research Question</li>
+<li>Theory</li>
+<li>Hypotheses</li>
+<li>Method</li>
+<li>Results</li>
+<li>Conclusion (Answer to the research question)</li>
+</ul>
+<p>What do you like / dislike about the article? Do you have any points of critique?</p>
+
+</div>
 </div>
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-8.html#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
