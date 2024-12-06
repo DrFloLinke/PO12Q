@@ -350,80 +350,80 @@ Consider the following Table:</p>
 </div>
 <div id="loading-the-data" class="section level3 unnumbered hasAnchor">
 <h3>Loading the Data<a href="worksheet-week-1.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="worksheet-week-1.html#cb1-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/PO12Q/Seminars/PO12Q_Seminar_Week 1&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="worksheet-week-1.html#cb2-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;files/Week 1/WDI_PO12Q.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="worksheet-week-1.html#cb1-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/PO12Q/Seminars/PO12Q_Seminar_Week 1&quot;</span>)</span>
+<span id="cb1-2"><a href="worksheet-week-1.html#cb1-2" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WDI_PO12Q.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="guided-example" class="section level3 unnumbered hasAnchor">
 <h3>Guided Example<a href="worksheet-week-1.html#guided-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>We are now going to use the WDI, and produce a crosstab of Life expectancy at birth, total (years) by GDP per capita (constant 2010 US$), using the variables and </li>
+<li>We are now going to use the WDI, and produce a crosstab of Life expectancy at birth, total (years) by GDP per capita (constant 2010 US$), using the variables <code>lifeexp</code> and <code>gdppc</code></li>
 <li>We first need to recode both variables into factor variables, as these are continuous.</li>
-<li>First up is </li>
-<li>Recoding: as a refresher from PO11Q, we are specifying the new data frame as the old one, then we add a pipe, and call the function . Therein, we create a new variable called , which will be an ordered factor, cutting the variable at the stated intervals, and labeling these levels accordingly.</li>
+<li>First up is <code>lifeexp</code></li>
+<li>Recoding: as a refresher from PO11Q, we are specifying the new data frame as the old one, then we add a pipe, and call the function <code>mutate</code>. Therein, we create a new variable called <code>lifecat</code>, which will be an ordered factor, cutting the variable <code>life</code> at the stated intervals, and labeling these levels accordingly.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="worksheet-week-1.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="worksheet-week-1.html#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="worksheet-week-1.html#cb3-3" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="worksheet-week-1.html#cb3-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lifecat=</span></span>
-<span id="cb3-5"><a href="worksheet-week-1.html#cb3-5" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
-<span id="cb3-6"><a href="worksheet-week-1.html#cb3-6" tabindex="-1"></a>             <span class="fu">cut</span>(lifeexp, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">77</span>,<span class="dv">84</span>), </span>
-<span id="cb3-7"><a href="worksheet-week-1.html#cb3-7" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="worksheet-week-1.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="worksheet-week-1.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="worksheet-week-1.html#cb2-3" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a href="worksheet-week-1.html#cb2-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lifecat=</span></span>
+<span id="cb2-5"><a href="worksheet-week-1.html#cb2-5" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
+<span id="cb2-6"><a href="worksheet-week-1.html#cb2-6" tabindex="-1"></a>             <span class="fu">cut</span>(lifeexp, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">77</span>,<span class="dv">84</span>), </span>
+<span id="cb2-7"><a href="worksheet-week-1.html#cb2-7" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
 <ul>
-<li>Next up is which we are recoding into a factor variable with three levels:</li>
+<li>Next up is <code>gdppc</code> which we are recoding into a factor variable with three levels:</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="worksheet-week-1.html#cb4-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="worksheet-week-1.html#cb4-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpcat=</span></span>
-<span id="cb4-3"><a href="worksheet-week-1.html#cb4-3" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
-<span id="cb4-4"><a href="worksheet-week-1.html#cb4-4" tabindex="-1"></a>             <span class="fu">cut</span>(gdppc, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3861.5</span>,<span class="dv">25260</span>, <span class="dv">150000</span>), </span>
-<span id="cb4-5"><a href="worksheet-week-1.html#cb4-5" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="worksheet-week-1.html#cb3-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="worksheet-week-1.html#cb3-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpcat=</span></span>
+<span id="cb3-3"><a href="worksheet-week-1.html#cb3-3" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
+<span id="cb3-4"><a href="worksheet-week-1.html#cb3-4" tabindex="-1"></a>             <span class="fu">cut</span>(gdppc, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3861.5</span>,<span class="dv">25260</span>, <span class="dv">150000</span>), </span>
+<span id="cb3-5"><a href="worksheet-week-1.html#cb3-5" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
 <ul>
 <li>Let us now see whether the level of GDP has an influence on life expectancy</li>
 <li>State the null and the alternative hypothesis (directional)</li>
 <li>Run the cross-tabulation, by calling:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="worksheet-week-1.html#cb5-1" tabindex="-1"></a>wdi_table <span class="ot">&lt;-</span> <span class="fu">with</span>(wdi, <span class="fu">table</span>(gdpcat, lifecat))</span>
-<span id="cb5-2"><a href="worksheet-week-1.html#cb5-2" tabindex="-1"></a>wdi_table</span>
-<span id="cb5-3"><a href="worksheet-week-1.html#cb5-3" tabindex="-1"></a>        lifecat</span>
-<span id="cb5-4"><a href="worksheet-week-1.html#cb5-4" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb5-5"><a href="worksheet-week-1.html#cb5-5" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb5-6"><a href="worksheet-week-1.html#cb5-6" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb5-7"><a href="worksheet-week-1.html#cb5-7" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="worksheet-week-1.html#cb4-1" tabindex="-1"></a>wdi_table <span class="ot">&lt;-</span> <span class="fu">with</span>(wdi, <span class="fu">table</span>(gdpcat, lifecat))</span>
+<span id="cb4-2"><a href="worksheet-week-1.html#cb4-2" tabindex="-1"></a>wdi_table</span>
+<span id="cb4-3"><a href="worksheet-week-1.html#cb4-3" tabindex="-1"></a>        lifecat</span>
+<span id="cb4-4"><a href="worksheet-week-1.html#cb4-4" tabindex="-1"></a>gdpcat   low high</span>
+<span id="cb4-5"><a href="worksheet-week-1.html#cb4-5" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
+<span id="cb4-6"><a href="worksheet-week-1.html#cb4-6" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
+<span id="cb4-7"><a href="worksheet-week-1.html#cb4-7" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
 <ul>
 <li>Now perform a chi-squared test, using the command<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="worksheet-week-1.html#cb6-1" tabindex="-1"></a>Xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(wdi_table, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
-<span id="cb6-2"><a href="worksheet-week-1.html#cb6-2" tabindex="-1"></a>Xsq</span>
-<span id="cb6-3"><a href="worksheet-week-1.html#cb6-3" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="worksheet-week-1.html#cb6-4" tabindex="-1"></a>    Pearson<span class="st">&#39;s Chi-squared test</span></span>
-<span id="cb6-5"><a href="worksheet-week-1.html#cb6-5" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="worksheet-week-1.html#cb6-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
-<span id="cb6-7"><a href="worksheet-week-1.html#cb6-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="worksheet-week-1.html#cb5-1" tabindex="-1"></a>Xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(wdi_table, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
+<span id="cb5-2"><a href="worksheet-week-1.html#cb5-2" tabindex="-1"></a>Xsq</span>
+<span id="cb5-3"><a href="worksheet-week-1.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="worksheet-week-1.html#cb5-4" tabindex="-1"></a>    Pearson<span class="st">&#39;s Chi-squared test</span></span>
+<span id="cb5-5"><a href="worksheet-week-1.html#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="worksheet-week-1.html#cb5-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
+<span id="cb5-7"><a href="worksheet-week-1.html#cb5-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
 <ul>
 <li>Are the results statistically significant? At what level?</li>
 <li>Produce the table of expected frequencies, using the command</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="worksheet-week-1.html#cb7-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>expected, <span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="worksheet-week-1.html#cb7-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb7-3"><a href="worksheet-week-1.html#cb7-3" tabindex="-1"></a>gdpcat     low  high</span>
-<span id="cb7-4"><a href="worksheet-week-1.html#cb7-4" tabindex="-1"></a>  low    <span class="fl">51.44</span> <span class="fl">17.56</span></span>
-<span id="cb7-5"><a href="worksheet-week-1.html#cb7-5" tabindex="-1"></a>  medium <span class="fl">52.19</span> <span class="fl">17.81</span></span>
-<span id="cb7-6"><a href="worksheet-week-1.html#cb7-6" tabindex="-1"></a>  high   <span class="fl">22.37</span>  <span class="fl">7.63</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="worksheet-week-1.html#cb6-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>expected, <span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="worksheet-week-1.html#cb6-2" tabindex="-1"></a>        lifecat</span>
+<span id="cb6-3"><a href="worksheet-week-1.html#cb6-3" tabindex="-1"></a>gdpcat     low  high</span>
+<span id="cb6-4"><a href="worksheet-week-1.html#cb6-4" tabindex="-1"></a>  low    <span class="fl">51.44</span> <span class="fl">17.56</span></span>
+<span id="cb6-5"><a href="worksheet-week-1.html#cb6-5" tabindex="-1"></a>  medium <span class="fl">52.19</span> <span class="fl">17.81</span></span>
+<span id="cb6-6"><a href="worksheet-week-1.html#cb6-6" tabindex="-1"></a>  high   <span class="fl">22.37</span>  <span class="fl">7.63</span></span></code></pre></div>
 <ul>
 <li>You can compare that to the observed ones:</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="worksheet-week-1.html#cb8-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>observed, <span class="dv">2</span>)</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="worksheet-week-1.html#cb7-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>observed, <span class="dv">2</span>)</span>
+<span id="cb7-2"><a href="worksheet-week-1.html#cb7-2" tabindex="-1"></a>        lifecat</span>
+<span id="cb7-3"><a href="worksheet-week-1.html#cb7-3" tabindex="-1"></a>gdpcat   low high</span>
+<span id="cb7-4"><a href="worksheet-week-1.html#cb7-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
+<span id="cb7-5"><a href="worksheet-week-1.html#cb7-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
+<span id="cb7-6"><a href="worksheet-week-1.html#cb7-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<p>You can see that this is identical to producing the cross-tabulation in the first place:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="worksheet-week-1.html#cb8-1" tabindex="-1"></a>wdi_table</span>
 <span id="cb8-2"><a href="worksheet-week-1.html#cb8-2" tabindex="-1"></a>        lifecat</span>
 <span id="cb8-3"><a href="worksheet-week-1.html#cb8-3" tabindex="-1"></a>gdpcat   low high</span>
 <span id="cb8-4"><a href="worksheet-week-1.html#cb8-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
 <span id="cb8-5"><a href="worksheet-week-1.html#cb8-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
 <span id="cb8-6"><a href="worksheet-week-1.html#cb8-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
-<p>You can see that this is identical to producing the cross-tabulation in the first place:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="worksheet-week-1.html#cb9-1" tabindex="-1"></a>wdi_table</span>
-<span id="cb9-2"><a href="worksheet-week-1.html#cb9-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb9-3"><a href="worksheet-week-1.html#cb9-3" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb9-4"><a href="worksheet-week-1.html#cb9-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb9-5"><a href="worksheet-week-1.html#cb9-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb9-6"><a href="worksheet-week-1.html#cb9-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
 <ul>
 <li>What have we found out?</li>
 </ul>
@@ -458,7 +458,7 @@ Consider the following Table:</p>
 <hr />
 <ol start="1">
 <li id="fn1"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-1.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>I am using the option here to reproduce the <span class="math inline">\(\chi^{2}\)</span>-value you would get if you calculated this by hand. Technically, <span class="math inline">\(\chi^{2}\)</span> is only an approximation of the hypergeometric distribution which would deliver an exact test. You can get the precise value by applying Yates’ continuity correction with .<a href="worksheet-week-1.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>I am using the <code>correct=FALSE</code> option here to reproduce the <span class="math inline">\(\chi^{2}\)</span>-value you would get if you calculated this by hand. Technically, <span class="math inline">\(\chi^{2}\)</span> is only an approximation of the hypergeometric distribution which would deliver an exact test. You can get the precise value by applying Yates’ continuity correction with <code>correct=TRUE</code>.<a href="worksheet-week-1.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

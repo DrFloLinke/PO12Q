@@ -354,7 +354,7 @@ very funny topic, but interesting nonetheless). The two variables are, respectiv
 <li>Adding axes labels and making them readable.</li>
 <li>Remove the grid in the background.</li>
 </ol>
-<p><img src="main_files/figure-html/unnamed-chunk-44-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="main_files/figure-html/unnamed-chunk-43-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>If you have done everything correctly, you should see that the dots are rather concentrated in the bottom left corner of the scatterplot with some outliers far away from the cloud of our data. It is not a big deal, but we might want to get rid of the outliers and this way improve our visualisation.</p>
 <p>There are several ways to do that, of course. But let’s say we want to transform our variables, excluding all values over a certain point. For instance, we want to exclude the values above 750 of our alcohol variable and above 500 for our mortality variable. How would you do that?</p>
 <p><strong><em>Hint:</em></strong> <em>there are several solutions. One could be, creating a new datset subsetting the original. Another solution could be again, creating a new variable telling R to transform all the values above our treshold in
@@ -397,11 +397,11 @@ Residual standard error: 35.61 on 6956 degrees of freedom
 Multiple R-squared:  0.2374,    Adjusted R-squared:  0.2373 
 F-statistic:  2165 on 1 and 6956 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="additional-exercises.html#cb22-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
-<span id="cb22-2"><a href="additional-exercises.html#cb22-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
-<span id="cb22-3"><a href="additional-exercises.html#cb22-3" tabindex="-1"></a>              Estimate  Std. Error   t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
-<span id="cb22-4"><a href="additional-exercises.html#cb22-4" tabindex="-1"></a>(Intercept) <span class="fl">78.1551599</span> <span class="fl">0.619648419</span> <span class="fl">126.12823</span>        <span class="dv">0</span></span>
-<span id="cb22-5"><a href="additional-exercises.html#cb22-5" tabindex="-1"></a>alcohol      <span class="fl">0.2082697</span> <span class="fl">0.004476011</span>  <span class="fl">46.53021</span>        <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="additional-exercises.html#cb21-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
+<span id="cb21-2"><a href="additional-exercises.html#cb21-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
+<span id="cb21-3"><a href="additional-exercises.html#cb21-3" tabindex="-1"></a>              Estimate  Std. Error   t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
+<span id="cb21-4"><a href="additional-exercises.html#cb21-4" tabindex="-1"></a>(Intercept) <span class="fl">78.1551599</span> <span class="fl">0.619648419</span> <span class="fl">126.12823</span>        <span class="dv">0</span></span>
+<span id="cb21-5"><a href="additional-exercises.html#cb21-5" tabindex="-1"></a>alcohol      <span class="fl">0.2082697</span> <span class="fl">0.004476011</span>  <span class="fl">46.53021</span>        <span class="dv">0</span></span></code></pre></div>
 </div>
 <div id="interpretation" class="section level2 unnumbered hasAnchor">
 <h2>Interpretation<a href="additional-exercises.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
