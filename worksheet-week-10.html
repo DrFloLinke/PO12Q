@@ -261,9 +261,30 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="worksheet-week-8.html"><a href="worksheet-week-8.html#homework-1"><i class="fa fa-check"></i>Homework</a></li>
 </ul></li>
 <li class="part"><span><b>Week 9</b></span></li>
-<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html"><i class="fa fa-check"></i>Worksheet Week 9</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html"><i class="fa fa-check"></i>Worksheet Week 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#working-with-regression-analysis"><i class="fa fa-check"></i>Working with Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-analysis"><i class="fa fa-check"></i>Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#transformation-of-variables"><i class="fa fa-check"></i>Transformation of Variables</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#solutions-7"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
 <li class="part"><span><b>Week 10</b></span></li>
-<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html"><i class="fa fa-check"></i>Worksheet Week 10</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html"><i class="fa fa-check"></i>Worksheet Week 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html#self-assessment-questions-7"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html#testing-the-classical-linear-assumptions"><i class="fa fa-check"></i>Testing the Classical Linear Assumptions</a>
+<ul>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html#homoscedasticity"><i class="fa fa-check"></i>Homoscedasticity</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html#multi-collinearity"><i class="fa fa-check"></i>(Multi-)Collinearity</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html#the-gauss-markov-theorem"><i class="fa fa-check"></i>The Gauss-Markov Theorem</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-10.html"><a href="worksheet-week-10.html#solutions-8"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
 <li class="part"><span><b>Downloads</b></span></li>
 <li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html"><i class="fa fa-check"></i>Downloads</a>
 <ul>
@@ -292,11 +313,151 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="worksheet-week-10" class="section level1 unnumbered hasAnchor">
 <h1>Worksheet Week 10<a href="worksheet-week-10.html#worksheet-week-10" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-assessment-questions-7" class="section level2 unnumbered hasAnchor">
+<h2>Self-Assessment Questions<a href="worksheet-week-10.html#self-assessment-questions-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>How do the mathematical properties of OLS (Week 5) differ from the Classical Linear Assumptions?</li>
+<li>Why is observed heteroscedasticity a problem that needs addressing?</li>
+<li>What happens in a model with (multi-)collinearity?</li>
+<li>Does the assumption of linearity in the Gauss-Markov Theorem preclude non-linear transformations? Why / why not?</li>
+</ol>
+</div>
+<div id="testing-the-classical-linear-assumptions" class="section level2 unnumbered hasAnchor">
+<h2>Testing the Classical Linear Assumptions<a href="worksheet-week-10.html#testing-the-classical-linear-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For this worksheet we will be using the <code>london</code> data set from the lectures, this time with the following variables:</p>
+<p><img src="main_files/figure-html/unnamed-chunk-66-1.png" width="758" /></p>
+<p>Data are taken from <span class="citation">GOV.UK (2013)</span>, <span class="citation">London Data Store (2010)</span>, and <span class="citation">House of Commons Library (n.d.)</span>.</p>
+<div id="homoscedasticity" class="section level3 unnumbered hasAnchor">
+<h3>Homoscedasticity<a href="worksheet-week-10.html#homoscedasticity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Load the data set <a href="files/Week%2010/london_11.csv">london_11.csv</a> as an object called <code>london</code></li>
+<li>Subset the data to a random sample as follows:</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="worksheet-week-10.html#cb22-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb22-2"><a href="worksheet-week-10.html#cb22-2" tabindex="-1"></a>london_sam <span class="ot">&lt;-</span> <span class="fu">sample_frac</span>(london, <span class="fl">0.65</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Regress GCSE scores on <code>income</code> and interpret the results.{#ex:homo3}</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="worksheet-week-10.html#cb23-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Breusch-Pagan Test by Hand {#ex:homo4}
+<ol style="list-style-type: lower-alpha">
+<li>Extract the residuals from model 1 and store their squared values in a new object called <code>ressq</code>.</li>
+</ol></li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="worksheet-week-10.html#cb24-1" tabindex="-1"></a>ressq <span class="ot">&lt;-</span> <span class="fu">resid</span>(model1)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="line-block">          b. Regress the squared residuals on the original independent variable.</div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="worksheet-week-10.html#cb25-1" tabindex="-1"></a>model1res <span class="ot">&lt;-</span> <span class="fu">lm</span>(ressq<span class="sc">~</span>income, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<div class="line-block">          c. Store the number of observations of this new model in an object called <code>N</code>.</div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="worksheet-week-10.html#cb26-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nobs</span>(model1res)</span></code></pre></div>
+<div class="line-block">          d. Obtain the model fit measure R<span class="math inline">\(^2\)</span> for this model.</div>
+<div class="line-block">          e. Calculate the test-statistic for the Breusch-Pagan test as the product of <code>N</code> and R<span class="math inline">\(^2\)</span>.</div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="worksheet-week-10.html#cb27-1" tabindex="-1"></a>chisq <span class="ot">&lt;-</span> <span class="fl">0.001857</span><span class="sc">*</span>N</span></code></pre></div>
+<div class="line-block">          f. Conduct a Chi-Squared test with one degree of freedom.</div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="worksheet-week-10.html#cb28-1" tabindex="-1"></a><span class="fu">pchisq</span>(chisq, <span class="at">df=</span><span class="dv">1</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
+<span id="cb28-2"><a href="worksheet-week-10.html#cb28-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7676653</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Breusch-Pagan Test with the <code>lmtest</code> package.
+<ol style="list-style-type: lower-alpha">
+<li>Install and load the <code>lmtest</code> package</li>
+</ol></li>
+</ol>
+<div class="line-block">          b. Call</div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="worksheet-week-10.html#cb29-1" tabindex="-1"></a><span class="fu">bptest</span>(model1)</span></code></pre></div>
+<div class="line-block">          c. Compare the results with the results obtained in Exercise @ref{ex:homo4}.</div>
+<ol start="6" style="list-style-type: decimal">
+<li>Heteroscedasticity
+<ol style="list-style-type: lower-alpha">
+<li>Now let’s introduce heteroscedasticity:</li>
+</ol></li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="worksheet-week-10.html#cb30-1" tabindex="-1"></a>london_heterosc <span class="ot">&lt;-</span> <span class="fu">filter</span>(london, income<span class="sc">&lt;</span><span class="dv">28000</span> <span class="sc">|</span> income<span class="sc">&gt;</span><span class="dv">100000</span>)</span></code></pre></div>
+<div class="line-block">          b. Estimate a new model, and note the significance of coefficients.</div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="worksheet-week-10.html#cb31-1" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_heterosc)</span></code></pre></div>
+<div class="line-block">          c. Conduct a Breusch-Pagan Test with the <code>lmtest</code> package.<br />
+          d. Install and load the <code>sandwich</code> package.</div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="worksheet-week-10.html#cb32-1" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span></code></pre></div>
+<div class="line-block">          e. The <code>sandwich</code> package replaces <span class="math inline">\(\Omega\)</span> with a new diagonal which takes into account</div>
+<div class="line-block">               heteroscedasticity. The default is <code>HC3</code> – if you ever work with somebody using Stata then</div>
+<div class="line-block">               you need to replace this with <code>HC1</code> to obtain the same results. Conduct a significance test with</div>
+<div class="line-block">               robust standard errors (with the <code>sandwich</code> function <code>coeftest</code>):</div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="worksheet-week-10.html#cb33-1" tabindex="-1"></a><span class="fu">coeftest</span>(model2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(model2, <span class="at">type=</span><span class="st">&quot;HC3&quot;</span>))</span></code></pre></div>
+<div class="line-block">          f. Compare the significance to the results in 6b and explain the reason for the difference.</div>
+<div class="line-block">          g. Estimate a model of your own choice with <code>gcse</code> as your dependent variable.</div>
+<div class="line-block">          h. Conduct the Breusch-Pagan test</div>
+<div class="line-block">               i. by hand</div>
+<div class="line-block">               ii. with the <code>lmtest</code> package</div>
+</div>
+<div id="multi-collinearity" class="section level3 unnumbered hasAnchor">
+<h3>(Multi-)Collinearity<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a><a href="worksheet-week-10.html#multi-collinearity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this Section, we will be testing for collinearity. We can do so with correlation analysis, which assesses to what degree two variables vary together. As such, this method is limited to pairwise comparisons between variables. It is conceivable, and indeed often the case, however, that one variable is functionally related to two or more other independent variables, such as</p>
+<p><span class="math display">\[\begin{equation*}
+    x_{1,i} = 0.2 x_{2,i }- 1.7 x_{3,i}
+\end{equation*}\]</span></p>
+<p>We refer to this situation as multicollinearity. In order to detect it, we need to test for the functional dependence of each independent variable on the remaining independent variables in the model. We can do so by employing secondary regression models, not unlike in the Breusch-Pagan Test (see lecture slides). We specify K secondary regression models, each adopting one of our K independent variables as its dependent variable. Let us specify such a function for <span class="math inline">\(x_1\)</span>:</p>
+<p><span class="math display">\[\begin{equation*}
+x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_{K,i} + v_i
+\end{equation*}\]</span></p>
+<p>where <span class="math inline">\(\alpha\)</span> denotes our new regression coefficients, and <span class="math inline">\(v_i\)</span> represents a random error term. For the remaining independent variables, the functions would look as follows:</p>
+<p><span class="math display">\[\begin{align*}
+    x_{2,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{3,i} + \alpha_3 x_{4,i} + ... + \alpha_{K-1} x_{K,i} + v_i \\
+    x_{3,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{4,i} + ... + \alpha_{K-1} x_{K,i} + v_i \\
+    \vdots \\
+    x_{K,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + ... + \alpha_{K-1} x_{K-1,i} + v_i
+\end{align*}\]</span></p>
+<p>In order to quantify how well each of the K regression functions explains the respective independent variable, we are going to use Adjusted R-Squared. We will note the <span class="math inline">\(R^2\)</span> of each individual regression as <span class="math inline">\(R_j^2\)</span> where j runs from 1 to K, or <span class="math inline">\(j=1,...,K\)</span>.</p>
+<p><span class="math inline">\(R_j^2\)</span> in itself already provides useful information, but we can do better than this. We can use <span class="math inline">\(R_j^2\)</span> to develop a measure which tells us how much larger the observed variance of a coefficient is compared to a scenario in which the variable was totally functionally independent from the other independent variables in the model. We call this measure <strong>variance inflation factor</strong> and define it as follows:</p>
+<p><span class="math display">\[\begin{equation}
+\text{VIF}_j = \frac{1}{1-R_j^2}
+\end{equation}\]</span></p>
+<p>Its size is solely determined by <span class="math inline">\(R_j^2\)</span>. The better a model explains the respective independent variable, the closer <span class="math inline">\(R_j^2\)</span> will be to one, increasing the size of VIF<span class="math inline">\(_j\)</span>. A commonly adopted threshold for classing a variable as (multi-)collinear is VIF=10. This threshold is completely arbitrary, but has nonetheless managed to establish itself in regression analysis.</p>
+<p>We will now use <code>london\_sam</code> data frame to put theory into practice.</p>
+<ol style="list-style-type: decimal">
+<li>Regress GCSE scores on and in a multiple regression model. Interpret the results.</li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="worksheet-week-10.html#cb34-1" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income <span class="sc">+</span> idaci, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Install and load the package.</li>
+</ol>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="worksheet-week-10.html#cb35-1" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Calculate the Variance Inflation Factor (VIF) for this model as follows:</li>
+</ol>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="worksheet-week-10.html#cb36-1" tabindex="-1"></a><span class="fu">vif</span>(model3)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Interpret the results.</li>
+<li>Regress GCSE scores on <code>houseprice</code>. Store the results in an object called <code>model4</code>. Note the significance of the slope coefficient and interpret the results.</li>
+<li>Let’s introduce some collinearity by estimating the following model:</li>
+</ol>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="worksheet-week-10.html#cb37-1" tabindex="-1"></a>model5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income <span class="sc">+</span> houseprice, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<ol start="7" style="list-style-type: decimal">
+<li>Calculate the VIF for model 5. Interpret the results.</li>
+<li>Drawing on the results of Exercise 7, explain the significance of the slope coefficients of Model 1 (Exercise 3 in the previous section) and Model 4 (Exercise 6 of this section).</li>
+</ol>
+</div>
+</div>
+<div id="the-gauss-markov-theorem" class="section level2 unnumbered hasAnchor">
+<h2>The Gauss-Markov Theorem<a href="worksheet-week-10.html#the-gauss-markov-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Explain in your own words, what BLUE means.</li>
+<li>According to Malinvaud, the assumption that <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span> is quite important. To see this, consider the PRF: <span class="math inline">\(Y=\beta_{0}+\beta_{1}X_{i}+\epsilon_{i}\)</span>. Now consider two situations: (1) <span class="math inline">\(\beta_{0}=0\)</span>, <span class="math inline">\(\beta_{1}=1\)</span> and <span class="math inline">\(E(\epsilon_{i})=0\)</span>; and (2) <span class="math inline">\(\beta_{0}=1\)</span>, <span class="math inline">\(\beta_{1}=0\)</span> and <span class="math inline">\(E(\epsilon_{i})=X_{i}-1\)</span>. Now take the expectation of the PRF conditional upon <span class="math inline">\(X\)</span> in those two cases, and see if you agree with Malinvaud about the significance of the assumption <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span>.</li>
+</ol>
+</div>
+<div id="solutions-8" class="section level2 unnumbered hasAnchor">
+<h2>Solutions<a href="worksheet-week-10.html#solutions-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a>.</p>
 
+</div>
 </div>
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="13">
+<li id="fn13"><p>This discussion is a verbatim reproduction of .<a href="worksheet-week-10.html#fnref13" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
