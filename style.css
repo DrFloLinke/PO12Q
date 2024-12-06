@@ -1,0 +1,98 @@
+
+.book .book-summary {
+  background: #2A415F;
+}
+
+
+.book .book-body {
+  background: #496282;
+}
+
+
+
+.book .book-summary ul.summary li, 
+.book .book-summary ul.summary li a, 
+.book .book-summary ul.summary li span,
+.book .book-summary ul.summary li.active a, 
+.book .book-summary ul.summary li.done > a, 
+.book .book-summary ul.summary li a:hover,
+.book .book-summary ul.summary li i.fa-check {
+  color: #e8f1f2;
+}
+
+
+.book .book-summary ul.summary li a:hover {
+  background: #393A3B;
+  text-decoration: none;
+}
+
+.book .book-body .book-summary ul.summary li a.gitbook-link {
+  color: #e9eef2;
+}
+
+
+.book .book-summary ul.summary li.done i.fa-check
+{
+  display: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal pre {
+  border: 1px solid #ccc;
+}
+
+
+table { caption-side: bottom }
+
+h1 {
+  font-family: Avenir, Helvetica, "sans serif";
+  font-size:   48px;
+  font-weight: normal;
+}
+
+
+h2,h3,h4 {
+  font-family: Avenir, Helvetica, "sans serif";
+  font-size:   24px;
+  font-weight: normal;
+}
+
+
+
+.book.font-family-0 {
+  font-family: Avenir, Helvetica, "sans serif";
+}
+.book.font-family-1 {
+  font-family: Avenir, Helvetica, "sans serif";
+}
+
+.summary{
+font-family: Avenir, Helvetica, "sans serif";
+}
+
+li.appendix span, li.part span { /* for TOC part names */
+  margin-top: 1.5em;
+  opacity: 1 !important;
+  text-transform: uppercase;
+}
+
+/*____Code Chunks____*/
+
+.sourceCode pre {
+  margin: 0 !important; /* makes space above and below symmetrical*/
+}
+
+.sourceCode {
+  margin-bottom: 0.85em; /* adds same amount of margin as a <p> would */
+}
+
+img {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.caption {
+    width: --line-width;
+    text-align: center;
+}
+
