@@ -336,11 +336,11 @@ div.csl-indent {
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="worksheet-week-10.html#cb27-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb27-2"><a href="worksheet-week-10.html#cb27-2" tabindex="-1"></a>london_sam <span class="ot">&lt;-</span> <span class="fu">sample_frac</span>(london, <span class="fl">0.65</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
-<li>Regress GCSE scores on <code>income</code> and interpret the results.{#ex:homo3}</li>
+<li>Regress GCSE scores on <code>income</code> and interpret the results.</li>
 </ol>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="worksheet-week-10.html#cb28-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_sam)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
-<li>Breusch-Pagan Test by Hand {#ex:homo4}
+<li>Breusch-Pagan Test by Hand
 <ol style="list-style-type: lower-alpha">
 <li>Extract the residuals from model 1 and store their squared values in a new object called <code>ressq</code>.</li>
 </ol></li>
@@ -411,7 +411,7 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_
 \text{VIF}_j = \frac{1}{1-R_j^2}
 \end{equation}\]</span></p>
 <p>Its size is solely determined by <span class="math inline">\(R_j^2\)</span>. The better a model explains the respective independent variable, the closer <span class="math inline">\(R_j^2\)</span> will be to one, increasing the size of VIF<span class="math inline">\(_j\)</span>. A commonly adopted threshold for classing a variable as (multi-)collinear is VIF=10. This threshold is completely arbitrary, but has nonetheless managed to establish itself in regression analysis.</p>
-<p>We will now use <code>london\_sam</code> data frame to put theory into practice.</p>
+<p>We will now use <code>london_sam</code> data frame to put theory into practice.</p>
 <ol style="list-style-type: decimal">
 <li>Regress GCSE scores on and in a multiple regression model. Interpret the results.</li>
 </ol>
@@ -440,7 +440,7 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_
 <h2>The Gauss-Markov Theorem<a href="worksheet-week-10.html#the-gauss-markov-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Explain in your own words, what BLUE means.</li>
-<li>According to Malinvaud, the assumption that <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span> is quite important. To see this, consider the PRF: <span class="math inline">\(Y=\beta_{0}+\beta_{1}X_{i}+\epsilon_{i}\)</span>. Now consider two situations: (1) <span class="math inline">\(\beta_{0}=0\)</span>, <span class="math inline">\(\beta_{1}=1\)</span> and <span class="math inline">\(E(\epsilon_{i})=0\)</span>; and (2) <span class="math inline">\(\beta_{0}=1\)</span>, <span class="math inline">\(\beta_{1}=0\)</span> and <span class="math inline">\(E(\epsilon_{i})=X_{i}-1\)</span>. Now take the expectation of the PRF conditional upon <span class="math inline">\(X\)</span> in those two cases, and see if you agree with Malinvaud about the significance of the assumption <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span>.</li>
+<li>According to Malinvaud, the assumption that <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span> is quite important. To see this, consider the PRF: <span class="math inline">\(Y=\beta_{0}+\beta_{1}X_{i}+\epsilon_{i}\)</span>. Now consider two situations: (1) <span class="math inline">\(\beta_{0}=0\)</span>, <span class="math inline">\(\beta_{1}=1\)</span> and <span class="math inline">\(E(\epsilon_{i})=0\)</span>; and (2) <span class="math inline">\(\beta_{0}=1\)</span>, <span class="math inline">\(\beta_{1}=0\)</span> and <span class="math inline">\(E(\epsilon_{i})=X_{i}-1\)</span>. Now take the expectation of the PRF conditional upon <span class="math inline">\(X\)</span> in those two cases, and see if you agree with Malinvaud about the significance of the assumption <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span>.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></li>
 </ol>
 </div>
 <div id="solutions-8" class="section level2 unnumbered hasAnchor">
@@ -456,6 +456,7 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_
 <hr />
 <ol start="13">
 <li id="fn13"><p>This discussion is a verbatim reproduction of <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-10.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>Exercise taken from <span class="citation">Gujarati &amp; Porter (2009)</span><a href="worksheet-week-10.html#fnref14" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
