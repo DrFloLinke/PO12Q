@@ -355,6 +355,9 @@ Consider the following Table:</p>
 <h3>Loading the Data<a href="worksheet-week-1.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="worksheet-week-1.html#cb1-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/PO12Q/Seminars/PO12Q_Seminar_Week 1&quot;</span>)</span>
 <span id="cb1-2"><a href="worksheet-week-1.html#cb1-2" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WDI_PO12Q.csv&quot;</span>)</span></code></pre></div>
+<div class="bulb">
+<p>You can copy the code from this page by hovering over the code chunk and clicking the icon in the top-right hand corner. You can then paste it into your RScript.</p>
+</div>
 </div>
 <div id="guided-example" class="section level3 unnumbered hasAnchor">
 <h3>Guided Example<a href="worksheet-week-1.html#guided-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -371,6 +374,9 @@ Consider the following Table:</p>
 <span id="cb2-5"><a href="worksheet-week-1.html#cb2-5" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
 <span id="cb2-6"><a href="worksheet-week-1.html#cb2-6" tabindex="-1"></a>             <span class="fu">cut</span>(lifeexp, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">77</span>,<span class="dv">84</span>), </span>
 <span id="cb2-7"><a href="worksheet-week-1.html#cb2-7" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
+<div class="bulb">
+<p>Make a habit of adding a note underneath each code chunk in your RScript (with a ‘#’) in which you translate the code into plain English.</p>
+</div>
 <ul>
 <li>Next up is <code>gdppc</code> which we are recoding into a factor variable with three levels:</li>
 </ul>
@@ -401,6 +407,9 @@ Consider the following Table:</p>
 <span id="cb5-5"><a href="worksheet-week-1.html#cb5-5" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="worksheet-week-1.html#cb5-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
 <span id="cb5-7"><a href="worksheet-week-1.html#cb5-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
+<div class="bulb">
+<p>As on PO11Q, you can find all R functions on the <a href="https://drfloreiche.github.io/POQFlashcards/">POQ FLashcard Section</a> of my webpage.</p>
+</div>
 <ul>
 <li>Are the results statistically significant? At what level?</li>
 <li>Produce the table of expected frequencies, using the command</li>
