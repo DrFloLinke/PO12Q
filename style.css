@@ -143,8 +143,8 @@ img {
     background-position: 15px center;
     min-height: 120px;
     color: #000000;
-    background-color: #D69A2D;
-    border: solid 5px #F3E1C0;
+    background-color: #F1BE48;
+    border: solid 5px #FBECC8;
     background-image: url("files/warning.png") !important;
   }
   
@@ -157,8 +157,21 @@ img {
     background-position: 15px center;
     min-height: 120px;
     color: #ffffff;
-    background-color: #9D2235;
+    background-color: #A73849;
     border: solid 5px #CE919A;
     background-image: url("files/stop.png") !important;
   }
 
+  div.puzzle {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #000000;
+    background-color: #E2B86C;
+    border: solid 5px #F7EBD5;
+    background-image: url("files/puzzle_black.png") !important;
+  }
