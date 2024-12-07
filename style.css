@@ -1,15 +1,13 @@
-
 .book .book-summary {
-  background: #2A415F;
+  background: #2A415F!important;
 }
 
 
 .book .book-body {
-  background: #496282;
+  background: #496282!important;
 }
 
-
-
+/*____font in menu____*/
 .book .book-summary ul.summary li, 
 .book .book-summary ul.summary li a, 
 .book .book-summary ul.summary li span,
@@ -20,7 +18,7 @@
   color: #e8f1f2;
 }
 
-
+/*____hover over menu____*/
 .book .book-summary ul.summary li a:hover {
   background: #393A3B;
   text-decoration: none;
@@ -36,13 +34,31 @@
   display: none;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal pre {
-  border: 1px solid #ccc;
+
+/*____Code Chunk Colour____*/
+pre {
+    background-color: #edf2f7 !important;
 }
 
+.sourceCode { color: #2A415F !important; } /* NormalTok*/
+.sourceCode .kw { color: #2A415F !important; } /* KeyWordTok*/
+.sourceCode .dt { color: #2A415F!important; } /* Data Type Tok*/
+.sourceCode .dv, .sourceCode .bn, .sourceCode .fl { color: #2A415F !important; } /*DecValTok = dv, BaseNTok = bn, FloatTok = fl */
+.sourceCode .ch { color: #2A415F !important; } /*. CharTok*/
+.sourceCode .st { color: #2A415F !important; } /*.StringTok */
+.sourceCode .co { color: #2A415F !important; } /*.CommontTok */
+.sourceCode .ot { color: #2A415F!important; } /*.OtherTok */
+.sourceCode .al { color: #BE531C !important; font-weight: bold; } /*.AlertTok */
+.sourceCode .fu { color: #2A415F!important; } /*.FunctionTok  */
+.sourceCode .re { color: #2A415F!important; } /*.RegionMarkerTok */
+.sourceCode .er { color: #2A415F !important; font-weight: bold; } /*.ErrorTok */
 
+
+
+/*____Table caption at bottom____*/
 table { caption-side: bottom }
 
+/*____Change fonts to cmss___*/
 h1 {
   font-family: Avenir, Helvetica, "sans serif";
   font-size:   48px;
@@ -56,8 +72,6 @@ h2,h3,h4 {
   font-weight: normal;
 }
 
-
-
 .book.font-family-0 {
   font-family: Avenir, Helvetica, "sans serif";
 }
@@ -68,6 +82,8 @@ h2,h3,h4 {
 .summary{
 font-family: Avenir, Helvetica, "sans serif";
 }
+
+
 
 li.appendix span, li.part span { /* for TOC part names */
   margin-top: 1.5em;
@@ -85,14 +101,72 @@ li.appendix span, li.part span { /* for TOC part names */
   margin-bottom: 0.85em; /* adds same amount of margin as a <p> would */
 }
 
+/*____Center images____*/
 img {
     display: block;
     margin: auto;
     text-align: center;
 }
 
+
+/*____Center captions____*/
 .caption {
     width: --line-width;
     text-align: center;
 }
 
+
+
+/* -----------Sidebar div tips------------- */
+/* from r-pkgs.org*/
+
+  div.bulb {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #1f5386;
+    background-color: #bed3ec;
+    border: solid 5px #dfedff;
+  }
+  
+  div.warning {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #000000;
+    background-color: #D69A2D;
+    border: solid 5px #F3E1C0;
+  }
+  
+  div.stop {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #ffffff;
+    background-color: #9D2235;
+    border: solid 5px #CE919A;
+  }
+
+div.bulb {
+ background-image: url("../files/bulb.png");
+}
+
+div.stop {
+  background-image: url("../files/stop.png");
+}
+
+div.warning {
+  background-image: url("../files/warning.png");
+}

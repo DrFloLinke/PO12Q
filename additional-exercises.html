@@ -420,6 +420,9 @@ lectures.</li>
 <p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try and export the table.</p>
 <p><strong>Hint 1:</strong> The function needs to contain, in order: the name of the R object where you stored the regression results,
 the option <code>header=F</code> to suppress the annoying immortalisation of the author, the option <code>type="html"</code>, and the option <code>out="documentname.doc"</code> which places a word document with that file name in your working directory.</p>
+<div class="warning">
+<p>Should you use MS Word to write your essay and your essay is saved in your working directory, <strong>do not</strong> save the table document under the same name as your essay, as R will overwrite it and it will be gone forever.</p>
+</div>
 <p><strong>Hint 2:</strong> Remember that Google is your best friend when you learn to code. And after that as well. No one actually remembers all the functions and all their argument. The secret is to know how to google the things you need.</p>
 <p>You can improve the table in many ways. For example, you need to replace the variable names with the variable labels, You could add a name of the model and suppress unneeded statistics (see <a href="https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list" class="uri">https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list</a>).</p>
 </div>
