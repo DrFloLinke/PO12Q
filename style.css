@@ -131,6 +131,7 @@ img {
     color: #1f5386;
     background-color: #bed3ec;
     border: solid 5px #dfedff;
+    background-image: url("files/bulb.png") !important;
   }
   
   div.warning {
@@ -144,6 +145,7 @@ img {
     color: #000000;
     background-color: #D69A2D;
     border: solid 5px #F3E1C0;
+    background-image: url("files/warning.png") !important;
   }
   
   div.stop {
@@ -157,16 +159,6 @@ img {
     color: #ffffff;
     background-color: #9D2235;
     border: solid 5px #CE919A;
+    background-image: url("files/stop.png") !important;
   }
 
-div.bulb {
- background-image: url("../files/bulb.png");
-}
-
-div.stop {
-  background-image: url("../files/stop.png");
-}
-
-div.warning {
-  background-image: url("../files/warning.png");
-}
