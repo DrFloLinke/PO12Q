@@ -328,7 +328,7 @@ div.csl-indent {
 <div id="testing-the-classical-linear-assumptions" class="section level2 unnumbered hasAnchor">
 <h2>Testing the Classical Linear Assumptions<a href="worksheet-week-10.html#testing-the-classical-linear-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For this worksheet we will be using the <code>london</code> data set from the lectures, this time with the following variables:</p>
-<p><img src="main_files/figure-html/unnamed-chunk-65-1.png" width="758" /></p>
+<p><img src="main_files/figure-html/unnamed-chunk-63-1.png" width="758" /></p>
 <p>Data are taken from <span class="citation">GOV.UK (2013)</span>, <span class="citation">London Data Store (2010)</span>, and <span class="citation">House of Commons Library (n.d.)</span>.</p>
 <div id="homoscedasticity" class="section level3 unnumbered hasAnchor">
 <h3>Homoscedasticity<a href="worksheet-week-10.html#homoscedasticity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -336,29 +336,29 @@ div.csl-indent {
 <li>Load the data set <a href="files/Week%2010/london_11.csv">london_11.csv</a> as an object called <code>london</code></li>
 <li>Subset the data to a random sample as follows:</li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="worksheet-week-10.html#cb27-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb27-2"><a href="worksheet-week-10.html#cb27-2" tabindex="-1"></a>london_sam <span class="ot">&lt;-</span> <span class="fu">sample_frac</span>(london, <span class="fl">0.65</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="worksheet-week-10.html#cb28-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb28-2"><a href="worksheet-week-10.html#cb28-2" tabindex="-1"></a>london_sam <span class="ot">&lt;-</span> <span class="fu">sample_frac</span>(london, <span class="fl">0.65</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Regress GCSE scores on <code>income</code> and interpret the results.</li>
 </ol>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="worksheet-week-10.html#cb28-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="worksheet-week-10.html#cb29-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_sam)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Breusch-Pagan Test by Hand
 <ol style="list-style-type: lower-alpha">
 <li>Extract the residuals from model 1 and store their squared values in a new object called <code>ressq</code>.</li>
 </ol></li>
 </ol>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="worksheet-week-10.html#cb29-1" tabindex="-1"></a>ressq <span class="ot">&lt;-</span> <span class="fu">resid</span>(model1)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="worksheet-week-10.html#cb30-1" tabindex="-1"></a>ressq <span class="ot">&lt;-</span> <span class="fu">resid</span>(model1)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <div class="line-block">          b. Regress the squared residuals on the original independent variable.</div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="worksheet-week-10.html#cb30-1" tabindex="-1"></a>model1res <span class="ot">&lt;-</span> <span class="fu">lm</span>(ressq<span class="sc">~</span>income, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="worksheet-week-10.html#cb31-1" tabindex="-1"></a>model1res <span class="ot">&lt;-</span> <span class="fu">lm</span>(ressq<span class="sc">~</span>income, <span class="at">data=</span>london_sam)</span></code></pre></div>
 <div class="line-block">          c. Store the number of observations of this new model in an object called <code>N</code>.</div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="worksheet-week-10.html#cb31-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nobs</span>(model1res)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="worksheet-week-10.html#cb32-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nobs</span>(model1res)</span></code></pre></div>
 <div class="line-block">          d. Obtain the model fit measure R<span class="math inline">\(^2\)</span> for this model.</div>
 <div class="line-block">          e. Calculate the test-statistic for the Breusch-Pagan test as the product of <code>N</code> and R<span class="math inline">\(^2\)</span>.</div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="worksheet-week-10.html#cb32-1" tabindex="-1"></a>chisq <span class="ot">&lt;-</span> <span class="fl">0.001857</span><span class="sc">*</span>N</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="worksheet-week-10.html#cb33-1" tabindex="-1"></a>chisq <span class="ot">&lt;-</span> <span class="fl">0.001857</span><span class="sc">*</span>N</span></code></pre></div>
 <div class="line-block">          f. Conduct a Chi-Squared test with one degree of freedom.</div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="worksheet-week-10.html#cb33-1" tabindex="-1"></a><span class="fu">pchisq</span>(chisq, <span class="at">df=</span><span class="dv">1</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
-<span id="cb33-2"><a href="worksheet-week-10.html#cb33-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7676653</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="worksheet-week-10.html#cb34-1" tabindex="-1"></a><span class="fu">pchisq</span>(chisq, <span class="at">df=</span><span class="dv">1</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
+<span id="cb34-2"><a href="worksheet-week-10.html#cb34-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7676653</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Breusch-Pagan Test with the <code>lmtest</code> package.
 <ol style="list-style-type: lower-alpha">
@@ -366,7 +366,7 @@ div.csl-indent {
 </ol></li>
 </ol>
 <div class="line-block">          b. Call</div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="worksheet-week-10.html#cb34-1" tabindex="-1"></a><span class="fu">bptest</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="worksheet-week-10.html#cb35-1" tabindex="-1"></a><span class="fu">bptest</span>(model1)</span></code></pre></div>
 <div class="line-block">          c. Compare the results with the results obtained in Exercise @ref{ex:homo4}.</div>
 <ol start="6" style="list-style-type: decimal">
 <li>Heteroscedasticity
@@ -374,17 +374,17 @@ div.csl-indent {
 <li>Now let’s introduce heteroscedasticity:</li>
 </ol></li>
 </ol>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="worksheet-week-10.html#cb35-1" tabindex="-1"></a>london_heterosc <span class="ot">&lt;-</span> <span class="fu">filter</span>(london, income<span class="sc">&lt;</span><span class="dv">28000</span> <span class="sc">|</span> income<span class="sc">&gt;</span><span class="dv">100000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="worksheet-week-10.html#cb36-1" tabindex="-1"></a>london_heterosc <span class="ot">&lt;-</span> <span class="fu">filter</span>(london, income<span class="sc">&lt;</span><span class="dv">28000</span> <span class="sc">|</span> income<span class="sc">&gt;</span><span class="dv">100000</span>)</span></code></pre></div>
 <div class="line-block">          b. Estimate a new model, and note the significance of coefficients.</div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="worksheet-week-10.html#cb36-1" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_heterosc)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="worksheet-week-10.html#cb37-1" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_heterosc)</span></code></pre></div>
 <div class="line-block">          c. Conduct a Breusch-Pagan Test with the <code>lmtest</code> package.<br />
           d. Install and load the <code>sandwich</code> package.</div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="worksheet-week-10.html#cb37-1" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="worksheet-week-10.html#cb38-1" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span></code></pre></div>
 <div class="line-block">          e. The <code>sandwich</code> package replaces <span class="math inline">\(\Omega\)</span> with a new diagonal which takes into account</div>
 <div class="line-block">               heteroscedasticity. The default is <code>HC3</code> – if you ever work with somebody using Stata then</div>
 <div class="line-block">               you need to replace this with <code>HC1</code> to obtain the same results. Conduct a significance test with</div>
 <div class="line-block">               robust standard errors (with the <code>sandwich</code> function <code>coeftest</code>):</div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="worksheet-week-10.html#cb38-1" tabindex="-1"></a><span class="fu">coeftest</span>(model2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(model2, <span class="at">type=</span><span class="st">&quot;HC3&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="worksheet-week-10.html#cb39-1" tabindex="-1"></a><span class="fu">coeftest</span>(model2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(model2, <span class="at">type=</span><span class="st">&quot;HC3&quot;</span>))</span></code></pre></div>
 <div class="line-block">          f. Compare the significance to the results in 6b and explain the reason for the difference.</div>
 <div class="line-block">          g. Estimate a model of your own choice with <code>gcse</code> as your dependent variable.</div>
 <div class="line-block">          h. Conduct the Breusch-Pagan test</div>
@@ -392,7 +392,7 @@ div.csl-indent {
 <div class="line-block">               ii. with the <code>lmtest</code> package</div>
 </div>
 <div id="multi-collinearity" class="section level3 unnumbered hasAnchor">
-<h3>(Multi-)Collinearity<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a><a href="worksheet-week-10.html#multi-collinearity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3>(Multi-)Collinearity<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a><a href="worksheet-week-10.html#multi-collinearity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this Section, we will be testing for collinearity. We can do so with correlation analysis, which assesses to what degree two variables vary together. As such, this method is limited to pairwise comparisons between variables. It is conceivable, and indeed often the case, however, that one variable is functionally related to two or more other independent variables, such as</p>
 <p><span class="math display">\[\begin{equation*}
     x_{1,i} = 0.2 x_{2,i }- 1.7 x_{3,i}
@@ -418,21 +418,21 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_
 <ol style="list-style-type: decimal">
 <li>Regress GCSE scores on and in a multiple regression model. Interpret the results.</li>
 </ol>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="worksheet-week-10.html#cb39-1" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income <span class="sc">+</span> idaci, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="worksheet-week-10.html#cb40-1" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income <span class="sc">+</span> idaci, <span class="at">data=</span>london_sam)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Install and load the package.</li>
 </ol>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="worksheet-week-10.html#cb40-1" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="worksheet-week-10.html#cb41-1" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Calculate the Variance Inflation Factor (VIF) for this model as follows:</li>
 </ol>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="worksheet-week-10.html#cb41-1" tabindex="-1"></a><span class="fu">vif</span>(model3)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="worksheet-week-10.html#cb42-1" tabindex="-1"></a><span class="fu">vif</span>(model3)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Interpret the results.</li>
 <li>Regress GCSE scores on <code>houseprice</code>. Store the results in an object called <code>model4</code>. Note the significance of the slope coefficient and interpret the results.</li>
 <li>Let’s introduce some collinearity by estimating the following model:</li>
 </ol>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="worksheet-week-10.html#cb42-1" tabindex="-1"></a>model5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income <span class="sc">+</span> houseprice, <span class="at">data=</span>london_sam)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="worksheet-week-10.html#cb43-1" tabindex="-1"></a>model5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income <span class="sc">+</span> houseprice, <span class="at">data=</span>london_sam)</span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Calculate the VIF for model 5. Interpret the results.</li>
 <li>Drawing on the results of Exercise 7, explain the significance of the slope coefficients of Model 1 (Exercise 3 in the previous section) and Model 4 (Exercise 6 of this section).</li>
@@ -443,7 +443,7 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_
 <h2>The Gauss-Markov Theorem<a href="worksheet-week-10.html#the-gauss-markov-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Explain in your own words, what BLUE means.</li>
-<li>According to Malinvaud, the assumption that <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span> is quite important. To see this, consider the PRF: <span class="math inline">\(Y=\beta_{0}+\beta_{1}X_{i}+\epsilon_{i}\)</span>. Now consider two situations: (1) <span class="math inline">\(\beta_{0}=0\)</span>, <span class="math inline">\(\beta_{1}=1\)</span> and <span class="math inline">\(E(\epsilon_{i})=0\)</span>; and (2) <span class="math inline">\(\beta_{0}=1\)</span>, <span class="math inline">\(\beta_{1}=0\)</span> and <span class="math inline">\(E(\epsilon_{i})=X_{i}-1\)</span>. Now take the expectation of the PRF conditional upon <span class="math inline">\(X\)</span> in those two cases, and see if you agree with Malinvaud about the significance of the assumption <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span>.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></li>
+<li>According to Malinvaud, the assumption that <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span> is quite important. To see this, consider the PRF: <span class="math inline">\(Y=\beta_{0}+\beta_{1}X_{i}+\epsilon_{i}\)</span>. Now consider two situations: (1) <span class="math inline">\(\beta_{0}=0\)</span>, <span class="math inline">\(\beta_{1}=1\)</span> and <span class="math inline">\(E(\epsilon_{i})=0\)</span>; and (2) <span class="math inline">\(\beta_{0}=1\)</span>, <span class="math inline">\(\beta_{1}=0\)</span> and <span class="math inline">\(E(\epsilon_{i})=X_{i}-1\)</span>. Now take the expectation of the PRF conditional upon <span class="math inline">\(X\)</span> in those two cases, and see if you agree with Malinvaud about the significance of the assumption <span class="math inline">\(E(\epsilon_{i}|X_{i})=0\)</span>.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a></li>
 </ol>
 </div>
 <div id="solutions-8" class="section level2 unnumbered hasAnchor">
@@ -457,9 +457,9 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_
 
 <div class="footnotes">
 <hr />
-<ol start="13">
-<li id="fn13"><p>This discussion is a verbatim reproduction of <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-10.html#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p>Exercise taken from <span class="citation">Gujarati &amp; Porter (2009)</span><a href="worksheet-week-10.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<ol start="14">
+<li id="fn14"><p>This discussion is a verbatim reproduction of <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-10.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>Exercise taken from <span class="citation">Gujarati &amp; Porter (2009)</span><a href="worksheet-week-10.html#fnref15" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

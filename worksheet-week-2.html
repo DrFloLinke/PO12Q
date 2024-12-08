@@ -331,10 +331,136 @@ div.csl-indent {
 <div id="data-preparation" class="section level3 unnumbered hasAnchor">
 <h3>Data Preparation<a href="worksheet-week-2.html#data-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>We are working with the World Development Indicators again. Data are taken from <span class="citation">World Bank (2020)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
+<li>We are working with the World Development Indicators again. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
 <li>To save you rooting in your files, here is the codebook (you are welcome):</li>
 </ul>
-<p><img src="main_files/figure-html/unnamed-chunk-17-1.png" width="758" /></p>
+<table>
+<caption><span id="tab:wdicode2">Table 2: </span>WDI Codebook</caption>
+<colgroup>
+<col width="14%" />
+<col width="85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Country Name</td>
+<td align="left">Country Name</td>
+</tr>
+<tr class="even">
+<td align="left">Country Code</td>
+<td align="left">Country Code</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="left">year</td>
+</tr>
+<tr class="even">
+<td align="left">gdppc</td>
+<td align="left">GDP per capita (constant 2010 US$)</td>
+</tr>
+<tr class="odd">
+<td align="left">gdpgrowth</td>
+<td align="left">Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)</td>
+</tr>
+<tr class="even">
+<td align="left">enrl_gross</td>
+<td align="left">School enrollment, primary (% gross)</td>
+</tr>
+<tr class="odd">
+<td align="left">enrl_net</td>
+<td align="left">School enrollment, primary (% net)</td>
+</tr>
+<tr class="even">
+<td align="left">agri</td>
+<td align="left">Employment in agriculture (% of total employment) (modeled ILO estimate)</td>
+</tr>
+<tr class="odd">
+<td align="left">slums</td>
+<td align="left">Population living in slums (% of urban population)</td>
+</tr>
+<tr class="even">
+<td align="left">telephone</td>
+<td align="left">Fixed telephone subscriptions (per 100 people)</td>
+</tr>
+<tr class="odd">
+<td align="left">internet</td>
+<td align="left">Individuals using the Internet (% of population)</td>
+</tr>
+<tr class="even">
+<td align="left">tax</td>
+<td align="left">Tax revenue (% of GDP)</td>
+</tr>
+<tr class="odd">
+<td align="left">electricity</td>
+<td align="left">Access to electricity (% of population)</td>
+</tr>
+<tr class="even">
+<td align="left">mobile</td>
+<td align="left">Mobile cellular subscriptions (per 100 people)</td>
+</tr>
+<tr class="odd">
+<td align="left">service</td>
+<td align="left">Services, value added (% of GDP)</td>
+</tr>
+<tr class="even">
+<td align="left">oil</td>
+<td align="left">Oil rents (% of GDP)</td>
+</tr>
+<tr class="odd">
+<td align="left">natural</td>
+<td align="left">Total natural resources rents (% of GDP)</td>
+</tr>
+<tr class="even">
+<td align="left">literacy</td>
+<td align="left">Literacy rate, adult total (% of people ages 15 and above)</td>
+</tr>
+<tr class="odd">
+<td align="left">prim_compl</td>
+<td align="left">Primary completion rate, total (% of relevant age group)</td>
+</tr>
+<tr class="even">
+<td align="left">infant</td>
+<td align="left">Mortality rate, infant (per 1,000 live births)</td>
+</tr>
+<tr class="odd">
+<td align="left">hosp</td>
+<td align="left">Hospital beds (per 1,000 people)</td>
+</tr>
+<tr class="even">
+<td align="left">tub</td>
+<td align="left">Incidence of tuberculosis (per 100,000 people)</td>
+</tr>
+<tr class="odd">
+<td align="left">health_ex</td>
+<td align="left">Current health expenditure (% of GDP)</td>
+</tr>
+<tr class="even">
+<td align="left">ineq</td>
+<td align="left">Income share held by lowest 10%</td>
+</tr>
+<tr class="odd">
+<td align="left">unemploy</td>
+<td align="left">Unemployment, total (% of total labor force) (modeled ILO estimate)</td>
+</tr>
+<tr class="even">
+<td align="left">lifeexp</td>
+<td align="left">Life expectancy at birth, total (years)</td>
+</tr>
+<tr class="odd">
+<td align="left">urban</td>
+<td align="left">Urban population (% of total population)</td>
+</tr>
+<tr class="even">
+<td align="left">polity5</td>
+<td align="left">Combined Polity V score</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p>Load the data set</p></li>
 <li><p>The Polity V Score (variable <code>polity5</code>) codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy). With the <code>tidyvserse</code>, create a new variable called <code>democracy</code> which codes all countries with a Polity V score lower than +1 as dictatorships, and all countries with a Polity V score from +1 to +10 as democracies.</p></li>

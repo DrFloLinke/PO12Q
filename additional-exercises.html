@@ -314,7 +314,7 @@ div.csl-indent {
 <div id="additional-exercises" class="section level1 unnumbered hasAnchor">
 <h1>Additional Exercises<a href="additional-exercises.html#additional-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="load-packages-and-data" class="section level2 unnumbered hasAnchor">
-<h2>Load Packages and data<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a><a href="additional-exercises.html#load-packages-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Load Packages and data<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a><a href="additional-exercises.html#load-packages-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages:</p>
 <ol style="list-style-type: decimal">
 <li><code>haven</code></li>
@@ -322,12 +322,13 @@ div.csl-indent {
 <li><code>stargazer</code></li>
 </ol>
 <p>Set working directory and load the data. The file is on Moodle. It’s called simd.csv and it’s the “Scottish Index of Multiple Deprivation”. More details here: <a href="https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/" class="uri">https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/</a></p>
-<p><strong>Hint:</strong> Remember that the WD is the folder where you stored the data set and where all the outputs will be saved</p>
-<p><strong>Hint2:</strong> Note, the data is a .csv file</p>
 </div>
 <div id="inspect-your-data" class="section level2 unnumbered hasAnchor">
 <h2>Inspect your data<a href="additional-exercises.html#inspect-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here you can use several basic functions. The dataset does not contain too many variables, so you can start by using <code>names()</code>, <code>str()</code>, <code>dim()</code>, etc.</p>
+<div class="puzzle">
+<p>The function <code>dim()</code> is new. What does it do?</p>
+</div>
 </div>
 <div id="preliminary-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Preliminary Analysis<a href="additional-exercises.html#preliminary-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -344,8 +345,7 @@ very funny topic, but interesting nonetheless). The two variables are, respectiv
 </div>
 <div id="visualisation" class="section level2 unnumbered hasAnchor">
 <h2>Visualisation<a href="additional-exercises.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let’s start with the visualisation of the relationship between the two variables. What is the best way to visualise the relationship considering the level of measurement of our variables?</p>
-<p><strong>Hint:</strong> Probably a scatterplot, right? So, use a scatterplot to visualise the relationship and add the regression line.</p>
+<p>Let’s start with the visualisation of the relationship between the two variables. Use a scatterplot to visualise the relationship and add the regression line.</p>
 <p>You can use <code>ggplot</code>, but also the standard <code>plot()</code> function.</p>
 <p>Improve the graph by:</p>
 <ol style="list-style-type: decimal">
@@ -354,11 +354,13 @@ very funny topic, but interesting nonetheless). The two variables are, respectiv
 <li>Adding axes labels and making them readable.</li>
 <li>Remove the grid in the background.</li>
 </ol>
-<p><img src="main_files/figure-html/unnamed-chunk-43-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="main_files/figure-html/unnamed-chunk-42-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>If you have done everything correctly, you should see that the dots are rather concentrated in the bottom left corner of the scatterplot with some outliers far away from the cloud of our data. It is not a big deal, but we might want to get rid of the outliers and this way improve our visualisation.</p>
 <p>There are several ways to do that, of course. But let’s say we want to transform our variables, excluding all values over a certain point. For instance, we want to exclude the values above 750 of our alcohol variable and above 500 for our mortality variable. How would you do that?</p>
-<p><strong><em>Hint:</em></strong> <em>there are several solutions. One could be, creating a new datset subsetting the original. Another solution could be again, creating a new variable telling R to transform all the values above our treshold in
-NA (missing values). Try to find an apply the appropriate code. Use Google if necessary, it helps a lot.</em></p>
+<div class="bulb">
+<p>There are – of course – several solutions. One could be, to create a new datset, subsetting the original. Another solution could be to create a new variable telling R to transform all the values above our treshold in
+<span style="color:black"><code>NA</code></span>. Try to find an apply the appropriate code. Use Google if necessary, it helps a lot.</p>
+</div>
 </div>
 <div id="visualisation-2.0" class="section level2 unnumbered hasAnchor">
 <h2>Visualisation 2.0<a href="additional-exercises.html#visualisation-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -366,14 +368,17 @@ NA (missing values). Try to find an apply the appropriate code. Use Google if ne
 <p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code>geom_point()</code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see: https:
 //www.rdocumentation.org/packages/ggplot2/versions/3.4.0/topics/geom_point).</p>
 <p>Also, you can draw a vertical and horizontal line corresponding to the mean of your variables using <code>geom_hline</code> and <code>geom_vline</code>. You can thus check if the regression line passes through the mean of X and Y. (see: <a href="https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline" class="uri">https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline</a>).</p>
+<div class="bulb">
+<p>Remember that Google is your best friend when you learn to code. And after that as well. No one actually remembers all the functions and all their argument. The secret is to know how to google the things you need.</p>
+</div>
 </div>
 <div id="saving-the-scatterplot" class="section level2 unnumbered hasAnchor">
 <h2>Saving the Scatterplot<a href="additional-exercises.html#saving-the-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can also save a graph as .png, .JPG (even .pdf) that you can then import in a word document. Although there are many way to use your R output, saving a graph might be sometimes useful.</p>
 <p>Use the function <code>ggsave()</code> to save your scatterplot. Again, there are tons of examples online, google it.</p>
-<p><strong>Hint:</strong> You first need to store the graph in an object.</p>
-<p><strong>Hint 2:</strong> The file will end up in your working directory</p>
-<div style="page-break-after: always;"></div>
+<div class="bulb">
+<p>You first need to store the graph in an object.</p>
+</div>
 </div>
 <div id="regression-analysis-yes-finally" class="section level2 unnumbered hasAnchor">
 <h2>Regression Analysis (yes, finally)<a href="additional-exercises.html#regression-analysis-yes-finally" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -397,11 +402,11 @@ Residual standard error: 35.61 on 6956 degrees of freedom
 Multiple R-squared:  0.2374,    Adjusted R-squared:  0.2373 
 F-statistic:  2165 on 1 and 6956 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="additional-exercises.html#cb21-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
-<span id="cb21-2"><a href="additional-exercises.html#cb21-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
-<span id="cb21-3"><a href="additional-exercises.html#cb21-3" tabindex="-1"></a>              Estimate  Std. Error   t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
-<span id="cb21-4"><a href="additional-exercises.html#cb21-4" tabindex="-1"></a>(Intercept) <span class="fl">78.1551599</span> <span class="fl">0.619648419</span> <span class="fl">126.12823</span>        <span class="dv">0</span></span>
-<span id="cb21-5"><a href="additional-exercises.html#cb21-5" tabindex="-1"></a>alcohol      <span class="fl">0.2082697</span> <span class="fl">0.004476011</span>  <span class="fl">46.53021</span>        <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="additional-exercises.html#cb22-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
+<span id="cb22-2"><a href="additional-exercises.html#cb22-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
+<span id="cb22-3"><a href="additional-exercises.html#cb22-3" tabindex="-1"></a>              Estimate  Std. Error   t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
+<span id="cb22-4"><a href="additional-exercises.html#cb22-4" tabindex="-1"></a>(Intercept) <span class="fl">78.1551599</span> <span class="fl">0.619648419</span> <span class="fl">126.12823</span>        <span class="dv">0</span></span>
+<span id="cb22-5"><a href="additional-exercises.html#cb22-5" tabindex="-1"></a>alcohol      <span class="fl">0.2082697</span> <span class="fl">0.004476011</span>  <span class="fl">46.53021</span>        <span class="dv">0</span></span></code></pre></div>
 </div>
 <div id="interpretation" class="section level2 unnumbered hasAnchor">
 <h2>Interpretation<a href="additional-exercises.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -418,12 +423,12 @@ lectures.</li>
 <div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
 <h2>Exporting the Results<a href="additional-exercises.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try and export the table.</p>
-<p><strong>Hint 1:</strong> The function needs to contain, in order: the name of the R object where you stored the regression results,
-the option <code>header=F</code> to suppress the annoying immortalisation of the author, the option <code>type="html"</code>, and the option <code>out="documentname.doc"</code> which places a word document with that file name in your working directory.</p>
+<div class="bulb">
+<p>The function needs to contain, in order: the name of the R object where you stored the regression results, the option <span style="color:black"><code>header=F</code></span> to suppress the annoying immortalisation of the author, the option <span style="color:black"><code>type="html"</code></span>, and the option <span style="color:black"><code>out="documentname.doc"</code></span> which places a word document with that file name in your working directory.</p>
+</div>
 <div class="warning">
 <p>Should you use MS Word to write your essay and your essay is saved in your working directory, <strong>do not</strong> save the table document under the same name as your essay, as R will overwrite it and it will be gone forever.</p>
 </div>
-<p><strong>Hint 2:</strong> Remember that Google is your best friend when you learn to code. And after that as well. No one actually remembers all the functions and all their argument. The secret is to know how to google the things you need.</p>
 <p>You can improve the table in many ways. For example, you need to replace the variable names with the variable labels, You could add a name of the model and suppress unneeded statistics (see <a href="https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list" class="uri">https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list</a>).</p>
 </div>
 <div id="comparing-models" class="section level2 unnumbered hasAnchor">
@@ -441,8 +446,8 @@ the option <code>header=F</code> to suppress the annoying immortalisation of the
 
 <div class="footnotes">
 <hr />
-<ol start="10">
-<li id="fn10"><p>These exercises were originally written by Oleksiy Bondarenko who taught the module in 2022/23. I have slightly altered them in subsequent years.<a href="additional-exercises.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<ol start="11">
+<li id="fn11"><p>These exercises were originally written by Oleksiy Bondarenko who taught the module in 2022/23. I have slightly altered them in subsequent years.<a href="additional-exercises.html#fnref11" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

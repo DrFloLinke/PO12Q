@@ -314,7 +314,7 @@ div.csl-indent {
 <div id="worksheet-week-5" class="section level1 unnumbered hasAnchor">
 <h1>Worksheet Week 5<a href="worksheet-week-5.html#worksheet-week-5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="self-assessment-questions-4" class="section level2 unnumbered hasAnchor">
-<h2>Self-Assessment Questions<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a><a href="worksheet-week-5.html#self-assessment-questions-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Self-Assessment Questions<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a><a href="worksheet-week-5.html#self-assessment-questions-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Why do we need a measure to assess goodness of fit?</li>
 <li>How do you interpret R-Squared?</li>
@@ -328,43 +328,51 @@ div.csl-indent {
 <div id="mathematical-properties-of-ols" class="section level2 unnumbered hasAnchor">
 <h2>Mathematical Properties of OLS<a href="worksheet-week-5.html#mathematical-properties-of-ols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>I showed in the lecture that the predicted values of y are uncorrelated with the residuals. Show mathematically that this is not the case for the error terms. (Hint: Consider carefully Equation 2 on Slide 8.)</li>
+<li>I showed in the lecture that the predicted values of y are uncorrelated with the residuals. Show mathematically that this is not the case for the error terms.</li>
 </ol>
+<div class="bulb">
+<p>Hint: Consider carefully Equation 2 on Slide 8.</p>
+</div>
 </div>
 <div id="goodness-of-fit-using-r" class="section level2 unnumbered hasAnchor">
 <h2>Goodness of Fit – Using R<a href="worksheet-week-5.html#goodness-of-fit-using-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will be using our WDI example again to explore model fit in R. Data are taken from <span class="citation">World Bank (2020)</span> and <span class="citation">Marshall &amp; Gurr (2020)</span>. The data set is available on Moodle.</p>
+<p>We will be using our WDI example again to explore model fit in R. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</p>
 <ol style="list-style-type: decimal">
-<li>Set your working directory and load the data set as an object called <code>wdi</code>.</li>
+<li>Download the <a href="files/Week%201/WDI_PO12Q.csv">WDI_PO12Q.csv</a> data set. Set your working directory and load the data set as an object called <code>wdi</code>.</li>
 <li>We will re-assess our question from Week 1, whether the level of GDP has an influence on life expectancy</li>
 <li>State the null and the alternative hypothesis (directional)</li>
 <li>Run the regression model.</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="worksheet-week-5.html#cb17-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;files/Week 5/WDI_PO12Q.csv&quot;</span>)</span>
+<span id="cb17-2"><a href="worksheet-week-5.html#cb17-2" tabindex="-1"></a><span class="fu">attach</span>(wdi)</span>
+<span id="cb17-3"><a href="worksheet-week-5.html#cb17-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeexp <span class="sc">~</span> gdppc)</span>
+<span id="cb17-4"><a href="worksheet-week-5.html#cb17-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb17-5"><a href="worksheet-week-5.html#cb17-5" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="worksheet-week-5.html#cb17-6" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb17-7"><a href="worksheet-week-5.html#cb17-7" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> lifeexp <span class="sc">~</span> gdppc)</span>
+<span id="cb17-8"><a href="worksheet-week-5.html#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="worksheet-week-5.html#cb17-9" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb17-10"><a href="worksheet-week-5.html#cb17-10" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
+<span id="cb17-11"><a href="worksheet-week-5.html#cb17-11" tabindex="-1"></a><span class="sc">-</span><span class="fl">17.445</span>  <span class="sc">-</span><span class="fl">3.260</span>   <span class="fl">1.545</span>   <span class="fl">4.760</span>   <span class="fl">8.969</span> </span>
+<span id="cb17-12"><a href="worksheet-week-5.html#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="worksheet-week-5.html#cb17-13" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb17-14"><a href="worksheet-week-5.html#cb17-14" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb17-15"><a href="worksheet-week-5.html#cb17-15" tabindex="-1"></a>(Intercept) <span class="fl">6.815e+01</span>  <span class="fl">5.797e-01</span>  <span class="fl">117.56</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb17-16"><a href="worksheet-week-5.html#cb17-16" tabindex="-1"></a>gdppc       <span class="fl">2.619e-04</span>  <span class="fl">2.515e-05</span>   <span class="fl">10.41</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb17-17"><a href="worksheet-week-5.html#cb17-17" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb17-18"><a href="worksheet-week-5.html#cb17-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb17-19"><a href="worksheet-week-5.html#cb17-19" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="worksheet-week-5.html#cb17-20" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">6.129</span> on <span class="dv">167</span> degrees of freedom</span>
+<span id="cb17-21"><a href="worksheet-week-5.html#cb17-21" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb17-22"><a href="worksheet-week-5.html#cb17-22" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
+<span id="cb17-23"><a href="worksheet-week-5.html#cb17-23" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
 <li>Build the SRF and interpret the coefficients.</li>
 <li>Assess and interpret model fit, using “Multiple R-squared” which is equivalent to the R<span class="math inline">\(^2\)</span> we discussed in the lecture.</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="worksheet-week-5.html#cb16-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;files/Week 5/WDI_PO12Q.csv&quot;</span>)</span>
-<span id="cb16-2"><a href="worksheet-week-5.html#cb16-2" tabindex="-1"></a><span class="fu">attach</span>(wdi)</span>
-<span id="cb16-3"><a href="worksheet-week-5.html#cb16-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeexp <span class="sc">~</span> gdppc)</span>
-<span id="cb16-4"><a href="worksheet-week-5.html#cb16-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
-<span id="cb16-5"><a href="worksheet-week-5.html#cb16-5" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="worksheet-week-5.html#cb16-6" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb16-7"><a href="worksheet-week-5.html#cb16-7" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> lifeexp <span class="sc">~</span> gdppc)</span>
-<span id="cb16-8"><a href="worksheet-week-5.html#cb16-8" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="worksheet-week-5.html#cb16-9" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb16-10"><a href="worksheet-week-5.html#cb16-10" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
-<span id="cb16-11"><a href="worksheet-week-5.html#cb16-11" tabindex="-1"></a><span class="sc">-</span><span class="fl">17.445</span>  <span class="sc">-</span><span class="fl">3.260</span>   <span class="fl">1.545</span>   <span class="fl">4.760</span>   <span class="fl">8.969</span> </span>
-<span id="cb16-12"><a href="worksheet-week-5.html#cb16-12" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="worksheet-week-5.html#cb16-13" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb16-14"><a href="worksheet-week-5.html#cb16-14" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb16-15"><a href="worksheet-week-5.html#cb16-15" tabindex="-1"></a>(Intercept) <span class="fl">6.815e+01</span>  <span class="fl">5.797e-01</span>  <span class="fl">117.56</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb16-16"><a href="worksheet-week-5.html#cb16-16" tabindex="-1"></a>gdppc       <span class="fl">2.619e-04</span>  <span class="fl">2.515e-05</span>   <span class="fl">10.41</span>   <span class="sc">&lt;</span><span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb16-17"><a href="worksheet-week-5.html#cb16-17" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb16-18"><a href="worksheet-week-5.html#cb16-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb16-19"><a href="worksheet-week-5.html#cb16-19" tabindex="-1"></a></span>
-<span id="cb16-20"><a href="worksheet-week-5.html#cb16-20" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">6.129</span> on <span class="dv">167</span> degrees of freedom</span>
-<span id="cb16-21"><a href="worksheet-week-5.html#cb16-21" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb16-22"><a href="worksheet-week-5.html#cb16-22" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
-<span id="cb16-23"><a href="worksheet-week-5.html#cb16-23" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="bulb">
+<p>We have “only” covered the <span style="color:black"><code>Estimate</code></span> column in this output so far. We will be working towards interpreting the rest over the next few weeks.</p>
+</div>
 <p>You can also extract specific blocks of the output table by placing brackets [] after the <code>summary()</code> function. For example <code>summary()[1]</code>. Try to extract the block containing model fit, like this:</p>
 <pre><code>$r.squared
 [1] 0.3936356</code></pre>
@@ -372,9 +380,9 @@ div.csl-indent {
 <div id="goodness-of-fit-by-hand" class="section level2 unnumbered hasAnchor">
 <h2>Goodness of Fit – By Hand<a href="worksheet-week-5.html#goodness-of-fit-by-hand" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>Using the data and calculations presented in the Table below, calculate the coefficient of determination, <span class="math inline">\(r^{2}\)</span>, with <span class="math inline">\(\hat{Y_{i}}= \widehat{-53.1} + \widehat{39.7} X_{i}\)</span></li>
+<li>Using the data and calculations presented in the Table below, calculate the coefficient of determination, <span class="math inline">\(r^{2}\)</span>, with <span class="math inline">\(\hat{Y_{i}}= -53.1 + 39.7 X_{i}\)</span></li>
 </ol>
-<p><img src="main_files/figure-html/unnamed-chunk-38-1.png" width="758" /></p>
+<p><img src="main_files/figure-html/unnamed-chunk-37-1.png" width="758" /></p>
 </div>
 <div id="solutions-3" class="section level2 unnumbered hasAnchor">
 <h2>Solutions<a href="worksheet-week-5.html#solutions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -387,8 +395,8 @@ div.csl-indent {
 
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-5.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<ol start="9">
+<li id="fn9"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-5.html#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -342,14 +342,147 @@ Consider the following Table:</p>
 </div>
 <div id="cross-tabulations-in-r" class="section level2 unnumbered hasAnchor">
 <h2>Cross-Tabulations in R<a href="worksheet-week-1.html#cross-tabulations-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="warning">
+<p>If you have joined PO12Q without suffering through PO11Q, then please work through these two worksheets:</p>
+<ul>
+<li><a href="files/Downloads/Week%201/PO11Q_Seminar_Week-5.pdf">PO11Q Worsheet, Week 5</a></li>
+<li><a href="files/Downloads/Week%201/PO11Q_Seminar_Week-7.pdf">PO11Q Worsheet, Week 7</a></li>
+</ul>
+</div>
 <div id="data-set" class="section level3 unnumbered hasAnchor">
 <h3>Data Set<a href="worksheet-week-1.html#data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>We are working with the World Development Indicators this week, data are taken from <span class="citation">World Bank (2020)</span> and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
+<li>We are working with the World Development Indicators this week. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
 <li>Download the data <a href="files/Week%201/WDI_PO12Q.csv">WDI_PO12Q.csv</a> and place it in a new working directory for this week</li>
 <li>The variables we will be working with today are as follows:</li>
 </ul>
-<p><img src="main_files/figure-html/unnamed-chunk-3-5.png" width="758" /></p>
+<table>
+<caption><span id="tab:wdicode1">Table 1: </span>WDI Codebook</caption>
+<colgroup>
+<col width="14%" />
+<col width="85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Country Name</td>
+<td align="left">Country Name</td>
+</tr>
+<tr class="even">
+<td align="left">Country Code</td>
+<td align="left">Country Code</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="left">year</td>
+</tr>
+<tr class="even">
+<td align="left">gdppc</td>
+<td align="left">GDP per capita (constant 2010 US$)</td>
+</tr>
+<tr class="odd">
+<td align="left">gdpgrowth</td>
+<td align="left">Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)</td>
+</tr>
+<tr class="even">
+<td align="left">enrl_gross</td>
+<td align="left">School enrollment, primary (% gross)</td>
+</tr>
+<tr class="odd">
+<td align="left">enrl_net</td>
+<td align="left">School enrollment, primary (% net)</td>
+</tr>
+<tr class="even">
+<td align="left">agri</td>
+<td align="left">Employment in agriculture (% of total employment) (modeled ILO estimate)</td>
+</tr>
+<tr class="odd">
+<td align="left">slums</td>
+<td align="left">Population living in slums (% of urban population)</td>
+</tr>
+<tr class="even">
+<td align="left">telephone</td>
+<td align="left">Fixed telephone subscriptions (per 100 people)</td>
+</tr>
+<tr class="odd">
+<td align="left">internet</td>
+<td align="left">Individuals using the Internet (% of population)</td>
+</tr>
+<tr class="even">
+<td align="left">tax</td>
+<td align="left">Tax revenue (% of GDP)</td>
+</tr>
+<tr class="odd">
+<td align="left">electricity</td>
+<td align="left">Access to electricity (% of population)</td>
+</tr>
+<tr class="even">
+<td align="left">mobile</td>
+<td align="left">Mobile cellular subscriptions (per 100 people)</td>
+</tr>
+<tr class="odd">
+<td align="left">service</td>
+<td align="left">Services, value added (% of GDP)</td>
+</tr>
+<tr class="even">
+<td align="left">oil</td>
+<td align="left">Oil rents (% of GDP)</td>
+</tr>
+<tr class="odd">
+<td align="left">natural</td>
+<td align="left">Total natural resources rents (% of GDP)</td>
+</tr>
+<tr class="even">
+<td align="left">literacy</td>
+<td align="left">Literacy rate, adult total (% of people ages 15 and above)</td>
+</tr>
+<tr class="odd">
+<td align="left">prim_compl</td>
+<td align="left">Primary completion rate, total (% of relevant age group)</td>
+</tr>
+<tr class="even">
+<td align="left">infant</td>
+<td align="left">Mortality rate, infant (per 1,000 live births)</td>
+</tr>
+<tr class="odd">
+<td align="left">hosp</td>
+<td align="left">Hospital beds (per 1,000 people)</td>
+</tr>
+<tr class="even">
+<td align="left">tub</td>
+<td align="left">Incidence of tuberculosis (per 100,000 people)</td>
+</tr>
+<tr class="odd">
+<td align="left">health_ex</td>
+<td align="left">Current health expenditure (% of GDP)</td>
+</tr>
+<tr class="even">
+<td align="left">ineq</td>
+<td align="left">Income share held by lowest 10%</td>
+</tr>
+<tr class="odd">
+<td align="left">unemploy</td>
+<td align="left">Unemployment, total (% of total labor force) (modeled ILO estimate)</td>
+</tr>
+<tr class="even">
+<td align="left">lifeexp</td>
+<td align="left">Life expectancy at birth, total (years)</td>
+</tr>
+<tr class="odd">
+<td align="left">urban</td>
+<td align="left">Urban population (% of total population)</td>
+</tr>
+<tr class="even">
+<td align="left">polity5</td>
+<td align="left">Combined Polity V score</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="loading-the-data" class="section level3 unnumbered hasAnchor">
 <h3>Loading the Data<a href="worksheet-week-1.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -408,7 +541,7 @@ Consider the following Table:</p>
 <span id="cb5-6"><a href="worksheet-week-1.html#cb5-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
 <span id="cb5-7"><a href="worksheet-week-1.html#cb5-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
 <div class="bulb">
-<p>As on PO11Q, you can find all R functions on the <a href="https://drfloreiche.github.io/POQFlashcards/">POQ FLashcard Section</a> of my webpage.</p>
+<p>As on PO11Q, you can find all R functions on the <a href="https://drfloreiche.github.io/POQFlashcards/">POQ Flashcard Section</a> of my webpage.</p>
 </div>
 <ul>
 <li>Are the results statistically significant? At what level?</li>
@@ -449,7 +582,7 @@ Consider the following Table:</p>
 <li><p>State the null and directional alternative hypothesis for this test.</p></li>
 <li><p>Create a new variable <code>primary_fac</code> using the <code>prim_compl</code> variable. Cut it into three categories “low”, “medium”, and “high”, cutting <code>prim_compl</code> at its first quartile, and its mean.</p></li>
 <li><p>Apply the same procedure to <code>unemploy</code>, creating a new variable called <code>unemp_fac</code>.</p></li>
-<li><p>Create a cross-tabulation assessing the dependence of youth unemployment on primary completion rate.
+<li><p>Create a cross-tabulation assessing the dependence of unemployment on primary completion rate.
 <code>unemp_fac</code>.</p></li>
 <li><p>Test whether the dependence is statistically significant.
 <code>unemp_fac</code>.</p></li>
