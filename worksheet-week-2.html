@@ -47,6 +47,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -161,6 +162,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
 <li class="part"><span><b>Week 1</b></span></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#video-and-rscript"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html"><i class="fa fa-check"></i>Worksheet Week 1</a>
 <ul>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html#self-assessment-questions"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
@@ -267,7 +273,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#working-with-regression-analysis"><i class="fa fa-check"></i>Working with Regression Analysis</a>
 <ul>
-<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep-1"><i class="fa fa-check"></i>Data Prep</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-analysis"><i class="fa fa-check"></i>Data Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
@@ -477,17 +483,20 @@ div.csl-indent {
 <li>State the null hypothesis and the directional alternative hypothesis for this research question.</li>
 <li>In order to test this hypothesis, we need to first create a cross-tabulation:</li>
 </ul>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="worksheet-week-2.html#cb9-1" tabindex="-1"></a><span class="fu">table</span>(wdi<span class="sc">$</span>gdpcat, wdi<span class="sc">$</span>politybin)</span>
 <span id="cb9-2"><a href="worksheet-week-2.html#cb9-2" tabindex="-1"></a>            </span>
 <span id="cb9-3"><a href="worksheet-week-2.html#cb9-3" tabindex="-1"></a>             Dictatorship Democracy</span>
 <span id="cb9-4"><a href="worksheet-week-2.html#cb9-4" tabindex="-1"></a>  Developing           <span class="dv">21</span>        <span class="dv">36</span></span>
 <span id="cb9-5"><a href="worksheet-week-2.html#cb9-5" tabindex="-1"></a>  Developed            <span class="dv">19</span>        <span class="dv">71</span></span></code></pre></div>
+</details>
 <ul>
 <li>We now take the number of observations which are classed as democracies per development status.</li>
 <li>We also calculate the row totals, as this gives us the total number of developing and developed countries, respectively.</li>
 <li>Then we are ready to use the <code>prop.test()</code> command, by first specifying the number of countries which are democracies, then the total number of developing and developed countries, then advising R that a correction for small sample sizes is not necessary in our case.</li>
 <li>Our hypothesis is directional, because we expect a higher proportion of developed countries to be democratic than developing countries. The status <code>Developing</code> is the lower category, and we thus expect this proportion to be smaller, or “less”. We add this to the test function as option <code>alternative = "less"</code>.</li>
 </ul>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="worksheet-week-2.html#cb10-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">36</span>,<span class="dv">71</span>),<span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">90</span>), <span class="at">correct=</span>F, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
 <span id="cb10-2"><a href="worksheet-week-2.html#cb10-2" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="worksheet-week-2.html#cb10-3" tabindex="-1"></a>    <span class="dv">2</span><span class="sc">-</span>sample test <span class="cf">for</span> equality of proportions without continuity correction</span>
@@ -500,6 +509,7 @@ div.csl-indent {
 <span id="cb10-10"><a href="worksheet-week-2.html#cb10-10" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
 <span id="cb10-11"><a href="worksheet-week-2.html#cb10-11" tabindex="-1"></a>   prop <span class="dv">1</span>    prop <span class="dv">2</span> </span>
 <span id="cb10-12"><a href="worksheet-week-2.html#cb10-12" tabindex="-1"></a><span class="fl">0.6315789</span> <span class="fl">0.7888889</span> </span></code></pre></div>
+</details>
 <ul>
 <li>Which proportion of developing and developed countries are democratic?</li>
 <li>Do we verify or falsify our hypothesis at a 95% confidence level?</li>
@@ -532,10 +542,13 @@ div.csl-indent {
 <ul>
 <li>For the Levene test you need the <code>car</code> package, where “car” stands for “Companion to Applied Regression”:</li>
 </ul>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="worksheet-week-2.html#cb11-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>)</span></code></pre></div>
+</details>
 <ul>
 <li>Now we call the package and perform the test:</li>
 </ul>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="worksheet-week-2.html#cb12-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
 <span id="cb12-2"><a href="worksheet-week-2.html#cb12-2" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="worksheet-week-2.html#cb12-3" tabindex="-1"></a><span class="fu">leveneTest</span>(wdi<span class="sc">$</span>lifeexp <span class="sc">~</span> wdi<span class="sc">$</span>gdpcat)</span>
@@ -545,10 +558,12 @@ div.csl-indent {
 <span id="cb12-7"><a href="worksheet-week-2.html#cb12-7" tabindex="-1"></a><span class="st">      167                  </span></span>
 <span id="cb12-8"><a href="worksheet-week-2.html#cb12-8" tabindex="-1"></a><span class="st">---</span></span>
 <span id="cb12-9"><a href="worksheet-week-2.html#cb12-9" tabindex="-1"></a><span class="st">Signif. codes:  0 &#39;</span><span class="sc">**</span><span class="er">*</span><span class="st">&#39; 0.001 &#39;</span><span class="sc">**</span><span class="st">&#39; 0.01 &#39;</span><span class="sc">*</span><span class="st">&#39; 0.05 &#39;</span>.<span class="st">&#39; 0.1 &#39;</span> <span class="st">&#39; 1</span></span></code></pre></div>
+</details>
 <ul>
 <li><p>The result is insignificant, and we therefore accept the null hypothesis. This means that the variance in the two samples is equal.</p></li>
 <li><p>Now we can perform the t-test. We once again specify <code>alternative="less"</code> as an option, due to the same reasoning as before.</p></li>
 </ul>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="worksheet-week-2.html#cb13-1" tabindex="-1"></a><span class="fu">t.test</span>(lifeexp <span class="sc">~</span> gdpcat, <span class="at">data=</span>wdi, <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="at">alternative=</span><span class="st">&quot;less&quot;</span>)</span>
 <span id="cb13-2"><a href="worksheet-week-2.html#cb13-2" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="worksheet-week-2.html#cb13-3" tabindex="-1"></a>    Two Sample t<span class="sc">-</span>test</span>
@@ -561,6 +576,7 @@ div.csl-indent {
 <span id="cb13-10"><a href="worksheet-week-2.html#cb13-10" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
 <span id="cb13-11"><a href="worksheet-week-2.html#cb13-11" tabindex="-1"></a>mean <span class="cf">in</span> group Developing  mean <span class="cf">in</span> group Developed </span>
 <span id="cb13-12"><a href="worksheet-week-2.html#cb13-12" tabindex="-1"></a>                <span class="fl">64.65938</span>                 <span class="fl">75.71177</span> </span></code></pre></div>
+</details>
 <ul>
 <li>Can we conclude at a 95% confidence level, that people live longer in developed countries than in developing countries?</li>
 </ul>

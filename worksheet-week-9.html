@@ -47,6 +47,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -161,6 +162,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
 <li class="part"><span><b>Week 1</b></span></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#video-and-rscript"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html"><i class="fa fa-check"></i>Worksheet Week 1</a>
 <ul>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html#self-assessment-questions"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
@@ -267,7 +273,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#working-with-regression-analysis"><i class="fa fa-check"></i>Working with Regression Analysis</a>
 <ul>
-<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep-1"><i class="fa fa-check"></i>Data Prep</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-analysis"><i class="fa fa-check"></i>Data Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
@@ -331,8 +337,8 @@ div.csl-indent {
 <div id="working-with-regression-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Working with Regression Analysis<a href="worksheet-week-9.html#working-with-regression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will be using the “crime.csv” data available in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a> to analyse attitudes and experiences of crime in England and Wales. The data set contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents. Data are taken from <span class="citation">University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics (2019)</span>. For variable labels, please consult the <a href="files/Downloads/Week%209/Codebook%20Crime%20Data%20Set.pdf">Crime Data Code Book</a>.</p>
-<div id="data-prep" class="section level3 unnumbered hasAnchor">
-<h3>Data Prep<a href="worksheet-week-9.html#data-prep" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data-prep-1" class="section level3 unnumbered hasAnchor">
+<h3>Data Prep<a href="worksheet-week-9.html#data-prep-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Each respondent was randomly assigned to a different module, indicated by <code>split</code> and only asked a subsection of the questions. The <code>antisocx</code> variable is part of module A and asks for a score from respondents on how much antisocial behaviour is in the neighbourhood.</p>
 <ol style="list-style-type: decimal">
 <li>Create a new data set for those who were chosen for the ‘A’ module. Call this <code>crime.a</code>.</li>

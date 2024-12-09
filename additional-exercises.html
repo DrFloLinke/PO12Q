@@ -47,6 +47,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -161,6 +162,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
 <li class="part"><span><b>Week 1</b></span></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#video-and-rscript"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html"><i class="fa fa-check"></i>Worksheet Week 1</a>
 <ul>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html#self-assessment-questions"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
@@ -267,7 +273,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#working-with-regression-analysis"><i class="fa fa-check"></i>Working with Regression Analysis</a>
 <ul>
-<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep-1"><i class="fa fa-check"></i>Data Prep</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-analysis"><i class="fa fa-check"></i>Data Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
@@ -409,11 +415,13 @@ Residual standard error: 35.61 on 6956 degrees of freedom
 Multiple R-squared:  0.2374,    Adjusted R-squared:  0.2373 
 F-statistic:  2165 on 1 and 6956 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="additional-exercises.html#cb22-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
 <span id="cb22-2"><a href="additional-exercises.html#cb22-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
 <span id="cb22-3"><a href="additional-exercises.html#cb22-3" tabindex="-1"></a>              Estimate  Std. Error   t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
 <span id="cb22-4"><a href="additional-exercises.html#cb22-4" tabindex="-1"></a>(Intercept) <span class="fl">78.1551599</span> <span class="fl">0.619648419</span> <span class="fl">126.12823</span>        <span class="dv">0</span></span>
 <span id="cb22-5"><a href="additional-exercises.html#cb22-5" tabindex="-1"></a>alcohol      <span class="fl">0.2082697</span> <span class="fl">0.004476011</span>  <span class="fl">46.53021</span>        <span class="dv">0</span></span></code></pre></div>
+</details>
 <hr />
 </div>
 <div id="interpretation" class="section level2 unnumbered hasAnchor">

@@ -47,6 +47,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -161,6 +162,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
 <li class="part"><span><b>Week 1</b></span></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#video-and-rscript"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html"><i class="fa fa-check"></i>Worksheet Week 1</a>
 <ul>
 <li class="chapter" data-level="" data-path="worksheet-week-1.html"><a href="worksheet-week-1.html#self-assessment-questions"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
@@ -267,7 +273,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#working-with-regression-analysis"><i class="fa fa-check"></i>Working with Regression Analysis</a>
 <ul>
-<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-prep-1"><i class="fa fa-check"></i>Data Prep</a></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#data-analysis"><i class="fa fa-check"></i>Data Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="worksheet-week-9.html"><a href="worksheet-week-9.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
@@ -350,19 +356,24 @@ div.csl-indent {
 <ol style="list-style-type: decimal">
 <li>Load the data set from Excel.</li>
 </ol>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="worksheet-week-4.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb14-2"><a href="worksheet-week-4.html#cb14-2" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="worksheet-week-4.html#cb14-3" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;files/Week 4/PO12Q_4.xlsx&quot;</span>)</span></code></pre></div>
+</details>
 <div class="bulb">
 <p>You can also enter the values of a table manually using the <span style="color:black"><code>matrix()</code></span> function as follows:</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="worksheet-week-4.html#cb15-1" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">19</span>,<span class="dv">56</span>,<span class="dv">45</span>,<span class="dv">37</span>,<span class="dv">23</span>,<span class="dv">32</span>,<span class="dv">65</span>,<span class="dv">43</span>,<span class="dv">48</span>,</span>
 <span id="cb15-2"><a href="worksheet-week-4.html#cb15-2" tabindex="-1"></a>                  <span class="dv">700</span>,<span class="dv">650</span>,<span class="dv">2300</span>,<span class="dv">1900</span>,<span class="dv">2000</span>,<span class="dv">900</span>,<span class="dv">1000</span>,<span class="dv">2500</span>,<span class="dv">2800</span>,<span class="dv">1200</span>),</span>
 <span id="cb15-3"><a href="worksheet-week-4.html#cb15-3" tabindex="-1"></a>                <span class="at">nrow=</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
 <span id="cb15-4"><a href="worksheet-week-4.html#cb15-4" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(table)</span></code></pre></div>
+</details>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li>Run the regression in R as follows:</li>
 </ol>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="worksheet-week-4.html#cb16-1" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
 <span id="cb16-2"><a href="worksheet-week-4.html#cb16-2" tabindex="-1"></a><span class="fu">summary</span>(regression)</span>
 <span id="cb16-3"><a href="worksheet-week-4.html#cb16-3" tabindex="-1"></a></span>
@@ -383,6 +394,7 @@ div.csl-indent {
 <span id="cb16-18"><a href="worksheet-week-4.html#cb16-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">335.3</span> on <span class="dv">8</span> degrees of freedom</span>
 <span id="cb16-19"><a href="worksheet-week-4.html#cb16-19" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7859</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7592</span> </span>
 <span id="cb16-20"><a href="worksheet-week-4.html#cb16-20" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">29.37</span> on <span class="dv">1</span> and <span class="dv">8</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">0.0006314</span></span></code></pre></div>
+</details>
 <ol start="3" style="list-style-type: decimal">
 <li>Check your results from the first section.</li>
 </ol>
