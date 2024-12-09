@@ -175,3 +175,17 @@ img {
     border: solid 5px #F7EBD5;
     background-image: url("files/puzzle_black.png") !important;
   }
+  
+  div.video {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #1f3047;
+    background-color: #A4B1C1;
+    border: solid 5px #DBE0E6;
+    background-image: url("files/reel.png") !important;
+  }
