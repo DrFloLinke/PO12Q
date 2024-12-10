@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Reading Week | PO12Q: Seminar Companion</title>
-  <meta name="description" content="Reading Week | PO12Q: Seminar Companion" />
+  <title>Methods, Methods, Methods | PO12Q: Seminar Companion</title>
+  <meta name="description" content="Methods, Methods, Methods | PO12Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Reading Week | PO12Q: Seminar Companion" />
+  <meta property="og:title" content="Methods, Methods, Methods | PO12Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Reading Week | PO12Q: Seminar Companion" />
+  <meta name="twitter:title" content="Methods, Methods, Methods | PO12Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="worksheet-week-5.html"/>
-<link rel="next" href="methods-methods-methods-4.html"/>
+<link rel="prev" href="worksheet-week-4.html"/>
+<link rel="next" href="worksheet-week-5.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -353,28 +353,146 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reading-week" class="section level1 unnumbered hasAnchor">
-<h1>Reading Week<a href="reading-week.html#reading-week" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>You know the drill. Reading week is not an institutionalised holiday, but I do expect you to put in about 10 hours of work for this module over the course of this week. Here are a few suggestions for activities to fill these 10 hours:</p>
-<ul>
-<li>Catch up on the reading</li>
-<li>Revise the material of Weeks 1-5 in preparation for the in-class test in Week 7.</li>
-<li>Go through the worksheets of Weeks 1-5 for the same reason.</li>
-<li>If you struggle with understanding the code, go through the worksheets and verbalise in plain English each code chunk. If you need help with what each of the functions means then you can find descriptions in the csv files that underpin the flashcards. These are available <a href="https://drfloreiche.github.io/POQFlashcards/weekly-content-1.html">here</a>.</li>
-<li>Revise all R functions up to this point. I have made a special <a href="https://drfloreiche.github.io/POQFlashcards/weekly-content-1.html#week-6-consolidating-weeks-1-5">flashcard section</a> for this.</li>
-</ul>
-
+<div id="methods-methods-methods-3" class="section level1 unnumbered hasAnchor">
+<h1>Methods, Methods, Methods<a href="methods-methods-methods-3.html#methods-methods-methods-3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This week we will explore a measure for model fit, the so-called R-Squared. Discover how to obtain it in R in this section.</p>
+<p>Just as in week 4 we will be working with the American National Election Studies (ANES), and to be more precise with the pilot survey conducted before the 2020 presidential election. If you haven’t already done so, you will have to register with ANES in order to download the data set. To do so, please follow <a href="https://electionstudies.org/data-center/2020-exploratory-testing-survey/">this link</a>.</p>
+<div id="data-prep-3" class="section level2 unnumbered hasAnchor">
+<h2>Data Prep<a href="methods-methods-methods-3.html#data-prep-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Place the ANES data in a folder which you will be using as a working directory for this session. Open the “Code for Data Preparation” below, and copy this into an RScript. Remember to adjust the working directory with the <code>setwd()</code> command at the beginning. Then run the RScript and you will be ready to proceed to the video.</p>
+<div class="bluebox">
+<details>
+<summary>
+Code for Data Preparation
+</summary>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="methods-methods-methods-3.html#cb23-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb23-2"><a href="methods-methods-methods-3.html#cb23-2" tabindex="-1"></a><span class="co"># MMM - Week 5 - Data Preparation</span></span>
+<span id="cb23-3"><a href="methods-methods-methods-3.html#cb23-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb23-4"><a href="methods-methods-methods-3.html#cb23-4" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="methods-methods-methods-3.html#cb23-5" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="methods-methods-methods-3.html#cb23-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb23-7"><a href="methods-methods-methods-3.html#cb23-7" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/OneDrive - University of Warwick/Warwick/Modules/PO12Q/Methods/5 Model Fit&quot;</span>)</span>
+<span id="cb23-8"><a href="methods-methods-methods-3.html#cb23-8" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="methods-methods-methods-3.html#cb23-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb23-10"><a href="methods-methods-methods-3.html#cb23-10" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="methods-methods-methods-3.html#cb23-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb23-12"><a href="methods-methods-methods-3.html#cb23-12" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="methods-methods-methods-3.html#cb23-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb23-14"><a href="methods-methods-methods-3.html#cb23-14" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="methods-methods-methods-3.html#cb23-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
+<span id="cb23-16"><a href="methods-methods-methods-3.html#cb23-16" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="methods-methods-methods-3.html#cb23-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
+<span id="cb23-18"><a href="methods-methods-methods-3.html#cb23-18" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="methods-methods-methods-3.html#cb23-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
+<span id="cb23-20"><a href="methods-methods-methods-3.html#cb23-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
+<span id="cb23-21"><a href="methods-methods-methods-3.html#cb23-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
+<span id="cb23-22"><a href="methods-methods-methods-3.html#cb23-22" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="methods-methods-methods-3.html#cb23-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
+<span id="cb23-24"><a href="methods-methods-methods-3.html#cb23-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
+<span id="cb23-25"><a href="methods-methods-methods-3.html#cb23-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
+<span id="cb23-26"><a href="methods-methods-methods-3.html#cb23-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
+<span id="cb23-27"><a href="methods-methods-methods-3.html#cb23-27" tabindex="-1"></a></span>
+<span id="cb23-28"><a href="methods-methods-methods-3.html#cb23-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
+<span id="cb23-29"><a href="methods-methods-methods-3.html#cb23-29" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="methods-methods-methods-3.html#cb23-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb23-31"><a href="methods-methods-methods-3.html#cb23-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb23-32"><a href="methods-methods-methods-3.html#cb23-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
+<span id="cb23-33"><a href="methods-methods-methods-3.html#cb23-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
+<span id="cb23-34"><a href="methods-methods-methods-3.html#cb23-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
+<span id="cb23-35"><a href="methods-methods-methods-3.html#cb23-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
+<span id="cb23-36"><a href="methods-methods-methods-3.html#cb23-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
+<span id="cb23-37"><a href="methods-methods-methods-3.html#cb23-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
+<span id="cb23-38"><a href="methods-methods-methods-3.html#cb23-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
+<span id="cb23-39"><a href="methods-methods-methods-3.html#cb23-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
+<span id="cb23-40"><a href="methods-methods-methods-3.html#cb23-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
+<span id="cb23-41"><a href="methods-methods-methods-3.html#cb23-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
+<span id="cb23-42"><a href="methods-methods-methods-3.html#cb23-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
+<span id="cb23-43"><a href="methods-methods-methods-3.html#cb23-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
+<span id="cb23-44"><a href="methods-methods-methods-3.html#cb23-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
+<span id="cb23-45"><a href="methods-methods-methods-3.html#cb23-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
+<span id="cb23-46"><a href="methods-methods-methods-3.html#cb23-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
+<span id="cb23-47"><a href="methods-methods-methods-3.html#cb23-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
+<span id="cb23-48"><a href="methods-methods-methods-3.html#cb23-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
+<span id="cb23-49"><a href="methods-methods-methods-3.html#cb23-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
+<span id="cb23-50"><a href="methods-methods-methods-3.html#cb23-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
+<span id="cb23-51"><a href="methods-methods-methods-3.html#cb23-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
+<span id="cb23-52"><a href="methods-methods-methods-3.html#cb23-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
+<span id="cb23-53"><a href="methods-methods-methods-3.html#cb23-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
+<span id="cb23-54"><a href="methods-methods-methods-3.html#cb23-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
+<span id="cb23-55"><a href="methods-methods-methods-3.html#cb23-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
+<span id="cb23-56"><a href="methods-methods-methods-3.html#cb23-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
+<span id="cb23-57"><a href="methods-methods-methods-3.html#cb23-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
+<span id="cb23-58"><a href="methods-methods-methods-3.html#cb23-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
+<span id="cb23-59"><a href="methods-methods-methods-3.html#cb23-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
+<span id="cb23-60"><a href="methods-methods-methods-3.html#cb23-60" tabindex="-1"></a></span>
+<span id="cb23-61"><a href="methods-methods-methods-3.html#cb23-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
+<span id="cb23-62"><a href="methods-methods-methods-3.html#cb23-62" tabindex="-1"></a></span>
+<span id="cb23-63"><a href="methods-methods-methods-3.html#cb23-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
+<span id="cb23-64"><a href="methods-methods-methods-3.html#cb23-64" tabindex="-1"></a></span>
+<span id="cb23-65"><a href="methods-methods-methods-3.html#cb23-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week5.csv&quot;</span>)</span></code></pre></div>
+</details>
+</details>
 </div>
-
-
-
+<hr />
+</div>
+<div id="video-and-rscript-3" class="section level2 unnumbered hasAnchor">
+<h2>Video and RScript<a href="methods-methods-methods-3.html#video-and-rscript-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can find the video introducing you to this week’s method by way of a worked example below. You can also access the code I am typing up in the video in the “Code for Data Analysis” section. I would encourage you to type it yourself, though, as then code tends to better sink into the depths of your brain ;</p>
+<div class="bluebox">
+<details>
+<summary>
+Code for Data Analysis
+</summary>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="methods-methods-methods-3.html#cb24-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb24-2"><a href="methods-methods-methods-3.html#cb24-2" tabindex="-1"></a><span class="co"># MMM - Week 5 - Model Fit</span></span>
+<span id="cb24-3"><a href="methods-methods-methods-3.html#cb24-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb24-4"><a href="methods-methods-methods-3.html#cb24-4" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="methods-methods-methods-3.html#cb24-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb24-6"><a href="methods-methods-methods-3.html#cb24-6" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/OneDrive - University of Warwick/Warwick/Modules/PO12Q/Methods/5 Model Fit&quot;</span>)</span>
+<span id="cb24-7"><a href="methods-methods-methods-3.html#cb24-7" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="methods-methods-methods-3.html#cb24-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb24-9"><a href="methods-methods-methods-3.html#cb24-9" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="methods-methods-methods-3.html#cb24-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb24-11"><a href="methods-methods-methods-3.html#cb24-11" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="methods-methods-methods-3.html#cb24-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb24-13"><a href="methods-methods-methods-3.html#cb24-13" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="methods-methods-methods-3.html#cb24-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week5.csv&quot;</span>)</span>
+<span id="cb24-15"><a href="methods-methods-methods-3.html#cb24-15" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="methods-methods-methods-3.html#cb24-16" tabindex="-1"></a><span class="co"># Visualisation</span></span>
+<span id="cb24-17"><a href="methods-methods-methods-3.html#cb24-17" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb24-18"><a href="methods-methods-methods-3.html#cb24-18" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="methods-methods-methods-3.html#cb24-19" tabindex="-1"></a><span class="fu">ggplot</span>(anes, <span class="fu">aes</span>(<span class="at">x =</span> inc, <span class="at">y =</span> fttrump1)) <span class="sc">+</span></span>
+<span id="cb24-20"><a href="methods-methods-methods-3.html#cb24-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-21"><a href="methods-methods-methods-3.html#cb24-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span>
+<span id="cb24-22"><a href="methods-methods-methods-3.html#cb24-22" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="methods-methods-methods-3.html#cb24-23" tabindex="-1"></a></span>
+<span id="cb24-24"><a href="methods-methods-methods-3.html#cb24-24" tabindex="-1"></a><span class="co"># Regression</span></span>
+<span id="cb24-25"><a href="methods-methods-methods-3.html#cb24-25" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb24-26"><a href="methods-methods-methods-3.html#cb24-26" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="methods-methods-methods-3.html#cb24-27" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
+<span id="cb24-28"><a href="methods-methods-methods-3.html#cb24-28" tabindex="-1"></a></span>
+<span id="cb24-29"><a href="methods-methods-methods-3.html#cb24-29" tabindex="-1"></a>model1</span>
+<span id="cb24-30"><a href="methods-methods-methods-3.html#cb24-30" tabindex="-1"></a></span>
+<span id="cb24-31"><a href="methods-methods-methods-3.html#cb24-31" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+</details>
+</details>
+</div>
+<div class="video">
+<p><strong>Model Fit for Regression in R</strong></p>
+<iframe src="https://livewarwickac-my.sharepoint.com/personal/u1373867_live_warwick_ac_uk/_layouts/15/embed.aspx?UniqueId=5e3978a5-e7c1-5841-71e2-f4209c54b217&amp;embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Model Fit for Linear Regression in R-20201125_010814.mov">
+</iframe>
+</div>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="worksheet-week-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods-methods-methods-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="worksheet-week-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="worksheet-week-5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
