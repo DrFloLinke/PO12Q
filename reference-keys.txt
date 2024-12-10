@@ -1,4 +1,6 @@
 tab:wdicode1
 tab:wdicode2
 tab:regdata
+tab:regdata5
+tab:regdata7
 tab:wdicode8
