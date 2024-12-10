@@ -372,7 +372,7 @@ Code for Data Preparation
 <span id="cb1-4"><a href="methods-methods-methods.html#cb1-4" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="methods-methods-methods.html#cb1-5" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="methods-methods-methods.html#cb1-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb1-7"><a href="methods-methods-methods.html#cb1-7" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/OneDrive - University of Warwick/Warwick/Modules/PO12Q/Methods/1 CrossTabs&quot;</span>)</span>
+<span id="cb1-7"><a href="methods-methods-methods.html#cb1-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
 <span id="cb1-8"><a href="methods-methods-methods.html#cb1-8" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="methods-methods-methods.html#cb1-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
 <span id="cb1-10"><a href="methods-methods-methods.html#cb1-10" tabindex="-1"></a></span>
@@ -429,42 +429,41 @@ Code for Data Analysis
 <span id="cb2-3"><a href="methods-methods-methods.html#cb2-3" tabindex="-1"></a><span class="do">######################################</span></span>
 <span id="cb2-4"><a href="methods-methods-methods.html#cb2-4" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="methods-methods-methods.html#cb2-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb2-6"><a href="methods-methods-methods.html#cb2-6" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/OneDrive - University of Warwick/Warwick/Modules/PO12Q/Methods/1 CrossTabs&quot;</span>)</span>
-<span id="cb2-7"><a href="methods-methods-methods.html#cb2-7" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;PO12Q_MMM_Week 1_Data Prep.R&quot;</span>)</span>
-<span id="cb2-8"><a href="methods-methods-methods.html#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="methods-methods-methods.html#cb2-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb2-10"><a href="methods-methods-methods.html#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="methods-methods-methods.html#cb2-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-12"><a href="methods-methods-methods.html#cb2-12" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="methods-methods-methods.html#cb2-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb2-14"><a href="methods-methods-methods.html#cb2-14" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="methods-methods-methods.html#cb2-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week1.csv&quot;</span>)</span>
-<span id="cb2-16"><a href="methods-methods-methods.html#cb2-16" tabindex="-1"></a>anes<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(anes<span class="sc">$</span>sex)</span>
-<span id="cb2-17"><a href="methods-methods-methods.html#cb2-17" tabindex="-1"></a>anes<span class="sc">$</span>trump <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(anes<span class="sc">$</span>trump)</span>
-<span id="cb2-18"><a href="methods-methods-methods.html#cb2-18" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="methods-methods-methods.html#cb2-19" tabindex="-1"></a><span class="co"># Tabulate relationship between sex and support for Trump</span></span>
-<span id="cb2-20"><a href="methods-methods-methods.html#cb2-20" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="methods-methods-methods.html#cb2-21" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump)</span>
-<span id="cb2-22"><a href="methods-methods-methods.html#cb2-22" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="methods-methods-methods.html#cb2-23" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump))</span>
-<span id="cb2-24"><a href="methods-methods-methods.html#cb2-24" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="methods-methods-methods.html#cb2-25" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump), <span class="at">margin =</span> <span class="dv">1</span>)</span>
-<span id="cb2-26"><a href="methods-methods-methods.html#cb2-26" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="methods-methods-methods.html#cb2-27" tabindex="-1"></a><span class="co"># save table for analysis</span></span>
-<span id="cb2-28"><a href="methods-methods-methods.html#cb2-28" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="methods-methods-methods.html#cb2-29" tabindex="-1"></a>trumpsex <span class="ot">&lt;-</span> <span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump)</span>
-<span id="cb2-30"><a href="methods-methods-methods.html#cb2-30" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="methods-methods-methods.html#cb2-31" tabindex="-1"></a>trumpsex</span>
-<span id="cb2-32"><a href="methods-methods-methods.html#cb2-32" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="methods-methods-methods.html#cb2-33" tabindex="-1"></a>xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(trumpsex, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
-<span id="cb2-34"><a href="methods-methods-methods.html#cb2-34" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="methods-methods-methods.html#cb2-35" tabindex="-1"></a>xsq</span>
-<span id="cb2-36"><a href="methods-methods-methods.html#cb2-36" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="methods-methods-methods.html#cb2-37" tabindex="-1"></a><span class="co"># display observed and expected values</span></span>
-<span id="cb2-38"><a href="methods-methods-methods.html#cb2-38" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="methods-methods-methods.html#cb2-39" tabindex="-1"></a>xsq<span class="sc">$</span>expected</span>
-<span id="cb2-40"><a href="methods-methods-methods.html#cb2-40" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="methods-methods-methods.html#cb2-41" tabindex="-1"></a>xsq<span class="sc">$</span>observed</span></code></pre></div>
+<span id="cb2-6"><a href="methods-methods-methods.html#cb2-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb2-7"><a href="methods-methods-methods.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="methods-methods-methods.html#cb2-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb2-9"><a href="methods-methods-methods.html#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="methods-methods-methods.html#cb2-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-11"><a href="methods-methods-methods.html#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="methods-methods-methods.html#cb2-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb2-13"><a href="methods-methods-methods.html#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="methods-methods-methods.html#cb2-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week1.csv&quot;</span>)</span>
+<span id="cb2-15"><a href="methods-methods-methods.html#cb2-15" tabindex="-1"></a>anes<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(anes<span class="sc">$</span>sex)</span>
+<span id="cb2-16"><a href="methods-methods-methods.html#cb2-16" tabindex="-1"></a>anes<span class="sc">$</span>trump <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(anes<span class="sc">$</span>trump)</span>
+<span id="cb2-17"><a href="methods-methods-methods.html#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="methods-methods-methods.html#cb2-18" tabindex="-1"></a><span class="co"># Tabulate relationship between sex and support for Trump</span></span>
+<span id="cb2-19"><a href="methods-methods-methods.html#cb2-19" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="methods-methods-methods.html#cb2-20" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump)</span>
+<span id="cb2-21"><a href="methods-methods-methods.html#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="methods-methods-methods.html#cb2-22" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump))</span>
+<span id="cb2-23"><a href="methods-methods-methods.html#cb2-23" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="methods-methods-methods.html#cb2-24" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump), <span class="at">margin =</span> <span class="dv">1</span>)</span>
+<span id="cb2-25"><a href="methods-methods-methods.html#cb2-25" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="methods-methods-methods.html#cb2-26" tabindex="-1"></a><span class="co"># save table for analysis</span></span>
+<span id="cb2-27"><a href="methods-methods-methods.html#cb2-27" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="methods-methods-methods.html#cb2-28" tabindex="-1"></a>trumpsex <span class="ot">&lt;-</span> <span class="fu">table</span>(anes<span class="sc">$</span>sex,anes<span class="sc">$</span>trump)</span>
+<span id="cb2-29"><a href="methods-methods-methods.html#cb2-29" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="methods-methods-methods.html#cb2-30" tabindex="-1"></a>trumpsex</span>
+<span id="cb2-31"><a href="methods-methods-methods.html#cb2-31" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="methods-methods-methods.html#cb2-32" tabindex="-1"></a>xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(trumpsex, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
+<span id="cb2-33"><a href="methods-methods-methods.html#cb2-33" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="methods-methods-methods.html#cb2-34" tabindex="-1"></a>xsq</span>
+<span id="cb2-35"><a href="methods-methods-methods.html#cb2-35" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="methods-methods-methods.html#cb2-36" tabindex="-1"></a><span class="co"># display observed and expected values</span></span>
+<span id="cb2-37"><a href="methods-methods-methods.html#cb2-37" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="methods-methods-methods.html#cb2-38" tabindex="-1"></a>xsq<span class="sc">$</span>expected</span>
+<span id="cb2-39"><a href="methods-methods-methods.html#cb2-39" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="methods-methods-methods.html#cb2-40" tabindex="-1"></a>xsq<span class="sc">$</span>observed</span></code></pre></div>
 </details>
 </details>
 </div>
