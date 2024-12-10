@@ -47,10 +47,13 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -391,24 +394,19 @@ div.csl-indent {
 <ol style="list-style-type: decimal">
 <li>Load the data set from Excel.</li>
 </ol>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="worksheet-week-4.html#cb20-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb20-2"><a href="worksheet-week-4.html#cb20-2" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="worksheet-week-4.html#cb20-3" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;files/Week 4/PO12Q_4.xlsx&quot;</span>)</span></code></pre></div>
-</details>
 <div class="bulb">
 <p>You can also enter the values of a table manually using the <span style="color:black"><code>matrix()</code></span> function as follows:</p>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="worksheet-week-4.html#cb21-1" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">19</span>,<span class="dv">56</span>,<span class="dv">45</span>,<span class="dv">37</span>,<span class="dv">23</span>,<span class="dv">32</span>,<span class="dv">65</span>,<span class="dv">43</span>,<span class="dv">48</span>,</span>
 <span id="cb21-2"><a href="worksheet-week-4.html#cb21-2" tabindex="-1"></a>                  <span class="dv">700</span>,<span class="dv">650</span>,<span class="dv">2300</span>,<span class="dv">1900</span>,<span class="dv">2000</span>,<span class="dv">900</span>,<span class="dv">1000</span>,<span class="dv">2500</span>,<span class="dv">2800</span>,<span class="dv">1200</span>),</span>
 <span id="cb21-3"><a href="worksheet-week-4.html#cb21-3" tabindex="-1"></a>                <span class="at">nrow=</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
 <span id="cb21-4"><a href="worksheet-week-4.html#cb21-4" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(table)</span></code></pre></div>
-</details>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li>Run the regression in R as follows:</li>
 </ol>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="worksheet-week-4.html#cb22-1" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
 <span id="cb22-2"><a href="worksheet-week-4.html#cb22-2" tabindex="-1"></a><span class="fu">summary</span>(regression)</span>
 <span id="cb22-3"><a href="worksheet-week-4.html#cb22-3" tabindex="-1"></a></span>
@@ -429,7 +427,6 @@ div.csl-indent {
 <span id="cb22-18"><a href="worksheet-week-4.html#cb22-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">335.3</span> on <span class="dv">8</span> degrees of freedom</span>
 <span id="cb22-19"><a href="worksheet-week-4.html#cb22-19" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7859</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7592</span> </span>
 <span id="cb22-20"><a href="worksheet-week-4.html#cb22-20" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">29.37</span> on <span class="dv">1</span> and <span class="dv">8</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">0.0006314</span></span></code></pre></div>
-</details>
 <ol start="3" style="list-style-type: decimal">
 <li>Check your results from the first section.</li>
 </ol>

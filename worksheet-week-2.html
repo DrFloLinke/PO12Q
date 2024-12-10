@@ -47,10 +47,13 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -377,130 +380,244 @@ div.csl-indent {
 <li>We are working with the World Development Indicators again. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
 <li>To save you rooting in your files, here is the codebook (you are welcome):</li>
 </ul>
-<table>
-<caption><span id="tab:wdicode2">Table 2: </span>WDI Codebook</caption>
-<colgroup>
-<col width="14%" />
-<col width="85%" />
-</colgroup>
+<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:wdicode2">Table 2: </span>WDI Codebook
+</caption>
 <thead>
-<tr class="header">
-<th align="left">variable</th>
-<th align="left">label</th>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:left;">
+label
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Country Name</td>
-<td align="left">Country Name</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+Country Name
+</td>
+<td style="text-align:left;">
+Country Name
+</td>
 </tr>
-<tr class="even">
-<td align="left">Country Code</td>
-<td align="left">Country Code</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+Country Code
+</td>
+<td style="text-align:left;">
+Country Code
+</td>
 </tr>
-<tr class="odd">
-<td align="left">year</td>
-<td align="left">year</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+year
+</td>
+<td style="text-align:left;">
+year
+</td>
 </tr>
-<tr class="even">
-<td align="left">gdppc</td>
-<td align="left">GDP per capita (constant 2010 US$)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+gdppc
+</td>
+<td style="text-align:left;">
+GDP per capita (constant 2010 US$)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">gdpgrowth</td>
-<td align="left">Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+gdpgrowth
+</td>
+<td style="text-align:left;">
+Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)
+</td>
 </tr>
-<tr class="even">
-<td align="left">enrl_gross</td>
-<td align="left">School enrollment, primary (% gross)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+enrl_gross
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% gross)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">enrl_net</td>
-<td align="left">School enrollment, primary (% net)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+enrl_net
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% net)
+</td>
 </tr>
-<tr class="even">
-<td align="left">agri</td>
-<td align="left">Employment in agriculture (% of total employment) (modeled ILO estimate)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+agri
+</td>
+<td style="text-align:left;">
+Employment in agriculture (% of total employment) (modeled ILO estimate)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">slums</td>
-<td align="left">Population living in slums (% of urban population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+slums
+</td>
+<td style="text-align:left;">
+Population living in slums (% of urban population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">telephone</td>
-<td align="left">Fixed telephone subscriptions (per 100 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+telephone
+</td>
+<td style="text-align:left;">
+Fixed telephone subscriptions (per 100 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">internet</td>
-<td align="left">Individuals using the Internet (% of population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+internet
+</td>
+<td style="text-align:left;">
+Individuals using the Internet (% of population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">tax</td>
-<td align="left">Tax revenue (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+tax
+</td>
+<td style="text-align:left;">
+Tax revenue (% of GDP)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">electricity</td>
-<td align="left">Access to electricity (% of population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+electricity
+</td>
+<td style="text-align:left;">
+Access to electricity (% of population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">mobile</td>
-<td align="left">Mobile cellular subscriptions (per 100 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+mobile
+</td>
+<td style="text-align:left;">
+Mobile cellular subscriptions (per 100 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">service</td>
-<td align="left">Services, value added (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+service
+</td>
+<td style="text-align:left;">
+Services, value added (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">oil</td>
-<td align="left">Oil rents (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+oil
+</td>
+<td style="text-align:left;">
+Oil rents (% of GDP)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">natural</td>
-<td align="left">Total natural resources rents (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+natural
+</td>
+<td style="text-align:left;">
+Total natural resources rents (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">literacy</td>
-<td align="left">Literacy rate, adult total (% of people ages 15 and above)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+literacy
+</td>
+<td style="text-align:left;">
+Literacy rate, adult total (% of people ages 15 and above)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">prim_compl</td>
-<td align="left">Primary completion rate, total (% of relevant age group)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+prim_compl
+</td>
+<td style="text-align:left;">
+Primary completion rate, total (% of relevant age group)
+</td>
 </tr>
-<tr class="even">
-<td align="left">infant</td>
-<td align="left">Mortality rate, infant (per 1,000 live births)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+infant
+</td>
+<td style="text-align:left;">
+Mortality rate, infant (per 1,000 live births)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">hosp</td>
-<td align="left">Hospital beds (per 1,000 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+hosp
+</td>
+<td style="text-align:left;">
+Hospital beds (per 1,000 people)
+</td>
 </tr>
-<tr class="even">
-<td align="left">tub</td>
-<td align="left">Incidence of tuberculosis (per 100,000 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+tub
+</td>
+<td style="text-align:left;">
+Incidence of tuberculosis (per 100,000 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">health_ex</td>
-<td align="left">Current health expenditure (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+health_ex
+</td>
+<td style="text-align:left;">
+Current health expenditure (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">ineq</td>
-<td align="left">Income share held by lowest 10%</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+ineq
+</td>
+<td style="text-align:left;">
+Income share held by lowest 10%
+</td>
 </tr>
-<tr class="odd">
-<td align="left">unemploy</td>
-<td align="left">Unemployment, total (% of total labor force) (modeled ILO estimate)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+unemploy
+</td>
+<td style="text-align:left;">
+Unemployment, total (% of total labor force) (modeled ILO estimate)
+</td>
 </tr>
-<tr class="even">
-<td align="left">lifeexp</td>
-<td align="left">Life expectancy at birth, total (years)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+lifeexp
+</td>
+<td style="text-align:left;">
+Life expectancy at birth, total (years)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">urban</td>
-<td align="left">Urban population (% of total population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+urban
+</td>
+<td style="text-align:left;">
+Urban population (% of total population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">polity5</td>
-<td align="left">Combined Polity V score</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+polity5
+</td>
+<td style="text-align:left;">
+Combined Polity V score
+</td>
 </tr>
 </tbody>
 </table>
@@ -518,20 +635,17 @@ div.csl-indent {
 <li>State the null hypothesis and the directional alternative hypothesis for this research question.</li>
 <li>In order to test this hypothesis, we need to first create a cross-tabulation:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="worksheet-week-2.html#cb13-1" tabindex="-1"></a><span class="fu">table</span>(wdi<span class="sc">$</span>gdpcat, wdi<span class="sc">$</span>politybin)</span>
 <span id="cb13-2"><a href="worksheet-week-2.html#cb13-2" tabindex="-1"></a>            </span>
 <span id="cb13-3"><a href="worksheet-week-2.html#cb13-3" tabindex="-1"></a>             Dictatorship Democracy</span>
 <span id="cb13-4"><a href="worksheet-week-2.html#cb13-4" tabindex="-1"></a>  Developing           <span class="dv">21</span>        <span class="dv">36</span></span>
 <span id="cb13-5"><a href="worksheet-week-2.html#cb13-5" tabindex="-1"></a>  Developed            <span class="dv">19</span>        <span class="dv">71</span></span></code></pre></div>
-</details>
 <ul>
 <li>We now take the number of observations which are classed as democracies per development status.</li>
 <li>We also calculate the row totals, as this gives us the total number of developing and developed countries, respectively.</li>
 <li>Then we are ready to use the <code>prop.test()</code> command, by first specifying the number of countries which are democracies, then the total number of developing and developed countries, then advising R that a correction for small sample sizes is not necessary in our case.</li>
 <li>Our hypothesis is directional, because we expect a higher proportion of developed countries to be democratic than developing countries. The status <code>Developing</code> is the lower category, and we thus expect this proportion to be smaller, or “less”. We add this to the test function as option <code>alternative = "less"</code>.</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="worksheet-week-2.html#cb14-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">36</span>,<span class="dv">71</span>),<span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">90</span>), <span class="at">correct=</span>F, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
 <span id="cb14-2"><a href="worksheet-week-2.html#cb14-2" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="worksheet-week-2.html#cb14-3" tabindex="-1"></a>    <span class="dv">2</span><span class="sc">-</span>sample test <span class="cf">for</span> equality of proportions without continuity correction</span>
@@ -544,7 +658,6 @@ div.csl-indent {
 <span id="cb14-10"><a href="worksheet-week-2.html#cb14-10" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
 <span id="cb14-11"><a href="worksheet-week-2.html#cb14-11" tabindex="-1"></a>   prop <span class="dv">1</span>    prop <span class="dv">2</span> </span>
 <span id="cb14-12"><a href="worksheet-week-2.html#cb14-12" tabindex="-1"></a><span class="fl">0.6315789</span> <span class="fl">0.7888889</span> </span></code></pre></div>
-</details>
 <ul>
 <li>Which proportion of developing and developed countries are democratic?</li>
 <li>Do we verify or falsify our hypothesis at a 95% confidence level?</li>
@@ -577,13 +690,10 @@ div.csl-indent {
 <ul>
 <li>For the Levene test you need the <code>car</code> package, where “car” stands for “Companion to Applied Regression”:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="worksheet-week-2.html#cb15-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>)</span></code></pre></div>
-</details>
 <ul>
 <li>Now we call the package and perform the test:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="worksheet-week-2.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
 <span id="cb16-2"><a href="worksheet-week-2.html#cb16-2" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="worksheet-week-2.html#cb16-3" tabindex="-1"></a><span class="fu">leveneTest</span>(wdi<span class="sc">$</span>lifeexp <span class="sc">~</span> wdi<span class="sc">$</span>gdpcat)</span>
@@ -593,12 +703,10 @@ div.csl-indent {
 <span id="cb16-7"><a href="worksheet-week-2.html#cb16-7" tabindex="-1"></a><span class="st">      167                  </span></span>
 <span id="cb16-8"><a href="worksheet-week-2.html#cb16-8" tabindex="-1"></a><span class="st">---</span></span>
 <span id="cb16-9"><a href="worksheet-week-2.html#cb16-9" tabindex="-1"></a><span class="st">Signif. codes:  0 &#39;</span><span class="sc">**</span><span class="er">*</span><span class="st">&#39; 0.001 &#39;</span><span class="sc">**</span><span class="st">&#39; 0.01 &#39;</span><span class="sc">*</span><span class="st">&#39; 0.05 &#39;</span>.<span class="st">&#39; 0.1 &#39;</span> <span class="st">&#39; 1</span></span></code></pre></div>
-</details>
 <ul>
 <li><p>The result is insignificant, and we therefore accept the null hypothesis. This means that the variance in the two samples is equal.</p></li>
 <li><p>Now we can perform the t-test. We once again specify <code>alternative="less"</code> as an option, due to the same reasoning as before.</p></li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="worksheet-week-2.html#cb17-1" tabindex="-1"></a><span class="fu">t.test</span>(lifeexp <span class="sc">~</span> gdpcat, <span class="at">data=</span>wdi, <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="at">alternative=</span><span class="st">&quot;less&quot;</span>)</span>
 <span id="cb17-2"><a href="worksheet-week-2.html#cb17-2" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="worksheet-week-2.html#cb17-3" tabindex="-1"></a>    Two Sample t<span class="sc">-</span>test</span>
@@ -611,7 +719,6 @@ div.csl-indent {
 <span id="cb17-10"><a href="worksheet-week-2.html#cb17-10" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
 <span id="cb17-11"><a href="worksheet-week-2.html#cb17-11" tabindex="-1"></a>mean <span class="cf">in</span> group Developing  mean <span class="cf">in</span> group Developed </span>
 <span id="cb17-12"><a href="worksheet-week-2.html#cb17-12" tabindex="-1"></a>                <span class="fl">64.65938</span>                 <span class="fl">75.71177</span> </span></code></pre></div>
-</details>
 <ul>
 <li>Can we conclude at a 95% confidence level, that people live longer in developed countries than in developing countries?</li>
 </ul>

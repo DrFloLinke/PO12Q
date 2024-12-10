@@ -47,10 +47,13 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -376,137 +379,250 @@ div.csl-indent {
 <li><p>Import the data set into R:</p></li>
 <li><p>Once again, here is the overview of the variables available and their respective label in Table <a href="worksheet-week-8.html#tab:wdicode8">3</a>:</p></li>
 </ul>
-<table>
-<caption><span id="tab:wdicode8">Table 3: </span>WDI Codebook</caption>
-<colgroup>
-<col width="14%" />
-<col width="85%" />
-</colgroup>
+<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:wdicode8">Table 3: </span>WDI Codebook
+</caption>
 <thead>
-<tr class="header">
-<th align="left">variable</th>
-<th align="left">label</th>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:left;">
+label
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Country Name</td>
-<td align="left">Country Name</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+Country Name
+</td>
+<td style="text-align:left;">
+Country Name
+</td>
 </tr>
-<tr class="even">
-<td align="left">Country Code</td>
-<td align="left">Country Code</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+Country Code
+</td>
+<td style="text-align:left;">
+Country Code
+</td>
 </tr>
-<tr class="odd">
-<td align="left">year</td>
-<td align="left">year</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+year
+</td>
+<td style="text-align:left;">
+year
+</td>
 </tr>
-<tr class="even">
-<td align="left">gdppc</td>
-<td align="left">GDP per capita (constant 2010 US$)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+gdppc
+</td>
+<td style="text-align:left;">
+GDP per capita (constant 2010 US$)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">gdpgrowth</td>
-<td align="left">Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+gdpgrowth
+</td>
+<td style="text-align:left;">
+Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)
+</td>
 </tr>
-<tr class="even">
-<td align="left">enrl_gross</td>
-<td align="left">School enrollment, primary (% gross)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+enrl_gross
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% gross)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">enrl_net</td>
-<td align="left">School enrollment, primary (% net)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+enrl_net
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% net)
+</td>
 </tr>
-<tr class="even">
-<td align="left">agri</td>
-<td align="left">Employment in agriculture (% of total employment) (modeled ILO estimate)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+agri
+</td>
+<td style="text-align:left;">
+Employment in agriculture (% of total employment) (modeled ILO estimate)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">slums</td>
-<td align="left">Population living in slums (% of urban population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+slums
+</td>
+<td style="text-align:left;">
+Population living in slums (% of urban population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">telephone</td>
-<td align="left">Fixed telephone subscriptions (per 100 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+telephone
+</td>
+<td style="text-align:left;">
+Fixed telephone subscriptions (per 100 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">internet</td>
-<td align="left">Individuals using the Internet (% of population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+internet
+</td>
+<td style="text-align:left;">
+Individuals using the Internet (% of population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">tax</td>
-<td align="left">Tax revenue (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+tax
+</td>
+<td style="text-align:left;">
+Tax revenue (% of GDP)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">electricity</td>
-<td align="left">Access to electricity (% of population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+electricity
+</td>
+<td style="text-align:left;">
+Access to electricity (% of population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">mobile</td>
-<td align="left">Mobile cellular subscriptions (per 100 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+mobile
+</td>
+<td style="text-align:left;">
+Mobile cellular subscriptions (per 100 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">service</td>
-<td align="left">Services, value added (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+service
+</td>
+<td style="text-align:left;">
+Services, value added (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">oil</td>
-<td align="left">Oil rents (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+oil
+</td>
+<td style="text-align:left;">
+Oil rents (% of GDP)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">natural</td>
-<td align="left">Total natural resources rents (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+natural
+</td>
+<td style="text-align:left;">
+Total natural resources rents (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">literacy</td>
-<td align="left">Literacy rate, adult total (% of people ages 15 and above)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+literacy
+</td>
+<td style="text-align:left;">
+Literacy rate, adult total (% of people ages 15 and above)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">prim_compl</td>
-<td align="left">Primary completion rate, total (% of relevant age group)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+prim_compl
+</td>
+<td style="text-align:left;">
+Primary completion rate, total (% of relevant age group)
+</td>
 </tr>
-<tr class="even">
-<td align="left">infant</td>
-<td align="left">Mortality rate, infant (per 1,000 live births)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+infant
+</td>
+<td style="text-align:left;">
+Mortality rate, infant (per 1,000 live births)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">hosp</td>
-<td align="left">Hospital beds (per 1,000 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+hosp
+</td>
+<td style="text-align:left;">
+Hospital beds (per 1,000 people)
+</td>
 </tr>
-<tr class="even">
-<td align="left">tub</td>
-<td align="left">Incidence of tuberculosis (per 100,000 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+tub
+</td>
+<td style="text-align:left;">
+Incidence of tuberculosis (per 100,000 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">health_ex</td>
-<td align="left">Current health expenditure (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+health_ex
+</td>
+<td style="text-align:left;">
+Current health expenditure (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">ineq</td>
-<td align="left">Income share held by lowest 10%</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+ineq
+</td>
+<td style="text-align:left;">
+Income share held by lowest 10%
+</td>
 </tr>
-<tr class="odd">
-<td align="left">unemploy</td>
-<td align="left">Unemployment, total (% of total labor force) (modeled ILO estimate)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+unemploy
+</td>
+<td style="text-align:left;">
+Unemployment, total (% of total labor force) (modeled ILO estimate)
+</td>
 </tr>
-<tr class="even">
-<td align="left">lifeexp</td>
-<td align="left">Life expectancy at birth, total (years)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+lifeexp
+</td>
+<td style="text-align:left;">
+Life expectancy at birth, total (years)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">urban</td>
-<td align="left">Urban population (% of total population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+urban
+</td>
+<td style="text-align:left;">
+Urban population (% of total population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">polity5</td>
-<td align="left">Combined Polity V score</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+polity5
+</td>
+<td style="text-align:left;">
+Combined Polity V score
+</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="worksheet-week-8.html#cb35-1" tabindex="-1"></a>wdi_life <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
 <span id="cb35-2"><a href="worksheet-week-8.html#cb35-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_life)</span>
 <span id="cb35-3"><a href="worksheet-week-8.html#cb35-3" tabindex="-1"></a></span>
@@ -528,13 +644,11 @@ div.csl-indent {
 <span id="cb35-19"><a href="worksheet-week-8.html#cb35-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
 <span id="cb35-20"><a href="worksheet-week-8.html#cb35-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
 <span id="cb35-21"><a href="worksheet-week-8.html#cb35-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
-</details>
 <ul>
 <li>Interpret the coefficients.</li>
 <li>Now we use a different regressor, say “Urban population (% of total)”.</li>
 <li>Specify the null and the alternative hypotheses.</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="worksheet-week-8.html#cb36-1" tabindex="-1"></a>wdi_urban <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
 <span id="cb36-2"><a href="worksheet-week-8.html#cb36-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_urban)</span>
 <span id="cb36-3"><a href="worksheet-week-8.html#cb36-3" tabindex="-1"></a></span>
@@ -556,13 +670,11 @@ div.csl-indent {
 <span id="cb36-19"><a href="worksheet-week-8.html#cb36-19" tabindex="-1"></a>  (<span class="dv">17</span> observations deleted due to missingness)</span>
 <span id="cb36-20"><a href="worksheet-week-8.html#cb36-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3045</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3006</span> </span>
 <span id="cb36-21"><a href="worksheet-week-8.html#cb36-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">77.07</span> on <span class="dv">1</span> and <span class="dv">176</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">1.417e-15</span></span></code></pre></div>
-</details>
 <ul>
 <li>Interpret the coefficients.</li>
 <li>What does this mean for the hypotheses?</li>
 <li>If we want to assess the influence of both independent variables together, we type:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="worksheet-week-8.html#cb37-1" tabindex="-1"></a>wdi_joint <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
 <span id="cb37-2"><a href="worksheet-week-8.html#cb37-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_joint)</span>
 <span id="cb37-3"><a href="worksheet-week-8.html#cb37-3" tabindex="-1"></a></span>
@@ -585,7 +697,6 @@ div.csl-indent {
 <span id="cb37-20"><a href="worksheet-week-8.html#cb37-20" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
 <span id="cb37-21"><a href="worksheet-week-8.html#cb37-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.463</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.4565</span> </span>
 <span id="cb37-22"><a href="worksheet-week-8.html#cb37-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">71.55</span> on <span class="dv">2</span> and <span class="dv">166</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
-</details>
 <ul>
 <li>Interpret the coefficients.</li>
 </ul>
@@ -818,13 +929,9 @@ Adjusted R<sup>2</sup>
 <li>Specify the SRF for Model 3, paying special attention to notation.</li>
 <li>Now assume, we want to know whether education has a bearing on the level of GDP. We call:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="worksheet-week-8.html#cb38-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
-</details>
 <p>and also add it to the joint model:</p>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="worksheet-week-8.html#cb39-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
-</details>
 <p>This should lead to these results:</p>
  
  

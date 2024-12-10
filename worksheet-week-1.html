@@ -47,10 +47,13 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -400,140 +403,252 @@ Consider the following Table:</p>
 <li>Download the data <a href="files/Week%201/WDI_PO12Q.csv">WDI_PO12Q.csv</a> and place it in a new working directory for this week</li>
 <li>The variables we will be working with today are as follows:</li>
 </ul>
-<table>
-<caption><span id="tab:wdicode1">Table 1: </span>WDI Codebook</caption>
-<colgroup>
-<col width="14%" />
-<col width="85%" />
-</colgroup>
+<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:wdicode1">Table 1: </span>WDI Codebook
+</caption>
 <thead>
-<tr class="header">
-<th align="left">variable</th>
-<th align="left">label</th>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:left;">
+label
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Country Name</td>
-<td align="left">Country Name</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+Country Name
+</td>
+<td style="text-align:left;">
+Country Name
+</td>
 </tr>
-<tr class="even">
-<td align="left">Country Code</td>
-<td align="left">Country Code</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+Country Code
+</td>
+<td style="text-align:left;">
+Country Code
+</td>
 </tr>
-<tr class="odd">
-<td align="left">year</td>
-<td align="left">year</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+year
+</td>
+<td style="text-align:left;">
+year
+</td>
 </tr>
-<tr class="even">
-<td align="left">gdppc</td>
-<td align="left">GDP per capita (constant 2010 US$)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+gdppc
+</td>
+<td style="text-align:left;">
+GDP per capita (constant 2010 US$)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">gdpgrowth</td>
-<td align="left">Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+gdpgrowth
+</td>
+<td style="text-align:left;">
+Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)
+</td>
 </tr>
-<tr class="even">
-<td align="left">enrl_gross</td>
-<td align="left">School enrollment, primary (% gross)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+enrl_gross
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% gross)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">enrl_net</td>
-<td align="left">School enrollment, primary (% net)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+enrl_net
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% net)
+</td>
 </tr>
-<tr class="even">
-<td align="left">agri</td>
-<td align="left">Employment in agriculture (% of total employment) (modeled ILO estimate)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+agri
+</td>
+<td style="text-align:left;">
+Employment in agriculture (% of total employment) (modeled ILO estimate)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">slums</td>
-<td align="left">Population living in slums (% of urban population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+slums
+</td>
+<td style="text-align:left;">
+Population living in slums (% of urban population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">telephone</td>
-<td align="left">Fixed telephone subscriptions (per 100 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+telephone
+</td>
+<td style="text-align:left;">
+Fixed telephone subscriptions (per 100 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">internet</td>
-<td align="left">Individuals using the Internet (% of population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+internet
+</td>
+<td style="text-align:left;">
+Individuals using the Internet (% of population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">tax</td>
-<td align="left">Tax revenue (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+tax
+</td>
+<td style="text-align:left;">
+Tax revenue (% of GDP)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">electricity</td>
-<td align="left">Access to electricity (% of population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+electricity
+</td>
+<td style="text-align:left;">
+Access to electricity (% of population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">mobile</td>
-<td align="left">Mobile cellular subscriptions (per 100 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+mobile
+</td>
+<td style="text-align:left;">
+Mobile cellular subscriptions (per 100 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">service</td>
-<td align="left">Services, value added (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+service
+</td>
+<td style="text-align:left;">
+Services, value added (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">oil</td>
-<td align="left">Oil rents (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+oil
+</td>
+<td style="text-align:left;">
+Oil rents (% of GDP)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">natural</td>
-<td align="left">Total natural resources rents (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+natural
+</td>
+<td style="text-align:left;">
+Total natural resources rents (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">literacy</td>
-<td align="left">Literacy rate, adult total (% of people ages 15 and above)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+literacy
+</td>
+<td style="text-align:left;">
+Literacy rate, adult total (% of people ages 15 and above)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">prim_compl</td>
-<td align="left">Primary completion rate, total (% of relevant age group)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+prim_compl
+</td>
+<td style="text-align:left;">
+Primary completion rate, total (% of relevant age group)
+</td>
 </tr>
-<tr class="even">
-<td align="left">infant</td>
-<td align="left">Mortality rate, infant (per 1,000 live births)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+infant
+</td>
+<td style="text-align:left;">
+Mortality rate, infant (per 1,000 live births)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">hosp</td>
-<td align="left">Hospital beds (per 1,000 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+hosp
+</td>
+<td style="text-align:left;">
+Hospital beds (per 1,000 people)
+</td>
 </tr>
-<tr class="even">
-<td align="left">tub</td>
-<td align="left">Incidence of tuberculosis (per 100,000 people)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+tub
+</td>
+<td style="text-align:left;">
+Incidence of tuberculosis (per 100,000 people)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">health_ex</td>
-<td align="left">Current health expenditure (% of GDP)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+health_ex
+</td>
+<td style="text-align:left;">
+Current health expenditure (% of GDP)
+</td>
 </tr>
-<tr class="even">
-<td align="left">ineq</td>
-<td align="left">Income share held by lowest 10%</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+ineq
+</td>
+<td style="text-align:left;">
+Income share held by lowest 10%
+</td>
 </tr>
-<tr class="odd">
-<td align="left">unemploy</td>
-<td align="left">Unemployment, total (% of total labor force) (modeled ILO estimate)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+unemploy
+</td>
+<td style="text-align:left;">
+Unemployment, total (% of total labor force) (modeled ILO estimate)
+</td>
 </tr>
-<tr class="even">
-<td align="left">lifeexp</td>
-<td align="left">Life expectancy at birth, total (years)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+lifeexp
+</td>
+<td style="text-align:left;">
+Life expectancy at birth, total (years)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">urban</td>
-<td align="left">Urban population (% of total population)</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+urban
+</td>
+<td style="text-align:left;">
+Urban population (% of total population)
+</td>
 </tr>
-<tr class="even">
-<td align="left">polity5</td>
-<td align="left">Combined Polity V score</td>
+<tr>
+<td style="text-align:left;min-width: 1in; ">
+polity5
+</td>
+<td style="text-align:left;">
+Combined Polity V score
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="loading-the-data" class="section level3 unnumbered hasAnchor">
 <h3>Loading the Data<a href="worksheet-week-1.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="worksheet-week-1.html#cb3-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/PO12Q/Seminars/PO12Q_Seminar_Week 1&quot;</span>)</span>
 <span id="cb3-2"><a href="worksheet-week-1.html#cb3-2" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WDI_PO12Q.csv&quot;</span>)</span></code></pre></div>
-</details>
 <div class="bulb">
 <p>You can copy the code from this page by hovering over the code chunk and clicking the icon in the top-right hand corner. You can then paste it into your RScript.</p>
 </div>
@@ -546,7 +661,6 @@ Consider the following Table:</p>
 <li>First up is <code>lifeexp</code></li>
 <li>Recoding: as a refresher from PO11Q, we are specifying the new data frame as the old one, then we add a pipe, and call the function <code>mutate</code>. Therein, we create a new variable called <code>lifecat</code>, which will be an ordered factor, cutting the variable <code>life</code> at the stated intervals, and labeling these levels accordingly.</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="worksheet-week-1.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb4-2"><a href="worksheet-week-1.html#cb4-2" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="worksheet-week-1.html#cb4-3" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
@@ -554,26 +668,22 @@ Consider the following Table:</p>
 <span id="cb4-5"><a href="worksheet-week-1.html#cb4-5" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
 <span id="cb4-6"><a href="worksheet-week-1.html#cb4-6" tabindex="-1"></a>             <span class="fu">cut</span>(lifeexp, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">77</span>,<span class="dv">84</span>), </span>
 <span id="cb4-7"><a href="worksheet-week-1.html#cb4-7" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
-</details>
 <div class="bulb">
 <p>Make a habit of adding a note underneath each code chunk in your RScript (with a ‘#’) in which you translate the code into plain English.</p>
 </div>
 <ul>
 <li>Next up is <code>gdppc</code> which we are recoding into a factor variable with three levels:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="worksheet-week-1.html#cb5-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="worksheet-week-1.html#cb5-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpcat=</span></span>
 <span id="cb5-3"><a href="worksheet-week-1.html#cb5-3" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
 <span id="cb5-4"><a href="worksheet-week-1.html#cb5-4" tabindex="-1"></a>             <span class="fu">cut</span>(gdppc, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3861.5</span>,<span class="dv">25260</span>, <span class="dv">150000</span>), </span>
 <span id="cb5-5"><a href="worksheet-week-1.html#cb5-5" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
-</details>
 <ul>
 <li>Let us now see whether the level of GDP has an influence on life expectancy</li>
 <li>State the null and the alternative hypothesis (directional)</li>
 <li>Run the cross-tabulation, by calling:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="worksheet-week-1.html#cb6-1" tabindex="-1"></a>wdi_table <span class="ot">&lt;-</span> <span class="fu">with</span>(wdi, <span class="fu">table</span>(gdpcat, lifecat))</span>
 <span id="cb6-2"><a href="worksheet-week-1.html#cb6-2" tabindex="-1"></a>wdi_table</span>
 <span id="cb6-3"><a href="worksheet-week-1.html#cb6-3" tabindex="-1"></a>        lifecat</span>
@@ -581,11 +691,9 @@ Consider the following Table:</p>
 <span id="cb6-5"><a href="worksheet-week-1.html#cb6-5" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
 <span id="cb6-6"><a href="worksheet-week-1.html#cb6-6" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
 <span id="cb6-7"><a href="worksheet-week-1.html#cb6-7" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
-</details>
 <ul>
 <li>Now perform a chi-squared test, using the command<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="worksheet-week-1.html#cb7-1" tabindex="-1"></a>Xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(wdi_table, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
 <span id="cb7-2"><a href="worksheet-week-1.html#cb7-2" tabindex="-1"></a>Xsq</span>
 <span id="cb7-3"><a href="worksheet-week-1.html#cb7-3" tabindex="-1"></a></span>
@@ -593,7 +701,6 @@ Consider the following Table:</p>
 <span id="cb7-5"><a href="worksheet-week-1.html#cb7-5" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="worksheet-week-1.html#cb7-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
 <span id="cb7-7"><a href="worksheet-week-1.html#cb7-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
-</details>
 <div class="bulb">
 <p>As on PO11Q, you can find all R functions on the <a href="https://drfloreiche.github.io/POQFlashcards/">POQ Flashcard Section</a> of my webpage.</p>
 </div>
@@ -602,34 +709,28 @@ Consider the following Table:</p>
 <li>What do these results mean for our hypotheses?</li>
 <li>Produce the table of expected frequencies, using the command</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="worksheet-week-1.html#cb8-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>expected, <span class="dv">2</span>)</span>
 <span id="cb8-2"><a href="worksheet-week-1.html#cb8-2" tabindex="-1"></a>        lifecat</span>
 <span id="cb8-3"><a href="worksheet-week-1.html#cb8-3" tabindex="-1"></a>gdpcat     low  high</span>
 <span id="cb8-4"><a href="worksheet-week-1.html#cb8-4" tabindex="-1"></a>  low    <span class="fl">51.44</span> <span class="fl">17.56</span></span>
 <span id="cb8-5"><a href="worksheet-week-1.html#cb8-5" tabindex="-1"></a>  medium <span class="fl">52.19</span> <span class="fl">17.81</span></span>
 <span id="cb8-6"><a href="worksheet-week-1.html#cb8-6" tabindex="-1"></a>  high   <span class="fl">22.37</span>  <span class="fl">7.63</span></span></code></pre></div>
-</details>
 <ul>
 <li>You can compare that to the observed ones:</li>
 </ul>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="worksheet-week-1.html#cb9-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>observed, <span class="dv">2</span>)</span>
 <span id="cb9-2"><a href="worksheet-week-1.html#cb9-2" tabindex="-1"></a>        lifecat</span>
 <span id="cb9-3"><a href="worksheet-week-1.html#cb9-3" tabindex="-1"></a>gdpcat   low high</span>
 <span id="cb9-4"><a href="worksheet-week-1.html#cb9-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
 <span id="cb9-5"><a href="worksheet-week-1.html#cb9-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
 <span id="cb9-6"><a href="worksheet-week-1.html#cb9-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
-</details>
 <p>You can see that this is identical to producing the cross-tabulation in the first place:</p>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="worksheet-week-1.html#cb10-1" tabindex="-1"></a>wdi_table</span>
 <span id="cb10-2"><a href="worksheet-week-1.html#cb10-2" tabindex="-1"></a>        lifecat</span>
 <span id="cb10-3"><a href="worksheet-week-1.html#cb10-3" tabindex="-1"></a>gdpcat   low high</span>
 <span id="cb10-4"><a href="worksheet-week-1.html#cb10-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
 <span id="cb10-5"><a href="worksheet-week-1.html#cb10-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
 <span id="cb10-6"><a href="worksheet-week-1.html#cb10-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
-</details>
 <ul>
 <li>In plain English: What have we found out?</li>
 </ul>

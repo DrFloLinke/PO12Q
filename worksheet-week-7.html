@@ -47,10 +47,13 @@
 
 
 
-<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -382,7 +385,6 @@ div.csl-indent {
 <div id="regression-hypothesis-testing-confidence-intervals" class="section level2 unnumbered hasAnchor">
 <h2>Regression – Hypothesis Testing &amp; Confidence Intervals<a href="worksheet-week-7.html#regression-hypothesis-testing-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider the following regression, where <code>gdp</code> indicates Gross Domestic Product (PPP) in 2005 US Dollars, and <code>life</code> indicates life expectancy at birth in years. I am running the regression with the first line and store the results in the object <code>wdi</code>. The second line asks R to display the detailed results for the regression. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</p>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="worksheet-week-7.html#cb29-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
 <span id="cb29-2"><a href="worksheet-week-7.html#cb29-2" tabindex="-1"></a><span class="fu">summary</span>(model1)</span>
 <span id="cb29-3"><a href="worksheet-week-7.html#cb29-3" tabindex="-1"></a></span>
@@ -404,7 +406,6 @@ div.csl-indent {
 <span id="cb29-19"><a href="worksheet-week-7.html#cb29-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
 <span id="cb29-20"><a href="worksheet-week-7.html#cb29-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
 <span id="cb29-21"><a href="worksheet-week-7.html#cb29-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
-</details>
 <ol style="list-style-type: decimal">
 <li>Formulate the null and alternative hypotheses which is tested in this model.</li>
 <li>Build the regression function.</li>
@@ -422,12 +423,10 @@ div.csl-indent {
 <li>Calculate the 95% confidence intervals for the coefficient <code>life</code> and the intercept. Compare your results to the R output below.</li>
 <li>Find two explanations in the output for why the coefficient for <code>life</code> is statistically significant at the 5% level?</li>
 </ol>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="worksheet-week-7.html#cb30-1" tabindex="-1"></a><span class="fu">confint</span>(model1,<span class="at">level =</span> <span class="fl">0.95</span>)</span>
 <span id="cb30-2"><a href="worksheet-week-7.html#cb30-2" tabindex="-1"></a>                  <span class="fl">2.5</span> <span class="sc">%    97.5 %</span></span>
 <span id="cb30-3"><a href="worksheet-week-7.html#cb30-3" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">114852.512</span> <span class="sc">-</span><span class="fl">73761.11</span></span>
 <span id="cb30-4"><a href="worksheet-week-7.html#cb30-4" tabindex="-1"></a>lifeexp        <span class="fl">1218.183</span>   <span class="fl">1788.24</span></span></code></pre></div>
-</details>
 <hr />
 </div>
 <div id="solutions-4" class="section level2 unnumbered hasAnchor">
