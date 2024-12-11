@@ -701,10 +701,8 @@ Rank of data zones from most deprived (ranked 1) to least deprived (ranked 6,976
 <div id="preliminary-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Preliminary Analysis<a href="additional-exercises.html#preliminary-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now that you have a preliminary idea of the structure of the dataset, you can select two variables and test a possible relationship. The topic today is bivariate linear regression analysis, so remember that the outcome variable needs to be continuous.</p>
-<p>Let’s say we want to look at the relationship between alcohol consumption and mortality rate (yes, not a
-very funny topic, but interesting nonetheless). The two variables are, respectively, alcohol and mortality
-(rather intuitive this time).</p>
-<p>Now, formulate the working (alternative) and the null hypothesis. Write them down.</p>
+<p>Let’s say we want to look at the relationship between alcohol consumption and mortality rate (yes, not a very funny topic, but interesting nonetheless). The two variables are, respectively, <code>ALCOHOL</code> and <code>SMR</code>.</p>
+<p>Now, formulate the working (alternative) and the null hypothesis.</p>
 <p><strong>H<span class="math inline">\(\pmb{_0}\)</span>:</strong></p>
 <p><strong>H<span class="math inline">\(\pmb{_1}\)</span>:</strong></p>
 <p>Which is your dependent variable?</p>
@@ -716,14 +714,20 @@ very funny topic, but interesting nonetheless). The two variables are, respectiv
 <h2>Visualisation<a href="additional-exercises.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s start with the visualisation of the relationship between the two variables. Use a scatterplot to visualise the relationship and add the regression line.</p>
 <p>You can use <code>ggplot</code>, but also the standard <code>plot()</code> function.</p>
-<p>Improve the graph by:</p>
+<p>Improve the initial graph by:</p>
 <ol style="list-style-type: decimal">
 <li>Adding a regression line.</li>
 <li>Adding up a relevant title, also possibly a subtitle.</li>
 <li>Adding axes labels and making them readable.</li>
 <li>Remove the grid in the background.</li>
 </ol>
-<p><img src="main_files/figure-html/unnamed-chunk-49-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>The result should be Figure <a href="additional-exercises.html#fig:alcsmr">1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:alcsmr"></span>
+<img src="main_files/figure-html/alcsmr-1.png" alt="\label{fig:alcsmr}Improved Graph" width="75%" />
+<p class="caption">
+Figure 1: Improved Graph
+</p>
+</div>
 <p>If you have done everything correctly, you should see that the dots are rather concentrated in the bottom left corner of the scatterplot with some outliers far away from the cloud of our data. It is not a big deal, but we might want to get rid of the outliers and this way improve our visualisation.</p>
 <p>There are several ways to do that, of course. But let’s say we want to transform our variables, excluding all values over a certain point. For instance, we want to exclude the values above 750 of our alcohol variable and above 500 for our mortality variable. How would you do that?</p>
 <div class="bulb">
@@ -734,7 +738,7 @@ very funny topic, but interesting nonetheless). The two variables are, respectiv
 </div>
 <div id="visualisation-2.0" class="section level2 unnumbered hasAnchor">
 <h2>Visualisation 2.0<a href="additional-exercises.html#visualisation-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now, visualise the relationship using the new variables. What can you see?</p>
+<p>Now, visualise the relationship using the reduced data frame. What can you see?</p>
 <p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code>geom_point()</code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see <a href="www.rdocumentation.org/packages/ggplot2/versions/3.4.0/topics/geom_point">R Documentation</a>).</p>
 <p>Also, you can draw a vertical and horizontal line corresponding to the mean of your variables using <code>geom_hline</code> and <code>geom_vline</code>. You can thus check if the regression line passes through the mean of X and Y. (see <a href="www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline">R Documentation</a>).</p>
 <div class="bulb">

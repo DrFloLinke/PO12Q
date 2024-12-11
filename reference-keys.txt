@@ -4,6 +4,7 @@ tab:regdata
 tab:regdata5
 tab:regdata7
 tab:simdcode
+fig:alcsmr
 tab:simreg
 tab:wdicode8
 tab:reg1
