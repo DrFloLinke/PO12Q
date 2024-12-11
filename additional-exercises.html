@@ -366,7 +366,328 @@ div.csl-indent {
 <li><code>ggplot2</code></li>
 <li><code>stargazer</code></li>
 </ol>
-<p>Set working directory and load the data file <a href="files/Week%207/simd.csv">simd.csv</a> into R. This is the “Scottish Index of Multiple Deprivation”. More details here: <a href="https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/" class="uri">https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/</a></p>
+<p>Set working directory and load the data file <a href="files/Week%207/simd.csv">simd.csv</a> into R. This is the <a href="https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/">“Scottish Index of Multiple Deprivation”</a>. Here is the codebook:</p>
+<table style="width:100%; color: black; margin-left: auto; margin-right: auto; color: black; font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;" class="table lightable-classic-2">
+<caption>
+<span id="tab:simdcode">Table 6: </span>Codebook for <code>simd</code> Data Set
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Label
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Data_Zone
+</td>
+<td style="text-align:left;">
+2011 Data Zone
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Intermediate_Zone
+</td>
+<td style="text-align:left;">
+2011 Intermediate Zone name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Council_area
+</td>
+<td style="text-align:left;">
+Council area name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Total_population
+</td>
+<td style="text-align:left;">
+2017 NRS small area population estimates
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Working_age_population
+</td>
+<td style="text-align:left;">
+2017 NRS small area population estimates and state pension age
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Income_rate
+</td>
+<td style="text-align:left;">
+Percentage of people who are income deprived
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Income_count
+</td>
+<td style="text-align:left;">
+Number of people who are income deprived
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Employment_rate
+</td>
+<td style="text-align:left;">
+Percentage of people who are employment deprived
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Employment_count
+</td>
+<td style="text-align:left;">
+Number of people who are employment deprived
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+CIF
+</td>
+<td style="text-align:left;">
+Comparative Illness Factor: standardised ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+ALCOHOL
+</td>
+<td style="text-align:left;">
+Hospital stays related to alcohol use: standardised ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+DRUG
+</td>
+<td style="text-align:left;">
+Hospital stays related to drug use: standardised ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+mortality
+</td>
+<td style="text-align:left;">
+Standardised mortality ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+DEPRESS
+</td>
+<td style="text-align:left;">
+Proportion of population being prescribed drugs for anxiety, depression or psychosis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+LBWT
+</td>
+<td style="text-align:left;">
+Proportion of live singleton births of low birth weight
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+EMERG
+</td>
+<td style="text-align:left;">
+Emergency stays in hospital: standardised ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Attendance
+</td>
+<td style="text-align:left;">
+School pupil attendance
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Attainment
+</td>
+<td style="text-align:left;">
+Attainment of school leavers
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+no_qualifications
+</td>
+<td style="text-align:left;">
+Working age people with no qualifications: standardised ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+not_participating
+</td>
+<td style="text-align:left;">
+Proportion of people aged 16-19 not participating in education, employment or training
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+University
+</td>
+<td style="text-align:left;">
+Proportion of 17-21 year olds entering university
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+drive_petrol
+</td>
+<td style="text-align:left;">
+Average drive time to a petrol station in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+drive_GP
+</td>
+<td style="text-align:left;">
+Average drive time to a GP surgery in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+drive_PO
+</td>
+<td style="text-align:left;">
+Average drive time to a post office in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+drive_primary
+</td>
+<td style="text-align:left;">
+Average drive time to a primary school in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+drive_retail
+</td>
+<td style="text-align:left;">
+Average drive time to a retail centre in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+drive_secondary
+</td>
+<td style="text-align:left;">
+Average drive time to a secondary school in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+PT_GP
+</td>
+<td style="text-align:left;">
+Public transport travel time to a GP surgery in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+PT_Post
+</td>
+<td style="text-align:left;">
+Public transport travel time to a post office in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+PT_retail
+</td>
+<td style="text-align:left;">
+Public transport travel time to a retail centre in minutes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+broadband
+</td>
+<td style="text-align:left;">
+Percentage of premises without access to superfast broadband (at least 30Mb/s download speed)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+crime_count
+</td>
+<td style="text-align:left;">
+Number of recorded crimes of violence, sexual offences, domestic housebreaking, vandalism, drugs offences, and common assault
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+crime_rate
+</td>
+<td style="text-align:left;">
+Recorded crimes of violence, sexual offences, domestic housebreaking, vandalism, drugs offences, and common assault per 10,000 people
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+overcrowded_count
+</td>
+<td style="text-align:left;">
+Number of people in households that are overcrowded
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+nocentralheat_count
+</td>
+<td style="text-align:left;">
+Number of people in households without central heating
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+overcrowded_rate
+</td>
+<td style="text-align:left;">
+Percentage of people in households that are overcrowded
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+nocentralheat_rate
+</td>
+<td style="text-align:left;">
+Percentage of people in households without central heating
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sim_rank
+</td>
+<td style="text-align:left;">
+Rank of data zones from most deprived (ranked 1) to least deprived (ranked 6,976)
+</td>
+</tr>
+</tbody>
+</table>
 <hr />
 </div>
 <div id="inspect-your-data" class="section level2 unnumbered hasAnchor">
@@ -436,28 +757,28 @@ very funny topic, but interesting nonetheless). The two variables are, respectiv
 <p>Now we can finally run a linear regression with mortality as the outcome variable and alcohol as the predictor using the <code>lm()</code> function. Store the results in an object called <code>model</code> and visualise the regression output using <code>summary()</code>. Use the reduced data set without outliers.</p>
 <pre><code>
 Call:
-lm(formula = mortality ~ alcohol, data = simred)
+lm(formula = SMR ~ ALCOHOL, data = simred)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--122.69  -22.52   -4.71   17.27  377.77 
+-146.54  -22.63   -4.72   16.73  387.27 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 78.155160   0.619648  126.13   &lt;2e-16 ***
-alcohol      0.208270   0.004476   46.53   &lt;2e-16 ***
+(Intercept) 76.733653   0.636021  120.65   &lt;2e-16 ***
+ALCOHOL      0.217635   0.004579   47.53   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 35.61 on 6956 degrees of freedom
-Multiple R-squared:  0.2374,    Adjusted R-squared:  0.2373 
-F-statistic:  2165 on 1 and 6956 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 36.13 on 6959 degrees of freedom
+Multiple R-squared:  0.2451,    Adjusted R-squared:  0.2449 
+F-statistic:  2259 on 1 and 6959 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="additional-exercises.html#cb32-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
 <span id="cb32-2"><a href="additional-exercises.html#cb32-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
-<span id="cb32-3"><a href="additional-exercises.html#cb32-3" tabindex="-1"></a>              Estimate  Std. Error   t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
-<span id="cb32-4"><a href="additional-exercises.html#cb32-4" tabindex="-1"></a>(Intercept) <span class="fl">78.1551599</span> <span class="fl">0.619648419</span> <span class="fl">126.12823</span>        <span class="dv">0</span></span>
-<span id="cb32-5"><a href="additional-exercises.html#cb32-5" tabindex="-1"></a>alcohol      <span class="fl">0.2082697</span> <span class="fl">0.004476011</span>  <span class="fl">46.53021</span>        <span class="dv">0</span></span></code></pre></div>
+<span id="cb32-3"><a href="additional-exercises.html#cb32-3" tabindex="-1"></a>              Estimate  Std. Error  t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
+<span id="cb32-4"><a href="additional-exercises.html#cb32-4" tabindex="-1"></a>(Intercept) <span class="fl">76.7336534</span> <span class="fl">0.636021422</span> <span class="fl">120.6463</span>        <span class="dv">0</span></span>
+<span id="cb32-5"><a href="additional-exercises.html#cb32-5" tabindex="-1"></a>ALCOHOL      <span class="fl">0.2176351</span> <span class="fl">0.004579103</span>  <span class="fl">47.5279</span>        <span class="dv">0</span></span></code></pre></div>
 <hr />
 </div>
 <div id="interpretation" class="section level2 unnumbered hasAnchor">
@@ -483,6 +804,120 @@ lectures.</li>
 <p>Should you use MS Word to write your essay and your essay is saved in your working directory, <strong>do not</strong> save the table document under the same name as your essay, as R will overwrite it and it will be gone forever.</p>
 </div>
 <p>You can improve the table in many ways. For example, you need to replace the variable names with the variable labels, You could add a name of the model and suppress unneeded statistics (see <a href="https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list" class="uri">https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list</a>).</p>
+<p>If you have done everything correctly, you should receive something similar to this:</p>
+ 
+ 
+<center>
+<table style="text-align:center">
+<caption>
+<strong><span id="tab:simreg"><span id="tab:simreg">Table 7: </span></span>Impact of Alcohol Abuse on Mortality in Scotland</strong>
+</caption>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Standardised Mortality Ratio
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Hospital Stays related to Alcohol Use
+</td>
+<td>
+0.218<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.005)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+76.734<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.636)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+6,961
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.245
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
+</td>
+</tr>
+</table>
+</center>
+<p> 
+ </p>
 <hr />
 </div>
 <div id="comparing-models" class="section level2 unnumbered hasAnchor">
