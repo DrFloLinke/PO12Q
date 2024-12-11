@@ -773,31 +773,31 @@ Residual standard error: 36.13 on 6959 degrees of freedom
 Multiple R-squared:  0.2451,    Adjusted R-squared:  0.2449 
 F-statistic:  2259 on 1 and 6959 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="additional-exercises.html#cb32-1" tabindex="-1"></a><span class="fu">summary</span>(model)[<span class="dv">4</span>]</span>
-<span id="cb32-2"><a href="additional-exercises.html#cb32-2" tabindex="-1"></a><span class="sc">$</span>coefficients</span>
-<span id="cb32-3"><a href="additional-exercises.html#cb32-3" tabindex="-1"></a>              Estimate  Std. Error  t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
-<span id="cb32-4"><a href="additional-exercises.html#cb32-4" tabindex="-1"></a>(Intercept) <span class="fl">76.7336534</span> <span class="fl">0.636021422</span> <span class="fl">120.6463</span>        <span class="dv">0</span></span>
-<span id="cb32-5"><a href="additional-exercises.html#cb32-5" tabindex="-1"></a>ALCOHOL      <span class="fl">0.2176351</span> <span class="fl">0.004579103</span>  <span class="fl">47.5279</span>        <span class="dv">0</span></span></code></pre></div>
+<pre><code>$coefficients
+              Estimate  Std. Error  t value Pr(&gt;|t|)
+(Intercept) 76.7336534 0.636021422 120.6463        0
+ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
+<div class="bulb">
+<p>As you go through the different numbers, take note which component of the regression output is associated with which number.</p>
+</div>
 <hr />
 </div>
 <div id="interpretation" class="section level2 unnumbered hasAnchor">
 <h2>Interpretation<a href="additional-exercises.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Interpret the results, starting with model evaluation.</p>
 <ol style="list-style-type: decimal">
-<li>Is the p-value of the F-statistics statistically significant? We will be discussing this in our following
-lectures.</li>
 <li>How much variation in the outcome variable does the model explain? What does this tell us about the model?</li>
-<li>What’s the value of the slope? What does it mean?</li>
-<li>What’s the value of the regression coefficient? How do we interpret it? Is it statistically significant? What does it mean in practice?</li>
+<li>Interpret the slope coefficient.</li>
+<li>Interpret the intercept? What does it mean in practice?</li>
 <li>Interpret the results (in plain language) referring to the hypothesis you formulated above.</li>
 </ol>
 <hr />
 </div>
 <div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
 <h2>Exporting the Results<a href="additional-exercises.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try and export the table.</p>
+<p>Just as with graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try and export the table.</p>
 <div class="bulb">
-<p>The function needs to contain, in order: the name of the R object where you stored the regression results, the option <span style="color:black"><code>header=F</code></span> to suppress the annoying immortalisation of the author, the option <span style="color:black"><code>type="html"</code></span>, and the option <span style="color:black"><code>out="documentname.doc"</code></span> which places a word document with that file name in your working directory.</p>
+<p>The <span style="color:black"><code>stargazer</code></span> function needs to contain, in order: the name of the R object where you stored the regression results, the option <span style="color:black"><code>header=F</code></span> to suppress the annoying immortalisation of the author, the option <span style="color:black"><code>type="html"</code></span>, and the option <span style="color:black"><code>out="documentname.doc"</code></span> which places a word document with that file name in your working directory.</p>
 </div>
 <div class="warning">
 <p>Should you use MS Word to write your essay and your essay is saved in your working directory, <strong>do not</strong> save the table document under the same name as your essay, as R will overwrite it and it will be gone forever.</p>
