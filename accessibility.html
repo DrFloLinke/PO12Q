@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Worksheet Week 9 | PO12Q: Seminar Companion</title>
-  <meta name="description" content="Worksheet Week 9 | PO12Q: Seminar Companion" />
+  <title>Accessibility | PO12Q: Seminar Companion</title>
+  <meta name="description" content="Accessibility | PO12Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Worksheet Week 9 | PO12Q: Seminar Companion" />
+  <meta property="og:title" content="Accessibility | PO12Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Worksheet Week 9 | PO12Q: Seminar Companion" />
+  <meta name="twitter:title" content="Accessibility | PO12Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="methods-methods-methods-6.html"/>
-<link rel="next" href="methods-methods-methods-7.html"/>
+<link rel="prev" href="companion-features.html"/>
+<link rel="next" href="methods-methods-methods.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -357,107 +357,21 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="worksheet-week-9" class="section level1 unnumbered hasAnchor">
-<h1>Worksheet Week 9<a href="worksheet-week-9.html#worksheet-week-9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="group-work-self-reflection" class="section level2 unnumbered hasAnchor">
-<h2>Group Work – Self-Reflection<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a><a href="worksheet-week-9.html#group-work-self-reflection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>How does the concept of the conditional expected value relate to the interpretation of coefficients in multiple regression?</li>
-<li>How do you select variables for a multiple regression model?</li>
-<li>Why do we apply non-linear transformations to variables?</li>
-<li>How do you interpret the effect of a logarithmized variable?</li>
-<li>Give an example for each of the variable transformations we discussed in the lecture.</li>
-</ol>
-<div class="stop">
-<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
-</div>
-<hr />
-</div>
-<div id="working-with-regression-analysis" class="section level2 unnumbered hasAnchor">
-<h2>Working with Regression Analysis<a href="worksheet-week-9.html#working-with-regression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will be using the “crime.csv” data available in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a> to analyse attitudes and experiences of crime in England and Wales. The data set contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents. Data are taken from <span class="citation">University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics (2019)</span>. For variable labels, please consult the <a href="files/Downloads/Week%209/Codebook%20Crime%20Data%20Set.pdf">Crime Data Code Book</a>.</p>
-<div id="data-prep-7" class="section level3 unnumbered hasAnchor">
-<h3>Data Prep<a href="worksheet-week-9.html#data-prep-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Each respondent was randomly assigned to a different module, indicated by <code>split</code> and only asked a subsection of the questions. The <code>antisocx</code> variable is part of module A and asks for a score from respondents on how much antisocial behaviour is in the neighbourhood.</p>
-<ol style="list-style-type: decimal">
-<li>Create a new data set for those who were chosen for the ‘A’ module. Call this <code>crime.a</code>.</li>
-</ol>
-</div>
-<div id="data-analysis" class="section level3 unnumbered hasAnchor">
-<h3>Data Analysis<a href="worksheet-week-9.html#data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li>Previous research has suggested men perceive more antisocial behaviour in rural areas than urban areas.
-<ol style="list-style-type: lower-alpha">
-<li>Create a linear model using only male respondents from <code>crime.a</code> with the dependent variable <code>antisocx</code> and the independent variable <code>rural2</code>. Do your findings support previous research?</li>
-<li>Test the same model using only women. How do the two models differ?</li>
-</ol></li>
-<li>The <code>wburgl</code> variable asks respondents how worried they are about being burgled with answers ranging from “Very worried” to “Not at all worried” along with “Not applicable” and “Don’t know.”</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Recode those with “Not applicable” or “Don’t know” as NAs.
-b.Using <code>agegrp7</code> and <code>wburgl</code> as continuous variables, test the hypothesis that older people are more worried about being burgled.</li>
-<li>Using a dummy variable test whether those over 65 have are more worried about burglary then those who are younger.</li>
-<li>Using dummies test whether any of the age groups differ significantly from the youngest age group.</li>
-<li>What does the intercept in each of the three models represent?</li>
-</ol>
-<hr />
-</div>
-</div>
-<div id="going-further" class="section level2 unnumbered hasAnchor">
-<h2>Going Further<a href="worksheet-week-9.html#going-further" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="bulb">
-<p>I have written these exercises so that you can practise in R a little more. These are a bt more demanding, however.If you skip this section, please make sure to do the exercises in the next section, as this taps into the variable transformations we explored in the lecture.</p>
-</div>
-<ol style="list-style-type: decimal">
-<li>There are five variables which ask how worried the respondent is about being the victim of various crimes:
-<ol style="list-style-type: lower-alpha">
-<li>Create an additive variable called <code>worry</code> from these variables so that a score of 0 indicates the respondent answered all “Not at all worried” and a score of 15 indicates the respondent answered all “Very worried.” (<em>Tip: Make sure to clean the variables for</em> <code>NAs</code>).</li>
-<li>What are the mode, mean and median for <code>worry</code>?</li>
-<li>Describe the variable <code>educat3</code>. How could it be modified to be used as a continuous variable?</li>
-<li>Using <code>educat3</code> as both a continuous and factor variable evaluate the statement “Worry about being a victim of crime is higher in those with lower education levels.”</li>
-<li>What are the <span class="math inline">\(R^2\)</span> values for the two models calculated? Which is higher? Does this make that model better than the other?</li>
-<li>Calculate <span class="math inline">\(97.5\%\)</span> confidence intervals for the coefficients for those with GCSEs and those with Degrees. What does this tell you?</li>
-</ol></li>
-</ol>
-<hr />
-</div>
-<div id="transformation-of-variables" class="section level2 unnumbered hasAnchor">
-<h2>Transformation of Variables<a href="worksheet-week-9.html#transformation-of-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This Section uses the <code>london_exercises</code> data set available in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a>. Data are taken from <span class="citation">London Data Store (2013)</span>. <a href="files/Downloads/Week%209/Codebook-London-Exercises.pdf">This document</a> provides a full codebook.</p>
-<ol style="list-style-type: decimal">
-<li>Unemployment rate, defined as the ratio of people in full time employment to population of working age is often said to be related to crime. Generate an unemployment rate variable for each of the wards.</li>
-<li>It is theorised that unemployment is a driving factor behind crime rates.
-<ol style="list-style-type: lower-alpha">
-<li>Plot a scatter graph with unemployment rate, crime rate, and the regression line that may be used to evaluate the theory. Describe the plot and the best fit line.</li>
-<li>Plot the graph again excluding wards with a crime rate greater than 500. Describe the plot and the best fit line.</li>
-<li>Plot another graph excluding wards with a crime rate of over 500 with the crime rate log transformed. Describe the plot and the best fit line.</li>
-<li>Build both models. Interpret both including the effect size. Which model fits the data better?</li>
-</ol></li>
-</ol>
-<hr />
-</div>
-<div id="solutions-7" class="section level2 unnumbered hasAnchor">
-<h2>Solutions<a href="worksheet-week-9.html#solutions-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a>.</p>
+<div id="accessibility" class="section level1 unnumbered hasAnchor">
+<h1>Accessibility<a href="accessibility.html#accessibility" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>For those of you who prefer a dark background, like me, you can select this option from the menu at the top of the page. Click the “A” symbol, and then you can choose between “white”, “sepia”, or “night”.</p>
 
-</div>
 </div>
 
 
 
-<div class="footnotes">
-<hr />
-<ol start="13">
-<li id="fn13"><p>All exercises are a reproduction from <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-9.html#fnref13" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="methods-methods-methods-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods-methods-methods-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="companion-features.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods-methods-methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
