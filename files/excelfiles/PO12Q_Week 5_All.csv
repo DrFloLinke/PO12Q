@@ -1,0 +1,8 @@
+"term","package","description","title"
+"ifelse","base","Return a or b depending on the value of test","All Functions of Week 5"
+"setwd","base","Set Working Directory",""
+"library","base","Load an R package",""
+"read_dta","haven","Read a .dta file (Stata data)",""
+"attach","base","Attach Set of R Objects to Search Path",""
+"lm","base","Fit a linear model",""
+"summary","base","Obtain summary statistics or detailed regression output",""

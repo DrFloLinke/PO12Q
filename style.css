@@ -213,6 +213,22 @@ img {
   border-radius: 12px;
 }
 
+.baser {
+  padding: 1em;
+  background: #D8CFDD;
+  color: #3C1053;
+  border: 3px solid #D8CFDD;
+  border-radius: 12px;
+  margin-bottom: 1em;
+}
+
+.flashcard {
+  padding: 1em;
+  background: #D8CFDD;
+  color: #3C1053;
+  border: 1px solid #775887;
+}
+
 @font-face {
   font-family: "Computer Modern";
   src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');

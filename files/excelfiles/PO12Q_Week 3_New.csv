@@ -1,0 +1,7 @@
+"term","package","description","title"
+"read_excel","readxl","Read an Excel file","New Functions in Week 3"
+"ggplot","GGPLOT2","Create a ggplot graph",""
+"aes","GGPLOT2","Construct aesthetic mapping of a ggplot graph",""
+"geom_point","GGPLOT2","Generates a scatter plot",""
+"geom_smooth","GGPLOT2","Generates a smoothed conditional means curve / line",""
+"theme_classic","GGPLOT2","A minimalistic theme with no gridlines",""

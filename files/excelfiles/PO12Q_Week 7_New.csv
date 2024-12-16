@@ -1,0 +1,5 @@
+"term","package","description","title"
+"as.numeric","base","Coerce a vector to numeric","New Functions in Week 7"
+"as.character","base","Coerce a vector to character",""
+"scale_x_continuous","GGPLOT2","Customise continuous x axis",""
+"scale_y_continuous","GGPLOT2","Customise continuous y axis",""

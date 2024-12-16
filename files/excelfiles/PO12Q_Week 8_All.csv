@@ -1,0 +1,8 @@
+"term","package","description","title"
+"setwd","base","Set Working Directory","All Functions of Week 8"
+"library","base","Load an R package",""
+"read_dta","haven","Read a .dta file (Stata data)",""
+"lm","base","Fit a linear model",""
+"summary","base","Obtain summary statistics or detailed regression output",""
+"stargazer","stargazer","Create a regression output table",""
+"c","base","Combine values/vectors into a vector",""
