@@ -400,7 +400,7 @@ div.csl-indent {
 <h3>Data Preparation<a href="worksheet-week-2.html#data-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>We are working with the World Development Indicators again. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
-<li>To save you rooting in your files, here is the codebook (you are welcome):</li>
+<li>To save you clicking back to last week, here is the code book (you are welcome):</li>
 </ul>
 <table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
@@ -653,7 +653,7 @@ Combined Polity V score
 </table>
 <ul>
 <li><p>Load the data set</p></li>
-<li><p>The Polity V Score (variable <code>polity5</code>) codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy). With the <code>tidyvserse</code>, create a new variable called <code>democracy</code> which codes all countries with a Polity V score lower than +1 as dictatorships, and all countries with a Polity V score from +1 to +10 as democracies.</p></li>
+<li><p>The Polity V Score (variable <code>polity5</code>) codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy). With the <code>tidyvserse</code>, create a new variable called <code>politybin</code> which codes all countries with a Polity V score lower than +1 as dictatorships, and all countries with a Polity V score from +1 to +10 as democracies.</p></li>
 <li><p>Apply the same procedure to <code>gdp</code>, cutting it at its median into two levels, <code>Developing</code> and <code>Developed</code>, creating a new variable called <code>gdpcat</code>.</p></li>
 <li><p>Last up is the variable <code>gdpgrowth</code>. Create a new variable called <code>growth</code> which divides countries into “slow-growing” and “fast-growing” countries, using the mean as the cut-off point.</p></li>
 </ul>
@@ -699,7 +699,8 @@ Combined Polity V score
 <div id="exercise-two-sample-test-for-a-proportion" class="section level3 unnumbered hasAnchor">
 <h3>Exercise – Two-Sample Test for a Proportion<a href="worksheet-week-2.html#exercise-two-sample-test-for-a-proportion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>Is a higher proportion of fast-growing countries democratic than slow-growing countries? Use a 95% confidence level.</li>
+<li><p>Is a higher proportion of fast-growing countries democratic than slow-growing countries? Use a 95% confidence level.</p></li>
+<li><p>Now repeat the exercise, but this time with the <code>democracy</code> variable. Do the results differ? Why? Why not?</p></li>
 </ul>
 </div>
 <div id="guided-example-two-sample-test-for-a-mean" class="section level3 unnumbered hasAnchor">
@@ -771,7 +772,7 @@ Combined Polity V score
 <li>Work through <a href="https://drfloreiche.github.io/PO12Q/flashcards-1.html">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
 <li>Find an example for each NEW function and apply it in R to ensure it works</li>
 <li>Complete the <a href="https://moodle.warwick.ac.uk/mod/quiz/view.php?id=2436018">Week 2 Moodle Quiz</a></li>
-<li>Complete Exercise 4.55 in <span class="citation">Agresti (2018)</span></li>
+<li>Complete Exercise 4.55 in <span class="citation">Agresti (2018, p. 112)</span></li>
 <li>Work through the Section <a href="https://drfloreiche.github.io/PO12Q/introduction-to-matrices.html">“Introduction to Matrices”</a>.</li>
 </ul>
 <hr />

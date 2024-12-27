@@ -396,8 +396,7 @@ div.csl-indent {
 </div>
 <div id="calculations-by-hand" class="section level2 unnumbered hasAnchor">
 <h2>Calculations by Hand<a href="worksheet-week-1.html#calculations-by-hand" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>I have given you an example of a cross-tabulation in the lecture.
-Consider the following Table:</p>
+<p>I have given you an example of a cross-tabulation in the lecture. Consider the following Table:</p>
 <p><img src="main_files/figure-html/unnamed-chunk-3-1.png" width="396" /></p>
 <p>Calculate the Expected Values and fill in the following table:</p>
 <p><img src="main_files/figure-html/unnamed-chunk-4-3.png" width="396" /></p>
@@ -421,7 +420,8 @@ Consider the following Table:</p>
 <div id="data-set" class="section level3 unnumbered hasAnchor">
 <h3>Data Set<a href="worksheet-week-1.html#data-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>We are working with the World Development Indicators this week. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>. For more information on the democracy coding by Boix et al. please download the <a href="files/Week%201/Boix_PolRegimes.pdf">corresponding paper</a>.</li>
+<li>We are working with the World Development Indicators this week. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
+<li>For more information on the democracy coding by Boix et al. please download and read the <a href="files/Week%201/Boix_PolRegimes.pdf">corresponding paper</a>.</li>
 <li>Download the data <a href="files/Week%201/WDI_PO12Q.csv">WDI_PO12Q.csv</a> and place it in a new working directory for this week</li>
 <li>The variables we will be working with today are as follows:</li>
 </ul>
@@ -686,7 +686,7 @@ Combined Polity V score
 <div id="guided-example" class="section level3 unnumbered hasAnchor">
 <h3>Guided Example<a href="worksheet-week-1.html#guided-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>We are now going to use the WDI, and produce a crosstab of Life expectancy at birth, total (years) by GDP per capita (constant 2010 US$), using the variables <code>lifeexp</code> and <code>gdppc</code></li>
+<li>We are now going to use the WDI, and produce a crosstab of life expectancy at birth, total (years) by GDP per capita (constant 2010 US$), using the variables <code>lifeexp</code> and <code>gdppc</code></li>
 <li>We first need to recode both variables into factor variables, as these are continuous.</li>
 <li>First up is <code>lifeexp</code></li>
 <li>Recoding: as a refresher from PO11Q, we are specifying the new data frame as the old one, then we add a pipe, and call the function <code>mutate</code>. Therein, we create a new variable called <code>lifecat</code>, which will be an ordered factor, cutting the variable <code>life</code> at the stated intervals, and labeling these levels accordingly.</li>
