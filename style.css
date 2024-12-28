@@ -75,37 +75,37 @@ table { caption-side: bottom }
 /*____Change fonts to cmss___*/
 
 @font-face {
-  font-family: "DMSans-Light";
-  src: url('~/Dropbox/PO12Q/files/Font/DMSans-Light.ttf');
+  font-family: "Montserrat-Light";
+  src: url('~/Dropbox/PO12Q/files/Font/Montserrat-Light.ttf');
 }
 
 h1 {
-  font-family: "DMSans-Light";
+  font-family: "Montserrat-Light";
   font-size:   48px;
   font-weight: normal;
 }
 
 
 h2,h3,h4 {
-  font-family: "DMSans-Light";
+  font-family: "Montserrat-Light";
   font-size:   24px;
   font-weight: normal;
 }
 
 .book.font-family-0 {
-  font-family: "DMSans-Light";
+  font-family: "Montserrat-Light";
 }
 .book.font-family-1 {
-  font-family: "DMSans-Light";
+  font-family: "Montserrat-Light";
 }
 
 .summary{
-font-family: "DMSans-Light";
+font-family: "Montserrat-Light";
 }
 
 
 li.appendix span, li.part span { /* for TOC part names */
-  font-family: "DMSans-Light";
+  font-family: "Montserrat-Light";
   margin-top: 1.5em;
   opacity: 1 !important;
   text-transform: uppercase;
