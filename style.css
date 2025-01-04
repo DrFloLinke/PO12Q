@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
 
 .book .book-summary {
   background: #2A415F!important;
@@ -75,8 +76,8 @@ pre {
 table { caption-side: bottom }
 
 /*____Change fonts to Inconsolata___*/
-span:not(.math.inline) {
-    font-family: "Inconsolata", serif;
+@font-face {
+  font-family: "Cantarell";
 }
 
 
@@ -113,9 +114,6 @@ li.appendix span, li.part span { /* for TOC part names */
   text-transform: uppercase;
 }
 
-span.citation {
-  font-family: "Cantarell", serif !important;
-}
 
 
 /*____Code Chunks____*/
