@@ -674,6 +674,11 @@ Combined Polity V score
 <li>We now take the number of observations which are classed as democracies per development status.</li>
 <li>We also calculate the row totals, as this gives us the total number of developing and developed countries, respectively.</li>
 <li>Then we are ready to use the <code>prop.test()</code> command, by first specifying the number of countries which are democracies, then the total number of developing and developed countries, then advising R that a correction for small sample sizes is not necessary in our case.</li>
+</ul>
+<div class="bulb">
+<p>R uses a <span class="math inline">\(\chi^2\)</span>-test for this, as we are essentially dealing with a cross-tabulation. When you do this by hand, please use z-scores and the normal distribution.</p>
+</div>
+<ul>
 <li>Our hypothesis is directional, because we expect a higher proportion of developed countries to be democratic than developing countries. The status <code>Developing</code> is the lower category, and we thus expect this proportion to be smaller, or “less”. We add this to the test function as option <code>alternative = "less"</code>.</li>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="worksheet-week-2.html#cb14-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">36</span>,<span class="dv">71</span>),<span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">90</span>), <span class="at">correct=</span>F, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
@@ -701,6 +706,7 @@ Combined Polity V score
 <ul>
 <li><p>Is a higher proportion of fast-growing countries democratic than slow-growing countries? Use a 95% confidence level.</p></li>
 <li><p>Now repeat the exercise, but this time with the <code>democracy</code> variable. Do the results differ? Why? Why not?</p></li>
+<li><p>Calculate the last two-sample test by hand.</p></li>
 </ul>
 </div>
 <div id="guided-example-two-sample-test-for-a-mean" class="section level3 unnumbered hasAnchor">
