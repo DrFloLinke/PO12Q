@@ -709,12 +709,14 @@ Combined Polity V score
 <li>Now we are interested whether people live longer in developed countries than in developing countries?</li>
 <li>For this, we use the variable <code>life</code></li>
 <li>Once again, state the Null- and the Alternative Hypothesis</li>
-<li>The t-test assumes an equal variance in both samples, and so we need to test whether this is the case. We will do this with the so-called Levene Test, where:
-<ul>
-<li>H<span class="math inline">\(_{0}\)</span>: The variance among the groups is equal.</li>
-<li>H<span class="math inline">\(_{\text{A}}\)</span>: The variance among the groups is not equal.</li>
-</ul></li>
+<li>The first step in a t-test for two means is to find out whether the variance is equal in both samples.</li>
 </ul>
+<div class="puzzle">
+<p>Explain why this is required in a two-sample test for a mean, and why we did not have to do this in a two-sample test for a proportion.</p>
+</div>
+<p>To test for equal variances we use the Levene Test, where:
+- H<span class="math inline">\(_{0}\)</span>: The variance among the groups is equal.
+- H<span class="math inline">\(_{\text{A}}\)</span>: The variance among the groups is not equal.</p>
 <div class="bulb">
 <p>This is essentially another two-sample test in which we ascertain whether the difference between the variances of the two groups is different from zero (H<span class="math inline">\(_{0}\)</span>)</p>
 </div>
