@@ -683,17 +683,16 @@ Combined Polity V score
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="worksheet-week-2.html#cb14-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">c</span>(<span class="dv">36</span>,<span class="dv">71</span>),<span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">90</span>), <span class="at">correct=</span>F, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
 <span id="cb14-2"><a href="worksheet-week-2.html#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="worksheet-week-2.html#cb14-3" tabindex="-1"></a>    <span class="dv">2</span><span class="sc">-</span>sample test <span class="cf">for</span> equality of proportions without</span>
-<span id="cb14-4"><a href="worksheet-week-2.html#cb14-4" tabindex="-1"></a>    continuity correction</span>
-<span id="cb14-5"><a href="worksheet-week-2.html#cb14-5" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="worksheet-week-2.html#cb14-6" tabindex="-1"></a>data<span class="sc">:</span>  <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">71</span>) out of <span class="fu">c</span>(<span class="dv">57</span>, <span class="dv">90</span>)</span>
-<span id="cb14-7"><a href="worksheet-week-2.html#cb14-7" tabindex="-1"></a>X<span class="sc">-</span>squared <span class="ot">=</span> <span class="fl">4.3602</span>, df <span class="ot">=</span> <span class="dv">1</span>, p<span class="sc">-</span>value <span class="ot">=</span> <span class="fl">0.01839</span></span>
-<span id="cb14-8"><a href="worksheet-week-2.html#cb14-8" tabindex="-1"></a>alternative hypothesis<span class="sc">:</span> less</span>
-<span id="cb14-9"><a href="worksheet-week-2.html#cb14-9" tabindex="-1"></a><span class="dv">95</span> percent confidence interval<span class="sc">:</span></span>
-<span id="cb14-10"><a href="worksheet-week-2.html#cb14-10" tabindex="-1"></a> <span class="sc">-</span><span class="fl">1.00000000</span> <span class="sc">-</span><span class="fl">0.03061662</span></span>
-<span id="cb14-11"><a href="worksheet-week-2.html#cb14-11" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
-<span id="cb14-12"><a href="worksheet-week-2.html#cb14-12" tabindex="-1"></a>   prop <span class="dv">1</span>    prop <span class="dv">2</span> </span>
-<span id="cb14-13"><a href="worksheet-week-2.html#cb14-13" tabindex="-1"></a><span class="fl">0.6315789</span> <span class="fl">0.7888889</span> </span></code></pre></div>
+<span id="cb14-3"><a href="worksheet-week-2.html#cb14-3" tabindex="-1"></a>    <span class="dv">2</span><span class="sc">-</span>sample test <span class="cf">for</span> equality of proportions without continuity correction</span>
+<span id="cb14-4"><a href="worksheet-week-2.html#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="worksheet-week-2.html#cb14-5" tabindex="-1"></a>data<span class="sc">:</span>  <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">71</span>) out of <span class="fu">c</span>(<span class="dv">57</span>, <span class="dv">90</span>)</span>
+<span id="cb14-6"><a href="worksheet-week-2.html#cb14-6" tabindex="-1"></a>X<span class="sc">-</span>squared <span class="ot">=</span> <span class="fl">4.3602</span>, df <span class="ot">=</span> <span class="dv">1</span>, p<span class="sc">-</span>value <span class="ot">=</span> <span class="fl">0.01839</span></span>
+<span id="cb14-7"><a href="worksheet-week-2.html#cb14-7" tabindex="-1"></a>alternative hypothesis<span class="sc">:</span> less</span>
+<span id="cb14-8"><a href="worksheet-week-2.html#cb14-8" tabindex="-1"></a><span class="dv">95</span> percent confidence interval<span class="sc">:</span></span>
+<span id="cb14-9"><a href="worksheet-week-2.html#cb14-9" tabindex="-1"></a> <span class="sc">-</span><span class="fl">1.00000000</span> <span class="sc">-</span><span class="fl">0.03061662</span></span>
+<span id="cb14-10"><a href="worksheet-week-2.html#cb14-10" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
+<span id="cb14-11"><a href="worksheet-week-2.html#cb14-11" tabindex="-1"></a>   prop <span class="dv">1</span>    prop <span class="dv">2</span> </span>
+<span id="cb14-12"><a href="worksheet-week-2.html#cb14-12" tabindex="-1"></a><span class="fl">0.6315789</span> <span class="fl">0.7888889</span> </span></code></pre></div>
 <ul>
 <li>Which proportion of developing and developed countries are democratic?</li>
 <li>Do we verify or falsify our hypothesis at a 95% confidence level?</li>
@@ -746,18 +745,18 @@ Combined Polity V score
 <span id="cb16-8"><a href="worksheet-week-2.html#cb16-8" tabindex="-1"></a><span class="st">---</span></span>
 <span id="cb16-9"><a href="worksheet-week-2.html#cb16-9" tabindex="-1"></a><span class="st">Signif. codes:  0 &#39;</span><span class="sc">**</span><span class="er">*</span><span class="st">&#39; 0.001 &#39;</span><span class="sc">**</span><span class="st">&#39; 0.01 &#39;</span><span class="sc">*</span><span class="st">&#39; 0.05 &#39;</span>.<span class="st">&#39; 0.1 &#39;</span> <span class="st">&#39; 1</span></span></code></pre></div>
 <ul>
-<li><p>The result is insignificant, and we therefore accept the null hypothesis. This means that the variance in the two samples is equal.</p></li>
+<li><p>The result is significant, and we therefore reject the null hypothesis. This means that the variance in the two samples is not equal.</p></li>
 <li><p>Now we can perform the t-test. We once again specify <code>alternative="less"</code> as an option, due to the same reasoning as before.</p></li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="worksheet-week-2.html#cb17-1" tabindex="-1"></a><span class="fu">t.test</span>(lifeexp <span class="sc">~</span> gdpcat, <span class="at">data=</span>wdi, <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="at">alternative=</span><span class="st">&quot;less&quot;</span>)</span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="worksheet-week-2.html#cb17-1" tabindex="-1"></a><span class="fu">t.test</span>(lifeexp <span class="sc">~</span> gdpcat, <span class="at">data=</span>wdi, <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="at">alternative=</span><span class="st">&quot;less&quot;</span>)</span>
 <span id="cb17-2"><a href="worksheet-week-2.html#cb17-2" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="worksheet-week-2.html#cb17-3" tabindex="-1"></a>    Two Sample t<span class="sc">-</span>test</span>
+<span id="cb17-3"><a href="worksheet-week-2.html#cb17-3" tabindex="-1"></a>    Welch Two Sample t<span class="sc">-</span>test</span>
 <span id="cb17-4"><a href="worksheet-week-2.html#cb17-4" tabindex="-1"></a></span>
 <span id="cb17-5"><a href="worksheet-week-2.html#cb17-5" tabindex="-1"></a>data<span class="sc">:</span>  lifeexp by gdpcat</span>
-<span id="cb17-6"><a href="worksheet-week-2.html#cb17-6" tabindex="-1"></a>t <span class="ot">=</span> <span class="sc">-</span><span class="fl">10.74</span>, df <span class="ot">=</span> <span class="dv">167</span>, p<span class="sc">-</span>value <span class="sc">&lt;</span> <span class="fl">2.2e-16</span></span>
+<span id="cb17-6"><a href="worksheet-week-2.html#cb17-6" tabindex="-1"></a>t <span class="ot">=</span> <span class="sc">-</span><span class="fl">10.83</span>, df <span class="ot">=</span> <span class="fl">159.03</span>, p<span class="sc">-</span>value <span class="sc">&lt;</span> <span class="fl">2.2e-16</span></span>
 <span id="cb17-7"><a href="worksheet-week-2.html#cb17-7" tabindex="-1"></a>alternative hypothesis<span class="sc">:</span> true difference <span class="cf">in</span> means between group Developing and group Developed is less than <span class="dv">0</span></span>
 <span id="cb17-8"><a href="worksheet-week-2.html#cb17-8" tabindex="-1"></a><span class="dv">95</span> percent confidence interval<span class="sc">:</span></span>
-<span id="cb17-9"><a href="worksheet-week-2.html#cb17-9" tabindex="-1"></a>      <span class="sc">-</span><span class="cn">Inf</span> <span class="sc">-</span><span class="fl">8.465421</span></span>
+<span id="cb17-9"><a href="worksheet-week-2.html#cb17-9" tabindex="-1"></a>      <span class="sc">-</span><span class="cn">Inf</span> <span class="sc">-</span><span class="fl">8.477836</span></span>
 <span id="cb17-10"><a href="worksheet-week-2.html#cb17-10" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
 <span id="cb17-11"><a href="worksheet-week-2.html#cb17-11" tabindex="-1"></a>mean <span class="cf">in</span> group Developing  mean <span class="cf">in</span> group Developed </span>
 <span id="cb17-12"><a href="worksheet-week-2.html#cb17-12" tabindex="-1"></a>                <span class="fl">66.80181</span>                 <span class="fl">76.80833</span> </span></code></pre></div>
