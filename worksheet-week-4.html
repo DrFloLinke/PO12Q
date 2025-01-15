@@ -384,9 +384,9 @@ div.csl-indent {
 <h2>Self-Assessment Questions<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a><a href="worksheet-week-4.html#self-assessment-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>How does OLS fit the regression line?</li>
-<li>Why do we have to square the residuals for OLS?</li>
-<li>What are the advantages of working with matrices in regression analysis?</li>
+<li>Why do we have to square the residuals for the method of OLS?</li>
 <li>Explain the concept of an identity matrix.</li>
+<li>Consider the vector of error terms <span class="math inline">\(\epsilon\)</span> (an n <span class="math inline">\(\times\)</span> 1 matrix). How do you write <span class="math inline">\(\sum \epsilon^2\)</span> in matrix notation?</li>
 </ol>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
@@ -543,11 +543,11 @@ income (y)
 <div id="regression-in-r" class="section level2 unnumbered hasAnchor">
 <h2>Regression in R<a href="worksheet-week-4.html#regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>Load the data set from Excel.</li>
+<li>Load the income data set <a href="files/Week%204/PO12Q_4.xlsx">PO12Q_4.xlsx</a></li>
 </ol>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="worksheet-week-4.html#cb20-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb20-2"><a href="worksheet-week-4.html#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="worksheet-week-4.html#cb20-3" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;files/Week 4/PO12Q_4.xlsx&quot;</span>)</span></code></pre></div>
+<span id="cb20-3"><a href="worksheet-week-4.html#cb20-3" tabindex="-1"></a>incomedata <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;PO12Q_4.xlsx&quot;</span>)</span></code></pre></div>
 <div class="bulb">
 <p>You can also enter the values of a table manually using the <span style="color:black"><code>matrix()</code></span> function as follows:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="worksheet-week-4.html#cb21-1" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">19</span>,<span class="dv">56</span>,<span class="dv">45</span>,<span class="dv">37</span>,<span class="dv">23</span>,<span class="dv">32</span>,<span class="dv">65</span>,<span class="dv">43</span>,<span class="dv">48</span>,</span>
