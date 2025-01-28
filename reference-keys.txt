@@ -1,7 +1,10 @@
 tab:wdicode1
 tab:wdicode2
+tab:glossary3
 tab:regdata
+tab:glossary4
 tab:regdata5
+tab:glossary5
 tab:regdata7
 tab:simdcode
 fig:alcsmr
@@ -12,3 +15,4 @@ tab:reg2
 tab:reg3
 tab:reg4
 tab:londoncode10
+tab:glossaryfull
