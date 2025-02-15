@@ -731,7 +731,10 @@ Rank of data zones from most deprived (ranked 1) to least deprived (ranked 6,976
 </div>
 <div id="preliminary-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Preliminary Analysis<a href="additional-exercises.html#preliminary-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now that you have a preliminary idea of the structure of the dataset, you can select two variables and test a possible relationship. The topic today is bivariate linear regression analysis, so remember that the outcome variable needs to be continuous.</p>
+<p>Now that you have a preliminary idea of the structure of the dataset, you can select two variables and test a possible relationship.</p>
+<div class="bulb">
+<p>Remember that the outcome variable needs to be continuous.</p>
+</div>
 <p>Let’s say we want to look at the relationship between alcohol consumption and mortality rate (yes, not a very funny topic, but interesting nonetheless). The two variables are, respectively, <code>ALCOHOL</code> and <code>SMR</code>.</p>
 <p>Now, formulate the working (alternative) and the null hypothesis.</p>
 <p><strong>H<span class="math inline">\(\pmb{_0}\)</span>:</strong></p>
@@ -750,7 +753,7 @@ Rank of data zones from most deprived (ranked 1) to least deprived (ranked 6,976
 <li>Adding a regression line.</li>
 <li>Adding up a relevant title, also possibly a subtitle.</li>
 <li>Adding axes labels and making them readable.</li>
-<li>Remove the grid in the background.</li>
+<li>Removing the grid in the background.</li>
 </ol>
 <p>The result should be Figure <a href="additional-exercises.html#fig:alcsmr">1</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:alcsmr"></span>
@@ -760,7 +763,7 @@ Figure 1: Improved Graph
 </p>
 </div>
 <p>If you have done everything correctly, you should see that the dots are rather concentrated in the bottom left corner of the scatterplot with some outliers far away from the cloud of our data. It is not a big deal, but we might want to get rid of the outliers and this way improve our visualisation.</p>
-<p>There are several ways to do that, of course. But let’s say we want to transform our variables, excluding all values over a certain point. For instance, we want to exclude the values above 750 of our alcohol variable and above 500 for our mortality variable. How would you do that?</p>
+<p>There are several ways to do that, of course. But let’s say we want to transform our variables, excluding all values over a certain point. For example, we want to exclude the values above 750 of our alcohol variable and above 500 for our mortality variable.</p>
 <div class="bulb">
 <p>There are – of course – several solutions. One could be, to create a new datset, subsetting the original. Another solution could be to create a new variable telling R to transform all the values above our treshold in
 <span style="color:black"><code>NA</code></span>. Try to find an apply the appropriate code. Use Google if necessary, it helps a lot.</p>
@@ -773,7 +776,7 @@ Figure 1: Improved Graph
 <p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code>geom_point()</code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see <a href="www.rdocumentation.org/packages/ggplot2/versions/3.4.0/topics/geom_point">R Documentation</a>).</p>
 <p>Also, you can draw a vertical and horizontal line corresponding to the mean of your variables using <code>geom_hline</code> and <code>geom_vline</code>. You can thus check if the regression line passes through the mean of X and Y. (see <a href="www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline">R Documentation</a>).</p>
 <div class="bulb">
-<p>Remember that Google is your best friend when you learn to code. And after that as well. No one actually remembers all the functions and all their argument. The secret is to know how to google the things you need.</p>
+<p>Remember that Google and ChatGPT are your best friends when you learn to code. And after that as well - just not in exams. No one actually remembers all the functions and all their argument. The secret is to know how to google the things you need.</p>
 </div>
 <hr />
 </div>
@@ -825,12 +828,13 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
 <li>Interpret the slope coefficient.</li>
 <li>Interpret the intercept? What does it mean in practice?</li>
 <li>Interpret the results (in plain language) referring to the hypothesis you formulated above.</li>
+<li>What is the answer to our research question?</li>
 </ol>
 <hr />
 </div>
 <div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
 <h2>Exporting the Results<a href="additional-exercises.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Just as with graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try and export the table.</p>
+<p>Just as with graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try to export the table.</p>
 <div class="bulb">
 <p>The <span style="color:black"><code>stargazer</code></span> function needs to contain, in order: the name of the R object where you stored the regression results, the option <span style="color:black"><code>header=F</code></span> to suppress the annoying immortalisation of the author, the option <span style="color:black"><code>type="html"</code></span>, and the option <span style="color:black"><code>out="documentname.doc"</code></span> which places a word document with that file name in your working directory.</p>
 </div>
