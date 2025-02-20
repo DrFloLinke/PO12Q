@@ -396,8 +396,230 @@ div.csl-indent {
 <li>How do you select variables for a multiple regression model?</li>
 <li>Why do we apply non-linear transformations to variables?</li>
 <li>How do you interpret the effect of a logarithmized variable?</li>
-<li>Give an example for each of the variable transformations we discussed in the lecture.</li>
+<li>Using data from London wards <span class="citation">(London Data Store, 2013)</span> the regression models in Table <a href="worksheet-week-9.html#tab:reg91">18</a> explain voter turnout in the 2012 majoral elections.
+<ol style="list-style-type: lower-alpha">
+<li>interpret the intercept in Model 1</li>
+<li>interpret the slope coefficient in Model 1</li>
+<li>interpret the slope coefficients in Model 3</li>
+<li>explain why the size effect of the slope coefficients in Models 1 and 2 is so different</li>
+<li>interpret the model fit measure in Model 3</li>
+</ol></li>
 </ol>
+ 
+<center>
+<table style="text-align:center">
+<caption>
+<strong><span id="tab:reg91"><span id="tab:reg91">Table 18: </span></span>Regression Models 1</strong>
+</caption>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+Turnout in 2012 Majoral Elections
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Mean age of population
+</td>
+<td>
+0.740<sup>***</sup>
+</td>
+<td>
+</td>
+<td>
+0.724<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.063)
+</td>
+<td>
+</td>
+<td>
+(0.064)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Crimes committed per 1,000 residents
+</td>
+<td>
+</td>
+<td>
+-0.009<sup>***</sup>
+</td>
+<td>
+-0.005<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.003)
+</td>
+<td>
+(0.003)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+7.555<sup>***</sup>
+</td>
+<td>
+34.900<sup>***</sup>
+</td>
+<td>
+8.536<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(2.284)
+</td>
+<td>
+(0.319)
+</td>
+<td>
+(2.340)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+625
+</td>
+<td>
+625
+</td>
+<td>
+625
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.180
+</td>
+<td>
+0.015
+</td>
+<td>
+0.184
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.179
+</td>
+<td>
+0.014
+</td>
+<td>
+0.182
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
+</td>
+</tr>
+</table>
+</center>
+<p> </p>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
@@ -405,7 +627,7 @@ div.csl-indent {
 </div>
 <div id="working-with-regression-analysis" class="section level2 unnumbered hasAnchor">
 <h2>Working with Regression Analysis<a href="worksheet-week-9.html#working-with-regression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will be using the “crime.csv” data available in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a> to analyse attitudes and experiences of crime in England and Wales. The data set contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents. Data are taken from <span class="citation">University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics (2019)</span>. For variable labels, please consult the <a href="files/Downloads/Week%209/Codebook%20Crime%20Data%20Set.pdf">Crime Data Code Book</a>.</p>
+<p>We will be using the “crime.csv” data available in the <a href="https://drfloreiche.github.io/PO12Q/downloads.html">Downloads Section</a> to analyse attitudes and experiences of crime in England and Wales. The data set contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents <span class="citation">(University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics, 2019)</span>. For variable labels, please consult the <a href="files/Downloads/Week%209/Codebook%20Crime%20Data%20Set.pdf">Crime Data Code Book</a>.</p>
 <div id="data-prep-7" class="section level3 unnumbered hasAnchor">
 <h3>Data Prep<a href="worksheet-week-9.html#data-prep-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Each respondent was randomly assigned to a different module, indicated by <code>split</code> and only asked a subsection of the questions. The <code>antisocx</code> variable is part of module A and asks for a score from respondents on how much antisocial behaviour is in the neighbourhood.</p>
@@ -436,7 +658,7 @@ b.Using <code>agegrp7</code> and <code>wburgl</code> as continuous variables, te
 <div id="going-further" class="section level2 unnumbered hasAnchor">
 <h2>Going Further<a href="worksheet-week-9.html#going-further" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="bulb">
-<p>I have written these exercises so that you can practise in R a little more. These are a bt more demanding, however.If you skip this section, please make sure to do the exercises in the next section, as this taps into the variable transformations we explored in the lecture.</p>
+<p>I have written these exercises so that you can practice in R a little more. These are a bit more demanding, however. If you skip this section, please make sure to do the exercises in the next section, as this taps into the variable transformations we explored in the lecture.</p>
 </div>
 <ol style="list-style-type: decimal">
 <li>There are five variables which ask how worried the respondent is about being the victim of various crimes:
