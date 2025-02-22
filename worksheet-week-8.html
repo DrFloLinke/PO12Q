@@ -52,8 +52,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -773,222 +771,176 @@ Combined Polity V score
 <p>Bear in mind for your interpretation that these are partial slope coefficients!</p>
 </div>
 <ul>
-<li>Because I am nice, I am producing an overview of all three regressions in the following table:</li>
+<li>Because I am nice, I am producing an overview of all three regressions in Table <a href="worksheet-week-8.html#tab:reg1">13</a>:</li>
 </ul>
  
  
 <center>
-<table style="text-align:center">
-<caption>
-<strong><span id="tab:reg1"><span id="tab:reg1">Table 13: </span></span>Regression Models 1</strong>
-</caption>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_h9egjpm6dkcuwb0makq2(i, j, css_id) {
+          var table = document.getElementById("tinytable_h9egjpm6dkcuwb0makq2");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_h9egjpm6dkcuwb0makq2');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_h9egjpm6dkcuwb0makq2(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_h9egjpm6dkcuwb0makq2");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_xbj6z87dqvnlkime8ue5',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_re3q9b5a8rii1lyrwa2y',}, 
+          { positions: [ { i: 10, j: 2 }, { i: 10, j: 1 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_qrpwot9wrid2w16gilwy',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 3, j: 2 }, { i: 9, j: 2 }, { i: 3, j: 3 }, { i: 2, j: 2 }, { i: 9, j: 3 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 9, j: 1 }, { i: 8, j: 2 }, { i: 2, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 8, j: 3 },  ], css_id: 'tinytable_css_mwv03zb1otyuth86mguc',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_mk8fqba0skymrjv6acds',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_lepyo6u9ohiq7bp6sln6',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_gkgsif8jxk34idnmmv6t',}, 
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_e60f6x1nplpkr5wf7hem',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 3 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_e3vvn9639wm0duxbm0yz',}, 
+          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_blkn3bylkgbameurgt8f',}, 
+          { positions: [ { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_4m1lgvv3x372u73lnunn',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_h9egjpm6dkcuwb0makq2(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_xbj6z87dqvnlkime8ue5, .table th.tinytable_css_xbj6z87dqvnlkime8ue5 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_re3q9b5a8rii1lyrwa2y, .table th.tinytable_css_re3q9b5a8rii1lyrwa2y { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_qrpwot9wrid2w16gilwy, .table th.tinytable_css_qrpwot9wrid2w16gilwy { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_mwv03zb1otyuth86mguc, .table th.tinytable_css_mwv03zb1otyuth86mguc { text-align: center; }
+      .table td.tinytable_css_mk8fqba0skymrjv6acds, .table th.tinytable_css_mk8fqba0skymrjv6acds { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_lepyo6u9ohiq7bp6sln6, .table th.tinytable_css_lepyo6u9ohiq7bp6sln6 { text-align: left; }
+      .table td.tinytable_css_gkgsif8jxk34idnmmv6t, .table th.tinytable_css_gkgsif8jxk34idnmmv6t { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_e60f6x1nplpkr5wf7hem, .table th.tinytable_css_e60f6x1nplpkr5wf7hem { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_e3vvn9639wm0duxbm0yz, .table th.tinytable_css_e3vvn9639wm0duxbm0yz { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_blkn3bylkgbameurgt8f, .table th.tinytable_css_blkn3bylkgbameurgt8f { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_4m1lgvv3x372u73lnunn, .table th.tinytable_css_4m1lgvv3x372u73lnunn { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_h9egjpm6dkcuwb0makq2" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
 <tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=3>Dependent Variable:<br>per capita GDP</th>
 </tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="3">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="3">
-per capita GDP
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-<td>
-(3)
-</td>
-</tr>
-<tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Life Expectancy
-</td>
-<td>
-1,503.211<sup>***</sup>
-</td>
-<td>
-</td>
-<td>
-1,012.168<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(144.371)
-</td>
-<td>
-</td>
-<td>
-(172.696)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Urbanisation
-</td>
-<td>
-</td>
-<td>
-542.033<sup>***</sup>
-</td>
-<td>
-273.735<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-(61.743)
-</td>
-<td>
-(59.134)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
--94,306.810<sup>***</sup>
-</td>
-<td>
--16,983.430<sup>***</sup>
-</td>
-<td>
--74,786.150<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(10,406.730)
-</td>
-<td>
-(3,872.336)
-</td>
-<td>
-(10,690.130)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-169
-</td>
-<td>
-178
-</td>
-<td>
-169
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.394
-</td>
-<td>
-0.305
-</td>
-<td>
-0.463
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.390
-</td>
-<td>
-0.301
-</td>
-<td>
-0.456
-</td>
-</tr>
-<tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="3" style="text-align:right">
-<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
-</td>
-</tr>
-</table>
+        <caption><span id="tab:reg1">Table 13: </span> Regression Models 1.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Bivariate<br>(1)</th>
+                <th scope="col">Bivariate<br>(2)</th>
+                <th scope="col">Multiple<br>(3)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='4'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td>1503.211***</td>
+                  <td></td>
+                  <td>1012.168***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(144.371)</td>
+                  <td></td>
+                  <td>(172.696)</td>
+                </tr>
+                <tr>
+                  <td>Urbanisation</td>
+                  <td></td>
+                  <td>542.033***</td>
+                  <td>273.735***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(61.743)</td>
+                  <td>(59.134)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-94306.813***</td>
+                  <td>-16983.431***</td>
+                  <td>-74786.145***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(10406.727)</td>
+                  <td>(3872.336)</td>
+                  <td>(10690.128)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>169</td>
+                  <td>178</td>
+                  <td>169</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.394</td>
+                  <td>0.305</td>
+                  <td>0.463</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.390</td>
+                  <td>0.301</td>
+                  <td>0.456</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </center>
 <p> 
  </p>
@@ -1008,332 +960,207 @@ Adjusted R<sup>2</sup>
  
  
 <center>
-<table style="text-align:center">
-<caption>
-<strong><span id="tab:reg2"><span id="tab:reg2">Table 14: </span></span>Regression Models 2</strong>
-</caption>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_4fxmjv4bt0b7996k9te5(i, j, css_id) {
+          var table = document.getElementById("tinytable_4fxmjv4bt0b7996k9te5");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_4fxmjv4bt0b7996k9te5');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_4fxmjv4bt0b7996k9te5(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_4fxmjv4bt0b7996k9te5");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_wj21zklgnsisoxw4gp5d',}, 
+          { positions: [ { i: 9, j: 1 }, { i: 9, j: 4 }, { i: 9, j: 5 }, { i: 9, j: 2 }, { i: 9, j: 3 },  ], css_id: 'tinytable_css_u2ti6qxufzwbh6n0l5oi',}, 
+          { positions: [ { i: 0, j: 5 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_pfbw4haj25uhxsza6hyn',}, 
+          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_lw01vz4fd2id1dtj423h',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_fosxq9rl236d9jyrqe31',}, 
+          { positions: [ { i: 12, j: 1 }, { i: 12, j: 2 }, { i: 12, j: 3 }, { i: 12, j: 4 }, { i: 12, j: 5 },  ], css_id: 'tinytable_css_c5b1bbu96hd48o2rg8c8',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 11, j: 3 }, { i: 3, j: 4 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 4, j: 4 }, { i: 10, j: 3 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 5, j: 4 }, { i: 10, j: 4 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 },  ], css_id: 'tinytable_css_9ka962elxuuaaqz2dxce',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 }, { i: 1, j: 4 }, { i: 1, j: 5 },  ], css_id: 'tinytable_css_5u4doyuiuiomto5fm68d',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_50j4e8vzjvqoekyud2yp',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_4oi63fh3fyv5gum5t9jk',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_2p4nee14g5st4r3debk5',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_4fxmjv4bt0b7996k9te5(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_wj21zklgnsisoxw4gp5d, .table th.tinytable_css_wj21zklgnsisoxw4gp5d { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_u2ti6qxufzwbh6n0l5oi, .table th.tinytable_css_u2ti6qxufzwbh6n0l5oi { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_pfbw4haj25uhxsza6hyn, .table th.tinytable_css_pfbw4haj25uhxsza6hyn { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_lw01vz4fd2id1dtj423h, .table th.tinytable_css_lw01vz4fd2id1dtj423h { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_fosxq9rl236d9jyrqe31, .table th.tinytable_css_fosxq9rl236d9jyrqe31 { text-align: left; }
+      .table td.tinytable_css_c5b1bbu96hd48o2rg8c8, .table th.tinytable_css_c5b1bbu96hd48o2rg8c8 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_9ka962elxuuaaqz2dxce, .table th.tinytable_css_9ka962elxuuaaqz2dxce { text-align: center; }
+      .table td.tinytable_css_5u4doyuiuiomto5fm68d, .table th.tinytable_css_5u4doyuiuiomto5fm68d { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_50j4e8vzjvqoekyud2yp, .table th.tinytable_css_50j4e8vzjvqoekyud2yp { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_4oi63fh3fyv5gum5t9jk, .table th.tinytable_css_4oi63fh3fyv5gum5t9jk { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_2p4nee14g5st4r3debk5, .table th.tinytable_css_2p4nee14g5st4r3debk5 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_4fxmjv4bt0b7996k9te5" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
 <tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=5>Dependent Variable:<br>per capita GDP</th>
 </tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="5">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="5" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="5">
-per capita GDP
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-<td>
-(3)
-</td>
-<td>
-(4)
-</td>
-<td>
-(5)
-</td>
-</tr>
-<tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Life Expectancy
-</td>
-<td>
-1,503.211<sup>***</sup>
-</td>
-<td>
-</td>
-<td>
-1,012.168<sup>***</sup>
-</td>
-<td>
-</td>
-<td>
-973.985<sup>**</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(144.371)
-</td>
-<td>
-</td>
-<td>
-(172.696)
-</td>
-<td>
-</td>
-<td>
-(411.375)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Urbanisation
-</td>
-<td>
-</td>
-<td>
-542.033<sup>***</sup>
-</td>
-<td>
-273.735<sup>***</sup>
-</td>
-<td>
-</td>
-<td>
-227.126<sup>**</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-(61.743)
-</td>
-<td>
-(59.134)
-</td>
-<td>
-</td>
-<td>
-(83.427)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Literacy
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-258.407<sup>**</sup>
-</td>
-<td>
--221.731
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-(97.381)
-</td>
-<td>
-(142.455)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
--94,306.810<sup>***</sup>
-</td>
-<td>
--16,983.430<sup>***</sup>
-</td>
-<td>
--74,786.150<sup>***</sup>
-</td>
-<td>
--12,967.000
-</td>
-<td>
--55,246.840<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(10,406.730)
-</td>
-<td>
-(3,872.336)
-</td>
-<td>
-(10,690.130)
-</td>
-<td>
-(8,529.810)
-</td>
-<td>
-(19,311.130)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-169
-</td>
-<td>
-178
-</td>
-<td>
-169
-</td>
-<td>
-40
-</td>
-<td>
-39
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.394
-</td>
-<td>
-0.305
-</td>
-<td>
-0.463
-</td>
-<td>
-0.156
-</td>
-<td>
-0.497
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.390
-</td>
-<td>
-0.301
-</td>
-<td>
-0.456
-</td>
-<td>
-0.134
-</td>
-<td>
-0.454
-</td>
-</tr>
-<tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="5" style="text-align:right">
-<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
-</td>
-</tr>
-</table>
+        <caption><span id="tab:reg2">Table 14: </span> Regression Models 2.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">(1)</th>
+                <th scope="col">(2)</th>
+                <th scope="col">(3)</th>
+                <th scope="col">(4)</th>
+                <th scope="col">(5)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='6'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td>1503.211***</td>
+                  <td></td>
+                  <td>1012.168***</td>
+                  <td></td>
+                  <td>973.985*</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(144.371)</td>
+                  <td></td>
+                  <td>(172.696)</td>
+                  <td></td>
+                  <td>(411.375)</td>
+                </tr>
+                <tr>
+                  <td>Urbanisation</td>
+                  <td></td>
+                  <td>542.033***</td>
+                  <td>273.735***</td>
+                  <td></td>
+                  <td>227.126*</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(61.743)</td>
+                  <td>(59.134)</td>
+                  <td></td>
+                  <td>(83.427)</td>
+                </tr>
+                <tr>
+                  <td>Literacy</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>258.407*</td>
+                  <td>-221.731</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(97.381)</td>
+                  <td>(142.455)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-94306.813***</td>
+                  <td>-16983.431***</td>
+                  <td>-74786.145***</td>
+                  <td>-12967.003</td>
+                  <td>-55246.837**</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(10406.727)</td>
+                  <td>(3872.336)</td>
+                  <td>(10690.128)</td>
+                  <td>(8529.810)</td>
+                  <td>(19311.126)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>169</td>
+                  <td>178</td>
+                  <td>169</td>
+                  <td>40</td>
+                  <td>39</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.394</td>
+                  <td>0.305</td>
+                  <td>0.463</td>
+                  <td>0.156</td>
+                  <td>0.497</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.390</td>
+                  <td>0.301</td>
+                  <td>0.456</td>
+                  <td>0.134</td>
+                  <td>0.454</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </center>
 <p> 
  </p>
@@ -1343,250 +1170,183 @@ Adjusted R<sup>2</sup>
  
  
 <center>
-<table style="text-align:center">
-<caption>
-<strong><span id="tab:reg3"><span id="tab:reg3">Table 15: </span></span>Regression Models 3</strong>
-</caption>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_aw5g7cp1acdargnrwm55(i, j, css_id) {
+          var table = document.getElementById("tinytable_aw5g7cp1acdargnrwm55");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_aw5g7cp1acdargnrwm55');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_aw5g7cp1acdargnrwm55(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_aw5g7cp1acdargnrwm55");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_ztwl81im68nili8vzanz',}, 
+          { positions: [ { i: 12, j: 3 }, { i: 12, j: 1 }, { i: 12, j: 2 },  ], css_id: 'tinytable_css_z5msxh8391dset0lo1aw',}, 
+          { positions: [ { i: 0, j: 3 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_w05gjlsueuixhmqf3oi5',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_u435izwsgm1q7093tnwn',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 },  ], css_id: 'tinytable_css_t456ncyc82culj0kv7rn',}, 
+          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_stekehxs6ku82ii4m3ko',}, 
+          { positions: [ { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 2, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 11, j: 3 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_n4gynrwbfzxhfb6ea2ar',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_ladc0i8jwd4t4tmxtrgr',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_e1hrtzapvbf13rvuu8wg',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_8e54svwel14gj802avat',}, 
+          { positions: [ { i: 9, j: 2 }, { i: 9, j: 3 }, { i: 9, j: 1 },  ], css_id: 'tinytable_css_4vgz9ld3khkwamfo6jrr',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_aw5g7cp1acdargnrwm55(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_ztwl81im68nili8vzanz, .table th.tinytable_css_ztwl81im68nili8vzanz { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_z5msxh8391dset0lo1aw, .table th.tinytable_css_z5msxh8391dset0lo1aw { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_w05gjlsueuixhmqf3oi5, .table th.tinytable_css_w05gjlsueuixhmqf3oi5 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_u435izwsgm1q7093tnwn, .table th.tinytable_css_u435izwsgm1q7093tnwn { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_t456ncyc82culj0kv7rn, .table th.tinytable_css_t456ncyc82culj0kv7rn { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_stekehxs6ku82ii4m3ko, .table th.tinytable_css_stekehxs6ku82ii4m3ko { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_n4gynrwbfzxhfb6ea2ar, .table th.tinytable_css_n4gynrwbfzxhfb6ea2ar { text-align: center; }
+      .table td.tinytable_css_ladc0i8jwd4t4tmxtrgr, .table th.tinytable_css_ladc0i8jwd4t4tmxtrgr { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_e1hrtzapvbf13rvuu8wg, .table th.tinytable_css_e1hrtzapvbf13rvuu8wg { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_8e54svwel14gj802avat, .table th.tinytable_css_8e54svwel14gj802avat { text-align: left; }
+      .table td.tinytable_css_4vgz9ld3khkwamfo6jrr, .table th.tinytable_css_4vgz9ld3khkwamfo6jrr { text-align: center; border-bottom: solid black 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_aw5g7cp1acdargnrwm55" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
 <tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=3>Dependent Variable:<br>per capita GDP</th>
 </tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="3">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="3">
-per capita GDP
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-<td>
-(3)
-</td>
-</tr>
-<tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Literacy
-</td>
-<td>
-258.407<sup>**</sup>
-</td>
-<td>
--223.305
-</td>
-<td>
-28.390
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(97.381)
-</td>
-<td>
-(154.620)
-</td>
-<td>
-(99.706)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Life Expectancy
-</td>
-<td>
-</td>
-<td>
-1,483.785<sup>***</sup>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-(397.567)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Urbanisation
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-315.375<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-(77.633)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
--12,967.000
-</td>
-<td>
--77,851.340<sup>***</sup>
-</td>
-<td>
--12,399.610<sup>*</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(8,529.810)
-</td>
-<td>
-(18,924.060)
-</td>
-<td>
-(7,189.937)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-40
-</td>
-<td>
-39
-</td>
-<td>
-40
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.156
-</td>
-<td>
-0.390
-</td>
-<td>
-0.417
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.134
-</td>
-<td>
-0.357
-</td>
-<td>
-0.385
-</td>
-</tr>
-<tr>
-<td colspan="4" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="3" style="text-align:right">
-<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
-</td>
-</tr>
-</table>
+        <caption><span id="tab:reg3">Table 15: </span> Regression Models 3.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">(1)</th>
+                <th scope="col">(2)</th>
+                <th scope="col">(3)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='4'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td></td>
+                  <td>1483.785***</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(397.567)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Urbanisation</td>
+                  <td></td>
+                  <td></td>
+                  <td>315.375***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(77.633)</td>
+                </tr>
+                <tr>
+                  <td>Literacy</td>
+                  <td>258.407*</td>
+                  <td>-223.305</td>
+                  <td>28.390</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(97.381)</td>
+                  <td>(154.620)</td>
+                  <td>(99.706)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-12967.003</td>
+                  <td>-77851.339***</td>
+                  <td>-12399.608+</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(8529.810)</td>
+                  <td>(18924.058)</td>
+                  <td>(7189.937)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>40</td>
+                  <td>39</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.156</td>
+                  <td>0.390</td>
+                  <td>0.417</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.134</td>
+                  <td>0.357</td>
+                  <td>0.385</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </center>
 <p> 
  </p>
@@ -1598,181 +1358,161 @@ Adjusted R<sup>2</sup>
  
  
 <center>
-<table style="text-align:center">
-<caption>
-<strong><span id="tab:reg4"><span id="tab:reg4">Table 16: </span></span>Regression Models 4</strong>
-</caption>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_vabbj7re35ff2g0gkggd(i, j, css_id) {
+          var table = document.getElementById("tinytable_vabbj7re35ff2g0gkggd");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_vabbj7re35ff2g0gkggd');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_vabbj7re35ff2g0gkggd(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_vabbj7re35ff2g0gkggd");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_vpr4jhxxnhqu2s6liog6',}, 
+          { positions: [ { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_ssw2f8si7zvi6ulwumqi',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_puk45aaiid2ga0beg6ro',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_opec3hp09xopq8rtve7k',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 6, j: 2 },  ], css_id: 'tinytable_css_jkienu3rfcfhtl6javs1',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_d0yskknh7sa1ddb37sip',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_cve3w4hejep05l9ibmpl',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_bf5w4n9nyi6r6dwj07fi',}, 
+          { positions: [ { i: 10, j: 1 }, { i: 10, j: 2 },  ], css_id: 'tinytable_css_b1a8w9xu5pb9znjdwm4k',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_7at3xo7n6wy72ludds3w',}, 
+          { positions: [ { i: 0, j: 2 },  ], css_id: 'tinytable_css_5manpev60tb36lihpo9p',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_vabbj7re35ff2g0gkggd(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_vpr4jhxxnhqu2s6liog6, .table th.tinytable_css_vpr4jhxxnhqu2s6liog6 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_ssw2f8si7zvi6ulwumqi, .table th.tinytable_css_ssw2f8si7zvi6ulwumqi { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_puk45aaiid2ga0beg6ro, .table th.tinytable_css_puk45aaiid2ga0beg6ro { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_opec3hp09xopq8rtve7k, .table th.tinytable_css_opec3hp09xopq8rtve7k { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_jkienu3rfcfhtl6javs1, .table th.tinytable_css_jkienu3rfcfhtl6javs1 { text-align: center; }
+      .table td.tinytable_css_d0yskknh7sa1ddb37sip, .table th.tinytable_css_d0yskknh7sa1ddb37sip { text-align: left; }
+      .table td.tinytable_css_cve3w4hejep05l9ibmpl, .table th.tinytable_css_cve3w4hejep05l9ibmpl { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_bf5w4n9nyi6r6dwj07fi, .table th.tinytable_css_bf5w4n9nyi6r6dwj07fi { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_b1a8w9xu5pb9znjdwm4k, .table th.tinytable_css_b1a8w9xu5pb9znjdwm4k { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_7at3xo7n6wy72ludds3w, .table th.tinytable_css_7at3xo7n6wy72ludds3w { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_5manpev60tb36lihpo9p, .table th.tinytable_css_5manpev60tb36lihpo9p { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_vabbj7re35ff2g0gkggd" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
 <tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=2>Dependent Variable:<br>per capita GDP</th>
 </tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="2">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="2">
-per capita GDP
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-</tr>
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Life Expectancy
-</td>
-<td>
-1,503.211<sup>***</sup>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(144.371)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Infant Mortality
-</td>
-<td>
-</td>
-<td>
--524.111<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-(73.885)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
--94,306.810<sup>***</sup>
-</td>
-<td>
-26,467.130<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(10,406.730)
-</td>
-<td>
-(2,257.385)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-169
-</td>
-<td>
-178
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.394
-</td>
-<td>
-0.222
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.390
-</td>
-<td>
-0.218
-</td>
-</tr>
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="2" style="text-align:right">
-<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
-</td>
-</tr>
-</table>
+        <caption><span id="tab:reg4">Table 16: </span> Regression Models 4.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">life</th>
+                <th scope="col">infant</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='3'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td>1503.211***</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(144.371)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Infant Mortality (per 1,000 live births)</td>
+                  <td></td>
+                  <td>-524.111***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(73.885)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-94306.813***</td>
+                  <td>26467.135***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(10406.727)</td>
+                  <td>(2257.385)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>169</td>
+                  <td>178</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.394</td>
+                  <td>0.222</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.390</td>
+                  <td>0.218</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </center>
 <p> 
  </p>
