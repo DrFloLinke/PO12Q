@@ -21,23 +21,21 @@ names(crime)
 ##################################
 
 
-# Data Prep
-##################################   
-
-
-levels(crime$split)
-crime.a<- subset.data.frame(crime, split == "A (Experience of the police)") 
-
 # Data Analysis
 ################################## 
 
 # 1
+
 # a
+levels(crime$split)
+crime.a<- subset.data.frame(crime, split == "A (Experience of the police)") 
+
+# b
 model.antisoc.rural.men <- lm(antisocx ~ rural2, subset(crime.a, crime.a$sex == "Male"))
 summary(model.antisoc.rural.men)
 # Yes the model does suggest men perceive more crime in urban areas with a significant positive coefficient for urban areas compared to rural areas. 
 
-# b 
+# c
 model.antisoc.rural.women <- lm(antisocx ~ rural2, subset(crime.a, crime.a$sex == "Female"))
 summary(model.antisoc.rural.women)
 # The coefficient for rural areas is still highly significant and positive, slightly larger than the one for men. 
@@ -114,26 +112,31 @@ crime$wraceatt <- droplevels(crime$wraceatt)
 # Levels show that smallest value is very worried and largest is not at all. This needs to be recoded into a number where 0 indicates not worried and 3 indicates very worried.
 levels(crime$wburgl)
 crime <- crime %>%
-  mutate(wburgl.num = recode(wburgl, "Very worried"=3,                            "Fairly worried"= 2,
+  mutate(wburgl.num = recode(wburgl, "Very worried"=3,                            
+                             "Fairly worried"= 2,
                              "Not very worried"= 1,
                              "Not at all worried" = 0))
 
 crime <- crime %>%
-  mutate(wmugged.num = recode(wmugged, "Very worried"=3,                            "Fairly worried"= 2,
+  mutate(wmugged.num = recode(wmugged, "Very worried"=3,
+                              "Fairly worried"= 2,
                               "Not very worried"= 1,
                               "Not at all worried" = 0))
 
 crime <- crime %>%
-  mutate(wraped.num = recode(wraped, "Very worried"=3,                            "Fairly worried"= 2,
+  mutate(wraped.num = recode(wraped, "Very worried"=3,
+                             "Fairly worried"= 2,
                              "Not very worried"= 1,
                              "Not at all worried" = 0))
 
 crime <- crime %>%
-  mutate(wattack.num = recode(wattack, "Very worried"=3,                            "Fairly worried"= 2,
+  mutate(wattack.num = recode(wattack, "Very worried"=3,
+                              "Fairly worried"= 2,
                               "Not very worried"= 1,
                               "Not at all worried" = 0))
 crime <- crime %>%
-  mutate(wraceatt.num = recode(wraceatt, "Very worried"=3,                            "Fairly worried"= 2,
+  mutate(wraceatt.num = recode(wraceatt, "Very worried"=3,
+                               "Fairly worried"= 2,
                                "Not very worried"= 1,
                                "Not at all worried" = 0))
 
