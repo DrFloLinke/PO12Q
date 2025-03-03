@@ -194,32 +194,31 @@ confint(model.worry.educat.factor, "educat3Degree or diploma", level = 0.975)
 rm(list =ls())
 london <- read.csv('london_exercises_9.csv',header = T, stringsAsFactors = T)
 
-# a.
 #Dplyr solution:
 london <- london %>% mutate(unemp_rate = (adults - employed)/adults)
 #Base solution:
 london$unemp_rate = with(london, (adults - employed)/adults)
 
-# b.
-# i.
+# 2.
+# a.
 ggplot(london, aes(x = unemp_rate, y = crime)) + 
   geom_point() + geom_smooth(method = 'lm') +
   xlab('Unemployment Rate') + ylab('Crime Rate')
 # There is a positive relationship with higher unemployment associated with higher crime. There are three major outlying observations.
 
-# ii.
+# b.
 ggplot(subset(london, crime < 500),aes(x = unemp_rate, y = crime)) + 
   geom_point() + geom_smooth(method = 'lm') +
   xlab('Unemployment Rate') + ylab('Crime Rate')
 # Removing the outliers doesn't affect the trend but does accentuate the variability of the data. It highlights a few higher crime rate wards away from the best fit line.
 
-# iii.
+# c.
 ggplot(subset(london, crime < 500),
        aes(x = (unemp_rate), y = log(crime))) + geom_point() + 
   xlab('Unemployment Rate') + ylab('Logged Crime Rate') + geom_smooth(method = 'lm')  
 # There is still a positive trend as show by the best fit line. The above line outliers from the previous graph have been reduced in severity. 
 
-# iv.
+# d.
 model_crime_unemp <- lm(crime ~ unemp_rate, subset(london, crime < 500))
 summary(model_crime_unemp)
 # There is a positive effect for the unemployment rate in a ward on the crime rate in that ward. The slope coefficient is 176.31. This means that an increase of 0.1 in the unemployment rate, equivalent to 10% more of the population unemployed, results in an increase of 176 crimes per 1,000. This effect is highly significant with a p-value smaller than 0.05. The interval represents the number of crimes per 1,000 people at an unemployment rate of zero. 
