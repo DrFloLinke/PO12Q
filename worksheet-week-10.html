@@ -525,6 +525,9 @@ Mean income by constituency
 </ol></li>
 </ol>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="worksheet-week-10.html#cb53-1" tabindex="-1"></a>london_heterosc <span class="ot">&lt;-</span> <span class="fu">filter</span>(london, income<span class="sc">&lt;</span><span class="dv">28000</span> <span class="sc">|</span> income<span class="sc">&gt;</span><span class="dv">100000</span>)</span></code></pre></div>
+<div class="puzzle">
+<p>Why does this code lead to heteroscedasticity?</p>
+</div>
 <div class="line-block">          b. Estimate a new model, and note the significance of coefficients.</div>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="worksheet-week-10.html#cb54-1" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gcse <span class="sc">~</span> income, <span class="at">data=</span>london_heterosc)</span></code></pre></div>
 <div class="line-block">          c. Conduct a Breusch-Pagan Test with the <code>lmtest</code> package.<br />
