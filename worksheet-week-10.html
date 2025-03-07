@@ -561,7 +561,7 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{k-1} x_
     \vdots \\
     x_{k,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + ... + \alpha_{k-1} x_{k-1,i} + v_i
 \end{align*}\]</span></p>
-<p>In order to quantify how well each of the K regression functions explains the respective independent variable, we are going to use Adjusted R-Squared. We will note the <span class="math inline">\(\bar{R}^2\)</span> of each individual regression as <span class="math inline">\(\bar{R}_j^2\)</span> where j runs from 1 to K, or <span class="math inline">\(j=1,...,k\)</span>.</p>
+<p>In order to quantify how well each of the K regression functions explains the respective independent variable, we are going to use Adjusted R-Squared. We will note the <span class="math inline">\(\bar{R}^2\)</span> of each individual regression as <span class="math inline">\(\bar{R}_j^2\)</span> where j runs from 1 to k, or <span class="math inline">\(j=1,...,k\)</span>.</p>
 <p><span class="math inline">\(\bar{R}_j^2\)</span> in itself already provides useful information, but we can do better than this. We can use <span class="math inline">\(\bar{R}_j^2\)</span> to develop a measure which tells us how much larger the observed variance of a coefficient is compared to a scenario in which the variable was totally functionally independent from the other independent variables in the model. We call this measure <strong>variance inflation factor</strong> and define it as follows:</p>
 <p><span class="math display">\[\begin{equation}
 \text{VIF}_j = \frac{1}{1-\bar{R}_j^2}
