@@ -552,21 +552,21 @@ Mean income by constituency
 \end{equation*}\]</span></p>
 <p>We refer to this situation as multicollinearity. In order to detect it, we need to test for the functional dependence of each independent variable on the remaining independent variables in the model. We can do so by employing secondary regression models, not unlike in the Breusch-Pagan Test (see lecture slides). We specify K secondary regression models, each adopting one of our K independent variables as its dependent variable. Let us specify such a function for <span class="math inline">\(x_1\)</span>:</p>
 <p><span class="math display">\[\begin{equation*}
-x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{K-1} x_{K,i} + v_i
+x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{k-1} x_{k,i} + v_i
 \end{equation*}\]</span></p>
 <p>where <span class="math inline">\(\alpha\)</span> denotes our new regression coefficients, and <span class="math inline">\(v_i\)</span> represents a random error term. For the remaining independent variables, the functions would look as follows:</p>
 <p><span class="math display">\[\begin{align*}
-    x_{2,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{3,i} + \alpha_3 x_{4,i} + ... + \alpha_{K-1} x_{K,i} + v_i \\
-    x_{3,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{4,i} + ... + \alpha_{K-1} x_{K,i} + v_i \\
+    x_{2,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{3,i} + \alpha_3 x_{4,i} + ... + \alpha_{k-1} x_{k,i} + v_i \\
+    x_{3,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{4,i} + ... + \alpha_{k-1} x_{k,i} + v_i \\
     \vdots \\
-    x_{K,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + ... + \alpha_{K-1} x_{K-1,i} + v_i
+    x_{k,i} &amp;= \alpha_0 + \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + ... + \alpha_{k-1} x_{k-1,i} + v_i
 \end{align*}\]</span></p>
-<p>In order to quantify how well each of the K regression functions explains the respective independent variable, we are going to use Adjusted R-Squared. We will note the <span class="math inline">\(R^2\)</span> of each individual regression as <span class="math inline">\(R_j^2\)</span> where j runs from 1 to K, or <span class="math inline">\(j=1,...,K\)</span>.</p>
-<p><span class="math inline">\(R_j^2\)</span> in itself already provides useful information, but we can do better than this. We can use <span class="math inline">\(R_j^2\)</span> to develop a measure which tells us how much larger the observed variance of a coefficient is compared to a scenario in which the variable was totally functionally independent from the other independent variables in the model. We call this measure <strong>variance inflation factor</strong> and define it as follows:</p>
+<p>In order to quantify how well each of the K regression functions explains the respective independent variable, we are going to use Adjusted R-Squared. We will note the <span class="math inline">\(\bar{R}^2\)</span> of each individual regression as <span class="math inline">\(\bar{R}_j^2\)</span> where j runs from 1 to K, or <span class="math inline">\(j=1,...,k\)</span>.</p>
+<p><span class="math inline">\(\bar{R}_j^2\)</span> in itself already provides useful information, but we can do better than this. We can use <span class="math inline">\(\bar{R}_j^2\)</span> to develop a measure which tells us how much larger the observed variance of a coefficient is compared to a scenario in which the variable was totally functionally independent from the other independent variables in the model. We call this measure <strong>variance inflation factor</strong> and define it as follows:</p>
 <p><span class="math display">\[\begin{equation}
-\text{VIF}_j = \frac{1}{1-R_j^2}
+\text{VIF}_j = \frac{1}{1-\bar{R}_j^2}
 \end{equation}\]</span></p>
-<p>Its size is solely determined by <span class="math inline">\(R_j^2\)</span>. The better a model explains the respective independent variable, the closer <span class="math inline">\(R_j^2\)</span> will be to one, increasing the size of VIF<span class="math inline">\(_j\)</span>. A commonly adopted threshold for classing a variable as (multi-)collinear is VIF=10. This threshold is completely arbitrary, but has nonetheless managed to establish itself in regression analysis.</p>
+<p>Its size is solely determined by <span class="math inline">\(\bar{R}_j^2\)</span>. The better a model explains the respective independent variable, the closer <span class="math inline">\(\bar{R}_j^2\)</span> will be to one, increasing the size of VIF<span class="math inline">\(_j\)</span>. A commonly adopted threshold for classing a variable as (multi-)collinear is VIF=10. This threshold is completely arbitrary, but has nonetheless managed to establish itself in regression analysis.</p>
 <p>We will now use <code>london_sam</code> data frame to put theory into practice.</p>
 <ol style="list-style-type: decimal">
 <li>Regress GCSE scores on and in a multiple regression model. Interpret the results.</li>
