@@ -1,5 +1,7 @@
 tab:wdicode1
+tab:glossary1
 tab:wdicode2
+tab:glossary2
 tab:glossary3
 tab:regdata
 tab:glossary4
