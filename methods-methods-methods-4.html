@@ -400,71 +400,71 @@ div.csl-indent {
 <summary>
 Code for Data Preparation
 </summary>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="methods-methods-methods-4.html#cb27-1" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb27-2"><a href="methods-methods-methods-4.html#cb27-2" tabindex="-1"></a><span class="co"># MMM - Week 7 - Data Preparation</span></span>
-<span id="cb27-3"><a href="methods-methods-methods-4.html#cb27-3" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb27-4"><a href="methods-methods-methods-4.html#cb27-4" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="methods-methods-methods-4.html#cb27-5" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="methods-methods-methods-4.html#cb27-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb27-7"><a href="methods-methods-methods-4.html#cb27-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
-<span id="cb27-8"><a href="methods-methods-methods-4.html#cb27-8" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="methods-methods-methods-4.html#cb27-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb27-10"><a href="methods-methods-methods-4.html#cb27-10" tabindex="-1"></a></span>
-<span id="cb27-11"><a href="methods-methods-methods-4.html#cb27-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb27-12"><a href="methods-methods-methods-4.html#cb27-12" tabindex="-1"></a></span>
-<span id="cb27-13"><a href="methods-methods-methods-4.html#cb27-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb27-14"><a href="methods-methods-methods-4.html#cb27-14" tabindex="-1"></a></span>
-<span id="cb27-15"><a href="methods-methods-methods-4.html#cb27-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
-<span id="cb27-16"><a href="methods-methods-methods-4.html#cb27-16" tabindex="-1"></a></span>
-<span id="cb27-17"><a href="methods-methods-methods-4.html#cb27-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
-<span id="cb27-18"><a href="methods-methods-methods-4.html#cb27-18" tabindex="-1"></a></span>
-<span id="cb27-19"><a href="methods-methods-methods-4.html#cb27-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
-<span id="cb27-20"><a href="methods-methods-methods-4.html#cb27-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
-<span id="cb27-21"><a href="methods-methods-methods-4.html#cb27-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
-<span id="cb27-22"><a href="methods-methods-methods-4.html#cb27-22" tabindex="-1"></a></span>
-<span id="cb27-23"><a href="methods-methods-methods-4.html#cb27-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
-<span id="cb27-24"><a href="methods-methods-methods-4.html#cb27-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
-<span id="cb27-25"><a href="methods-methods-methods-4.html#cb27-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
-<span id="cb27-26"><a href="methods-methods-methods-4.html#cb27-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
-<span id="cb27-27"><a href="methods-methods-methods-4.html#cb27-27" tabindex="-1"></a></span>
-<span id="cb27-28"><a href="methods-methods-methods-4.html#cb27-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
-<span id="cb27-29"><a href="methods-methods-methods-4.html#cb27-29" tabindex="-1"></a></span>
-<span id="cb27-30"><a href="methods-methods-methods-4.html#cb27-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
-<span id="cb27-31"><a href="methods-methods-methods-4.html#cb27-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
-<span id="cb27-32"><a href="methods-methods-methods-4.html#cb27-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
-<span id="cb27-33"><a href="methods-methods-methods-4.html#cb27-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
-<span id="cb27-34"><a href="methods-methods-methods-4.html#cb27-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
-<span id="cb27-35"><a href="methods-methods-methods-4.html#cb27-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
-<span id="cb27-36"><a href="methods-methods-methods-4.html#cb27-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
-<span id="cb27-37"><a href="methods-methods-methods-4.html#cb27-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
-<span id="cb27-38"><a href="methods-methods-methods-4.html#cb27-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
-<span id="cb27-39"><a href="methods-methods-methods-4.html#cb27-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
-<span id="cb27-40"><a href="methods-methods-methods-4.html#cb27-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
-<span id="cb27-41"><a href="methods-methods-methods-4.html#cb27-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
-<span id="cb27-42"><a href="methods-methods-methods-4.html#cb27-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
-<span id="cb27-43"><a href="methods-methods-methods-4.html#cb27-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
-<span id="cb27-44"><a href="methods-methods-methods-4.html#cb27-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
-<span id="cb27-45"><a href="methods-methods-methods-4.html#cb27-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
-<span id="cb27-46"><a href="methods-methods-methods-4.html#cb27-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
-<span id="cb27-47"><a href="methods-methods-methods-4.html#cb27-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
-<span id="cb27-48"><a href="methods-methods-methods-4.html#cb27-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
-<span id="cb27-49"><a href="methods-methods-methods-4.html#cb27-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
-<span id="cb27-50"><a href="methods-methods-methods-4.html#cb27-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
-<span id="cb27-51"><a href="methods-methods-methods-4.html#cb27-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
-<span id="cb27-52"><a href="methods-methods-methods-4.html#cb27-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
-<span id="cb27-53"><a href="methods-methods-methods-4.html#cb27-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
-<span id="cb27-54"><a href="methods-methods-methods-4.html#cb27-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
-<span id="cb27-55"><a href="methods-methods-methods-4.html#cb27-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
-<span id="cb27-56"><a href="methods-methods-methods-4.html#cb27-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
-<span id="cb27-57"><a href="methods-methods-methods-4.html#cb27-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
-<span id="cb27-58"><a href="methods-methods-methods-4.html#cb27-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
-<span id="cb27-59"><a href="methods-methods-methods-4.html#cb27-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
-<span id="cb27-60"><a href="methods-methods-methods-4.html#cb27-60" tabindex="-1"></a></span>
-<span id="cb27-61"><a href="methods-methods-methods-4.html#cb27-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
-<span id="cb27-62"><a href="methods-methods-methods-4.html#cb27-62" tabindex="-1"></a></span>
-<span id="cb27-63"><a href="methods-methods-methods-4.html#cb27-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
-<span id="cb27-64"><a href="methods-methods-methods-4.html#cb27-64" tabindex="-1"></a></span>
-<span id="cb27-65"><a href="methods-methods-methods-4.html#cb27-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week7.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="methods-methods-methods-4.html#cb29-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb29-2"><a href="methods-methods-methods-4.html#cb29-2" tabindex="-1"></a><span class="co"># MMM - Week 7 - Data Preparation</span></span>
+<span id="cb29-3"><a href="methods-methods-methods-4.html#cb29-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb29-4"><a href="methods-methods-methods-4.html#cb29-4" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="methods-methods-methods-4.html#cb29-5" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="methods-methods-methods-4.html#cb29-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb29-7"><a href="methods-methods-methods-4.html#cb29-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb29-8"><a href="methods-methods-methods-4.html#cb29-8" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="methods-methods-methods-4.html#cb29-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb29-10"><a href="methods-methods-methods-4.html#cb29-10" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="methods-methods-methods-4.html#cb29-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb29-12"><a href="methods-methods-methods-4.html#cb29-12" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="methods-methods-methods-4.html#cb29-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb29-14"><a href="methods-methods-methods-4.html#cb29-14" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="methods-methods-methods-4.html#cb29-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
+<span id="cb29-16"><a href="methods-methods-methods-4.html#cb29-16" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="methods-methods-methods-4.html#cb29-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
+<span id="cb29-18"><a href="methods-methods-methods-4.html#cb29-18" tabindex="-1"></a></span>
+<span id="cb29-19"><a href="methods-methods-methods-4.html#cb29-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
+<span id="cb29-20"><a href="methods-methods-methods-4.html#cb29-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
+<span id="cb29-21"><a href="methods-methods-methods-4.html#cb29-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
+<span id="cb29-22"><a href="methods-methods-methods-4.html#cb29-22" tabindex="-1"></a></span>
+<span id="cb29-23"><a href="methods-methods-methods-4.html#cb29-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
+<span id="cb29-24"><a href="methods-methods-methods-4.html#cb29-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
+<span id="cb29-25"><a href="methods-methods-methods-4.html#cb29-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
+<span id="cb29-26"><a href="methods-methods-methods-4.html#cb29-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
+<span id="cb29-27"><a href="methods-methods-methods-4.html#cb29-27" tabindex="-1"></a></span>
+<span id="cb29-28"><a href="methods-methods-methods-4.html#cb29-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
+<span id="cb29-29"><a href="methods-methods-methods-4.html#cb29-29" tabindex="-1"></a></span>
+<span id="cb29-30"><a href="methods-methods-methods-4.html#cb29-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb29-31"><a href="methods-methods-methods-4.html#cb29-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb29-32"><a href="methods-methods-methods-4.html#cb29-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
+<span id="cb29-33"><a href="methods-methods-methods-4.html#cb29-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
+<span id="cb29-34"><a href="methods-methods-methods-4.html#cb29-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
+<span id="cb29-35"><a href="methods-methods-methods-4.html#cb29-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
+<span id="cb29-36"><a href="methods-methods-methods-4.html#cb29-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
+<span id="cb29-37"><a href="methods-methods-methods-4.html#cb29-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
+<span id="cb29-38"><a href="methods-methods-methods-4.html#cb29-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
+<span id="cb29-39"><a href="methods-methods-methods-4.html#cb29-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
+<span id="cb29-40"><a href="methods-methods-methods-4.html#cb29-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
+<span id="cb29-41"><a href="methods-methods-methods-4.html#cb29-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
+<span id="cb29-42"><a href="methods-methods-methods-4.html#cb29-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
+<span id="cb29-43"><a href="methods-methods-methods-4.html#cb29-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
+<span id="cb29-44"><a href="methods-methods-methods-4.html#cb29-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
+<span id="cb29-45"><a href="methods-methods-methods-4.html#cb29-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
+<span id="cb29-46"><a href="methods-methods-methods-4.html#cb29-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
+<span id="cb29-47"><a href="methods-methods-methods-4.html#cb29-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
+<span id="cb29-48"><a href="methods-methods-methods-4.html#cb29-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
+<span id="cb29-49"><a href="methods-methods-methods-4.html#cb29-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
+<span id="cb29-50"><a href="methods-methods-methods-4.html#cb29-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
+<span id="cb29-51"><a href="methods-methods-methods-4.html#cb29-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
+<span id="cb29-52"><a href="methods-methods-methods-4.html#cb29-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
+<span id="cb29-53"><a href="methods-methods-methods-4.html#cb29-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
+<span id="cb29-54"><a href="methods-methods-methods-4.html#cb29-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
+<span id="cb29-55"><a href="methods-methods-methods-4.html#cb29-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
+<span id="cb29-56"><a href="methods-methods-methods-4.html#cb29-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
+<span id="cb29-57"><a href="methods-methods-methods-4.html#cb29-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
+<span id="cb29-58"><a href="methods-methods-methods-4.html#cb29-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
+<span id="cb29-59"><a href="methods-methods-methods-4.html#cb29-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
+<span id="cb29-60"><a href="methods-methods-methods-4.html#cb29-60" tabindex="-1"></a></span>
+<span id="cb29-61"><a href="methods-methods-methods-4.html#cb29-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
+<span id="cb29-62"><a href="methods-methods-methods-4.html#cb29-62" tabindex="-1"></a></span>
+<span id="cb29-63"><a href="methods-methods-methods-4.html#cb29-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
+<span id="cb29-64"><a href="methods-methods-methods-4.html#cb29-64" tabindex="-1"></a></span>
+<span id="cb29-65"><a href="methods-methods-methods-4.html#cb29-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week7.csv&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <hr />
@@ -477,37 +477,37 @@ Code for Data Preparation
 <summary>
 Code for Data Analysis
 </summary>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="methods-methods-methods-4.html#cb28-1" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb28-2"><a href="methods-methods-methods-4.html#cb28-2" tabindex="-1"></a><span class="co"># MMM - Week 7 - Hypothesis Testing</span></span>
-<span id="cb28-3"><a href="methods-methods-methods-4.html#cb28-3" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb28-4"><a href="methods-methods-methods-4.html#cb28-4" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="methods-methods-methods-4.html#cb28-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb28-6"><a href="methods-methods-methods-4.html#cb28-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
-<span id="cb28-7"><a href="methods-methods-methods-4.html#cb28-7" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="methods-methods-methods-4.html#cb28-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb28-9"><a href="methods-methods-methods-4.html#cb28-9" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="methods-methods-methods-4.html#cb28-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb28-11"><a href="methods-methods-methods-4.html#cb28-11" tabindex="-1"></a></span>
-<span id="cb28-12"><a href="methods-methods-methods-4.html#cb28-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb28-13"><a href="methods-methods-methods-4.html#cb28-13" tabindex="-1"></a></span>
-<span id="cb28-14"><a href="methods-methods-methods-4.html#cb28-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week8.csv&quot;</span>)</span>
-<span id="cb28-15"><a href="methods-methods-methods-4.html#cb28-15" tabindex="-1"></a></span>
-<span id="cb28-16"><a href="methods-methods-methods-4.html#cb28-16" tabindex="-1"></a><span class="co"># Visualisation</span></span>
-<span id="cb28-17"><a href="methods-methods-methods-4.html#cb28-17" tabindex="-1"></a><span class="do">############################</span></span>
-<span id="cb28-18"><a href="methods-methods-methods-4.html#cb28-18" tabindex="-1"></a></span>
-<span id="cb28-19"><a href="methods-methods-methods-4.html#cb28-19" tabindex="-1"></a><span class="fu">ggplot</span>(anes, <span class="fu">aes</span>(<span class="at">x =</span> inc, <span class="at">y =</span> fttrump1)) <span class="sc">+</span></span>
-<span id="cb28-20"><a href="methods-methods-methods-4.html#cb28-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb28-21"><a href="methods-methods-methods-4.html#cb28-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span>
-<span id="cb28-22"><a href="methods-methods-methods-4.html#cb28-22" tabindex="-1"></a></span>
-<span id="cb28-23"><a href="methods-methods-methods-4.html#cb28-23" tabindex="-1"></a></span>
-<span id="cb28-24"><a href="methods-methods-methods-4.html#cb28-24" tabindex="-1"></a><span class="co"># Regression</span></span>
-<span id="cb28-25"><a href="methods-methods-methods-4.html#cb28-25" tabindex="-1"></a><span class="do">############################</span></span>
-<span id="cb28-26"><a href="methods-methods-methods-4.html#cb28-26" tabindex="-1"></a></span>
-<span id="cb28-27"><a href="methods-methods-methods-4.html#cb28-27" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
-<span id="cb28-28"><a href="methods-methods-methods-4.html#cb28-28" tabindex="-1"></a></span>
-<span id="cb28-29"><a href="methods-methods-methods-4.html#cb28-29" tabindex="-1"></a>model1</span>
-<span id="cb28-30"><a href="methods-methods-methods-4.html#cb28-30" tabindex="-1"></a></span>
-<span id="cb28-31"><a href="methods-methods-methods-4.html#cb28-31" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="methods-methods-methods-4.html#cb30-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb30-2"><a href="methods-methods-methods-4.html#cb30-2" tabindex="-1"></a><span class="co"># MMM - Week 7 - Hypothesis Testing</span></span>
+<span id="cb30-3"><a href="methods-methods-methods-4.html#cb30-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb30-4"><a href="methods-methods-methods-4.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="methods-methods-methods-4.html#cb30-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb30-6"><a href="methods-methods-methods-4.html#cb30-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb30-7"><a href="methods-methods-methods-4.html#cb30-7" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="methods-methods-methods-4.html#cb30-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb30-9"><a href="methods-methods-methods-4.html#cb30-9" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="methods-methods-methods-4.html#cb30-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb30-11"><a href="methods-methods-methods-4.html#cb30-11" tabindex="-1"></a></span>
+<span id="cb30-12"><a href="methods-methods-methods-4.html#cb30-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb30-13"><a href="methods-methods-methods-4.html#cb30-13" tabindex="-1"></a></span>
+<span id="cb30-14"><a href="methods-methods-methods-4.html#cb30-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week8.csv&quot;</span>)</span>
+<span id="cb30-15"><a href="methods-methods-methods-4.html#cb30-15" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="methods-methods-methods-4.html#cb30-16" tabindex="-1"></a><span class="co"># Visualisation</span></span>
+<span id="cb30-17"><a href="methods-methods-methods-4.html#cb30-17" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb30-18"><a href="methods-methods-methods-4.html#cb30-18" tabindex="-1"></a></span>
+<span id="cb30-19"><a href="methods-methods-methods-4.html#cb30-19" tabindex="-1"></a><span class="fu">ggplot</span>(anes, <span class="fu">aes</span>(<span class="at">x =</span> inc, <span class="at">y =</span> fttrump1)) <span class="sc">+</span></span>
+<span id="cb30-20"><a href="methods-methods-methods-4.html#cb30-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-21"><a href="methods-methods-methods-4.html#cb30-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span>
+<span id="cb30-22"><a href="methods-methods-methods-4.html#cb30-22" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="methods-methods-methods-4.html#cb30-23" tabindex="-1"></a></span>
+<span id="cb30-24"><a href="methods-methods-methods-4.html#cb30-24" tabindex="-1"></a><span class="co"># Regression</span></span>
+<span id="cb30-25"><a href="methods-methods-methods-4.html#cb30-25" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb30-26"><a href="methods-methods-methods-4.html#cb30-26" tabindex="-1"></a></span>
+<span id="cb30-27"><a href="methods-methods-methods-4.html#cb30-27" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
+<span id="cb30-28"><a href="methods-methods-methods-4.html#cb30-28" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="methods-methods-methods-4.html#cb30-29" tabindex="-1"></a>model1</span>
+<span id="cb30-30"><a href="methods-methods-methods-4.html#cb30-30" tabindex="-1"></a></span>
+<span id="cb30-31"><a href="methods-methods-methods-4.html#cb30-31" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 </details>
 </div>
 <div class="video">

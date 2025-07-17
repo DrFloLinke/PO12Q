@@ -396,7 +396,7 @@ div.csl-indent {
 <ol style="list-style-type: decimal">
 <li><code>haven</code></li>
 <li><code>ggplot2</code></li>
-<li><code>stargazer</code></li>
+<li><code>modelsummary</code></li>
 </ol>
 <p>Set working directory and load the data file <a href="files/Week%207/simd.csv">simd.csv</a> into R. This is the <a href="https://www.gov.scot/collections/scottish-index-of-multiple-deprivation-2020/">“Scottish Index of Multiple Deprivation”</a>. Here is the codebook:</p>
 <table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
@@ -512,7 +512,7 @@ Hospital stays related to drug use: standardised ratio
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-mortality
+SMR
 </td>
 <td style="text-align:left;">
 Standardised mortality ratio
@@ -736,7 +736,8 @@ Rank of data zones from most deprived (ranked 1) to least deprived (ranked 6,976
 <div class="bulb">
 <p>Remember that the outcome variable needs to be continuous.</p>
 </div>
-<p>Let’s say we want to look at the relationship between alcohol consumption and mortality rate (yes, not a very funny topic, but interesting nonetheless). The two variables are, respectively, <code>ALCOHOL</code> and <code>SMR</code>.</p>
+<p>Now that you have a preliminary idea of the structure of the dataset, you can select two variables and test a possible relationship. The topic today is bivariate linear regression analysis, so remember that the outcome variable needs to be continuous.</p>
+<p>Let’s say our research question is whether higher levels alcohol abuse are associated with higher mortality rate (yes, not a very funny topic, but interesting nonetheless). The two variables are, respectively, and .</p>
 <p>Now, formulate the working (alternative) and the null hypothesis.</p>
 <p><strong>H<span class="math inline">\(\pmb{_0}\)</span>:</strong></p>
 <p><strong>H<span class="math inline">\(\pmb{_1}\)</span>:</strong></p>
@@ -827,7 +828,7 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
 <ol style="list-style-type: decimal">
 <li>How much variation in the outcome variable does the model explain? What does this tell us about the model?</li>
 <li>Interpret the slope coefficient.</li>
-<li>Interpret the intercept? What does it mean in practice?</li>
+<li>Interpret the intercept. What does it mean in practice?</li>
 <li>Interpret the results (in plain language) referring to the hypothesis you formulated above.</li>
 <li>What is the answer to our research question?</li>
 </ol>
@@ -835,128 +836,148 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
 </div>
 <div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
 <h2>Exporting the Results<a href="additional-exercises.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Just as with graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>stargazer</code> package. Try to export the table.</p>
+<p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the <code>modelsummary</code> package <span class="citation">(Arel-Bundock, 2022)</span>.</p>
+<p>Just like writing a shopping list, we start by creating a list of models for which we want <code>modelsummary</code> to produce a table. You can merely list the names of the objects in which the models are stored, or you can give them specific names which will appear as column titles in the table. This addition is by no means a must, but sometimes you might wish to give models a particular name, for example if you have used different methods of estimation, different components of a theory, etc. In the table we are creating here, I wish to distinguish between bivariate and multivariate models. By default, <code>modelsummary</code> just numbers models in ascending order.</p>
+<p>This simple step is already sufficient to produce – an admittedly somewhat crude – results table. All we have to do is to load the <code>modelsummary</code> package and to use the previously defined list of models as the argument of the <code>modelsummary()</code> function:</p>
 <div class="bulb">
-<p>The <span style="color:black"><code>stargazer</code></span> function needs to contain, in order: the name of the R object where you stored the regression results, the option <span style="color:black"><code>header=F</code></span> to suppress the annoying immortalisation of the author, the option <span style="color:black"><code>type="html"</code></span>, and the option <span style="color:black"><code>out="documentname.doc"</code></span> which places a word document with that file name in your working directory.</p>
+<p>Execute these code chunks as we go through this Section, so you can see the alterations we make to the table in real-time.</p>
 </div>
-<div class="warning">
-<p>Should you use MS Word to write your essay and your essay is saved in your working directory, <strong>do not</strong> save the table document under the same name as your essay, as R will overwrite it and it will be gone forever.</p>
-</div>
-<p>You can improve the table in many ways. For example, you need to replace the variable names with the variable labels. You could also <a href="https://www.jakeruss.com/cheatsheets/stargazer/">add a name of the model</a>, and suppress <a href="https://www.rdocumentation.org/packages/stargazer/versions/5.2.3/topics/stargazer_stat_code_list">unneeded statistics</a>.</p>
-<p>If you have done everything correctly, you should receive something similar to this:</p>
- 
- 
-<center>
-<table style="text-align:center">
-<caption>
-<strong><span id="tab:simreg"><span id="tab:simreg">Table 12: </span></span>Impact of Alcohol Abuse on Mortality in Scotland</strong>
-</caption>
+<p>This table is a vast improvement on the raw R output you would receive when calling <code>summary(model1)</code>. But it is far from finished. One characteristic which is conspicuously absent is an assessment of statistical significance. In model summaries of this kind this information is usually provided in the form of asterisks or other symbols next to the respective coefficient. We can add these simply by adding the option <code>stars=TRUE</code> to the code.</p>
+<p>Next up is the modification of the stub. The stub is the leftmost column in which you name the indicators for which coefficients will be presented.In the stub, “[a]bbreviate nothing. And never ever ever use computer variable names to stand for concepts. These are personal code words that convey no meaning to readers.” <span class="citation">(Stimson, n.d., p. 10)</span> Following this advice, let us add proper labels to the independent variables.</p>
+<p>To let <code>modelsummary</code> know how to replace each variable name, we create a so-called coefficient map. This is really just a character vector which follows a “before-after” logic in each of its rows. For example <code>'age'='Age'</code> replaces the variable name <code>age</code> with the label <code>Age</code>. We need to do this for all the variables we used in our models. I am storing this in a vecor called <code>cm</code> which stands for coefficient map.</p>
+<p>The next step is easy, as we only need to feed this coefficient map into the <code>modelsummary</code> code with the option <code>coef_map=cm</code>:</p>
+<p>This is a personal thing, but I also like to show the label of the dependent variable in results tables. They just feel incomplete to me without this information. There is no default to achieve this in <code>modelsummary</code> and so we need to use a little trick.</p>
+<p>What I want to add in the first row, but only in the second columm, the text . This requires us to alter the style of the table slightly. <code>modelsummary</code> uses another package called <code>tinytable</code> to style the output. We load the package with <code>library(tinytable)</code> and instruct R to place the text where we want it.</p>
+<p>Lastly, let us tackle the model fit statistics. By default, <code>modelsummary</code> prints a whole festival of these into the bottom section of the table, but I want to concentrate only on R<span class="math inline">\(^2\)</span>.</p>
+<p>This should produce this table:</p>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_ek79x9lbjgytenm6semp(i, j, css_id) {
+          var table = document.getElementById("tinytable_ek79x9lbjgytenm6semp");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_ek79x9lbjgytenm6semp');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_ek79x9lbjgytenm6semp(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_ek79x9lbjgytenm6semp");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 6, j: 1 },  ], css_id: 'tinytable_css_utlt9f4zwfrbr1b5fei2',}, 
+          { positions: [ { i: 3, j: 1 },  ], css_id: 'tinytable_css_hvgvpcjjsjt79gha1icc',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 },  ], css_id: 'tinytable_css_ut8zxlrswibxkgbtyto2',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_2h1bc5fyzqqym2u1m28t',}, 
+          { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_o7okhu56gr6jhsgw11cn',}, 
+          { positions: [ { i: 6, j: 0 },  ], css_id: 'tinytable_css_pqk6pj5tusgjyow139w4',}, 
+          { positions: [ { i: 3, j: 0 },  ], css_id: 'tinytable_css_caop6ompvjn8md5q0pgs',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 },  ], css_id: 'tinytable_css_vzdfmw9o7h8669nmpws9',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_0ttofnaj2szlja7k1c57',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_v6q45fnvkaziop86xci3',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_ek79x9lbjgytenm6semp(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_utlt9f4zwfrbr1b5fei2, .table th.tinytable_css_utlt9f4zwfrbr1b5fei2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_hvgvpcjjsjt79gha1icc, .table th.tinytable_css_hvgvpcjjsjt79gha1icc { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_ut8zxlrswibxkgbtyto2, .table th.tinytable_css_ut8zxlrswibxkgbtyto2 { text-align: center; }
+      .table td.tinytable_css_2h1bc5fyzqqym2u1m28t, .table th.tinytable_css_2h1bc5fyzqqym2u1m28t { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_o7okhu56gr6jhsgw11cn, .table th.tinytable_css_o7okhu56gr6jhsgw11cn { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_pqk6pj5tusgjyow139w4, .table th.tinytable_css_pqk6pj5tusgjyow139w4 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_caop6ompvjn8md5q0pgs, .table th.tinytable_css_caop6ompvjn8md5q0pgs { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_vzdfmw9o7h8669nmpws9, .table th.tinytable_css_vzdfmw9o7h8669nmpws9 { text-align: left; }
+      .table td.tinytable_css_0ttofnaj2szlja7k1c57, .table th.tinytable_css_0ttofnaj2szlja7k1c57 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_v6q45fnvkaziop86xci3, .table th.tinytable_css_v6q45fnvkaziop86xci3 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_ek79x9lbjgytenm6semp" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
 <tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=1>Dependent Variable:<br>GCSE Score</th>
 </tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="1" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-Standardised Mortality Ratio
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Hospital Stays related to Alcohol Use
-</td>
-<td>
-0.218<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.005)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
-76.734<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.636)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-6,961
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.245
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td style="text-align:right">
-<code>*</code>p&lt;0.1; <code>**</code>p&lt;0.05; <code>***</code>p&lt;0.01
-</td>
-</tr>
-</table>
-</center>
-<p> 
- </p>
+        <caption><span id="tab:reg91">Table 12: </span> Regression Models</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Bivariate</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='2'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Intercept</td>
+                  <td>76.734***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(0.636)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>6961</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.245</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.245</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+<p>You can export your tables for use in MS Word, or Apple Pages. But you will not be able to export the full table, only up to the point at which you are specifying the options for <code>tinytable</code> with <code>|&gt;</code>. This is probably as good a reason as any to start working with Markdown or LaTeXBut if you are happy with this caveat, the following code will render the table in an MS Word document (<code>output="table.docx"</code>) that is placed in your working directory.</p>
 <hr />
 </div>
 <div id="comparing-models" class="section level2 unnumbered hasAnchor">

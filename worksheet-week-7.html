@@ -792,27 +792,27 @@ SUM
 <div id="regression-hypothesis-testing-confidence-intervals" class="section level2 unnumbered hasAnchor">
 <h2>Regression – Hypothesis Testing &amp; Confidence Intervals<a href="worksheet-week-7.html#regression-hypothesis-testing-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider the following regression, where <code>gdp</code> indicates Gross Domestic Product (PPP) in 2005 US Dollars, and <code>life</code> indicates life expectancy at birth in years. I am running the regression with the first line and store the results in the object <code>wdi</code>. The second line asks R to display the detailed results for the regression. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Miller et al. (2022)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="worksheet-week-7.html#cb29-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
-<span id="cb29-2"><a href="worksheet-week-7.html#cb29-2" tabindex="-1"></a><span class="fu">summary</span>(model1)</span>
-<span id="cb29-3"><a href="worksheet-week-7.html#cb29-3" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="worksheet-week-7.html#cb29-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb29-5"><a href="worksheet-week-7.html#cb29-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
-<span id="cb29-6"><a href="worksheet-week-7.html#cb29-6" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="worksheet-week-7.html#cb29-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb29-8"><a href="worksheet-week-7.html#cb29-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb29-9"><a href="worksheet-week-7.html#cb29-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
-<span id="cb29-10"><a href="worksheet-week-7.html#cb29-10" tabindex="-1"></a></span>
-<span id="cb29-11"><a href="worksheet-week-7.html#cb29-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb29-12"><a href="worksheet-week-7.html#cb29-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb29-13"><a href="worksheet-week-7.html#cb29-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb29-14"><a href="worksheet-week-7.html#cb29-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb29-15"><a href="worksheet-week-7.html#cb29-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb29-16"><a href="worksheet-week-7.html#cb29-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb29-17"><a href="worksheet-week-7.html#cb29-17" tabindex="-1"></a></span>
-<span id="cb29-18"><a href="worksheet-week-7.html#cb29-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
-<span id="cb29-19"><a href="worksheet-week-7.html#cb29-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb29-20"><a href="worksheet-week-7.html#cb29-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
-<span id="cb29-21"><a href="worksheet-week-7.html#cb29-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="worksheet-week-7.html#cb31-1" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb31-2"><a href="worksheet-week-7.html#cb31-2" tabindex="-1"></a><span class="fu">summary</span>(model1)</span>
+<span id="cb31-3"><a href="worksheet-week-7.html#cb31-3" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="worksheet-week-7.html#cb31-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb31-5"><a href="worksheet-week-7.html#cb31-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb31-6"><a href="worksheet-week-7.html#cb31-6" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="worksheet-week-7.html#cb31-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb31-8"><a href="worksheet-week-7.html#cb31-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb31-9"><a href="worksheet-week-7.html#cb31-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
+<span id="cb31-10"><a href="worksheet-week-7.html#cb31-10" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="worksheet-week-7.html#cb31-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb31-12"><a href="worksheet-week-7.html#cb31-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb31-13"><a href="worksheet-week-7.html#cb31-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb31-14"><a href="worksheet-week-7.html#cb31-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb31-15"><a href="worksheet-week-7.html#cb31-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb31-16"><a href="worksheet-week-7.html#cb31-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb31-17"><a href="worksheet-week-7.html#cb31-17" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="worksheet-week-7.html#cb31-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
+<span id="cb31-19"><a href="worksheet-week-7.html#cb31-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb31-20"><a href="worksheet-week-7.html#cb31-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
+<span id="cb31-21"><a href="worksheet-week-7.html#cb31-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Formulate the null and alternative hypotheses which is tested in this model.</li>
 <li>Build the regression function.</li>
@@ -830,10 +830,10 @@ SUM
 <li>Calculate the 95% confidence intervals for the coefficient <code>life</code> and the intercept. Compare your results to the R output below.</li>
 <li>Find two explanations in the output for why the coefficient for <code>life</code> is statistically significant at the 5% level?</li>
 </ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="worksheet-week-7.html#cb30-1" tabindex="-1"></a><span class="fu">confint</span>(model1,<span class="at">level =</span> <span class="fl">0.95</span>)</span>
-<span id="cb30-2"><a href="worksheet-week-7.html#cb30-2" tabindex="-1"></a>                  <span class="fl">2.5</span> <span class="sc">%    97.5 %</span></span>
-<span id="cb30-3"><a href="worksheet-week-7.html#cb30-3" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">114852.512</span> <span class="sc">-</span><span class="fl">73761.11</span></span>
-<span id="cb30-4"><a href="worksheet-week-7.html#cb30-4" tabindex="-1"></a>lifeexp        <span class="fl">1218.183</span>   <span class="fl">1788.24</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="worksheet-week-7.html#cb32-1" tabindex="-1"></a><span class="fu">confint</span>(model1,<span class="at">level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb32-2"><a href="worksheet-week-7.html#cb32-2" tabindex="-1"></a>                  <span class="fl">2.5</span> <span class="sc">%    97.5 %</span></span>
+<span id="cb32-3"><a href="worksheet-week-7.html#cb32-3" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">114852.512</span> <span class="sc">-</span><span class="fl">73761.11</span></span>
+<span id="cb32-4"><a href="worksheet-week-7.html#cb32-4" tabindex="-1"></a>lifeexp        <span class="fl">1218.183</span>   <span class="fl">1788.24</span></span></code></pre></div>
 <hr />
 </div>
 <div id="solutions-4" class="section level2 unnumbered hasAnchor">

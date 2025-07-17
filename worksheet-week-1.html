@@ -707,39 +707,56 @@ Combined Polity V score
 <span id="cb4-5"><a href="worksheet-week-1.html#cb4-5" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
 <span id="cb4-6"><a href="worksheet-week-1.html#cb4-6" tabindex="-1"></a>             <span class="fu">cut</span>(lifeexp, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">77</span>,<span class="dv">84</span>), </span>
 <span id="cb4-7"><a href="worksheet-week-1.html#cb4-7" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="worksheet-week-1.html#cb5-1" tabindex="-1"></a>wdi<span class="sc">$</span>lifecat <span class="ot">=</span> <span class="fu">as.factor</span> (<span class="fu">ifelse</span> (wdi<span class="sc">$</span>lifeexp <span class="sc">&lt;=</span> <span class="dv">77</span>, <span class="st">&#39;low&#39;</span>, <span class="st">&#39;high&#39;</span>))</span></code></pre></div>
+</details>
+</div>
 <div class="bulb">
 <p>Make a habit of adding a note underneath each code chunk in your RScript (with a ‘#’) in which you translate the code into plain English.</p>
 </div>
 <ul>
 <li>Next up is <code>gdppc</code> which we are recoding into a factor variable with three levels:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="worksheet-week-1.html#cb5-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="worksheet-week-1.html#cb5-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpcat=</span></span>
-<span id="cb5-3"><a href="worksheet-week-1.html#cb5-3" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
-<span id="cb5-4"><a href="worksheet-week-1.html#cb5-4" tabindex="-1"></a>             <span class="fu">cut</span>(gdppc, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3861.5</span>,<span class="dv">25260</span>, <span class="dv">150000</span>), </span>
-<span id="cb5-5"><a href="worksheet-week-1.html#cb5-5" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="worksheet-week-1.html#cb6-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="worksheet-week-1.html#cb6-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpcat=</span></span>
+<span id="cb6-3"><a href="worksheet-week-1.html#cb6-3" tabindex="-1"></a>           <span class="fu">ordered</span>(</span>
+<span id="cb6-4"><a href="worksheet-week-1.html#cb6-4" tabindex="-1"></a>             <span class="fu">cut</span>(gdppc, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3861.5</span>,<span class="dv">25260</span>, <span class="dv">150000</span>), </span>
+<span id="cb6-5"><a href="worksheet-week-1.html#cb6-5" tabindex="-1"></a>                 <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>))))</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="worksheet-week-1.html#cb7-1" tabindex="-1"></a>wdi<span class="sc">$</span>gdpcat <span class="ot">&lt;-</span> <span class="fu">as.factor</span> (<span class="fu">ifelse</span> (wdi<span class="sc">$</span>gdppc <span class="sc">&lt;=</span> <span class="fl">3861.5</span>, <span class="st">&#39;low&#39;</span>,</span>
+<span id="cb7-2"><a href="worksheet-week-1.html#cb7-2" tabindex="-1"></a>                                    <span class="fu">ifelse</span> (wdi<span class="sc">$</span>gdppc <span class="sc">&lt;=</span> <span class="dv">25260</span>, <span class="st">&#39;medium&#39;</span>, <span class="st">&#39;high&#39;</span>)))</span></code></pre></div>
+</details>
+</div>
 <ul>
 <li>Let us now see whether the level of GDP has an influence on life expectancy</li>
 <li>State the null and the alternative hypothesis (directional)</li>
 <li>Run the cross-tabulation, by calling:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="worksheet-week-1.html#cb6-1" tabindex="-1"></a>wdi_table <span class="ot">&lt;-</span> <span class="fu">with</span>(wdi, <span class="fu">table</span>(gdpcat, lifecat))</span>
-<span id="cb6-2"><a href="worksheet-week-1.html#cb6-2" tabindex="-1"></a>wdi_table</span>
-<span id="cb6-3"><a href="worksheet-week-1.html#cb6-3" tabindex="-1"></a>        lifecat</span>
-<span id="cb6-4"><a href="worksheet-week-1.html#cb6-4" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb6-5"><a href="worksheet-week-1.html#cb6-5" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb6-6"><a href="worksheet-week-1.html#cb6-6" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb6-7"><a href="worksheet-week-1.html#cb6-7" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="worksheet-week-1.html#cb8-1" tabindex="-1"></a>wdi_table <span class="ot">&lt;-</span> <span class="fu">with</span>(wdi, <span class="fu">table</span>(gdpcat, lifecat))</span>
+<span id="cb8-2"><a href="worksheet-week-1.html#cb8-2" tabindex="-1"></a>wdi_table</span>
+<span id="cb8-3"><a href="worksheet-week-1.html#cb8-3" tabindex="-1"></a>        lifecat</span>
+<span id="cb8-4"><a href="worksheet-week-1.html#cb8-4" tabindex="-1"></a>gdpcat   low high</span>
+<span id="cb8-5"><a href="worksheet-week-1.html#cb8-5" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
+<span id="cb8-6"><a href="worksheet-week-1.html#cb8-6" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
+<span id="cb8-7"><a href="worksheet-week-1.html#cb8-7" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
 <ul>
 <li>Now perform a chi-squared test, using the command<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="worksheet-week-1.html#cb7-1" tabindex="-1"></a>Xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(wdi_table, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
-<span id="cb7-2"><a href="worksheet-week-1.html#cb7-2" tabindex="-1"></a>Xsq</span>
-<span id="cb7-3"><a href="worksheet-week-1.html#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="worksheet-week-1.html#cb7-4" tabindex="-1"></a>    Pearson<span class="st">&#39;s Chi-squared test</span></span>
-<span id="cb7-5"><a href="worksheet-week-1.html#cb7-5" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="worksheet-week-1.html#cb7-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
-<span id="cb7-7"><a href="worksheet-week-1.html#cb7-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="worksheet-week-1.html#cb9-1" tabindex="-1"></a>Xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(wdi_table, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
+<span id="cb9-2"><a href="worksheet-week-1.html#cb9-2" tabindex="-1"></a>Xsq</span>
+<span id="cb9-3"><a href="worksheet-week-1.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="worksheet-week-1.html#cb9-4" tabindex="-1"></a>    Pearson<span class="st">&#39;s Chi-squared test</span></span>
+<span id="cb9-5"><a href="worksheet-week-1.html#cb9-5" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="worksheet-week-1.html#cb9-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
+<span id="cb9-7"><a href="worksheet-week-1.html#cb9-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
 <div class="bulb">
 <p>As on PO11Q, I have prepared flashcards to help you learn R functions. These have their own section each week in this companion, but are also available on the more general <a href="https://drfloreiche.github.io/POQFlashcards/">POQ Flashcard Page</a>.</p>
 </div>
@@ -748,28 +765,28 @@ Combined Polity V score
 <li>What do these results mean for our hypotheses?</li>
 <li>Produce the table of expected frequencies, using the command</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="worksheet-week-1.html#cb8-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>expected, <span class="dv">2</span>)</span>
-<span id="cb8-2"><a href="worksheet-week-1.html#cb8-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb8-3"><a href="worksheet-week-1.html#cb8-3" tabindex="-1"></a>gdpcat     low  high</span>
-<span id="cb8-4"><a href="worksheet-week-1.html#cb8-4" tabindex="-1"></a>  low    <span class="fl">51.44</span> <span class="fl">17.56</span></span>
-<span id="cb8-5"><a href="worksheet-week-1.html#cb8-5" tabindex="-1"></a>  medium <span class="fl">52.19</span> <span class="fl">17.81</span></span>
-<span id="cb8-6"><a href="worksheet-week-1.html#cb8-6" tabindex="-1"></a>  high   <span class="fl">22.37</span>  <span class="fl">7.63</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="worksheet-week-1.html#cb10-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>expected, <span class="dv">2</span>)</span>
+<span id="cb10-2"><a href="worksheet-week-1.html#cb10-2" tabindex="-1"></a>        lifecat</span>
+<span id="cb10-3"><a href="worksheet-week-1.html#cb10-3" tabindex="-1"></a>gdpcat     low  high</span>
+<span id="cb10-4"><a href="worksheet-week-1.html#cb10-4" tabindex="-1"></a>  low    <span class="fl">51.44</span> <span class="fl">17.56</span></span>
+<span id="cb10-5"><a href="worksheet-week-1.html#cb10-5" tabindex="-1"></a>  medium <span class="fl">52.19</span> <span class="fl">17.81</span></span>
+<span id="cb10-6"><a href="worksheet-week-1.html#cb10-6" tabindex="-1"></a>  high   <span class="fl">22.37</span>  <span class="fl">7.63</span></span></code></pre></div>
 <ul>
 <li>You can compare that to the observed ones:</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="worksheet-week-1.html#cb9-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>observed, <span class="dv">2</span>)</span>
-<span id="cb9-2"><a href="worksheet-week-1.html#cb9-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb9-3"><a href="worksheet-week-1.html#cb9-3" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb9-4"><a href="worksheet-week-1.html#cb9-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb9-5"><a href="worksheet-week-1.html#cb9-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb9-6"><a href="worksheet-week-1.html#cb9-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="worksheet-week-1.html#cb11-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>observed, <span class="dv">2</span>)</span>
+<span id="cb11-2"><a href="worksheet-week-1.html#cb11-2" tabindex="-1"></a>        lifecat</span>
+<span id="cb11-3"><a href="worksheet-week-1.html#cb11-3" tabindex="-1"></a>gdpcat   low high</span>
+<span id="cb11-4"><a href="worksheet-week-1.html#cb11-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
+<span id="cb11-5"><a href="worksheet-week-1.html#cb11-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
+<span id="cb11-6"><a href="worksheet-week-1.html#cb11-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
 <p>You can see that this is identical to producing the cross-tabulation in the first place:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="worksheet-week-1.html#cb10-1" tabindex="-1"></a>wdi_table</span>
-<span id="cb10-2"><a href="worksheet-week-1.html#cb10-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb10-3"><a href="worksheet-week-1.html#cb10-3" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb10-4"><a href="worksheet-week-1.html#cb10-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb10-5"><a href="worksheet-week-1.html#cb10-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb10-6"><a href="worksheet-week-1.html#cb10-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="worksheet-week-1.html#cb12-1" tabindex="-1"></a>wdi_table</span>
+<span id="cb12-2"><a href="worksheet-week-1.html#cb12-2" tabindex="-1"></a>        lifecat</span>
+<span id="cb12-3"><a href="worksheet-week-1.html#cb12-3" tabindex="-1"></a>gdpcat   low high</span>
+<span id="cb12-4"><a href="worksheet-week-1.html#cb12-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
+<span id="cb12-5"><a href="worksheet-week-1.html#cb12-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
+<span id="cb12-6"><a href="worksheet-week-1.html#cb12-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
 <ul>
 <li>In plain English: What have we found out?</li>
 </ul>

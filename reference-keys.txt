@@ -10,7 +10,7 @@ tab:glossary5
 tab:regdata7
 tab:simdcode
 fig:alcsmr
-tab:simreg
+tab:reg91
 tab:glossary7
 tab:wdicode8
 tab:reg1
@@ -18,7 +18,6 @@ tab:reg2
 tab:reg3
 tab:reg4
 tab:glossary8
-tab:reg91
 tab:glossary9
 tab:londoncode10
 tab:glossary10

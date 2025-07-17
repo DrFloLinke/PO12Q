@@ -140,7 +140,45 @@ crime <- crime %>%
                                "Not very worried"= 1,
                                "Not at all worried" = 0))
 
+
 crime$worry <- crime$wburgl.num + crime$wmugged.num + crime$wraped.num + crime$wattack.num + crime$wraceatt.num
+
+
+##########################################################################
+# BASE R
+##########################################################################
+#crime$wburgl.num <- as.factor (ifelse (crime$wburgl == 'Very worried', '3',
+#                                       ifelse (crime$wburgl == 'Fairly worried', '2',
+#                                               ifelse (crime$wburgl == 'Not very worried', '1',
+#                                                       ifelse (crime$wburgl == 'Not at all worried', #'0', '')))))
+#
+#
+#crime$wmugged.num <- as.factor (ifelse (crime$wmugged == 'Very worried', '3',
+#                                        ifelse (crime$wmugged == 'Fairly worried', '2',
+#                                                ifelse (crime$wmugged == 'Not very worried', '1',
+#                                                        ifelse (crime$wmugged == 'Not at all worried', #'0', '')))))
+#
+#
+#crime$wraped.num <- as.factor (ifelse (crime$wraped == 'Very worried', '3',
+#                                       ifelse (crime$wraped == 'Fairly worried', '2',
+#                                               ifelse (crime$wraped == 'Not very worried', '1',
+#                                                       ifelse (crime$wraped == 'Not at all worried', #'0', '')))))
+#
+#
+#crime$wattack.num <- as.factor (ifelse (crime$wattack == 'Very worried', '3',
+#                                        ifelse (crime$wattack == 'Fairly worried', '2',
+#                                                ifelse (crime$wattack == 'Not very worried', '1',
+#                                                        ifelse (crime$wattack == 'Not at all worried', #'0', '')))))
+#
+#
+#crime$wraceatt.num <- as.factor (ifelse (crime$wraceatt == 'Very worried', '3',
+#                                         ifelse (crime$wraceatt == 'Fairly worried', '2',
+#                                                 ifelse (crime$wraceatt == 'Not very worried', '1',
+#                                                         ifelse (crime$wraceatt == 'Not at all worried'#, '0', '')))))
+#
+#crime$worry <- as.numeric (crime$wburgl.num) + as.numeric (crime$wmugged.num) + as.numeric (crime$wraped.num) + as.numeric (crime$wattack.num) + as.numeric (crime$wraceatt.num)
+##########################################################################
+
 
 # b
 summary(crime$worry)
@@ -206,17 +244,45 @@ ggplot(london, aes(x = unemp_rate, y = crime)) +
   xlab('Unemployment Rate') + ylab('Crime Rate')
 # There is a positive relationship with higher unemployment associated with higher crime. There are three major outlying observations.
 
+##########################################################################
+# BASE R
+##########################################################################
+#plot (london$unemp_rate, london$crime,
+#      xlab = 'Unemployment Rate', ylab = 'Crime Rate')
+#abline (lm (london$crime ~ london$unemp_rate))
+##########################################################################
+
+
 # b.
 ggplot(subset(london, crime < 500),aes(x = unemp_rate, y = crime)) + 
   geom_point() + geom_smooth(method = 'lm') +
   xlab('Unemployment Rate') + ylab('Crime Rate')
 # Removing the outliers doesn't affect the trend but does accentuate the variability of the data. It highlights a few higher crime rate wards away from the best fit line.
 
+##########################################################################
+# BASE R
+##########################################################################
+#londonc <- london [london$crime < 500,]
+#plot (londonc$unemp_rate, londonc$crime,
+#      xlab = 'Unemployment Rate', ylab = 'Crime Rate')
+#abline (lm (londonc$crime ~ londonc$unemp_rate))
+##########################################################################
+
 # c.
 ggplot(subset(london, crime < 500),
        aes(x = (unemp_rate), y = log(crime))) + geom_point() + 
   xlab('Unemployment Rate') + ylab('Logged Crime Rate') + geom_smooth(method = 'lm')  
 # There is still a positive trend as show by the best fit line. The above line outliers from the previous graph have been reduced in severity. 
+
+##########################################################################
+# BASE R
+##########################################################################
+#londonc$logcrime <- log (londonc$crime)
+#plot (londonc$unemp_rate, londonc$logcrime,
+#      xlab = 'Unemployment Rate', ylab = 'Logged Crime Rate')
+#abline (lm (londonc$logcrime ~ londonc$unemp_rate))
+##########################################################################
+
 
 # d.
 model_crime_unemp <- lm(crime ~ unemp_rate, subset(london, crime < 500))

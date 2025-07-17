@@ -420,7 +420,6 @@ F-statistic: 227.3 on 1 and 623 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
-<p>Please have a look at the <a href="files/Week%208/PO12Q_Seminar_Week-8_SR-Questions.pdf">indicative solutions</a> to check your answers.</p>
 <hr />
 </div>
 <div id="multiple-regression-in-r-guided-example" class="section level2 unnumbered hasAnchor">
@@ -683,27 +682,27 @@ Combined Polity V score
 <ul>
 <li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="worksheet-week-8.html#cb36-1" tabindex="-1"></a>wdi_life <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
-<span id="cb36-2"><a href="worksheet-week-8.html#cb36-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_life)</span>
-<span id="cb36-3"><a href="worksheet-week-8.html#cb36-3" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="worksheet-week-8.html#cb36-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb36-5"><a href="worksheet-week-8.html#cb36-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
-<span id="cb36-6"><a href="worksheet-week-8.html#cb36-6" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="worksheet-week-8.html#cb36-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb36-8"><a href="worksheet-week-8.html#cb36-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb36-9"><a href="worksheet-week-8.html#cb36-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
-<span id="cb36-10"><a href="worksheet-week-8.html#cb36-10" tabindex="-1"></a></span>
-<span id="cb36-11"><a href="worksheet-week-8.html#cb36-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb36-12"><a href="worksheet-week-8.html#cb36-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb36-13"><a href="worksheet-week-8.html#cb36-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb36-14"><a href="worksheet-week-8.html#cb36-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb36-15"><a href="worksheet-week-8.html#cb36-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb36-16"><a href="worksheet-week-8.html#cb36-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb36-17"><a href="worksheet-week-8.html#cb36-17" tabindex="-1"></a></span>
-<span id="cb36-18"><a href="worksheet-week-8.html#cb36-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
-<span id="cb36-19"><a href="worksheet-week-8.html#cb36-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb36-20"><a href="worksheet-week-8.html#cb36-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
-<span id="cb36-21"><a href="worksheet-week-8.html#cb36-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="worksheet-week-8.html#cb38-1" tabindex="-1"></a>wdi_life <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb38-2"><a href="worksheet-week-8.html#cb38-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_life)</span>
+<span id="cb38-3"><a href="worksheet-week-8.html#cb38-3" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="worksheet-week-8.html#cb38-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb38-5"><a href="worksheet-week-8.html#cb38-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb38-6"><a href="worksheet-week-8.html#cb38-6" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="worksheet-week-8.html#cb38-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb38-8"><a href="worksheet-week-8.html#cb38-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb38-9"><a href="worksheet-week-8.html#cb38-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
+<span id="cb38-10"><a href="worksheet-week-8.html#cb38-10" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="worksheet-week-8.html#cb38-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb38-12"><a href="worksheet-week-8.html#cb38-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb38-13"><a href="worksheet-week-8.html#cb38-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb38-14"><a href="worksheet-week-8.html#cb38-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb38-15"><a href="worksheet-week-8.html#cb38-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb38-16"><a href="worksheet-week-8.html#cb38-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb38-17"><a href="worksheet-week-8.html#cb38-17" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="worksheet-week-8.html#cb38-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
+<span id="cb38-19"><a href="worksheet-week-8.html#cb38-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb38-20"><a href="worksheet-week-8.html#cb38-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
+<span id="cb38-21"><a href="worksheet-week-8.html#cb38-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
 <ul>
 <li>Interpret the coefficients.</li>
 </ul>
@@ -720,54 +719,54 @@ Combined Polity V score
 <li>Now we use a different regressor, say “Urban population (% of total)”.</li>
 <li>Specify the null and the alternative hypotheses.</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="worksheet-week-8.html#cb37-1" tabindex="-1"></a>wdi_urban <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb37-2"><a href="worksheet-week-8.html#cb37-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_urban)</span>
-<span id="cb37-3"><a href="worksheet-week-8.html#cb37-3" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="worksheet-week-8.html#cb37-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb37-5"><a href="worksheet-week-8.html#cb37-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb37-6"><a href="worksheet-week-8.html#cb37-6" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="worksheet-week-8.html#cb37-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb37-8"><a href="worksheet-week-8.html#cb37-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb37-9"><a href="worksheet-week-8.html#cb37-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">28588</span> <span class="sc">-</span><span class="dv">10681</span>  <span class="sc">-</span><span class="dv">3110</span>   <span class="dv">6863</span> <span class="dv">152303</span> </span>
-<span id="cb37-10"><a href="worksheet-week-8.html#cb37-10" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="worksheet-week-8.html#cb37-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb37-12"><a href="worksheet-week-8.html#cb37-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb37-13"><a href="worksheet-week-8.html#cb37-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">16983.43</span>    <span class="fl">3872.34</span>  <span class="sc">-</span><span class="fl">4.386</span> <span class="fl">1.98e-05</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb37-14"><a href="worksheet-week-8.html#cb37-14" tabindex="-1"></a>urban          <span class="fl">542.03</span>      <span class="fl">61.74</span>   <span class="fl">8.779</span> <span class="fl">1.42e-15</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb37-15"><a href="worksheet-week-8.html#cb37-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb37-16"><a href="worksheet-week-8.html#cb37-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb37-17"><a href="worksheet-week-8.html#cb37-17" tabindex="-1"></a></span>
-<span id="cb37-18"><a href="worksheet-week-8.html#cb37-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">19120</span> on <span class="dv">176</span> degrees of freedom</span>
-<span id="cb37-19"><a href="worksheet-week-8.html#cb37-19" tabindex="-1"></a>  (<span class="dv">17</span> observations deleted due to missingness)</span>
-<span id="cb37-20"><a href="worksheet-week-8.html#cb37-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3045</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3006</span> </span>
-<span id="cb37-21"><a href="worksheet-week-8.html#cb37-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">77.07</span> on <span class="dv">1</span> and <span class="dv">176</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">1.417e-15</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="worksheet-week-8.html#cb39-1" tabindex="-1"></a>wdi_urban <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb39-2"><a href="worksheet-week-8.html#cb39-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_urban)</span>
+<span id="cb39-3"><a href="worksheet-week-8.html#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="worksheet-week-8.html#cb39-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb39-5"><a href="worksheet-week-8.html#cb39-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb39-6"><a href="worksheet-week-8.html#cb39-6" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="worksheet-week-8.html#cb39-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb39-8"><a href="worksheet-week-8.html#cb39-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb39-9"><a href="worksheet-week-8.html#cb39-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">28588</span> <span class="sc">-</span><span class="dv">10681</span>  <span class="sc">-</span><span class="dv">3110</span>   <span class="dv">6863</span> <span class="dv">152303</span> </span>
+<span id="cb39-10"><a href="worksheet-week-8.html#cb39-10" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="worksheet-week-8.html#cb39-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb39-12"><a href="worksheet-week-8.html#cb39-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb39-13"><a href="worksheet-week-8.html#cb39-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">16983.43</span>    <span class="fl">3872.34</span>  <span class="sc">-</span><span class="fl">4.386</span> <span class="fl">1.98e-05</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb39-14"><a href="worksheet-week-8.html#cb39-14" tabindex="-1"></a>urban          <span class="fl">542.03</span>      <span class="fl">61.74</span>   <span class="fl">8.779</span> <span class="fl">1.42e-15</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb39-15"><a href="worksheet-week-8.html#cb39-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb39-16"><a href="worksheet-week-8.html#cb39-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb39-17"><a href="worksheet-week-8.html#cb39-17" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="worksheet-week-8.html#cb39-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">19120</span> on <span class="dv">176</span> degrees of freedom</span>
+<span id="cb39-19"><a href="worksheet-week-8.html#cb39-19" tabindex="-1"></a>  (<span class="dv">17</span> observations deleted due to missingness)</span>
+<span id="cb39-20"><a href="worksheet-week-8.html#cb39-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3045</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3006</span> </span>
+<span id="cb39-21"><a href="worksheet-week-8.html#cb39-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">77.07</span> on <span class="dv">1</span> and <span class="dv">176</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">1.417e-15</span></span></code></pre></div>
 <ul>
 <li>Interpret the coefficients.</li>
 <li>What does this mean for the hypotheses?</li>
 <li>If we want to assess the influence of both independent variables together, we type:</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="worksheet-week-8.html#cb38-1" tabindex="-1"></a>wdi_joint <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb38-2"><a href="worksheet-week-8.html#cb38-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_joint)</span>
-<span id="cb38-3"><a href="worksheet-week-8.html#cb38-3" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="worksheet-week-8.html#cb38-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb38-5"><a href="worksheet-week-8.html#cb38-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb38-6"><a href="worksheet-week-8.html#cb38-6" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="worksheet-week-8.html#cb38-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb38-8"><a href="worksheet-week-8.html#cb38-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb38-9"><a href="worksheet-week-8.html#cb38-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">22570</span>  <span class="sc">-</span><span class="dv">8825</span>  <span class="sc">-</span><span class="dv">2143</span>   <span class="dv">5594</span>  <span class="dv">74445</span> </span>
-<span id="cb38-10"><a href="worksheet-week-8.html#cb38-10" tabindex="-1"></a></span>
-<span id="cb38-11"><a href="worksheet-week-8.html#cb38-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb38-12"><a href="worksheet-week-8.html#cb38-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb38-13"><a href="worksheet-week-8.html#cb38-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">74786.14</span>   <span class="fl">10690.13</span>  <span class="sc">-</span><span class="fl">6.996</span> <span class="fl">6.17e-11</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb38-14"><a href="worksheet-week-8.html#cb38-14" tabindex="-1"></a>lifeexp       <span class="fl">1012.17</span>     <span class="fl">172.70</span>   <span class="fl">5.861</span> <span class="fl">2.41e-08</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb38-15"><a href="worksheet-week-8.html#cb38-15" tabindex="-1"></a>urban          <span class="fl">273.74</span>      <span class="fl">59.13</span>   <span class="fl">4.629</span> <span class="fl">7.37e-06</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb38-16"><a href="worksheet-week-8.html#cb38-16" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb38-17"><a href="worksheet-week-8.html#cb38-17" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb38-18"><a href="worksheet-week-8.html#cb38-18" tabindex="-1"></a></span>
-<span id="cb38-19"><a href="worksheet-week-8.html#cb38-19" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">13860</span> on <span class="dv">166</span> degrees of freedom</span>
-<span id="cb38-20"><a href="worksheet-week-8.html#cb38-20" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb38-21"><a href="worksheet-week-8.html#cb38-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.463</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.4565</span> </span>
-<span id="cb38-22"><a href="worksheet-week-8.html#cb38-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">71.55</span> on <span class="dv">2</span> and <span class="dv">166</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="worksheet-week-8.html#cb40-1" tabindex="-1"></a>wdi_joint <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb40-2"><a href="worksheet-week-8.html#cb40-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_joint)</span>
+<span id="cb40-3"><a href="worksheet-week-8.html#cb40-3" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="worksheet-week-8.html#cb40-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb40-5"><a href="worksheet-week-8.html#cb40-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb40-6"><a href="worksheet-week-8.html#cb40-6" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="worksheet-week-8.html#cb40-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb40-8"><a href="worksheet-week-8.html#cb40-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb40-9"><a href="worksheet-week-8.html#cb40-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">22570</span>  <span class="sc">-</span><span class="dv">8825</span>  <span class="sc">-</span><span class="dv">2143</span>   <span class="dv">5594</span>  <span class="dv">74445</span> </span>
+<span id="cb40-10"><a href="worksheet-week-8.html#cb40-10" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="worksheet-week-8.html#cb40-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb40-12"><a href="worksheet-week-8.html#cb40-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb40-13"><a href="worksheet-week-8.html#cb40-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">74786.14</span>   <span class="fl">10690.13</span>  <span class="sc">-</span><span class="fl">6.996</span> <span class="fl">6.17e-11</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb40-14"><a href="worksheet-week-8.html#cb40-14" tabindex="-1"></a>lifeexp       <span class="fl">1012.17</span>     <span class="fl">172.70</span>   <span class="fl">5.861</span> <span class="fl">2.41e-08</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb40-15"><a href="worksheet-week-8.html#cb40-15" tabindex="-1"></a>urban          <span class="fl">273.74</span>      <span class="fl">59.13</span>   <span class="fl">4.629</span> <span class="fl">7.37e-06</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb40-16"><a href="worksheet-week-8.html#cb40-16" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb40-17"><a href="worksheet-week-8.html#cb40-17" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb40-18"><a href="worksheet-week-8.html#cb40-18" tabindex="-1"></a></span>
+<span id="cb40-19"><a href="worksheet-week-8.html#cb40-19" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">13860</span> on <span class="dv">166</span> degrees of freedom</span>
+<span id="cb40-20"><a href="worksheet-week-8.html#cb40-20" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb40-21"><a href="worksheet-week-8.html#cb40-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.463</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.4565</span> </span>
+<span id="cb40-22"><a href="worksheet-week-8.html#cb40-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">71.55</span> on <span class="dv">2</span> and <span class="dv">166</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
 <ul>
 <li>Interpret the coefficients.</li>
 </ul>
@@ -775,7 +774,7 @@ Combined Polity V score
 <p>Bear in mind for your interpretation that these are partial slope coefficients!</p>
 </div>
 <ul>
-<li>Because I am nice, I am producing an overview<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> of all three regressions in Table <a href="worksheet-week-8.html#tab:reg1">15</a>:</li>
+<li>Because I am nice, I am producing an overview of all three regressions in Table <a href="worksheet-week-8.html#tab:reg1">15</a>:</li>
 </ul>
  
  
@@ -784,8 +783,8 @@ Combined Polity V score
 
     <script>
 
-      function styleCell_7w79y3vfpvw587ov19uw(i, j, css_id) {
-          var table = document.getElementById("tinytable_7w79y3vfpvw587ov19uw");
+      function styleCell_elnefi7uf8at9xjd5h17(i, j, css_id) {
+          var table = document.getElementById("tinytable_elnefi7uf8at9xjd5h17");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -795,7 +794,7 @@ Combined Polity V score
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_7w79y3vfpvw587ov19uw');
+        var table = document.getElementById('tinytable_elnefi7uf8at9xjd5h17');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -803,8 +802,8 @@ Combined Polity V score
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_7w79y3vfpvw587ov19uw(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_7w79y3vfpvw587ov19uw");
+      function spanCell_elnefi7uf8at9xjd5h17(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_elnefi7uf8at9xjd5h17");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -834,23 +833,23 @@ Combined Polity V score
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_lyrr3f222dl4k0zegi24',}, 
-          { positions: [ { i: 10, j: 2 }, { i: 10, j: 1 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_ta780qxj63g1tyr75zdu',}, 
-          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_clb96zq04262jdyv8s0f',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 3, j: 2 }, { i: 9, j: 2 }, { i: 3, j: 3 }, { i: 2, j: 2 }, { i: 9, j: 3 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 9, j: 1 }, { i: 8, j: 2 }, { i: 2, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 8, j: 3 },  ], css_id: 'tinytable_css_ovpnpdega43qindjkele',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_aex3y7xxd0qpzaw0hk26',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 1, j: 3 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_p3jlviglzckkc53ipdl1',}, 
-          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_ysum8lzeprre9obd8pjd',}, 
-          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_oiwikl12zx5vq3nrupa8',}, 
-          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_hjhlrlrgxqgi9sc4lpex',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_g7se7lfheh93t0zytne0',}, 
-          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_qm7oyy00r4lzx7g62fzl',}, 
+          { positions: [ { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_wak92yxrc715mgvd6c7a',}, 
+          { positions: [ { i: 10, j: 2 }, { i: 10, j: 1 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_1emy158moel7sk8xa36a',}, 
+          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_4nvoa9eu9ny97v6gjw99',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 3, j: 2 }, { i: 9, j: 2 }, { i: 3, j: 3 }, { i: 2, j: 2 }, { i: 9, j: 3 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 9, j: 1 }, { i: 8, j: 2 }, { i: 2, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 8, j: 3 },  ], css_id: 'tinytable_css_70aaeeeeoz263n32a9sm',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_rt3pa4ziyw4mok4b1h3m',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 3 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_6eimy5639g72dr58wix0',}, 
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_1086csjdf6zboqcj9tb7',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_2wprpgm970f1dbp778w2',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_ulflswu7ntmvgpmpz7ez',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_6zmxn3smaw2wtx1jdo6y',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_ak6m79g55rvyrj04aj19',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_7w79y3vfpvw587ov19uw(cell.i, cell.j, group.css_id);
+                  styleCell_elnefi7uf8at9xjd5h17(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -858,20 +857,20 @@ Combined Polity V score
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_lyrr3f222dl4k0zegi24, .table th.tinytable_css_lyrr3f222dl4k0zegi24 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_ta780qxj63g1tyr75zdu, .table th.tinytable_css_ta780qxj63g1tyr75zdu { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_clb96zq04262jdyv8s0f, .table th.tinytable_css_clb96zq04262jdyv8s0f { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_ovpnpdega43qindjkele, .table th.tinytable_css_ovpnpdega43qindjkele { text-align: center; }
-      .table td.tinytable_css_aex3y7xxd0qpzaw0hk26, .table th.tinytable_css_aex3y7xxd0qpzaw0hk26 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_p3jlviglzckkc53ipdl1, .table th.tinytable_css_p3jlviglzckkc53ipdl1 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_ysum8lzeprre9obd8pjd, .table th.tinytable_css_ysum8lzeprre9obd8pjd { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_oiwikl12zx5vq3nrupa8, .table th.tinytable_css_oiwikl12zx5vq3nrupa8 { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_hjhlrlrgxqgi9sc4lpex, .table th.tinytable_css_hjhlrlrgxqgi9sc4lpex { text-align: left; }
-      .table td.tinytable_css_g7se7lfheh93t0zytne0, .table th.tinytable_css_g7se7lfheh93t0zytne0 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_qm7oyy00r4lzx7g62fzl, .table th.tinytable_css_qm7oyy00r4lzx7g62fzl { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_wak92yxrc715mgvd6c7a, .table th.tinytable_css_wak92yxrc715mgvd6c7a { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_1emy158moel7sk8xa36a, .table th.tinytable_css_1emy158moel7sk8xa36a { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_4nvoa9eu9ny97v6gjw99, .table th.tinytable_css_4nvoa9eu9ny97v6gjw99 { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_70aaeeeeoz263n32a9sm, .table th.tinytable_css_70aaeeeeoz263n32a9sm { text-align: center; }
+      .table td.tinytable_css_rt3pa4ziyw4mok4b1h3m, .table th.tinytable_css_rt3pa4ziyw4mok4b1h3m { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_6eimy5639g72dr58wix0, .table th.tinytable_css_6eimy5639g72dr58wix0 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_1086csjdf6zboqcj9tb7, .table th.tinytable_css_1086csjdf6zboqcj9tb7 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_2wprpgm970f1dbp778w2, .table th.tinytable_css_2wprpgm970f1dbp778w2 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_ulflswu7ntmvgpmpz7ez, .table th.tinytable_css_ulflswu7ntmvgpmpz7ez { text-align: left; }
+      .table td.tinytable_css_6zmxn3smaw2wtx1jdo6y, .table th.tinytable_css_6zmxn3smaw2wtx1jdo6y { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_ak6m79g55rvyrj04aj19, .table th.tinytable_css_ak6m79g55rvyrj04aj19 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_7w79y3vfpvw587ov19uw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+      <table class="table table-borderless" id="tinytable_elnefi7uf8at9xjd5h17" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
         <thead>
 <tr>
 <th scope="col" align="center" colspan=1> </th>
@@ -957,9 +956,9 @@ Combined Polity V score
 <li>Specify the SRF for Model 3, paying special attention to notation.</li>
 <li>Now assume, we want to know whether education has a bearing on the level of GDP. We call:</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="worksheet-week-8.html#cb39-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="worksheet-week-8.html#cb41-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
 <p>and also add it to the joint model:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="worksheet-week-8.html#cb40-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="worksheet-week-8.html#cb42-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
 <p>This should lead to these results:</p>
  
  
@@ -968,8 +967,8 @@ Combined Polity V score
 
     <script>
 
-      function styleCell_h8afziyz4uf2rlak9koh(i, j, css_id) {
-          var table = document.getElementById("tinytable_h8afziyz4uf2rlak9koh");
+      function styleCell_uzqm2e6xuhhy8eg6t708(i, j, css_id) {
+          var table = document.getElementById("tinytable_uzqm2e6xuhhy8eg6t708");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -979,7 +978,7 @@ Combined Polity V score
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_h8afziyz4uf2rlak9koh');
+        var table = document.getElementById('tinytable_uzqm2e6xuhhy8eg6t708');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -987,8 +986,8 @@ Combined Polity V score
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_h8afziyz4uf2rlak9koh(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_h8afziyz4uf2rlak9koh");
+      function spanCell_uzqm2e6xuhhy8eg6t708(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_uzqm2e6xuhhy8eg6t708");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1018,23 +1017,23 @@ Combined Polity V score
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 0, j: 5 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_0da8o9msttl3nrr3634i',}, 
-          { positions: [ { i: 12, j: 1 }, { i: 12, j: 2 }, { i: 12, j: 3 }, { i: 12, j: 4 }, { i: 12, j: 5 },  ], css_id: 'tinytable_css_pkg3cvki5m5y4etewka2',}, 
-          { positions: [ { i: 9, j: 1 }, { i: 9, j: 4 }, { i: 9, j: 5 }, { i: 9, j: 2 }, { i: 9, j: 3 },  ], css_id: 'tinytable_css_h69jglvis7f4z0elql3l',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 11, j: 3 }, { i: 3, j: 4 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 4, j: 4 }, { i: 10, j: 3 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 5, j: 4 }, { i: 10, j: 4 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 },  ], css_id: 'tinytable_css_q7rtgpciukdxta75n84f',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_d80ojyj3yr90msr346th',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 }, { i: 1, j: 4 }, { i: 1, j: 5 },  ], css_id: 'tinytable_css_tad1z3838pet4qdf45gm',}, 
-          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_rpg04hw61q2xtw2ljh3q',}, 
-          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_fconcucl6xwef4ibi5fq',}, 
-          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_d0sibhc2ts7we0ihl9kt',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_p02x7s755ldsclunr0an',}, 
-          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_j7g46y16ceuqb46yn1a2',}, 
+          { positions: [ { i: 0, j: 5 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_pmukg6bviiog8muwf749',}, 
+          { positions: [ { i: 12, j: 1 }, { i: 12, j: 2 }, { i: 12, j: 3 }, { i: 12, j: 4 }, { i: 12, j: 5 },  ], css_id: 'tinytable_css_6cycd3osf8llndtu7d0m',}, 
+          { positions: [ { i: 9, j: 1 }, { i: 9, j: 4 }, { i: 9, j: 5 }, { i: 9, j: 2 }, { i: 9, j: 3 },  ], css_id: 'tinytable_css_fmmnkhi8ii4fvepjyung',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 11, j: 3 }, { i: 3, j: 4 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 4, j: 4 }, { i: 10, j: 3 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 5, j: 4 }, { i: 10, j: 4 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 },  ], css_id: 'tinytable_css_vu1lg4evyqloeytx4461',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_rb20wzcecthpzz2oatfa',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 }, { i: 1, j: 4 }, { i: 1, j: 5 },  ], css_id: 'tinytable_css_9m5vfpf1xdtrkmto5329',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_9lzotq8iyxmbeys6sx80',}, 
+          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_sjsccy4cmr7nfamtvqe0',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_j9lg8ykfpyypczorscko',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_5opnv7fv0to2lgjydnt7',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_yo1a3jahd2r2rsmemnws',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_h8afziyz4uf2rlak9koh(cell.i, cell.j, group.css_id);
+                  styleCell_uzqm2e6xuhhy8eg6t708(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1042,20 +1041,20 @@ Combined Polity V score
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_0da8o9msttl3nrr3634i, .table th.tinytable_css_0da8o9msttl3nrr3634i { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_pkg3cvki5m5y4etewka2, .table th.tinytable_css_pkg3cvki5m5y4etewka2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_h69jglvis7f4z0elql3l, .table th.tinytable_css_h69jglvis7f4z0elql3l { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_q7rtgpciukdxta75n84f, .table th.tinytable_css_q7rtgpciukdxta75n84f { text-align: center; }
-      .table td.tinytable_css_d80ojyj3yr90msr346th, .table th.tinytable_css_d80ojyj3yr90msr346th { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_tad1z3838pet4qdf45gm, .table th.tinytable_css_tad1z3838pet4qdf45gm { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_rpg04hw61q2xtw2ljh3q, .table th.tinytable_css_rpg04hw61q2xtw2ljh3q { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_fconcucl6xwef4ibi5fq, .table th.tinytable_css_fconcucl6xwef4ibi5fq { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_d0sibhc2ts7we0ihl9kt, .table th.tinytable_css_d0sibhc2ts7we0ihl9kt { text-align: left; }
-      .table td.tinytable_css_p02x7s755ldsclunr0an, .table th.tinytable_css_p02x7s755ldsclunr0an { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_j7g46y16ceuqb46yn1a2, .table th.tinytable_css_j7g46y16ceuqb46yn1a2 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_pmukg6bviiog8muwf749, .table th.tinytable_css_pmukg6bviiog8muwf749 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_6cycd3osf8llndtu7d0m, .table th.tinytable_css_6cycd3osf8llndtu7d0m { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_fmmnkhi8ii4fvepjyung, .table th.tinytable_css_fmmnkhi8ii4fvepjyung { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_vu1lg4evyqloeytx4461, .table th.tinytable_css_vu1lg4evyqloeytx4461 { text-align: center; }
+      .table td.tinytable_css_rb20wzcecthpzz2oatfa, .table th.tinytable_css_rb20wzcecthpzz2oatfa { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_9m5vfpf1xdtrkmto5329, .table th.tinytable_css_9m5vfpf1xdtrkmto5329 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_9lzotq8iyxmbeys6sx80, .table th.tinytable_css_9lzotq8iyxmbeys6sx80 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_sjsccy4cmr7nfamtvqe0, .table th.tinytable_css_sjsccy4cmr7nfamtvqe0 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_j9lg8ykfpyypczorscko, .table th.tinytable_css_j9lg8ykfpyypczorscko { text-align: left; }
+      .table td.tinytable_css_5opnv7fv0to2lgjydnt7, .table th.tinytable_css_5opnv7fv0to2lgjydnt7 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_yo1a3jahd2r2rsmemnws, .table th.tinytable_css_yo1a3jahd2r2rsmemnws { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_h8afziyz4uf2rlak9koh" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+      <table class="table table-borderless" id="tinytable_uzqm2e6xuhhy8eg6t708" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
         <thead>
 <tr>
 <th scope="col" align="center" colspan=1> </th>
@@ -1178,8 +1177,8 @@ Combined Polity V score
 
     <script>
 
-      function styleCell_80usl3rkpt8ncqwop4we(i, j, css_id) {
-          var table = document.getElementById("tinytable_80usl3rkpt8ncqwop4we");
+      function styleCell_b0t649z7u4lb9st0d6x9(i, j, css_id) {
+          var table = document.getElementById("tinytable_b0t649z7u4lb9st0d6x9");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1189,7 +1188,7 @@ Combined Polity V score
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_80usl3rkpt8ncqwop4we');
+        var table = document.getElementById('tinytable_b0t649z7u4lb9st0d6x9');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1197,8 +1196,8 @@ Combined Polity V score
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_80usl3rkpt8ncqwop4we(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_80usl3rkpt8ncqwop4we");
+      function spanCell_b0t649z7u4lb9st0d6x9(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_b0t649z7u4lb9st0d6x9");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1228,23 +1227,23 @@ Combined Polity V score
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 0, j: 3 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_5lh34c3ia8enyqrva52j',}, 
-          { positions: [ { i: 12, j: 3 }, { i: 12, j: 1 }, { i: 12, j: 2 },  ], css_id: 'tinytable_css_r7dghuqstwa9xcd0kygz',}, 
-          { positions: [ { i: 9, j: 2 }, { i: 9, j: 3 }, { i: 9, j: 1 },  ], css_id: 'tinytable_css_vdmqz9gvlpppzq6yk3ai',}, 
-          { positions: [ { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 2, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 11, j: 3 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_5knbpnn7vzqf7f5sl8cu',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_uider0jc6czcfd62tp7h',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 },  ], css_id: 'tinytable_css_975n75dipvhzwooxpbvw',}, 
-          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_g284m73ajhph3fqkuyrc',}, 
-          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_bwowgj2jhnj2sos3xqn0',}, 
-          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_ajkez794i5sb30r9rmb1',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_qq0ubtvkyrofv7u5odgj',}, 
-          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_vrdqhqxu5vhgjcf3i4ke',}, 
+          { positions: [ { i: 0, j: 3 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_sfweql705l54p8u2vmhl',}, 
+          { positions: [ { i: 12, j: 3 }, { i: 12, j: 1 }, { i: 12, j: 2 },  ], css_id: 'tinytable_css_3p0ogkzg4s8u5uy8yhgc',}, 
+          { positions: [ { i: 9, j: 2 }, { i: 9, j: 3 }, { i: 9, j: 1 },  ], css_id: 'tinytable_css_33vrk5jgakvi0xbd2jp3',}, 
+          { positions: [ { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 2, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 11, j: 3 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_wa7g3bdqasik54nf8d4t',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_ok44it6gsxgadwx9xcby',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 },  ], css_id: 'tinytable_css_v1uqywm9ifvi3yxsczj2',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_uykxrzp0pkkytbwcwn8u',}, 
+          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_6ae8niaw8mg97hno6bf2',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_aq15zrs34u8ireasgobi',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_ljtdsajgnocb52raiazl',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_eihlh2h0e5w9xph4y5s8',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_80usl3rkpt8ncqwop4we(cell.i, cell.j, group.css_id);
+                  styleCell_b0t649z7u4lb9st0d6x9(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1252,20 +1251,20 @@ Combined Polity V score
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_5lh34c3ia8enyqrva52j, .table th.tinytable_css_5lh34c3ia8enyqrva52j { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_r7dghuqstwa9xcd0kygz, .table th.tinytable_css_r7dghuqstwa9xcd0kygz { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_vdmqz9gvlpppzq6yk3ai, .table th.tinytable_css_vdmqz9gvlpppzq6yk3ai { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_5knbpnn7vzqf7f5sl8cu, .table th.tinytable_css_5knbpnn7vzqf7f5sl8cu { text-align: center; }
-      .table td.tinytable_css_uider0jc6czcfd62tp7h, .table th.tinytable_css_uider0jc6czcfd62tp7h { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_975n75dipvhzwooxpbvw, .table th.tinytable_css_975n75dipvhzwooxpbvw { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_g284m73ajhph3fqkuyrc, .table th.tinytable_css_g284m73ajhph3fqkuyrc { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_bwowgj2jhnj2sos3xqn0, .table th.tinytable_css_bwowgj2jhnj2sos3xqn0 { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_ajkez794i5sb30r9rmb1, .table th.tinytable_css_ajkez794i5sb30r9rmb1 { text-align: left; }
-      .table td.tinytable_css_qq0ubtvkyrofv7u5odgj, .table th.tinytable_css_qq0ubtvkyrofv7u5odgj { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_vrdqhqxu5vhgjcf3i4ke, .table th.tinytable_css_vrdqhqxu5vhgjcf3i4ke { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_sfweql705l54p8u2vmhl, .table th.tinytable_css_sfweql705l54p8u2vmhl { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_3p0ogkzg4s8u5uy8yhgc, .table th.tinytable_css_3p0ogkzg4s8u5uy8yhgc { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_33vrk5jgakvi0xbd2jp3, .table th.tinytable_css_33vrk5jgakvi0xbd2jp3 { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_wa7g3bdqasik54nf8d4t, .table th.tinytable_css_wa7g3bdqasik54nf8d4t { text-align: center; }
+      .table td.tinytable_css_ok44it6gsxgadwx9xcby, .table th.tinytable_css_ok44it6gsxgadwx9xcby { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_v1uqywm9ifvi3yxsczj2, .table th.tinytable_css_v1uqywm9ifvi3yxsczj2 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_uykxrzp0pkkytbwcwn8u, .table th.tinytable_css_uykxrzp0pkkytbwcwn8u { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_6ae8niaw8mg97hno6bf2, .table th.tinytable_css_6ae8niaw8mg97hno6bf2 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_aq15zrs34u8ireasgobi, .table th.tinytable_css_aq15zrs34u8ireasgobi { text-align: left; }
+      .table td.tinytable_css_ljtdsajgnocb52raiazl, .table th.tinytable_css_ljtdsajgnocb52raiazl { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_eihlh2h0e5w9xph4y5s8, .table th.tinytable_css_eihlh2h0e5w9xph4y5s8 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_80usl3rkpt8ncqwop4we" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+      <table class="table table-borderless" id="tinytable_b0t649z7u4lb9st0d6x9" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
         <thead>
 <tr>
 <th scope="col" align="center" colspan=1> </th>
@@ -1366,8 +1365,8 @@ Combined Polity V score
 
     <script>
 
-      function styleCell_fv997y85lsxld33el3rx(i, j, css_id) {
-          var table = document.getElementById("tinytable_fv997y85lsxld33el3rx");
+      function styleCell_kw8a0xaodudjns96lvah(i, j, css_id) {
+          var table = document.getElementById("tinytable_kw8a0xaodudjns96lvah");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1377,7 +1376,7 @@ Combined Polity V score
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_fv997y85lsxld33el3rx');
+        var table = document.getElementById('tinytable_kw8a0xaodudjns96lvah');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1385,8 +1384,8 @@ Combined Polity V score
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_fv997y85lsxld33el3rx(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_fv997y85lsxld33el3rx");
+      function spanCell_kw8a0xaodudjns96lvah(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_kw8a0xaodudjns96lvah");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1416,23 +1415,23 @@ Combined Polity V score
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 0, j: 2 },  ], css_id: 'tinytable_css_4sd6qw5yliasrm4gtlp8',}, 
-          { positions: [ { i: 10, j: 1 }, { i: 10, j: 2 },  ], css_id: 'tinytable_css_fy3q80bv1bzmpxp9cfq7',}, 
-          { positions: [ { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_j4di6gdamsp5gazvkaag',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 6, j: 2 },  ], css_id: 'tinytable_css_5cv4oalbz5ujrnx0j58s',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_6ogom4ypx8locsnmtsp0',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_3thm5xnnng9a5gfhyznk',}, 
-          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_nm3z6k5qqhc49gwq1ozx',}, 
-          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_pbpr52axgc5xvudm8qfx',}, 
-          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_hnxk6498tl9zfwu19xpl',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_7cslj0kjxkcqcfuxvzg2',}, 
-          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_9tuau6z6h8mt3e79r7hz',}, 
+          { positions: [ { i: 0, j: 2 },  ], css_id: 'tinytable_css_lclo8ynbeezo4dg1naw6',}, 
+          { positions: [ { i: 10, j: 1 }, { i: 10, j: 2 },  ], css_id: 'tinytable_css_yf3xrzim7i6b1hma1oog',}, 
+          { positions: [ { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_r8vzixbd9fx91k7wwenh',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 6, j: 2 },  ], css_id: 'tinytable_css_f4m25oiabw76ey6cj8bd',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_ngmx9359ir86nhn7fhso',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_w6pgvwz3rkmzhrubanta',}, 
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_ict46fip99qstmk1miic',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_7qqorrceucalnbpjzrf1',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_aquarwvmkvev6do2mau2',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_agyctuxg88lv10h6q6z4',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_b62h5t5zssv0xe944g1q',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_fv997y85lsxld33el3rx(cell.i, cell.j, group.css_id);
+                  styleCell_kw8a0xaodudjns96lvah(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1440,20 +1439,20 @@ Combined Polity V score
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_4sd6qw5yliasrm4gtlp8, .table th.tinytable_css_4sd6qw5yliasrm4gtlp8 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_fy3q80bv1bzmpxp9cfq7, .table th.tinytable_css_fy3q80bv1bzmpxp9cfq7 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_j4di6gdamsp5gazvkaag, .table th.tinytable_css_j4di6gdamsp5gazvkaag { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_5cv4oalbz5ujrnx0j58s, .table th.tinytable_css_5cv4oalbz5ujrnx0j58s { text-align: center; }
-      .table td.tinytable_css_6ogom4ypx8locsnmtsp0, .table th.tinytable_css_6ogom4ypx8locsnmtsp0 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_3thm5xnnng9a5gfhyznk, .table th.tinytable_css_3thm5xnnng9a5gfhyznk { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_nm3z6k5qqhc49gwq1ozx, .table th.tinytable_css_nm3z6k5qqhc49gwq1ozx { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_pbpr52axgc5xvudm8qfx, .table th.tinytable_css_pbpr52axgc5xvudm8qfx { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_hnxk6498tl9zfwu19xpl, .table th.tinytable_css_hnxk6498tl9zfwu19xpl { text-align: left; }
-      .table td.tinytable_css_7cslj0kjxkcqcfuxvzg2, .table th.tinytable_css_7cslj0kjxkcqcfuxvzg2 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_9tuau6z6h8mt3e79r7hz, .table th.tinytable_css_9tuau6z6h8mt3e79r7hz { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_lclo8ynbeezo4dg1naw6, .table th.tinytable_css_lclo8ynbeezo4dg1naw6 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_yf3xrzim7i6b1hma1oog, .table th.tinytable_css_yf3xrzim7i6b1hma1oog { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_r8vzixbd9fx91k7wwenh, .table th.tinytable_css_r8vzixbd9fx91k7wwenh { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_f4m25oiabw76ey6cj8bd, .table th.tinytable_css_f4m25oiabw76ey6cj8bd { text-align: center; }
+      .table td.tinytable_css_ngmx9359ir86nhn7fhso, .table th.tinytable_css_ngmx9359ir86nhn7fhso { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_w6pgvwz3rkmzhrubanta, .table th.tinytable_css_w6pgvwz3rkmzhrubanta { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ict46fip99qstmk1miic, .table th.tinytable_css_ict46fip99qstmk1miic { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_7qqorrceucalnbpjzrf1, .table th.tinytable_css_7qqorrceucalnbpjzrf1 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_aquarwvmkvev6do2mau2, .table th.tinytable_css_aquarwvmkvev6do2mau2 { text-align: left; }
+      .table td.tinytable_css_agyctuxg88lv10h6q6z4, .table th.tinytable_css_agyctuxg88lv10h6q6z4 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_b62h5t5zssv0xe944g1q, .table th.tinytable_css_b62h5t5zssv0xe944g1q { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_fv997y85lsxld33el3rx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+      <table class="table table-borderless" id="tinytable_kw8a0xaodudjns96lvah" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
         <thead>
 <tr>
 <th scope="col" align="center" colspan=1> </th>
@@ -1562,7 +1561,6 @@ Combined Polity V score
 <hr />
 <ol start="12">
 <li id="fn12"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="worksheet-week-8.html#fnref12" class="footnote-back">↩︎</a></p></li>
-<li id="fn13"><p>For disclosure: the following regression tables have been produced with the package <code>modelsummary</code> <span class="citation">(Arel-Bundock, 2022)</span> to which I will switch fully in 2025/26.<a href="worksheet-week-8.html#fnref13" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
