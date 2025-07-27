@@ -302,13 +302,13 @@ income (y)
 <li>Load the income data set <a href="files/Week%204/PO12Q_4.xlsx">PO12Q_4.xlsx</a>
 </li>
 </ol>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">incomedata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"PO12Q_4.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <div class="bulb">
 <p>You can also enter the values of a table manually using the <span style="color:black"><code><a href="https://rdrr.io/r/base/matrix.html">matrix()</a></code></span> function as follows:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">22</span>,<span class="fl">19</span>,<span class="fl">56</span>,<span class="fl">45</span>,<span class="fl">37</span>,<span class="fl">23</span>,<span class="fl">32</span>,<span class="fl">65</span>,<span class="fl">43</span>,<span class="fl">48</span>,</span>
 <span>                  <span class="fl">700</span>,<span class="fl">650</span>,<span class="fl">2300</span>,<span class="fl">1900</span>,<span class="fl">2000</span>,<span class="fl">900</span>,<span class="fl">1000</span>,<span class="fl">2500</span>,<span class="fl">2800</span>,<span class="fl">1200</span><span class="op">)</span>,</span>
 <span>                nrow<span class="op">=</span><span class="fl">10</span>,ncol<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
@@ -317,26 +317,27 @@ income (y)
 <ol start="2" style="list-style-type: decimal">
 <li>Run the regression in R as follows:</li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="worksheet-week-4.html#cb24-1" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
-<span id="cb24-2"><a href="worksheet-week-4.html#cb24-2" tabindex="-1"></a><span class="fu">summary</span>(regression)</span>
-<span id="cb24-3"><a href="worksheet-week-4.html#cb24-3" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="worksheet-week-4.html#cb24-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb24-5"><a href="worksheet-week-4.html#cb24-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> income <span class="sc">~</span> age, <span class="at">data =</span> incomedata)</span>
-<span id="cb24-6"><a href="worksheet-week-4.html#cb24-6" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="worksheet-week-4.html#cb24-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb24-8"><a href="worksheet-week-4.html#cb24-8" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
-<span id="cb24-9"><a href="worksheet-week-4.html#cb24-9" tabindex="-1"></a><span class="sc">-</span><span class="fl">652.25</span> <span class="sc">-</span><span class="fl">102.92</span>    <span class="fl">6.53</span>  <span class="fl">142.21</span>  <span class="fl">584.39</span> </span>
-<span id="cb24-10"><a href="worksheet-week-4.html#cb24-10" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="worksheet-week-4.html#cb24-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb24-12"><a href="worksheet-week-4.html#cb24-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb24-13"><a href="worksheet-week-4.html#cb24-13" tabindex="-1"></a>(Intercept)  <span class="sc">-</span><span class="fl">53.092</span>    <span class="fl">304.716</span>  <span class="sc">-</span><span class="fl">0.174</span> <span class="fl">0.866011</span>    </span>
-<span id="cb24-14"><a href="worksheet-week-4.html#cb24-14" tabindex="-1"></a>age           <span class="fl">39.695</span>      <span class="fl">7.325</span>   <span class="fl">5.419</span> <span class="fl">0.000631</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb24-15"><a href="worksheet-week-4.html#cb24-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb24-16"><a href="worksheet-week-4.html#cb24-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">'***'</span> <span class="fl">0.001</span> <span class="st">'**'</span> <span class="fl">0.01</span> <span class="st">'*'</span> <span class="fl">0.05</span> <span class="st">'.'</span> <span class="fl">0.1</span> <span class="st">' '</span> <span class="dv">1</span></span>
-<span id="cb24-17"><a href="worksheet-week-4.html#cb24-17" tabindex="-1"></a></span>
-<span id="cb24-18"><a href="worksheet-week-4.html#cb24-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">335.3</span> on <span class="dv">8</span> degrees of freedom</span>
-<span id="cb24-19"><a href="worksheet-week-4.html#cb24-19" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7859</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7592</span> </span>
-<span id="cb24-20"><a href="worksheet-week-4.html#cb24-20" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">29.37</span> on <span class="dv">1</span> and <span class="dv">8</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">0.0006314</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">regression</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">income</span> <span class="op">~</span> <span class="va">age</span>, data <span class="op">=</span> <span class="va">incomedata</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">regression</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = income ~ age, data = incomedata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-652.25 -102.92    6.53  142.21  584.39 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -53.092    304.716  -0.174 0.866011    
+age           39.695      7.325   5.419 0.000631 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 335.3 on 8 degrees of freedom
+Multiple R-squared:  0.7859,    Adjusted R-squared:  0.7592 
+F-statistic: 29.37 on 1 and 8 DF,  p-value: 0.0006314</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Check your results from the first section.</li>
 </ol>
@@ -395,7 +396,7 @@ income (y)
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO12Q: Introduction to Quantitative Political Analysis II – <br> Seminar Companion</p></strong>" was written by </p>
-<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 26 July, 2025.
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 27 July, 2025.
   </div>
 
   <div class="col-12 col-md-6 mt-3">

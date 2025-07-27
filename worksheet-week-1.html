@@ -492,24 +492,26 @@ Base R Solution
 <li>State the null and the alternative hypothesis (directional)</li>
 <li>Run the cross-tabulation, by calling:</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="worksheet-week-1.html#cb8-1" tabindex="-1"></a>wdi_table <span class="ot">&lt;-</span> <span class="fu">with</span>(wdi, <span class="fu">table</span>(gdpcat, lifecat))</span>
-<span id="cb8-2"><a href="worksheet-week-1.html#cb8-2" tabindex="-1"></a>wdi_table</span>
-<span id="cb8-3"><a href="worksheet-week-1.html#cb8-3" tabindex="-1"></a>        lifecat</span>
-<span id="cb8-4"><a href="worksheet-week-1.html#cb8-4" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb8-5"><a href="worksheet-week-1.html#cb8-5" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb8-6"><a href="worksheet-week-1.html#cb8-6" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb8-7"><a href="worksheet-week-1.html#cb8-7" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">wdi</span>, <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">gdpcat</span>, <span class="va">lifecat</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">wdi_table</span></span></code></pre></div>
+<pre><code>        lifecat
+gdpcat   low high
+  low     69    0
+  medium  54   16
+  high     3   27</code></pre>
 <ul>
 <li>Now perform a chi-squared test, using the command<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;I am using the &lt;code&gt;correct=FALSE&lt;/code&gt; option here to reproduce the &lt;span class="math inline"&gt;\(\chi^{2}\)&lt;/span&gt;-value you would get if you calculated this by hand. Technically, &lt;span class="math inline"&gt;\(\chi^{2}\)&lt;/span&gt; is only an approximation of the hypergeometric distribution which would deliver an exact test. You can get the precise value by applying Yates’ continuity correction with &lt;code&gt;correct=TRUE&lt;/code&gt;.&lt;/p&gt;'><sup>2</sup></a>
 </li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="worksheet-week-1.html#cb9-1" tabindex="-1"></a>Xsq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(wdi_table, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
-<span id="cb9-2"><a href="worksheet-week-1.html#cb9-2" tabindex="-1"></a>Xsq</span>
-<span id="cb9-3"><a href="worksheet-week-1.html#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="worksheet-week-1.html#cb9-4" tabindex="-1"></a>    Pearson<span class="st">'s Chi-squared test</span></span>
-<span id="cb9-5"><a href="worksheet-week-1.html#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="worksheet-week-1.html#cb9-6" tabindex="-1"></a><span class="st">data:  wdi_table</span></span>
-<span id="cb9-7"><a href="worksheet-week-1.html#cb9-7" tabindex="-1"></a><span class="st">X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Xsq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">wdi_table</span>, correct<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">Xsq</span></span></code></pre></div>
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  wdi_table
+X-squared = 89.702, df = 2, p-value &lt; 2.2e-16</code></pre>
 <div class="bulb">
 <p>As on PO11Q, I have prepared flashcards to help you learn R functions. These have their own section each week in this companion, but are also available on the more general <a href="https://drfloreiche.github.io/POQFlashcards/">POQ Flashcard Page</a>.</p>
 </div>
@@ -518,28 +520,31 @@ Base R Solution
 <li>What do these results mean for our hypotheses?</li>
 <li>Produce the table of expected frequencies, using the command</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="worksheet-week-1.html#cb10-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>expected, <span class="dv">2</span>)</span>
-<span id="cb10-2"><a href="worksheet-week-1.html#cb10-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb10-3"><a href="worksheet-week-1.html#cb10-3" tabindex="-1"></a>gdpcat     low  high</span>
-<span id="cb10-4"><a href="worksheet-week-1.html#cb10-4" tabindex="-1"></a>  low    <span class="fl">51.44</span> <span class="fl">17.56</span></span>
-<span id="cb10-5"><a href="worksheet-week-1.html#cb10-5" tabindex="-1"></a>  medium <span class="fl">52.19</span> <span class="fl">17.81</span></span>
-<span id="cb10-6"><a href="worksheet-week-1.html#cb10-6" tabindex="-1"></a>  high   <span class="fl">22.37</span>  <span class="fl">7.63</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Xsq</span><span class="op">$</span><span class="va">expected</span>, <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        lifecat
+gdpcat     low  high
+  low    51.44 17.56
+  medium 52.19 17.81
+  high   22.37  7.63</code></pre>
 <ul>
 <li>You can compare that to the observed ones:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="worksheet-week-1.html#cb11-1" tabindex="-1"></a><span class="fu">round</span>(Xsq<span class="sc">$</span>observed, <span class="dv">2</span>)</span>
-<span id="cb11-2"><a href="worksheet-week-1.html#cb11-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb11-3"><a href="worksheet-week-1.html#cb11-3" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb11-4"><a href="worksheet-week-1.html#cb11-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb11-5"><a href="worksheet-week-1.html#cb11-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb11-6"><a href="worksheet-week-1.html#cb11-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Xsq</span><span class="op">$</span><span class="va">observed</span>, <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>        lifecat
+gdpcat   low high
+  low     69    0
+  medium  54   16
+  high     3   27</code></pre>
 <p>You can see that this is identical to producing the cross-tabulation in the first place:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="worksheet-week-1.html#cb12-1" tabindex="-1"></a>wdi_table</span>
-<span id="cb12-2"><a href="worksheet-week-1.html#cb12-2" tabindex="-1"></a>        lifecat</span>
-<span id="cb12-3"><a href="worksheet-week-1.html#cb12-3" tabindex="-1"></a>gdpcat   low high</span>
-<span id="cb12-4"><a href="worksheet-week-1.html#cb12-4" tabindex="-1"></a>  low     <span class="dv">69</span>    <span class="dv">0</span></span>
-<span id="cb12-5"><a href="worksheet-week-1.html#cb12-5" tabindex="-1"></a>  medium  <span class="dv">54</span>   <span class="dv">16</span></span>
-<span id="cb12-6"><a href="worksheet-week-1.html#cb12-6" tabindex="-1"></a>  high     <span class="dv">3</span>   <span class="dv">27</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_table</span></span></code></pre></div>
+<pre><code>        lifecat
+gdpcat   low high
+  low     69    0
+  medium  54   16
+  high     3   27</code></pre>
 <ul>
 <li>In plain English: What have we found out?</li>
 </ul>
@@ -620,7 +625,7 @@ Base R Solution
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO12Q: Introduction to Quantitative Political Analysis II – <br> Seminar Companion</p></strong>" was written by </p>
-<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 26 July, 2025.
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 27 July, 2025.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
