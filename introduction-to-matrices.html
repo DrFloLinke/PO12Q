@@ -151,7 +151,84 @@ y_{i} = \beta_{0} + \beta_{1} x_{i} + \epsilon_{i}
     y_{n} &amp;= \beta_{0} + \beta_{1} x_{n} + \epsilon_{n}
 \end{align*}\]</span></p>
 <p>This is incredibly wasteful, as it unnecessarily repeats notation. What we could do instead is to create a list which has as many columns as there are unique elements in these equations (since they all have the same structure), and only note the numeric values which actually change. And there you have a matrix:</p>
-<div class="inline-figure"><img src="main_files/figure-html/unnamed-chunk-34-1.png" width="514"></div>
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script><div class="inline-table"><table class="top-bottom-rule-only" style="margin: 2em auto; text-align: center; border-collapse: collapse;">
+<tr>
+<td>
+<span class="math inline">\(Y\)</span>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(X\)</span>
+</td>
+<td>
+<span class="math inline">\(\beta\)</span>
+</td>
+<td>
+<span class="math inline">\(+\)</span>
+</td>
+<td>
+<span class="math inline">\(\epsilon\)</span>
+</td>
+</tr>
+<tr style="height: 2ex;"></tr>
+<tr>
+<td>
+<span class="math inline">\(\downarrow\)</span>
+</td>
+<td>
+</td>
+<td>
+<span class="math inline">\(\downarrow\)</span>
+</td>
+<td>
+<span class="math inline">\(\downarrow\)</span>
+</td>
+<td>
+</td>
+<td>
+<span class="math inline">\(\downarrow\)</span>
+</td>
+</tr>
+<tr style="height: 2ex;"></tr>
+<tr>
+<td>
+<span class="math inline">\(\begin{bmatrix}
+      y_1 \\ y_2 \\ \vdots \\ y_n
+      \end{bmatrix}\)</span>
+</td>
+<td>
+=
+</td>
+<td>
+<span class="math inline">\(\begin{bmatrix}
+      1 &amp; x_1 \\
+      1 &amp; x_2 \\
+      \vdots &amp; \vdots \\
+      1 &amp; x_n
+      \end{bmatrix}\)</span>
+</td>
+<td>
+<span class="math inline">\(\begin{bmatrix}
+      \beta_0 \\
+      \beta_1
+      \end{bmatrix}\)</span>
+</td>
+<td>
++
+</td>
+<td>
+<span class="math inline">\(\begin{bmatrix}
+      \epsilon_1 \\
+      \epsilon_2 \\
+      \vdots \\
+      \epsilon_n
+      \end{bmatrix}\)</span>
+</td>
+</tr>
+</table></div>
 <p>Whilst this is what we will be using matrices for next week, let us leave regression aside for now, and focus on working with matrices more generally. We will now be using these two sample matrices:</p>
 <p><span class="math display">\[\begin{equation*}
     A
@@ -334,7 +411,6 @@ y_{i} = \beta_{0} + \beta_{1} x_{i} + \epsilon_{i}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ypYz7w97t74?si=SlPTvYzLrjgzfmyr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
 </div>
-<hr>
 </div>
 </div>
 </div>
