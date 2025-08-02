@@ -412,10 +412,16 @@ Combined Polity V score
 </div>
 <p> </p>
 <ul>
-<li><p>Load the data set</p></li>
-<li><p>The Polity V Score (variable <code>polity5</code>) codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy). With the <code>tidyvserse</code>, create a new variable called <code>politybin</code> which codes all countries with a Polity V score lower than +1 as dictatorships, and all countries with a Polity V score from +1 to +10 as democracies.</p></li>
-<li><p>Apply the same procedure to <code>gdppc</code>, cutting it at its median into two levels, <code>Developing</code> and <code>Developed</code>, creating a new variable called <code>gdpcat</code>.</p></li>
-<li><p>Last up is the variable <code>gdpgrowth</code>. Create a new variable called <code>growth</code> which divides countries into “slow-growing” and “fast-growing” countries, using the mean as the cut-off point.</p></li>
+<li>Load the data set</li>
+</ul>
+<ul>
+<li>The Polity V Score (variable <code>polity5</code>) codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy). With the <code>tidyvserse</code>, create a new variable called <code>politybin</code> which codes all countries with a Polity V score lower than +1 as dictatorships, and all countries with a Polity V score from +1 to +10 as democracies.</li>
+</ul>
+<ul>
+<li>Apply the same procedure to <code>gdppc</code>, cutting it at its median into two levels, <code>Developing</code> and <code>Developed</code>, creating a new variable called <code>gdpcat</code>.</li>
+</ul>
+<ul>
+<li>Last up is the variable <code>gdpgrowth</code>. Create a new variable called <code>growth</code> which divides countries into “slow-growing” and “fast-growing” countries, using the mean as the cut-off point.</li>
 </ul>
 </div>
 <div id="guided-example-two-sample-test-for-a-proportion" class="section level3 unnumbered">
@@ -441,18 +447,18 @@ Combined Polity V score
 <p>R uses a <span class="math inline">\(\chi^2\)</span>-test for this, as we are essentially dealing with a cross-tabulation. When you do this by hand, please use z-scores and the normal distribution.</p>
 </div>
 <ul>
-<li>Our hypothesis is directional, because we expect a higher proportion of developing countries to be dictatorships than developed countries. The status <code>Developing</code> is the lower category, and we thus expect this proportion to be larger, or “greater”. We add this to the test function as option <code>alternative = "greater"</code>.</li>
+<li>Our hypothesis is directional, because we expect a higher proportion of developing countries to be dictatorships than developed countries. Nonetheless, we cannot be sure into which direction the influence will point empirically, and so we configure this test as a two-sided test (which is the default).</li>
 </ul>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/prop.test.html">prop.test</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">23</span>,<span class="fl">16</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">77</span>,<span class="fl">70</span><span class="op">)</span>, correct<span class="op">=</span><span class="cn">F</span>, alternative <span class="op">=</span> <span class="st">"greater"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/prop.test.html">prop.test</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">23</span>,<span class="fl">16</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">77</span>,<span class="fl">70</span><span class="op">)</span>, correct<span class="op">=</span><span class="cn">F</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     2-sample test for equality of proportions without continuity correction
 
 data:  c(23, 16) out of c(77, 70)
-X-squared = 0.92517, df = 1, p-value = 0.1681
-alternative hypothesis: greater
+X-squared = 0.92517, df = 1, p-value = 0.3361
+alternative hypothesis: two.sided
 95 percent confidence interval:
- -0.04893134  1.00000000
+ -0.07174032  0.21200006
 sample estimates:
    prop 1    prop 2 
 0.2987013 0.2285714 </code></pre>
@@ -460,17 +466,18 @@ sample estimates:
 <li>Which proportion of developing and developed countries are dictatorships?</li>
 <li>Do we verify or falsify our hypothesis at a 95% confidence level?</li>
 </ul>
-<div class="puzzle">
-<p>How would the R code change, if we investigated whether a higher proportion of developing countries is autocratic than developed countries?</p>
-</div>
 </div>
 <div id="exercise-two-sample-test-for-a-proportion" class="section level3 unnumbered">
 <h3>Exercise – Two-Sample Test for a Proportion<a class="anchor" aria-label="anchor" href="#exercise-two-sample-test-for-a-proportion"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
-<li><p>Is a higher proportion of fast-growing countries democratic than slow-growing countries? Use a 95% confidence level.</p></li>
-<li><p>Now repeat the exercise, but this time with the <code>democracy</code> variable. Do the results differ? Why? Why not?</p></li>
-<li><p>Calculate the last two-sample test by hand.</p></li>
+<li>Is a higher proportion of fast-growing countries democratic than slow-growing countries? Use a 95% confidence level.</li>
+</ul>
+<ul>
+<li>Now repeat the exercise, but this time with the <code>democracy</code> variable. Do the results differ? Why? Why not?</li>
+</ul>
+<ul>
+<li>Calculate the last two-sample test by hand.</li>
 </ul>
 </div>
 <div id="guided-example-two-sample-test-for-a-mean" class="section level3 unnumbered">
@@ -514,18 +521,18 @@ group   1  11.544 0.0008498 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <ul>
 <li><p>The result is significant, and we therefore reject the null hypothesis. This means that the variance in the two samples is not equal.</p></li>
-<li><p>Now we can perform the t-test. We once again specify <code>alternative="less"</code> as an option, due to the same reasoning as before.</p></li>
+<li><p>Now we can perform the t-test. We once again conduct a two-sided test, due to the same reasoning as before.</p></li>
 </ul>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">lifeexp</span> <span class="op">~</span> <span class="va">gdpcat</span>, data<span class="op">=</span><span class="va">wdi</span>, var.equal <span class="op">=</span> <span class="cn">FALSE</span>, alternative<span class="op">=</span><span class="st">"less"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">lifeexp</span> <span class="op">~</span> <span class="va">gdpcat</span>, data<span class="op">=</span><span class="va">wdi</span>, var.equal <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
     Welch Two Sample t-test
 
 data:  lifeexp by gdpcat
 t = -10.83, df = 159.03, p-value &lt; 2.2e-16
-alternative hypothesis: true difference in means between group Developing and group Developed is less than 0
+alternative hypothesis: true difference in means between group Developing and group Developed is not equal to 0
 95 percent confidence interval:
-      -Inf -8.477836
+ -11.831338  -8.181705
 sample estimates:
 mean in group Developing  mean in group Developed 
                 66.80181                 76.80833 </code></pre>
@@ -603,7 +610,7 @@ mean in group Developing  mean in group Developed
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO12Q: Introduction to Quantitative Political Analysis II – <br> Seminar Companion</p></strong>" was written by </p>
-<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 29 July, 2025.
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 02 August, 2025.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
