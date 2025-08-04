@@ -305,7 +305,7 @@ Mean income by constituency
 <div class="line-block">               you need to replace this with <code>HC1</code> to obtain the same results. Conduct a significance test with</div>
 <div class="line-block">               robust standard errors (with the <code>sandwich</code> function <code>coeftest</code>):</div>
 <div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lmtest/man/coeftest.html">coeftest</a></span><span class="op">(</span><span class="va">model2</span>, vcov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/sandwich/man/vcovHC.html">vcovHC</a></span><span class="op">(</span><span class="va">model2</span>, type<span class="op">=</span><span class="st">"HC3"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lmtest/man/coeftest.html">coeftest</a></span><span class="op">(</span><span class="va">model2</span>, vcov <span class="op">=</span> <span class="fu"><a href="https://sandwich.R-Forge.R-project.org/reference/vcovHC.html">vcovHC</a></span><span class="op">(</span><span class="va">model2</span>, type<span class="op">=</span><span class="st">"HC3"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="line-block">          f. Compare the significance to the results in 6b and explain the reason for the difference.</div>
 <div class="line-block">          g. Estimate a model of your own choice with <code>gcse</code> as your dependent variable.</div>
 <div class="line-block">          h. Conduct the Breusch-Pagan test</div>
@@ -410,7 +410,7 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{k-1} x_
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO12Q: Introduction to Quantitative Political Analysis II – <br> Seminar Companion</p></strong>" was written by </p>
-<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 03 August, 2025.
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 04 August, 2025.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
