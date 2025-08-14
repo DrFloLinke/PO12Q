@@ -639,8 +639,8 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
 
     <script>
 
-      function styleCell_yo1tyscoqjd5clx5tuyt(i, j, css_id) {
-          var table = document.getElementById("tinytable_yo1tyscoqjd5clx5tuyt");
+      function styleCell_7596vmyqq6vzeludz8he(i, j, css_id) {
+          var table = document.getElementById("tinytable_7596vmyqq6vzeludz8he");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -650,7 +650,7 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_yo1tyscoqjd5clx5tuyt');
+        var table = document.getElementById('tinytable_7596vmyqq6vzeludz8he');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -658,8 +658,8 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_yo1tyscoqjd5clx5tuyt(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_yo1tyscoqjd5clx5tuyt");
+      function spanCell_7596vmyqq6vzeludz8he(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_7596vmyqq6vzeludz8he");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -689,36 +689,36 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_7abp09nchykn8zt7rnyv',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_etk3ep37b4k0k7vx96je',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_xhtjnwwlnv6focpg06ex',}, 
-          { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_ryinhnmhih179mffg4ej',}, 
-          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_ym7p3n7dwoyla5xvx5ed',}, 
-          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_pqruhyz67gopx6dui5zk',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_9clur0lk2h2w5n6tct5g',}, 
-          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_syrah3l2bcgj23fuoey8',}, 
+          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_4li1bf1zfu0zbbwutvbi',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_5gtxzcg6dqjl14r0w088',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_912z77mdsw7iz0gqn2c3',}, 
+          { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_0ujvlc2hofudrnvd3i6d',}, 
+          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_ie7gk8d3pexmfs30maa4',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_1jpyn3glyj5rfrnc3qtr',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_nlpdqhauhzz8lslz2aro',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_odufcgsi7k12g9mn06s6',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_yo1tyscoqjd5clx5tuyt(cell.i, cell.j, group.css_id);
+                  styleCell_7596vmyqq6vzeludz8he(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script><style>
       /* tinytable css entries after */
-      .table td.tinytable_css_7abp09nchykn8zt7rnyv, .table th.tinytable_css_7abp09nchykn8zt7rnyv { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_etk3ep37b4k0k7vx96je, .table th.tinytable_css_etk3ep37b4k0k7vx96je { text-align: center; }
-      .table td.tinytable_css_xhtjnwwlnv6focpg06ex, .table th.tinytable_css_xhtjnwwlnv6focpg06ex { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_ryinhnmhih179mffg4ej, .table th.tinytable_css_ryinhnmhih179mffg4ej { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_ym7p3n7dwoyla5xvx5ed, .table th.tinytable_css_ym7p3n7dwoyla5xvx5ed { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_pqruhyz67gopx6dui5zk, .table th.tinytable_css_pqruhyz67gopx6dui5zk { text-align: left; }
-      .table td.tinytable_css_9clur0lk2h2w5n6tct5g, .table th.tinytable_css_9clur0lk2h2w5n6tct5g { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_syrah3l2bcgj23fuoey8, .table th.tinytable_css_syrah3l2bcgj23fuoey8 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_4li1bf1zfu0zbbwutvbi, .table th.tinytable_css_4li1bf1zfu0zbbwutvbi { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_5gtxzcg6dqjl14r0w088, .table th.tinytable_css_5gtxzcg6dqjl14r0w088 { text-align: center; }
+      .table td.tinytable_css_912z77mdsw7iz0gqn2c3, .table th.tinytable_css_912z77mdsw7iz0gqn2c3 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_0ujvlc2hofudrnvd3i6d, .table th.tinytable_css_0ujvlc2hofudrnvd3i6d { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ie7gk8d3pexmfs30maa4, .table th.tinytable_css_ie7gk8d3pexmfs30maa4 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_1jpyn3glyj5rfrnc3qtr, .table th.tinytable_css_1jpyn3glyj5rfrnc3qtr { text-align: left; }
+      .table td.tinytable_css_nlpdqhauhzz8lslz2aro, .table th.tinytable_css_nlpdqhauhzz8lslz2aro { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_odufcgsi7k12g9mn06s6, .table th.tinytable_css_odufcgsi7k12g9mn06s6 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
 <div class="container">
-      <div class="inline-table"><table class="table table-borderless" id="tinytable_yo1tyscoqjd5clx5tuyt" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <div class="inline-table"><table class="table table-borderless" id="tinytable_7596vmyqq6vzeludz8he" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
 <thead>
 <tr>
 <th scope="col" align="center" colspan="1"> </th>
@@ -827,7 +827,7 @@ ALCOHOL      0.2176351 0.004579103  47.5279        0</code></pre>
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO12Q: Introduction to Quantitative Political Analysis II – <br> Seminar Companion</p></strong>" was written by </p>
-<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 13 August, 2025.
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 14 August, 2025.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
