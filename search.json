@@ -794,17 +794,17 @@
     "href": "11-Downloads.html#documents",
     "title": "Downloads",
     "section": "Documents",
-    "text": "Documents\n\nPO91Q Bibliography\nStatistical Tables\nFormula Collection\nWorksheet Week 3 Solutions\nWorksheet Week 4 Solutions\nWorksheet Week 5 Solutions\nWorksheet Week 7 Solutions\nWorksheet Week 8 Solutions\nCase Study Week 8 Solutions",
+    "text": "Documents\n\nPO12Q Bibliography\nStatistical Tables\nFormula Collection\n\n\nWeek 1 Worksheet Solutions\nBoix et al. (2018) Paper\n\n\nWeek 2 Worksheet Solutions\n\n\nWeek 4 Worksheet Solutions\nWeek 4 Regression Calculations\n\n\nWeek 5 Regression Calculations\n\n\nWeek 7 Worksheet Solutions\nWeek 7 Regression Calculations\nWeek 7 Solutions to Additional Exercises\n\n\nWeek 9 Crime Data Code Book\nWeek 9 london_exercises Code Book\n\n\nWeek 10 Worksheet Solutions",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Downloads</span>"
     ]
   },
   {
-    "objectID": "11-Downloads.html#data-sets-in-alphabetical-order",
-    "href": "11-Downloads.html#data-sets-in-alphabetical-order",
+    "objectID": "11-Downloads.html#data-sets",
+    "href": "11-Downloads.html#data-sets",
     "title": "Downloads",
-    "section": "Data Sets – in alphabetical order",
-    "text": "Data Sets – in alphabetical order\n\nEU.xlsx\nExample.xlsx\nks2\nlondon_exercises\nmortality\nWDI_PO91Q.csv",
+    "section": "Data Sets",
+    "text": "Data Sets\n\ncrime.csv\nlondon_11.csv\nlondon_exercises.csv\nPO12Q_4.xslx\nsimd.csv\nWDI_PO12Q.csv",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Downloads</span>"
     ]
@@ -814,7 +814,7 @@
     "href": "11-Downloads.html#r-scripts",
     "title": "Downloads",
     "section": "R Scripts",
-    "text": "R Scripts\n\nWeek 2 Solutions\nWeek 3 Solutions\nWeek 4 Solutions\nWeek 7 Solutions\nWeek 8 Solutions",
+    "text": "R Scripts\n\nWeek 3 R Solutions\nWeek 8 R Solutions\nWeek 9 R Solutions\nWeek 10 R Solutions",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Downloads</span>"
     ]
