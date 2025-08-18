@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dr Flo Reiche">
 
-<title> PO12Q: Introduction to Quantitative Political Analysis II – PO12Q: Introduction to Quantitative Political Analysis II</title>
+<title>Full Glossary – PO12Q: Introduction to Quantitative Political Analysis II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,7 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-PO12Q.html" rel="next">
+<link href="./13-bib.html" rel="next">
+<link href="./11-Downloads.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -39,7 +59,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7c884608bb88d9d23eddf9360d6659a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b29b6557e3244565c6f94619cff3bdb2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +91,35 @@ ul.task-list li input[type="checkbox"] {
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -99,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Preface</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-Glossary.html"><span class="chapter-title">Full Glossary</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -113,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preface</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-Glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Full Glossary</span></a>
+  <a href="./12-Glossary.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Full Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,104 +240,253 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  <li><a href="#companion-features" id="toc-companion-features" class="nav-link" data-scroll-target="#companion-features">Companion Features</a></li>
-  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
+  <li><a href="#full-glossary" id="toc-full-glossary" class="nav-link active" data-scroll-target="#full-glossary">Full Glossary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"><span class="chapter-title">Full Glossary</span></h1></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO12Q: Introduction to Quantitative Political Analysis II</p></h1>
-</div>
-
-
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr Flo Reiche </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Department of Politics and International Studies, University of Warwick
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<style>
-/* Re-enable title block on this page only */
-header#title-block-header, .quarto-title-block { display: block !important; }
+<section id="full-glossary" class="level1 unnumbered">
+<h1 class="unnumbered">Full Glossary</h1>
+<div style="height:1em;">
 
-/* index page only (because it's inline here) */
-.quarto-title-block { 
-  background: transparent !important;
-  padding: 1rem 0 !important;
-  border: 0 !important;
-}
-/* hide the large title text but keep meta (author/affiliation) */
-.quarto-title-block .quarto-title h1.title { 
-  display: none !important; 
-}
-/* center the meta nicely */
-.quarto-title-block .quarto-title-meta {
-  display: flex !important;
-  justify-content: center !important;
-  text-align: center !important;
-  gap: .75rem;
-}
-</style>
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is the online companion to the seminars on PO12Q. The companion is structured very much in the same way as last term. But it introduces a new “Methods, Methods, Methods” feature. Here, I walk you through a an applied example in a short video to illustrate the method or technique we are covering in that respective week in R. Work through these sections before you come to the seminar to get a bit of a head start, or after to consolidate the knowledge you have gained in the seminar.</p>
-<p>I hope you find it useful!</p>
-<div style="text-align: left; margin-top: 0.5em; margin-bottom: 1em;">
-<p><img src="files/signature_white.png" width="200" style="display: inline-block; margin-bottom: 0.5em;"> <span style="font-size: 28px; font-weight: bold; color: #e1e2ea;"><br></span></p>
 </div>
-</section>
-<section id="companion-features" class="level1 unnumbered">
-<h1 class="unnumbered">Companion Features</h1>
-<p>You will find embedded in the text five different types of boxes which serve different purposes:</p>
-<div class="bulb">
-<p>Some explanations that will hopefully make your work with this webpage or learning the material itself easier.</p>
+<p>Unless otherwise noted, the definitions are taken from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.</p>
+<div style="height:1em;">
+
 </div>
-<div class="puzzle">
-<p>A brief question which tests your understanding of the previous material.</p>
+<div class="glossary-table">
+<div class="cell" data-tbl-colwidths="[25,75]">
+<div id="tbl-glossary-full" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25,75]">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-glossary-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">adjusted rsquared</td>
+<td style="text-align: left;">The coefficient of determination for multiple regression.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">autocorrelation</td>
+<td style="text-align: left;">The value of one error term does not allow us to predict the value of another error term. As such their covariances must be zero</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">binomial distribution</td>
+<td style="text-align: left;">A binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with the same probability of success.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">Describing the qualitative categories of a characteristic, for example different religions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">coefficient</td>
+<td style="text-align: left;">A coefficient is a numerical expression which is multiplied with the value of a variable</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">coefficient of determination</td>
+<td style="text-align: left;">Indicates the proportion of the variation in the dependent variable which is explained through the independent variable. It is defined as <span class="math inline">\(\frac{\text{Explained Sum of Squares}}{\text{Total Sum of Squares}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">collinearity</td>
+<td style="text-align: left;">If two variables are functionally dependent on each other we call these collinear. Should this apply to multiple variables at the same time we call these multi-collinear. (multi-)collinearity exists if – and only if – the values follow this function precisely. Such a situation is rare, as usually variables are more loosely related to one another</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">conditional distributions</td>
+<td style="text-align: left;">The number of subjects observed at all combinations of possible outcomes for the two (or more) categorical variables in the crosstabulation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">conditional expectation function</td>
+<td style="text-align: left;">see Population Regression Function (PRF)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">correlation</td>
+<td style="text-align: left;">The statistical dependence of two random variables which is determined by pairwise comparison of values</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">covariance</td>
+<td style="text-align: left;">A measure which assesses the degree to which the values of two variables (<span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span>) vary together (their joint variability).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">crosstabulation</td>
+<td style="text-align: left;">Crosstabulations, or contingency tables, display the number of subjects observed at all combinations of possible outcomes for two (or more) categorical variables in matrix format</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dichotomous</td>
+<td style="text-align: left;">Can only assume two mutually exclusive, but internally homogeneous qualitative categories</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dummy variable</td>
+<td style="text-align: left;">Dummy variables are dichotomous, categorical variables which indicate the presence or the absence of a characteristic.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">error term</td>
+<td style="text-align: left;">The error term quantifies the distance between each observation and the corresponding point on the regression line. The terms are denoted as <span class="math inline">\(\epsilon_{i}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">heteroscedasticity</td>
+<td style="text-align: left;">The variability of the error terms changes for different observations <span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">homoscedasticity</td>
+<td style="text-align: left;">Refers to a constant variance of the error terms</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">independent sample</td>
+<td style="text-align: left;">Here, the individuals or units in one sample do not influence or relate to those in the other sample. They’re from separate, unrelated groups. An example for a dependent sample would be the voter opinion before and after a debate, as we would be measuring the same individual twice.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">intercept</td>
+<td style="text-align: left;">The intercept is the point at which the regression line intersects the y-axis. In this book we denote it as <span class="math inline">\(\beta_{0}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">law of iterative expectations</td>
+<td style="text-align: left;">According to this law, “the expected value of X is equal to the expectationover the conditional expectation of X given Y” <span class="citation" data-cites="robinson:2022">(Robinson, 2022)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">logarithm</td>
+<td style="text-align: left;">Logarithm is defined as the exponent or power to which a base must be raised to yield a given number. Expressed mathematically, <span class="math inline">\(x\)</span> is the logarithm of <span class="math inline">\(n\)</span> to the base <span class="math inline">\(b\)</span> if <span class="math inline">\(b^x = n\)</span>, in which case <span class="math inline">\(x = log_b n\)</span> <span class="citation" data-cites="murray:2023">(Murray, 2023)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">marginal distributions</td>
+<td style="text-align: left;">Marginal distributions in a crosstabulation refer to the totals for each row and column, showing the overall distribution of each variable separately, regardless of the other. They are found in the margins of the table and help summarize how each variable is distributed across all categories</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">matrix</td>
+<td style="text-align: left;">A matrix is a rectangular array of numbers arranged in rows and columns. It is used to organize data or perform operations like transformations and systems of equations. Matrices are written in uppercase bold (e.g.&nbsp;<span class="math inline">\(\pmb{A}\)</span>) and can be added, multiplied, or inverted under certain conditions.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">model building</td>
+<td style="text-align: left;">Running a number of regression models, each testing a different combination of variables.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">multicollinearity</td>
+<td style="text-align: left;">A situation in which an independent variable is a function of multiple other independent variables in the regression model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">omitted variable bias</td>
+<td style="text-align: left;">If you omit an important variable in a regression model, it will bias the size of other coefficients if the variables are correlated.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ordinary Least Squares</td>
+<td style="text-align: left;">The method of fitting a regression line by means of minimizing the sum of the squared distances between the observations and the estimated values</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">outer product</td>
+<td style="text-align: left;">The outer product of two vectors results in a matrix in which each element is the product of corresponding elements from the first vector (rows) and the second vector (columns).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">parsimony</td>
+<td style="text-align: left;">Refers to the principle .</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">partial slope coefficient</td>
+<td style="text-align: left;">A partial slope coefficient measures the influence of a variable in multiple regression, holding all other independent variables in the model constant</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pooled standard error</td>
+<td style="text-align: left;">A combined estimate of the standard error across two or more groups, assuming they have equal variances, and is used when comparing group means</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Population Regression Function</td>
+<td style="text-align: left;">The Population Regression Function (PRF) describes the expected distribution of <span class="math inline">\(y\)</span>, given the values of the independent variable(s) <span class="math inline">\(x\)</span>. It is also called the conditional expectation function (CEF) and can be denoted as <span class="math inline">\(E(y_{i} \mid x_{i})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">reference category</td>
+<td style="text-align: left;">The category of a dummy variable in respect to which the effect on the value of the dependent variable is displayed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">regression</td>
+<td style="text-align: left;">Regression analysis determines the direction and magnitude of influence of one or more independent variables on a dependent variable</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">regression line</td>
+<td style="text-align: left;">The regression line describes how the dependent variable is functionally related to the values of the independent variable. It it defined by the intercept <span class="math inline">\(\beta_{0}\)</span> and the slope <span class="math inline">\(\beta_{1}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">residual</td>
+<td style="text-align: left;">An estimation of the error term. The difference between an observation <span class="math inline">\(y_{i}\)</span> and the estimated value <span class="math inline">\(\hat{y}_{i}\)</span>. Denoted as <span class="math inline">\(\hat{\epsilon}_{i}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">robust standard errors</td>
+<td style="text-align: left;">Also known as Huber-White standard errors, correct for heteroscedasticity by “[adjusting] the model-based standard errors using the empirical variability of the model residuals” <span class="citation" data-cites="mansournia:2020">(Mansournia et al., 2020, p. 347)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sample Regression Function</td>
+<td style="text-align: left;">A regression line based on a randomly drawn sample</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">scalar</td>
+<td style="text-align: left;">A scalar is a single numerical value used to represent magnitude. In linear algebra, it is typically written in lowercase italic (e.g.&nbsp;<span class="math inline">\(a\)</span>, <span class="math inline">\(x\)</span>).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">slope</td>
+<td style="text-align: left;">A slope is defined as rise over run, and so it tells us how many units of y we need to climb (or descend if the slope is negative) for every additional unit of the independent variable <span class="math inline">\(x\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">statistical dependence</td>
+<td style="text-align: left;">Statistical dependence in crosstabulations refers to a situation where the distribution of one categorical variable varies across the levels of another. If the variables are dependent, knowing the value of one gives information about the other; if independent, the distribution of one remains consistent across all categories of the other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">time-series data</td>
+<td style="text-align: left;">Time-series data review a certain characteristic over time <span class="math inline">\(t\)</span>, where <span class="math inline">\(t\)</span> runs from 1 to <span class="math inline">\(T\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Variance-Covariance Matrix</td>
+<td style="text-align: left;">A variance-covariance matrix is a square matrix that encapsulates the variances of different variables on its diagonal and the covariances between pairs of variables in its off-diagonal elements.&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Variance Inflation Factor (VIF)</td>
+<td style="text-align: left;">A measure to quantify the how much larger the observed variance of a coefficient is compared to a scenario in which the variable was totally functionally independent from the other independent variables in the model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vector</td>
+<td style="text-align: left;">A vector is a list of numbers arranged in a specific order, often as a column. It represents both magnitude and direction. In notation, vectors are written in lowercase bold (e.g.&nbsp;<span class="math inline">\(\pmb{x}\)</span>). Vectors are used to describe quantities like position, velocity, or coefficients in a regression model.</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="video">
-<p>To help you a bit along the way through the module, I have recorded a few videos.</p>
 </div>
-<div class="warning">
-<p>This appears when you need to be careful with your coding in R to avoid problems.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-glossary-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Glossary for PO12Q
+</figcaption>
+</figure>
 </div>
-<div class="stop">
-<p>This box appears whenever I want you to stop at a particular point in the worksheet and to flag up to me that you are done.</p>
 </div>
-</section>
-<section id="accessibility" class="level1 unnumbered">
-<h1 class="unnumbered">Accessibility</h1>
-<p>The companion uses the font “<a href="https://fonts.google.com/specimen/Lexend">Lexend</a>”. Lexend fonts are intended to reduce visual stress and so improve reading performance. Initially they were designed with dyslexia and struggling readers in mind, but Bonnie Shaver-Troup, creator of the Lexend project, soon found out that these fonts are also great for everyone else.</p>
-<p>Code is displayed in <a href="https://www.recursive.design/">Recursive Mono</a>. The font’s characters share the same width for clear legibility and perfect alignment. This is particularly helpful for use in programming and data-heavy design tasks, but also allows for creative possibilities in display typography.</p>
-<p>The companion also uses a dark mode theme. For many users, including some neurodivergent individuals, dark mode can reduce eye strain and enhance focus by minimising visual overstimulation.</p>
-<p>Whilst I recognise that mobile phones play an essential part in all our daily lives, please note that this companion is optimised for display on tablets, laptops, and desktop computers.</p>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-mansournia:2020" class="csl-entry" role="listitem">
+Mansournia, M. A., Nazemipour, M., Naimi, A. I., Collins, G. S., &amp; Campbell, M. J. (2020). <span class="nocase">Reflection on modern methods: demystifying robust standard errors for epidemiologists</span>. <em>International Journal of Epidemiology</em>, <em>50</em>(1), 346–351. <a href="https://doi.org/10.1093/ije/dyaa260">https://doi.org/10.1093/ije/dyaa260</a>
+</div>
+<div id="ref-murray:2023" class="csl-entry" role="listitem">
+Murray, F. J. (2023). <span class="nocase">logarithm</span>. In <em>Encyclopedia Britannica</em>. <a href="https://www.britannica.com/science/logarithm">https://www.britannica.com/science/logarithm</a>
+</div>
+<div id="ref-reiche:forthcoming" class="csl-entry" role="listitem">
+Reiche, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-robinson:2022" class="csl-entry" role="listitem">
+Robinson, T. S. (2022). <em><span class="nocase">10 Fundamental Theorems for Econometrics</span></em>. <a href="https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/exp-theorems.html">https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/exp-theorems.html</a>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -751,10 +949,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./11-Downloads.html" class="pagination-link" aria-label="Downloads">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Downloads</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-PO12Q.html" class="pagination-link" aria-label="Week 1">
-        <span class="nav-page-text"><span class="chapter-title">Week 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13-bib.html" class="pagination-link" aria-label="List of References">
+        <span class="nav-page-text"><span class="chapter-title">List of References</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
