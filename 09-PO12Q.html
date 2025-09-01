@@ -525,8 +525,8 @@ Code for Data Analysis
 
     <script>
 
-      function styleCell_pids2loxsxhvdm3t4sof(i, j, css_id) {
-          var table = document.getElementById("tinytable_pids2loxsxhvdm3t4sof");
+      function styleCell_ehhov3kfzerf6e97ntal(i, j, css_id) {
+          var table = document.getElementById("tinytable_ehhov3kfzerf6e97ntal");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -535,8 +535,8 @@ Code for Data Analysis
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_pids2loxsxhvdm3t4sof(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_pids2loxsxhvdm3t4sof");
+      function spanCell_ehhov3kfzerf6e97ntal(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_ehhov3kfzerf6e97ntal");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -567,21 +567,21 @@ Code for Data Analysis
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_jqccy3fu8q7yug8n844z',}, 
-          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '6', j: 3 },  ], css_id: 'tinytable_css_7tjlaffw8u528rskf4yb',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '2', j: 2 }, { i: '4', j: 2 }, { i: '1', j: 2 }, { i: '2', j: 3 }, { i: '3', j: 1 }, { i: '4', j: 3 }, { i: '5', j: 2 }, { i: '3', j: 2 }, { i: '1', j: 3 }, { i: '3', j: 3 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_d2ckref8cdck4s2vq8sy',}, 
-          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_ls05167ba9db5fuco5p5',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_9mgc9rgw22j5nx2tejhv',}, 
-          { positions: [ { i: '6', j: 0 },  ], css_id: 'tinytable_css_w2xmrfxxyodleenymji3',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 },  ], css_id: 'tinytable_css_mrrfsiefj7a46z7va6yi',}, 
-          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_njdp22b2dj4hgy3frr7z',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_5a3avqljk9wua2unm67x',}, 
+          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_fatc43gcumkcbg4vfvni',}, 
+          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '6', j: 3 },  ], css_id: 'tinytable_css_dyd6jazxpfhj3szrs3fs',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '2', j: 2 }, { i: '4', j: 2 }, { i: '1', j: 2 }, { i: '2', j: 3 }, { i: '3', j: 1 }, { i: '4', j: 3 }, { i: '5', j: 2 }, { i: '3', j: 2 }, { i: '1', j: 3 }, { i: '3', j: 3 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_maxf5gw7hakbg6xenyne',}, 
+          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_w7qndfu7af4alkno9eck',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_tc9uxlvmd26wery5q80e',}, 
+          { positions: [ { i: '6', j: 0 },  ], css_id: 'tinytable_css_uid357yvd2b34b7trqgm',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 },  ], css_id: 'tinytable_css_pcsb3wppt31twzpkzyy5',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_o3rbi46bulqn0ddgcl8m',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_anny7zb6mlu8zvtm7qgr',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_pids2loxsxhvdm3t4sof(cell.i, cell.j, group.css_id);
+                  styleCell_ehhov3kfzerf6e97ntal(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -589,18 +589,18 @@ Code for Data Analysis
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_jqccy3fu8q7yug8n844z, .table th.tinytable_css_jqccy3fu8q7yug8n844z { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_7tjlaffw8u528rskf4yb, .table th.tinytable_css_7tjlaffw8u528rskf4yb { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_d2ckref8cdck4s2vq8sy, .table th.tinytable_css_d2ckref8cdck4s2vq8sy { text-align: center; }
-      .table td.tinytable_css_ls05167ba9db5fuco5p5, .table th.tinytable_css_ls05167ba9db5fuco5p5 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_9mgc9rgw22j5nx2tejhv, .table th.tinytable_css_9mgc9rgw22j5nx2tejhv { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_w2xmrfxxyodleenymji3, .table th.tinytable_css_w2xmrfxxyodleenymji3 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_mrrfsiefj7a46z7va6yi, .table th.tinytable_css_mrrfsiefj7a46z7va6yi { text-align: left; }
-      .table td.tinytable_css_njdp22b2dj4hgy3frr7z, .table th.tinytable_css_njdp22b2dj4hgy3frr7z { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_5a3avqljk9wua2unm67x, .table th.tinytable_css_5a3avqljk9wua2unm67x { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_fatc43gcumkcbg4vfvni, .table th.tinytable_css_fatc43gcumkcbg4vfvni { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_dyd6jazxpfhj3szrs3fs, .table th.tinytable_css_dyd6jazxpfhj3szrs3fs { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_maxf5gw7hakbg6xenyne, .table th.tinytable_css_maxf5gw7hakbg6xenyne { text-align: center; }
+      .table td.tinytable_css_w7qndfu7af4alkno9eck, .table th.tinytable_css_w7qndfu7af4alkno9eck { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_tc9uxlvmd26wery5q80e, .table th.tinytable_css_tc9uxlvmd26wery5q80e { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_uid357yvd2b34b7trqgm, .table th.tinytable_css_uid357yvd2b34b7trqgm { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_pcsb3wppt31twzpkzyy5, .table th.tinytable_css_pcsb3wppt31twzpkzyy5 { text-align: left; }
+      .table td.tinytable_css_o3rbi46bulqn0ddgcl8m, .table th.tinytable_css_o3rbi46bulqn0ddgcl8m { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_anny7zb6mlu8zvtm7qgr, .table th.tinytable_css_anny7zb6mlu8zvtm7qgr { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_pids2loxsxhvdm3t4sof" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_ehhov3kfzerf6e97ntal" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
 <th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
@@ -950,7 +950,7 @@ University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/drfloreiche\.github\.io\/PO12Q\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
