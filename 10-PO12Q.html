@@ -306,8 +306,14 @@ window.Quarto = {
   <li><a href="#video-and-rscript" id="toc-video-and-rscript" class="nav-link" data-scroll-target="#video-and-rscript">Video and RScript</a></li>
   </ul></li>
   <li><a href="#self-assessment-questions" id="toc-self-assessment-questions" class="nav-link" data-scroll-target="#self-assessment-questions">Self-Assessment Questions</a></li>
-  <li><a href="#testing-the-classical-linear-assumptions" id="toc-testing-the-classical-linear-assumptions" class="nav-link" data-scroll-target="#testing-the-classical-linear-assumptions">Testing the Classical Linear Assumptions</a>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
+  <li><a href="#working-with-the-classical-linear-assumptions" id="toc-working-with-the-classical-linear-assumptions" class="nav-link" data-scroll-target="#working-with-the-classical-linear-assumptions">Working with the Classical Linear Assumptions</a>
+  <ul class="collapse">
+  <li><a href="#how-to-use-the-app" id="toc-how-to-use-the-app" class="nav-link" data-scroll-target="#how-to-use-the-app">How to use the app</a></li>
+  <li><a href="#exercises-with-the-app" id="toc-exercises-with-the-app" class="nav-link" data-scroll-target="#exercises-with-the-app">Exercises with the app</a></li>
+  </ul></li>
+  <li><a href="#testing-the-classical-linear-assumptions-in-r" id="toc-testing-the-classical-linear-assumptions-in-r" class="nav-link" data-scroll-target="#testing-the-classical-linear-assumptions-in-r">Testing the Classical Linear Assumptions in R</a></li>
   <li><a href="#homoscedasticity" id="toc-homoscedasticity" class="nav-link" data-scroll-target="#homoscedasticity">Homoscedasticity</a></li>
   <li><a href="#multi-collinearity" id="toc-multi-collinearity" class="nav-link" data-scroll-target="#multi-collinearity">(Multi-)Collinearity</a></li>
   </ul></li>
@@ -502,8 +508,97 @@ Code for Data Analysis
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
 </section>
-<section id="testing-the-classical-linear-assumptions" class="level1 unnumbered">
-<h1 class="unnumbered">Testing the Classical Linear Assumptions</h1>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="working-with-the-classical-linear-assumptions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="working-with-the-classical-linear-assumptions">Working with the Classical Linear Assumptions</h2>
+<p>To help you understand the assumptions, I have written <a href="https://drfloreiche.github.io/shinylive/reg_assumptions/">an app</a> which illustrates how violations of key OLS regression assumptions affect estimation and inference.</p>
+<p>You start by simulating a base dataset. In a second step, you apply one of these three common assumption violations:</p>
+<ul>
+<li>Nonlinearity: the true relationship includes a quadratic term, but the fitted model is linear.<br>
+</li>
+<li>Heteroskedasticity: the error variance increases with <span class="math inline">\(x\)</span>, so residuals spread out unevenly.<br>
+</li>
+<li>Collinearity: predictors <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are highly correlated, making coefficient estimates unstable.</li>
+</ul>
+<section id="how-to-use-the-app" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-the-app">How to use the app</h3>
+<ol type="1">
+<li>Choose the <code>sample size</code> and the true coefficients (<span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>) in the left panel.<br>
+</li>
+<li>Click <code>Simulate data</code> to generate the base dataset.<br>
+</li>
+<li>Select a <code>violation scenario</code> and adjust its sliders to control severity.<br>
+</li>
+<li>The <code>main plot</code> shows the data, fitted line(s), and diagnostic curves.<br>
+</li>
+<li>The <code>Diagnostics box</code> reports statistical checks such as Breusch–Pagan, RESET, or VIF, depending on the scenario.<br>
+</li>
+<li>The <code>Model comparison</code> box contrasts the fitted equation with and without the violation.</li>
+</ol>
+<p>You can reset everything with the <code>Reset</code> button and repeat with different settings to see how results vary.</p>
+</section>
+<section id="exercises-with-the-app" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-with-the-app">Exercises with the app</h3>
+<ol type="1">
+<li><strong>Base fit</strong><br>
+Click <code>Simulate data</code> with the scenario set to <code>Base (no violation)</code>.
+<ol type="a">
+<li>What is the fitted line shown at the top of the plot?<br>
+</li>
+<li>Is the estimated slope <span class="math inline">\(\hat\beta_1\)</span> close to the “True <span class="math inline">\(\beta_1\)</span>” you set in the left panel? Briefly explain why it won’t be exactly equal.</li>
+</ol></li>
+<li><strong>Heteroskedasticity on/off</strong><br>
+Switch to <code>Heteroscedasticity</code> and set the slider to <code>0</code>.
+<ol type="a">
+<li>What happens to the Breusch–Pagan (approx) p-value?<br>
+</li>
+<li>Increase the slider until a clear “bowtie” pattern appears. How do the <code>SE (OLS)</code> and <code>SE (HC3)</code> compare for the slope, and which p-value (OLS vs HC3) is more conservative?</li>
+</ol></li>
+<li><strong>Reading the bowtie guide</strong><br>
+With heteroskedasticity turned up (non-zero), the dashed guide labeled “Error spread (<span class="math inline">\(\sigma\)</span>)” is plotted.
+<ol type="a">
+<li>What does this curve represent in relation to <span class="math inline">\(x\)</span>?<br>
+</li>
+<li>How does this relate to the Breusch–Pagan result you see in the diagnostics?</li>
+</ol></li>
+<li><strong>Functional form: keeping the same sample</strong><br>
+Switch to <code>Nonlinearity (functional form)</code>.
+<ol type="a">
+<li>Set <span class="math inline">\(\beta_2=0\)</span>. What should the scatter and linear fit look like relative to the base sample?<br>
+</li>
+<li>Increase <span class="math inline">\(\beta_2\)</span> (positive). What visual change do you see, and what happens to the <code>Linear vs quadratic (F-test)</code> p-value?<br>
+</li>
+<li>If you set <span class="math inline">\(\beta_2&lt;0\)</span>, how does the shape change and how should the RESET-style p-value respond?</li>
+</ol></li>
+<li><strong>Comparing linear vs quadratic coefficients</strong><br>
+In the <code>Nonlinearity</code> diagnostics, inspect the table for the quadratic fit.
+<ol type="a">
+<li>Which coefficient corresponds to curvature?<br>
+</li>
+<li>When does it become statistically significant, and how does this align with the F-test and the overlayed dashed quadratic curve?</li>
+</ol></li>
+<li><strong>Multicollinearity: creating instability</strong><br>
+Switch to <code>Collinearity (multivariate)</code>.
+<ol type="a">
+<li>Increase <span class="math inline">\(\rho_{x}\)</span> close to 1. What happens to the VIF values in the diagnostics?<br>
+</li>
+<li>In the <code>Model output</code> pane, compare the estimate of <span class="math inline">\(\beta_1\)</span> “both <span class="math inline">\(x_1\)</span> &amp; <span class="math inline">\(x_2\)</span>” vs “only <span class="math inline">\(x_1\)</span>”. What does this illustrate about coefficient instability?<br>
+</li>
+<li>Why does collinearity mainly affect inference (SEs, stability) rather than introducing systematic bias?</li>
+</ol></li>
+<li><strong>Equation comparison panel</strong><br>
+With each scenario, read the <code>Model comparison</code> block (bottom-right card).
+<ol type="a">
+<li>For <code>Nonlinearity</code>, why does the card display <span class="math inline">\(\hat y_{\text{linear}}=\hat\beta_0+\hat\beta_1 x\)</span> instead of the quadratic?<br>
+</li>
+<li>For <code>Collinearity</code>, how is the model equation written, and what does that tell you about interpretation of <span class="math inline">\(\hat\beta_{x_1}\)</span> and <span class="math inline">\(\hat\beta_{x_2}\)</span>?</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="testing-the-classical-linear-assumptions-in-r" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="testing-the-classical-linear-assumptions-in-r">Testing the Classical Linear Assumptions in R</h2>
 <p>For this worksheet we will be using the <code>london</code> data set from the lectures, this time with the following variables:</p>
 <p>&nbsp;</p>
 <div class="custom-html-table">
@@ -564,6 +659,7 @@ Table&nbsp;1: Codebook for <code>london_11</code> Data Set
 </div>
 <p>&nbsp;</p>
 <p>Data are taken from <span class="citation" data-cites="gov:2013">GOV.UK (2013)</span>, <span class="citation" data-cites="london:2010">London Data Store (2010)</span>, and <span class="citation" data-cites="hoc:nd">House of Commons Library (n.d.)</span>.</p>
+</section>
 <section id="homoscedasticity" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="homoscedasticity">Homoscedasticity</h2>
 <ol type="1">
