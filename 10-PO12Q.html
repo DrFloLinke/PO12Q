@@ -307,6 +307,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#self-assessment-questions" id="toc-self-assessment-questions" class="nav-link" data-scroll-target="#self-assessment-questions">Self-Assessment Questions</a></li>
   <li><a href="#multi-collinearity" id="toc-multi-collinearity" class="nav-link" data-scroll-target="#multi-collinearity">(Multi-)Collinearity</a></li>
+  <li><a href="#functional-misspecifiation-and-ramseys-reset-test" id="toc-functional-misspecifiation-and-ramseys-reset-test" class="nav-link" data-scroll-target="#functional-misspecifiation-and-ramseys-reset-test">Functional Misspecifiation and Ramsey’s RESET Test</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
   <li><a href="#working-with-the-classical-linear-assumptions" id="toc-working-with-the-classical-linear-assumptions" class="nav-link" data-scroll-target="#working-with-the-classical-linear-assumptions">Working with the Classical Linear Assumptions</a>
@@ -532,6 +533,47 @@ x_{1,i} = \alpha_0 + \alpha_1 x_{2,i} + \alpha_2 x_{3,i} + ... + \alpha_{k-1} x_
 \text{VIF}_j = \frac{1}{1-\bar{R}_j^2}
 \end{equation}\]</span></p>
 <p>Its size is solely determined by <span class="math inline">\(\bar{R}_j^2\)</span>. The better a model explains the respective independent variable, the closer <span class="math inline">\(\bar{R}_j^2\)</span> will be to one, increasing the size of VIF<span class="math inline">\(_j\)</span>. A commonly adopted threshold for classing a variable as (multi-)collinear is either VIF=5, or VIF=10. These thresholds are completely arbitrary, but have nonetheless managed to establish themselves in regression analysis.</p>
+</section>
+<section id="functional-misspecifiation-and-ramseys-reset-test" class="level1 unnumbered">
+<h1 class="unnumbered">Functional Misspecifiation and Ramsey’s RESET Test</h1>
+<p>The Classical Linear Model (CLA) assumes that the conditional expectation of <span class="math inline">\(y\)</span> is a linear function of the independent variables, i.e.&nbsp;</p>
+<p><span class="math display">\[\begin{equation*}
+E[y_i \mid x_{1,i}, x_{2,i}, \dots, x_{k,i}]
+= \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_k x_{k,i}
+\end{equation*}\]</span></p>
+<p>This does not mean that <span class="math inline">\(y\)</span> itself must be linear in the variables, but rather that our specified regression function correctly captures the systematic part of the relationship between <span class="math inline">\(y\)</span> and the independent variables. If the true relationship is nonlinear in ways not represented by our chosen functional form (for example, quadratic or interaction terms are missing), then the linearity assumption is violated.</p>
+<p>Ramsey’s Regression Specification Error Test (RESET) provides a convenient way to detect such misspecifications. The idea is simple: if our original model is well specified, then adding nonlinear combinations of the fitted values <span class="math inline">\(\hat{y}\)</span> should not significantly increase explanatory power. If they do, this suggests that some nonlinear transformations of the independent variables are missing.</p>
+<p>To implement the test, we take the fitted values <span class="math inline">\(\hat{y}_i\)</span> from our original regression model and augment the specification with their higher-order terms, such as <span class="math inline">\(\hat{y}_i^2\)</span>, <span class="math inline">\(\hat{y}_i^3\)</span>, and so on. A simple example would be</p>
+<p><span class="math display">\[\begin{equation*}
+y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \gamma_1 \hat{y}_i^2 + \gamma_2 \hat{y}_i^3 + u_i
+\end{equation*}\]</span></p>
+<p>where <span class="math inline">\(\gamma_1\)</span> and <span class="math inline">\(\gamma_2\)</span> are the new regression coefficients associated with the nonlinear transformations of the fitted values.</p>
+<p>But what does it actually mean to square <span class="math inline">\(\hat{y}\)</span>? Recall that <span class="math inline">\(\hat{y}\)</span> is itself a linear combination of the independent variables:</p>
+<p><span class="math display">\[\begin{equation*}
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_{1,i} + \hat{\beta}_2 x_{2,i}
+\end{equation*}\]</span></p>
+<p>For simplicity, let us consider only two independent variables. Squaring <span class="math inline">\(\hat{y}\)</span> yields</p>
+<p><span class="math display">\[\begin{equation*}
+\hat{y}_i^2 = (\hat{\beta}_0 + \hat{\beta}_1 x_{1,i} + \hat{\beta}_2 x_{2,i})^2
+\end{equation*}\]</span></p>
+<p>Expanding the square gives us</p>
+<p><span class="math display">\[\begin{equation*}
+\hat{y}_i^2 = \hat{\beta}_0^2
++ 2\hat{\beta}_0 \hat{\beta}_1 x_{1,i}
++ 2\hat{\beta}_0 \hat{\beta}_2 x_{2,i}
++ \hat{\beta}_1^2 x_{1,i}^2
++ 2\hat{\beta}_1 \hat{\beta}_2 x_{1,i}x_{2,i}
++ \hat{\beta}_2^2 x_{2,i}^2
+\end{equation*}\]</span></p>
+<p>Here you can see that squaring <span class="math inline">\(\hat{y}\)</span> introduces (i) quadratic terms such as <span class="math inline">\(x_{1,i}^2\)</span> and <span class="math inline">\(x_{2,i}^2\)</span>, and (ii) interaction terms such as <span class="math inline">\(x_{1,i}x_{2,i}\)</span>. Cubing <span class="math inline">\(\hat{y}\)</span> would in turn generate cubic terms and triple interactions, and so forth.</p>
+<p>This is the party trick of the RESET test: by including powers of the fitted values, we are indirectly testing whether higher-order polynomials and interactions of the independent variables explain additional variation in <span class="math inline">\(y\)</span>. If they do, it implies that our initial specification left out relevant nonlinear structure.</p>
+<p>The RESET test then proceeds by conducting a joint hypothesis test:</p>
+<p><span class="math display">\[\begin{equation*}
+H_0: \gamma_1 = \gamma_2 = ... = 0
+\end{equation*}\]</span></p>
+<p>This is carried out as a so-called F-test. An F-test is a statistical test that compares how well two models fit the data by checking whether the improvement in fit from adding extra terms is large enough to be unlikely due to chance. This is what you will see in the diagnostics section of the app below.</p>
+<p>Rejection of <span class="math inline">\(H_0\)</span> indicates that at least one nonlinear transformation contributes to explaining <span class="math inline">\(y\)</span>, and hence that our original model suffers from functional misspecification. Failure to reject <span class="math inline">\(H_0\)</span> suggests no evidence against the original specification.</p>
+<p>As with most specification tests, RESET does not tell us the precise form of the omitted non-linearity, only that our functional form may be inadequate – a bit like R not running a script, but not telling you where you missed that elusive comma or bracket. It is therefore best understood as a diagnostic tool pointing us towards re-examining the theoretical foundations of our model specification (see Week 9).</p>
 </section>
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
