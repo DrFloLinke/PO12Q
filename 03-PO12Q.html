@@ -289,7 +289,12 @@ window.Quarto = {
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
   <li><a href="#regression-theory" id="toc-regression-theory" class="nav-link" data-scroll-target="#regression-theory">Regression – Theory</a></li>
-  <li><a href="#calculations-with-matrices" id="toc-calculations-with-matrices" class="nav-link" data-scroll-target="#calculations-with-matrices">Calculations with Matrices</a></li>
+  <li><a href="#calculations-with-matrices" id="toc-calculations-with-matrices" class="nav-link" data-scroll-target="#calculations-with-matrices">Calculations with Matrices</a>
+  <ul class="collapse">
+  <li><a href="#core-exercises" id="toc-core-exercises" class="nav-link" data-scroll-target="#core-exercises">Core Exercises</a></li>
+  <li><a href="#advanced-exercises" id="toc-advanced-exercises" class="nav-link" data-scroll-target="#advanced-exercises">Advanced Exercises</a></li>
+  </ul></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul></li>
   <li><a href="#homework-for-week-4" id="toc-homework-for-week-4" class="nav-link" data-scroll-target="#homework-for-week-4">Homework for Week 4</a></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
@@ -664,11 +669,23 @@ x_{31} &amp; x_{32}
 <section id="regression-theory" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="regression-theory">Regression – Theory</h2>
 <ol type="1">
-<li>You are given the scatter plot in Figure 2.7 <span class="citation" data-cites="gujarati:2009">(taken from Gujarati &amp; Porter, 2009, p. 50)</span> along with the regression line. What general conclusion do you draw from this diagram? Is the regression line sketched in the diagram a population regression line or a sample regression line?</li>
+<li>You are given the scatter plot in <a href="#fig-lifegdp" class="quarto-xref">Figure&nbsp;<span>1</span></a> (data for 2015, source: <span class="citation" data-cites="worldbank:2024">The World Bank (n.d.)</span>) along with the regression line.
+<ol type="a">
+<li>What general conclusion do you draw from <a href="#fig-lifegdp" class="quarto-xref">Figure&nbsp;<span>1</span></a>?</li>
+<li>Is the regression line sketched in <a href="#fig-lifegdp" class="quarto-xref">Figure&nbsp;<span>1</span></a> a population regression line or a sample regression line?</li>
+<li>What would happen to the regression line if we ran separate models per region?</li>
+<li>Is a straight regression line adequate here?</li>
+</ol></li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="files/Week 3/gujarati210.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p>&nbsp;</p>
+<div id="fig-lifegdp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lifegdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="files/Week 3/sample.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lifegdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The effect of life expectancy on per capita GDP
+</figcaption>
 </figure>
 </div>
 </section>
@@ -683,7 +700,8 @@ x_{31} &amp; x_{32}
 <li>What is the purpose of an identity matrix?</li>
 </ul>
 </div>
-<p>Now, consider the following three matrices <span class="math inline">\(\pmb{A}\)</span>, <span class="math inline">\(\pmb{B}\)</span>, and <span class="math inline">\(\pmb{C}\)</span>: </p>
+<p>Now, consider the following three matrices <span class="math inline">\(\pmb{A}\)</span>, <span class="math inline">\(\pmb{B}\)</span>, and <span class="math inline">\(\pmb{C}\)</span>:</p>
+<p>&nbsp;</p>
 <p><span class="math display">\[\begin{equation*}
     \pmb{A} =
     \begin{bmatrix}
@@ -704,8 +722,15 @@ x_{31} &amp; x_{32}
         31  &amp; 19  \\
     \end{bmatrix}
 \end{equation*}\]</span></p>
+<p>&nbsp; &nbsp;</p>
+<hr>
+<section id="core-exercises" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="core-exercises">Core Exercises</h3>
+<div style="height: 1em;" aria-hidden="true">
+
+</div>
 <ol type="1">
-<li>What is the value in:
+<li><p>What is the value in:</p>
 <ol type="a">
 <li><span class="math inline">\(\pmb{A}_{22}\)</span><br>
 </li>
@@ -719,8 +744,9 @@ x_{31} &amp; x_{32}
 </li>
 <li><span class="math inline">\(\pmb{C}_{21}\)</span></li>
 </ol></li>
-<li>Transpose <span class="math inline">\(\pmb{B}\)</span> into <span class="math inline">\(\pmb{B}^\prime\)</span> using the following blank matrix.<br>
-</li>
+<li><p>State the dimensions (rows <span class="math inline">\(\times\)</span> columns) of <span class="math inline">\(\pmb{A}\)</span>, <span class="math inline">\(\pmb{B}\)</span>, <span class="math inline">\(\pmb{C}\)</span>, <span class="math inline">\(\pmb{B}^\prime\)</span>, and the product <span class="math inline">\(\pmb{C}\pmb{B}\)</span>.</p></li>
+<li><p>Transpose <span class="math inline">\(\pmb{B}\)</span> into <span class="math inline">\(\pmb{B}^\prime\)</span> using the following blank matrix.<br>
+</p></li>
 </ol>
 <p><span class="math display">\[\begin{equation*}
     \pmb{B}^\prime =
@@ -731,9 +757,28 @@ x_{31} &amp; x_{32}
         &amp; &amp; &amp; &amp;\\
     \end{bmatrix}
 \end{equation*}\]</span></p>
-<ol start="3" type="1">
-<li>Solve <span class="math inline">\(\pmb{D}\)</span> where <span class="math inline">\(\pmb{C} \times \pmb{B} = \pmb{D}\)</span> using the following blank matrix.<br>
+<div style="height: 1em;" aria-hidden="true">
+
+</div>
+<ol start="4" type="1">
+<li>For each pair below, say whether the product is defined. If defined, give the resulting dimensions (do <strong>not</strong> calculate the entries):
+<ol type="a">
+<li><span class="math inline">\(\pmb{A}\pmb{B}\)</span><br>
 </li>
+<li><span class="math inline">\(\pmb{B}\pmb{A}\)</span><br>
+</li>
+<li><span class="math inline">\(\pmb{A}\pmb{C}\)</span><br>
+</li>
+<li><span class="math inline">\(\pmb{C}\pmb{A}\)</span><br>
+</li>
+<li><span class="math inline">\(\pmb{B}\pmb{C}\)</span></li>
+</ol></li>
+</ol>
+<div style="height: 1em;" aria-hidden="true">
+
+</div>
+<ol start="5" type="1">
+<li>Solve <span class="math inline">\(\pmb{D}\)</span> where <span class="math inline">\(\pmb{C} \times \pmb{B} = \pmb{D}\)</span> using the following blank matrix.</li>
 </ol>
 <p><span class="math display">\[\begin{equation*}
     \pmb{D} =
@@ -744,9 +789,13 @@ x_{31} &amp; x_{32}
         &amp; &amp; &amp; &amp; &amp; &amp;\\
     \end{bmatrix}
 \end{equation*}\]</span></p>
-<ol start="4" type="1">
-<li>Solve <span class="math inline">\(\pmb{C}^{-1}\)</span>, showing your workings using the appropriate formula.<br>
-</li>
+<div style="height: 1em;" aria-hidden="true">
+
+</div>
+<ol start="6" type="1">
+<li><p>Calculate <span class="math inline">\(\det(\pmb{C})\)</span>. (You will need it for Q7.)</p></li>
+<li><p>Solve <span class="math inline">\(\pmb{C}^{-1}\)</span>.<br>
+</p></li>
 </ol>
 <p><span class="math display">\[\begin{equation*}
     \pmb{C}^{-1} = \frac{\:}{\hspace{2.5cm}}
@@ -760,6 +809,39 @@ x_{31} &amp; x_{32}
         &amp; &amp; &amp; &amp;  \\
     \end{bmatrix}
 \end{equation*}\]</span></p>
+<p>&nbsp; &nbsp;</p>
+<hr>
+</section>
+<section id="advanced-exercises" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="advanced-exercises">Advanced Exercises</h3>
+<div style="height: 1em;" aria-hidden="true">
+
+</div>
+<ol start="8" type="1">
+<li>Using your result for <span class="math inline">\(\pmb{C}^{-1}\)</span>, solve <span class="math inline">\(\pmb{C}\pmb{x}=\pmb{b}\)</span> for</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\pmb{b}=
+\begin{bmatrix}
+1\\
+-3
+\end{bmatrix}
+\quad\text{and}\quad
+\pmb{b}=
+\begin{bmatrix}
+4\\
+7
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<ol start="9" type="1">
+<li><p>Let <span class="math inline">\(\pmb{u}=\begin{bmatrix}1\\-1\\2\end{bmatrix}\)</span> and <span class="math inline">\(\pmb{v}=\begin{bmatrix}2\\0\\-1\end{bmatrix}\)</span>. Calculate <span class="math inline">\(\pmb{A}\pmb{u}\)</span> and <span class="math inline">\(\pmb{v}^\prime\pmb{A}\)</span>.</p></li>
+<li><p>Calculate <span class="math inline">\(3\pmb{A}-2\pmb{I}_3\)</span>, where <span class="math inline">\(\pmb{I}_3\)</span> is the <span class="math inline">\(3\times3\)</span> identity matrix.</p></li>
+</ol>
+</section>
+</section>
+<section id="solutions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="solutions">Solutions</h2>
+<p>The solutions to these exercises are available in the <a href="http://localhost:7534/11-Downloads.html">Downloads</a> Section.</p>
 </section>
 </section>
 <section id="homework-for-week-4" class="level1 unnumbered">
@@ -781,7 +863,7 @@ x_{31} &amp; x_{32}
 </ul></li>
 <li>Repeat this with more random matrices until you feel familiar with these operations (exam relevant)</li>
 </ul>
-<iframe id="matrixlab-iframe" src="https://drfloreiche.github.io/shinylive/matrices/" title="Matrix Lab" style="width:100%; border:0; display:block; min-height:1250px; overflow:hidden">
+<iframe id="matrixlab-iframe" src="https://drfloreiche.github.io/shinylive/matrices/" title="Matrix Lab" style="width:100%; border:0; display:block; min-height:1220px; overflow:hidden">
 </iframe>
 
 <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
@@ -925,11 +1007,11 @@ The data are available as a <a href="files/excelfiles/PO12Q_Week 3_Consolidate.c
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-gujarati:2009" class="csl-entry" role="listitem">
-Gujarati, D. N., &amp; Porter, D. C. (2009). <em><span>Basic Econometrics</span></em> (Fifth International Edition). New York: McGraw-Hill.
-</div>
 <div id="ref-reiche:forthcoming" class="csl-entry" role="listitem">
 Reiche, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-worldbank:2024" class="csl-entry" role="listitem">
+The World Bank. (n.d.n.d.). <em><span>World Development Indicators</span></em>. <a href="https://datacatalog.worldbank.org/dataset/world-development-indicators">https://datacatalog.worldbank.org/dataset/world-development-indicators</a>
 </div>
 </div>
 </section>
