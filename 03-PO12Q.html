@@ -770,18 +770,35 @@ x_{31} &amp; x_{32}
 <li>Work through <a href="https://drfloreiche.github.io/PO12Q/03-PO12Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
 <li>Find an example for each NEW function and apply it in R to ensure it works</li>
 <li>Complete the <a href="https://moodle.warwick.ac.uk/mod/quiz/view.php?id=2436035">Week 3 Moodle Quiz</a></li>
-<li>Familiarise yourself further with matrices by setting yourself two sample matrices, A and B (each should be a 2x2 matrix). Conduct the following operations:
+<li>Create two random 2x2 matrices with the app below (use the “Random A” and “Random B” buttons). Conduct the following operations by hand before checking your results with the app:
 <ul>
 <li>Multiply A and B</li>
 <li>Invert A and B</li>
+<li>Divide A by B (aka A <span class="math inline">\(\cdot\)</span> B<span class="math inline">\(^{-1}\)</span>)</li>
 <li>Transpose A and B</li>
 <li>Multiply A with an Identity Matrix</li>
 <li>Multiply A with A<span class="math inline">\(^{-1}\)</span>. What is the result called?</li>
 </ul></li>
+<li>Repeat this with more random matrices until you feel familiar with these operations (exam relevant)</li>
 </ul>
-<div class="bulb">
-<p>You can check your solutions with https://matrixcalc.org/ . You can also try to figure out how to do this in R. This is a great way to practice working with matrices until you are familiar with the procedure.</p>
-</div>
+<iframe id="matrixlab-iframe" src="https://drfloreiche.github.io/shinylive/matrices/" title="Matrix Lab" style="width:100%; border:0; display:block; min-height:1200px; overflow:hidden">
+</iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({
+    checkOrigin: false,                     // tighten later to your origin
+    heightCalculationMethod: 'lowestElement',
+    sizeHeight: true,
+    scrolling: false,
+    onInit: (iframe) => {
+      const poke = () => iframe.iFrameResizer && iframe.iFrameResizer.resize();
+      setTimeout(poke, 200);
+      setTimeout(poke, 800);
+      setTimeout(poke, 1600);
+    }
+  }, '#matrixlab-iframe');
+</script>
 </section>
 <section id="glossary" class="level1 unnumbered">
 <h1 class="unnumbered">Glossary</h1>
