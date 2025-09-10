@@ -853,27 +853,8 @@ Figure&nbsp;1: The effect of life expectancy on per capita GDP
 <li>Repeat this with more random matrices until you feel familiar with these operations (exam relevant)</li>
 </ul>
 <p>If the app below does not display properly for you, please go to the <a href="https://drfloreiche.github.io/shinylive/matrices/">standalone page of the app</a>.</p>
-<iframe id="matrixlab-iframe" src="https://drfloreiche.github.io/shinylive/matrices/" title="Matrix Lab" style="width:100%; border:0; display:block; min-height:1100px;" scrolling="no">
-  </iframe>
-  
-  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
-  <script>
-  iFrameResize({
-    checkOrigin: false,                 // tighten to your domain later
-    heightCalculationMethod: 'taggedElement',
-    sizeHeight: true,
-    sizeWidth: true,                    // recompute on width changes (phones)
-    autoResize: true,
-    resizeFrom: 'child',
-    onInit: (iframe) => {
-      const poke = () => iframe.iFrameResizer && iframe.iFrameResizer.resize();
-      requestAnimationFrame(poke);
-      setTimeout(poke, 300);
-      setTimeout(poke, 900);
-      setTimeout(poke, 1800);
-    }
-  }, '#matrixlab-iframe');
-</script>
+<iframe id="matrixlab-iframe" src="https://drfloreiche.github.io/shinylive/matrices/" title="Matrix Lab" style="width:100%; border:0; display:block; height:1100px; min-height:1100px; overflow:auto;" scrolling="yes">
+</iframe>
 </section>
 <section id="glossary" class="level1 unnumbered">
 <h1 class="unnumbered">Glossary</h1>
