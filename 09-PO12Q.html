@@ -520,8 +520,8 @@ Code for Data Analysis
 
     <script>
 
-      function styleCell_1jlmsuevf3lyb283zcws(i, j, css_id) {
-          var table = document.getElementById("tinytable_1jlmsuevf3lyb283zcws");
+      function styleCell_278319eg9rd42e84o68v(i, j, css_id) {
+          var table = document.getElementById("tinytable_278319eg9rd42e84o68v");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -530,8 +530,8 @@ Code for Data Analysis
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_1jlmsuevf3lyb283zcws(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_1jlmsuevf3lyb283zcws");
+      function spanCell_278319eg9rd42e84o68v(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_278319eg9rd42e84o68v");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -562,21 +562,21 @@ Code for Data Analysis
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_g8o1t4ctm7oxwnssu8o5',}, 
-          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '6', j: 3 },  ], css_id: 'tinytable_css_yy4x7eoz322ha1ujm6t7',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '2', j: 2 }, { i: '4', j: 2 }, { i: '1', j: 2 }, { i: '2', j: 3 }, { i: '3', j: 1 }, { i: '4', j: 3 }, { i: '5', j: 2 }, { i: '3', j: 2 }, { i: '1', j: 3 }, { i: '3', j: 3 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_632m74k6vpr4c9w8y1cj',}, 
-          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_naeyaywdbjytmlkq9dt1',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_ejdsxg132emmq69tyjvk',}, 
-          { positions: [ { i: '6', j: 0 },  ], css_id: 'tinytable_css_n0gwf4e8ogl03n6v0522',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 },  ], css_id: 'tinytable_css_kqchrcccmw9ablycnhtc',}, 
-          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_l4a3llfgvru4rug56e20',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_zha03ohlj2592njy19k1',}, 
+          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_ei5nlclja4hy17iiqt3l',}, 
+          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '6', j: 3 },  ], css_id: 'tinytable_css_hlpxzp9ybo0idm9ck5ki',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '2', j: 2 }, { i: '4', j: 2 }, { i: '1', j: 2 }, { i: '2', j: 3 }, { i: '3', j: 1 }, { i: '4', j: 3 }, { i: '5', j: 2 }, { i: '3', j: 2 }, { i: '1', j: 3 }, { i: '3', j: 3 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_bf4gzv4v9dzreqm6qduy',}, 
+          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_hiq0unfsxp7hdsio7nxa',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_cw19yax73x99y0y87nxy',}, 
+          { positions: [ { i: '6', j: 0 },  ], css_id: 'tinytable_css_34in1kcoi0p0qln4o036',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 },  ], css_id: 'tinytable_css_7p4k2lvp0k9kmhep0xep',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_u3ulygncq3tnc8uaw8gd',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_9rdzf0nrib0eiikqv111',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_1jlmsuevf3lyb283zcws(cell.i, cell.j, group.css_id);
+                  styleCell_278319eg9rd42e84o68v(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -584,18 +584,18 @@ Code for Data Analysis
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_g8o1t4ctm7oxwnssu8o5, .table th.tinytable_css_g8o1t4ctm7oxwnssu8o5 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_yy4x7eoz322ha1ujm6t7, .table th.tinytable_css_yy4x7eoz322ha1ujm6t7 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_632m74k6vpr4c9w8y1cj, .table th.tinytable_css_632m74k6vpr4c9w8y1cj { text-align: center; }
-      .table td.tinytable_css_naeyaywdbjytmlkq9dt1, .table th.tinytable_css_naeyaywdbjytmlkq9dt1 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_ejdsxg132emmq69tyjvk, .table th.tinytable_css_ejdsxg132emmq69tyjvk { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_n0gwf4e8ogl03n6v0522, .table th.tinytable_css_n0gwf4e8ogl03n6v0522 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_kqchrcccmw9ablycnhtc, .table th.tinytable_css_kqchrcccmw9ablycnhtc { text-align: left; }
-      .table td.tinytable_css_l4a3llfgvru4rug56e20, .table th.tinytable_css_l4a3llfgvru4rug56e20 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_zha03ohlj2592njy19k1, .table th.tinytable_css_zha03ohlj2592njy19k1 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ei5nlclja4hy17iiqt3l, .table th.tinytable_css_ei5nlclja4hy17iiqt3l { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_hlpxzp9ybo0idm9ck5ki, .table th.tinytable_css_hlpxzp9ybo0idm9ck5ki { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_bf4gzv4v9dzreqm6qduy, .table th.tinytable_css_bf4gzv4v9dzreqm6qduy { text-align: center; }
+      .table td.tinytable_css_hiq0unfsxp7hdsio7nxa, .table th.tinytable_css_hiq0unfsxp7hdsio7nxa { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_cw19yax73x99y0y87nxy, .table th.tinytable_css_cw19yax73x99y0y87nxy { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_34in1kcoi0p0qln4o036, .table th.tinytable_css_34in1kcoi0p0qln4o036 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_7p4k2lvp0k9kmhep0xep, .table th.tinytable_css_7p4k2lvp0k9kmhep0xep { text-align: left; }
+      .table td.tinytable_css_u3ulygncq3tnc8uaw8gd, .table th.tinytable_css_u3ulygncq3tnc8uaw8gd { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_9rdzf0nrib0eiikqv111, .table th.tinytable_css_9rdzf0nrib0eiikqv111 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_1jlmsuevf3lyb283zcws" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_278319eg9rd42e84o68v" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
 <th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
@@ -667,7 +667,7 @@ Table&nbsp;1: Regression Models for Self-Reflection Exercises
 </section>
 <section id="working-with-regression-analysis" class="level1 unnumbered">
 <h1 class="unnumbered">Working with Regression Analysis</h1>
-<p>We will be using the “crime.csv” data available in the <a href="https://drfloreiche.github.io/PO12Q/11-Downloads.html">Downloads Section</a> to analyse attitudes and experiences of crime in England and Wales. The data set contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents <span class="citation" data-cites="dataservice:2019">(University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics, 2019)</span>. For variable labels, please consult the <a href="files/Downloads/Week 9/Codebook Crime Data Set.pdf">Crime Data Code Book</a>.</p>
+<p>We will be using the “crime.csv” data available in the <a href="https://drflolinke.github.io/PO12Q/11-Downloads.html">Downloads Section</a> to analyse attitudes and experiences of crime in England and Wales. The data set contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents <span class="citation" data-cites="dataservice:2019">(University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics, 2019)</span>. For variable labels, please consult the <a href="files/Downloads/Week 9/Codebook Crime Data Set.pdf">Crime Data Code Book</a>.</p>
 <section id="data-analysis" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="data-analysis">Data Analysis</h2>
 <ol type="1">
@@ -705,7 +705,7 @@ Table&nbsp;1: Regression Models for Self-Reflection Exercises
 </section>
 <section id="transformation-of-variables" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="transformation-of-variables">Transformation of Variables</h2>
-<p>This Section uses the <code>london_exercises</code> data set available in the <a href="https://drfloreiche.github.io/PO12Q/11-Downloads.html">Downloads Section</a>. Data are taken from <span class="citation" data-cites="london:2013">London Data Store (2013)</span>. <a href="files/Downloads/Week 9/Codebook-London-Exercises.pdf">This document</a> provides a full codebook.</p>
+<p>This Section uses the <code>london_exercises</code> data set available in the <a href="https://drflolinke.github.io/PO12Q/11-Downloads.html">Downloads Section</a>. Data are taken from <span class="citation" data-cites="london:2013">London Data Store (2013)</span>. <a href="files/Downloads/Week 9/Codebook-London-Exercises.pdf">This document</a> provides a full codebook.</p>
 <ol type="1">
 <li>Unemployment rate, defined as the ratio of people in full time employment to population of working age is often said to be related to crime. Generate an unemployment rate variable for each of the wards.</li>
 <li>It is theorised that unemployment is a driving factor behind crime rates.
@@ -719,17 +719,17 @@ Table&nbsp;1: Regression Models for Self-Reflection Exercises
 </section>
 <section id="solutions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="solutions">Solutions</h2>
-<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO12Q/11-Downloads.html">Downloads Section</a>.</p>
+<p>You can find the Solutions in the <a href="https://drflolinke.github.io/PO12Q/11-Downloads.html">Downloads Section</a>.</p>
 </section>
 </section>
 <section id="homework-for-week-10" class="level1 unnumbered">
 <h1 class="unnumbered">Homework for Week 10</h1>
 <ul>
-<li>Work through <a href="https://drfloreiche.github.io/PO12Q/09-PO12Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
+<li>Work through <a href="https://drflolinke.github.io/PO12Q/09-PO12Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
 <li>Find an example for each NEW function and apply it in R to ensure it works</li>
 <li>Complete the <a href="https://moodle.warwick.ac.uk/mod/quiz/view.php?id=2436146">Week 9 Moodle Quiz</a></li>
 <li>Revise the material of weeks 7-9 and note any questions you might have</li>
-<li>Work through the Week 10 <a href="https://drfloreiche.github.io/PO12Q/10-PO12Q.html#methods-methods-methods">“Methods, Methods, Methods”</a> Section.</li>
+<li>Work through the Week 10 <a href="https://drflolinke.github.io/PO12Q/10-PO12Q.html#methods-methods-methods">“Methods, Methods, Methods”</a> Section.</li>
 </ul>
 </section>
 <section id="glossary" class="level1 unnumbered">
@@ -833,14 +833,14 @@ The data are available as a <a href="files/excelfiles/PO12Q_Week 9_Consolidate.c
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-linke:forthcoming" class="csl-entry" role="listitem">
+Linke, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
+</div>
 <div id="ref-london:2013" class="csl-entry" role="listitem">
 London Data Store. (2013). <em><span class="nocase">Ward Profiles and Atlas</span></em>. <a href="https://data.london.gov.uk/dataset/ward-profiles-and-atlas">https://data.london.gov.uk/dataset/ward-profiles-and-atlas</a>
 </div>
 <div id="ref-murray:2023" class="csl-entry" role="listitem">
 Murray, F. J. (2023). <span class="nocase">logarithm</span>. In <em>Encyclopedia Britannica</em>. <a href="https://www.britannica.com/science/logarithm">https://www.britannica.com/science/logarithm</a>
-</div>
-<div id="ref-reiche:forthcoming" class="csl-entry" role="listitem">
-Reiche, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
 </div>
 <div id="ref-dataservice:2019" class="csl-entry" role="listitem">
 University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics. (2019). <em><span class="nocase">Crime Survey for England and Wales, 2013-2014: Unrestricted Access Teaching Dataset</span></em>. <a href="https://doi.org/10.5255/UKDA-SN-8011-1">https://doi.org/10.5255/UKDA-SN-8011-1</a>
@@ -850,7 +850,7 @@ University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>All exercises are a reproduction from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>All exercises are a reproduction from <span class="citation" data-cites="linke:forthcoming">Linke (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
