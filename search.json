@@ -450,6 +450,16 @@
     ]
   },
   {
+    "objectID": "07-PO12Q.html#calculation-practice",
+    "href": "07-PO12Q.html#calculation-practice",
+    "title": "Week 7",
+    "section": "Calculation Practice",
+    "text": "Calculation Practice\nYou can now calculate the coefficient estimates, their standard errors, and the overall model fit by hand. One of the optional sections of the exam will ask you to complete some of these calculations - but with only five observations. If you wish to practice these calculations, I have written an app which lets you generate five random data points, performs all of the intermediary calculations, and presents the final results.\n\nHow to use the app\n\nClick “Generate Random 5”\nCalculate by hand (with a calculator):\n\nRegression Coefficients\nModel Fit\nStandard Errors\nSignificance test with \\(\\alpha=0.05\\)\n\nScroll down in the app to check your results\n\n\nI will also ask you in the Homework section below to apply this to a new data set with five observations.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 7</span>"
+    ]
+  },
+  {
     "objectID": "07-PO12Q.html#solutions",
     "href": "07-PO12Q.html#solutions",
     "title": "Week 7",
