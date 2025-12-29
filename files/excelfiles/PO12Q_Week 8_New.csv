@@ -1,2 +1,5 @@
 "term","package","description","title"
-"stargazer","stargazer","Create a regression output table","New Functions in Week 8"
+"theme_latex","tinytable","A theme for modelsummary/tinytable tables","New Functions in Week 8"
+"rm","base","Remove objects",""
+"ls","base","Return a vector of character strings giving the names of the objects in the specified environment",""
+"plotPlane","rockchalk","Draw a 3-D regression plot for two predictors",""
