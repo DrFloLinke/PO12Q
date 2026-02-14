@@ -1164,7 +1164,7 @@
     "href": "15-Exercises.html",
     "title": "Additional Exercises",
     "section": "",
-    "text": "Bivariate Regression\nFor the applied exercises you will be using the data set london_exercises. We will analyse patterns of crime in London1. The dataset contains several variables for each of the London wards, describing, amongst other things, demographics of their population and the number of crimes committed in each of them in 2015. A full codebook is provided in the following Table:\nThe data are taken from London Data Store (2013).",
+    "text": "Bivariate Regression\nFor this section you will be using the data set london_exercises. We will analyse patterns of crime in London1. The dataset contains several variables for each of the London wards, describing, amongst other things, demographics of their population and the number of crimes committed in each of them in 2015. A full codebook is provided in the following Table:\nThe data are taken from London Data Store (2013).",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
@@ -1214,7 +1214,7 @@
     "href": "15-Exercises.html#solutions-3",
     "title": "Additional Exercises",
     "section": "Solutions",
-    "text": "Solutions\n-tbc\n\n\n\n\nLinke, F. (forthcoming). Introduction to Quantitative Methods in the Social Sciences. Oxford: Oxford University Press.\n\n\nLondon Data Store. (2013). Ward Profiles and Atlas. https://data.london.gov.uk/dataset/ward-profiles-and-atlas\n\n\nUniversity of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics. (2019). Crime Survey for England and Wales, 2013-2014: Unrestricted Access Teaching Dataset. https://doi.org/10.5255/UKDA-SN-8011-1",
+    "text": "Solutions\n\ntbc\n\n\n\n\n\n\n\n\nLinke, F. (forthcoming). Introduction to Quantitative Methods in the Social Sciences. Oxford: Oxford University Press.\n\n\nLondon Data Store. (2013). Ward Profiles and Atlas. https://data.london.gov.uk/dataset/ward-profiles-and-atlas\n\n\nUniversity of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics. (2019). Crime Survey for England and Wales, 2013-2014: Unrestricted Access Teaching Dataset. https://doi.org/10.5255/UKDA-SN-8011-1",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
@@ -1224,7 +1224,7 @@
     "href": "15-Exercises.html#footnotes",
     "title": "Additional Exercises",
     "section": "",
-    "text": "These exercises are taken from Chapter 10 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎",
+    "text": "These exercises are taken from Chapter 10 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 12 in Linke (forthcoming).↩︎",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
