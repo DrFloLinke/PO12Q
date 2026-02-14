@@ -4,6 +4,15 @@
 # Exercise Solutions - Transforming Variables
 # *****************************************************************
 
+# For this script to work properly, follow the these steps:
+# 1. Create a folder as your working directory
+# 2. Set the working directory to this folder, and copy/paste the the 
+#    file path into the ROOT object in the user settings below
+# 3. Within that folder, create a subfolder called "data" 
+# 4. Within the "data" folder, create a subfolder called "raw"
+# 5. Download the "london_exercises.csv" file from the companion and
+#    save it in the "raw" folder
+
 # *****************************************************************
 # USER SETTINGS
 # *****************************************************************
