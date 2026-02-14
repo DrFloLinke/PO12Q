@@ -1254,3 +1254,119 @@ a.delayed-link.is-disabled {
 a.delayed-link.is-enabled {
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------
+   Quarto Callout: Custom Fat Icon Fix
+---------------------------------------- */
+
+/* 1. The Container */
+div.callout-note.callout {
+  border-left-color: var(--accent) !important;
+  border-right: 1px solid var(--panel-2) !important;
+  border-top: 1px solid var(--panel-2) !important;
+  border-bottom: 1px solid var(--panel-2) !important;
+  background-color: var(--panel) !important;
+  border-radius: 6px;
+}
+
+/* 2. Hide the original Quarto icon (the 'i') */
+div.callout-note .callout-icon-container i.callout-icon {
+  display: none !important;
+}
+
+/* 3. Create a NEW custom Fat Icon */
+div.callout-note .callout-icon-container::before {
+  content: "!"; /* Change this to "?" or "i" if preferred */
+  color: #cb7334;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 900 !important; /* This makes it very fat */
+  font-size: 1.0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  /* Optional: Add a circle around it */
+  border: 2px solid #cb7334;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* 4. Target the Feedback text - Regular Font Color */
+div.callout-note .callout-title-container.flex-fill {
+  color: #cb7334 !important;
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+
+  /* Reset all margins that Quarto forces */
+  margin: 0 !important;
+  padding: 0 !important;
+
+  /* The "Nudge" factor */
+  display: inline-block !important;
+  position: relative !important;
+  top: 1px; /* Adjust this (e.g., 2px or -1px) to perfectly center it by eye */
+}
+
+/* Ensure the parent header doesn't have weird internal spacing */
+div.callout-note .callout-header {
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* 5. Header cleanup */
+div.callout-note .callout-header {
+  background-color: var(--panel) !important;
+  border-bottom: 1px solid var(--panel-2) !important;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+/* 6. The content body (The Explanation) */
+div.callout-note .callout-body-container {
+  color: var(--fg) !important;
+  font-weight: 100 !important; 
+  padding: 1rem;
+  font-size: 0.95em;
+}
+
+/* ----------------------------------------
+   7. Custom Chevron (Right Side)
+---------------------------------------- */
+
+/* Hide the original stubborn Quarto arrow */
+div.callout-note .callout-btn-toggle i.callout-toggle,
+div.callout-note i.callout-toggle {
+  display: none !important;
+}
+
+/* Inject a custom, orange, fat chevron */
+div.callout-note .callout-btn-toggle::before {
+  content: "〉"; /* Using a thick chevron character */
+  color: #cb7334 !important;
+  font-weight: 900 !important;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  /* Adjust this to align with the text */
+  transform: translateY(1px); 
+}
+
+/* Rotate the custom chevron when the box is open */
+div.callout-note .callout-header[aria-expanded="true"] .callout-btn-toggle::before {
+  transform: rotate(90deg) translateY(0px);
+}
+
