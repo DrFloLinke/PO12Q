@@ -680,41 +680,21 @@
     ]
   },
   {
-    "objectID": "09-PO12Q.html#data-analysis",
-    "href": "09-PO12Q.html#data-analysis",
-    "title": "Week 9",
-    "section": "Data Analysis",
-    "text": "Data Analysis\n\nEach respondent was randomly assigned to a different module, indicated by split and only asked a subsection of the questions. The antisocx variable is part of module A and asks for a score from respondents on how much antisocial behaviour is in the neighbourhood. Previous research has suggested men perceive more antisocial behaviour in rural areas than urban areas.\n\nCreate a new data set for those who were chosen for the ‘A’ module. Call this crime.a.\nCreate a linear model using only male respondents from crime.a with the dependent variable antisocx and the independent variable rural2. Do your findings support previous research?\nTest the same model using only women. How do the two models differ?\n\nWe will now be using the full crime data frame. The wburgl variable asks respondents how worried they are about being burgled with answers ranging from “Very worried” to “Not at all worried” along with “Not applicable” and “Don’t know.”\n\n\nRecode those with “Not applicable” or “Don’t know” as NAs. b.Using agegrp7 and wburgl as continuous variables, test the hypothesis that older people are more worried about being burgled.\nUsing a dummy variable test whether those over 65 have are more worried about burglary then those who are younger.\nUsing dummies test whether any of the age groups differ significantly from the youngest age group.\nWhat does the intercept in each of the three models represent?",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 9</span>"
-    ]
-  },
-  {
-    "objectID": "09-PO12Q.html#going-further",
-    "href": "09-PO12Q.html#going-further",
-    "title": "Week 9",
-    "section": "Going Further",
-    "text": "Going Further\n\nI have written these exercises so that you can practice in R a little more. These are a bit more demanding, however. If you skip this section, please make sure to do the exercises in the next section, as this taps into the variable transformations we explored in the lecture.\n\n\nThere are five variables which ask how worried the respondent is about being the victim of various crimes:\n\nCreate an additive variable called worry from these variables so that a score of 0 indicates the respondent answered all “Not at all worried” and a score of 15 indicates the respondent answered all “Very worried.” (Tip: Make sure to clean the variables for NAs).\nWhat are the mode, mean and median for worry?\nDescribe the variable educat3. How could it be modified to be used as a continuous variable?\nUsing educat3 as both a continuous and factor variable evaluate the statement “Worry about being a victim of crime is higher in those with lower education levels.”\nWhat are the \\(R^2\\) values for the two models calculated? Which is higher? Does this make that model better than the other?\nCalculate \\(97.5\\%\\) confidence intervals for the coefficients for those with GCSEs and those with Degrees. What does this tell you?",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 9</span>"
-    ]
-  },
-  {
-    "objectID": "09-PO12Q.html#transformation-of-variables",
-    "href": "09-PO12Q.html#transformation-of-variables",
-    "title": "Week 9",
-    "section": "Transformation of Variables",
-    "text": "Transformation of Variables\nThis Section uses the london_exercises data set available in the Downloads Section. Data are taken from London Data Store (2013). This document provides a full codebook.\n\nUnemployment rate, defined as the ratio of people in full time employment to population of working age is often said to be related to crime. Generate an unemployment rate variable for each of the wards.\nIt is theorised that unemployment is a driving factor behind crime rates.\n\nPlot a scatter graph with unemployment rate, crime rate, and the regression line that may be used to evaluate the theory. Describe the plot and the best fit line.\nPlot the graph again excluding wards with a crime rate greater than 500. Describe the plot and the best fit line.\nPlot another graph excluding wards with a crime rate of over 500 with the crime rate log transformed. Describe the plot and the best fit line.\nBuild both models (b and c). Interpret both including the effect size. Which model fits the data better?",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 9</span>"
-    ]
-  },
-  {
     "objectID": "09-PO12Q.html#solutions",
     "href": "09-PO12Q.html#solutions",
     "title": "Week 9",
     "section": "Solutions",
-    "text": "Solutions\nYou can find the Solutions in the Downloads Section.",
+    "text": "Solutions\nYou can find the solutions to these exercises in the Multivariate Solutions RScript.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 9</span>"
+    ]
+  },
+  {
+    "objectID": "09-PO12Q.html#solutions-1",
+    "href": "09-PO12Q.html#solutions-1",
+    "title": "Week 9",
+    "section": "Solutions",
+    "text": "Solutions\nYou can find the solutions to these exercises in the Transformation Solutions RScript.",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 9</span>"
     ]
@@ -724,7 +704,7 @@
     "href": "09-PO12Q.html#footnotes",
     "title": "Week 9",
     "section": "",
-    "text": "All exercises are a reproduction from Linke (forthcoming).↩︎",
+    "text": "All exercises are a reproduction from Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 9</span>"
     ]
@@ -1180,41 +1160,11 @@
     ]
   },
   {
-    "objectID": "15-Exercises.html#exercises",
-    "href": "15-Exercises.html#exercises",
-    "title": "Additional Exercises",
-    "section": "Exercises",
-    "text": "Exercises\n\nEach respondent was randomly assigned to a different module, indicated by split and only asked a subsection of the questions. Which question(s) are part of each module?\nThe antisocx variable is part of module A and asks for a score from respondents on how much antisocial behaviour is in the neighbourhood.\n\nCreate a new data set for those who were chosen for the ‘A’ module. Call this crime.a\nRun a t-test to see whether women or men have greater perceptions of antisocial behaviour. Interpret the results.\nCreate a linear model with antisocx as the dependent variable and sex as the independent variable. Interpret the results. How does this differ from the t-test?\n\nPrevious research has suggested men perceive more antisocial behaviour in rural areas than urban areas.\n\nCreate a linear model using only male respondents from crime.a with the dependent variable antisocx and the independent variable rural2. Do your findings support previous research?\nTest the same model using only women. How do the two models differ?\nUsing interaction effects test whether being in a rural area has a larger effect on women’s perception of antisocial behaviour compared to men’s?\nHow would you test whether being female has an effect on the perception of higher antisocial behaviour in urban compared to rural areas?\n\nThe wburgl variable asks respondents how worried they are about being burgled with answers ranging from “Very worried” to “Not at all worried” along with “Not applicable” and “Don’t know.”\n\nRecode those with “Not applicable” or “Don’t know” as NAs.\nUsing agegrp7 and wburgl as continuous variables, test the hypothesis that older people are more worried about being burgled.\nUsing a dummy variable test whether those over 65 are more worried about burglary then those who are younger.\nUsing dummies test whether any of the age groups differ significantly from the youngest age group.\nWhat does the intercept in each of the three models represent?\n\nThere are five variables which ask how worried the respondent is about being the victim of various crimes: wburgl, wmugged, wraped, wattack, and wraceatt.\n\nCreate an additive variable called worry from these variables so that a score of 0 indicates the respondent answered all “Not at all worried” and a score of 15 indicates the respondent answered all “Very worried.”\nTip: Make sure to clean the variables for NAs.\nWhat are the mode, mean and median for worry?\n\n\n\n\nDescribe the variable educat3. How could it be modified to be used as a continuous variable?\nUsing educat3 as both a continuous and factor variable evaluate the statement “Worry about being a victim of crime is higher in those with lower education levels.”\nWhat are the \\(R^2\\) values for the two models calculated? Which is higher? Does this make that model better than the other?\nCalculate \\(97.5\\%\\) confidence intervals for the coefficients for those with GCSEs and those with Degrees. What does this tell you?\n\n\n\n\nCreate a model with worry as the dependent variable, age as a continuous, and education, sex, and rural status as dummy variables.\nInterpret the statistical significance of the intercept and the coefficients.\nInterpret the effect sizes of the four variables.\nWhat is the \\(\\bar{R}^2\\) for this model? How can you interpret it?\n\n\n\n\nUsing a bar chart plot the mean worry score across age groups for men and women. Describe the data.\nEstimate the effect of sex (categorical) and age (continuous) on worry scores. Do the independent variables interact?",
-    "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
-    ]
-  },
-  {
     "objectID": "15-Exercises.html#solutions-1",
     "href": "15-Exercises.html#solutions-1",
     "title": "Additional Exercises",
     "section": "Solutions",
-    "text": "Solutions\nYou can find the solutions to these exercises in the Multivariate Solutions RScript.",
-    "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
-    ]
-  },
-  {
-    "objectID": "15-Exercises.html#solutions-2",
-    "href": "15-Exercises.html#solutions-2",
-    "title": "Additional Exercises",
-    "section": "Solutions",
-    "text": "Solutions\nYou can find the solutions to these exercises in the Transformation Solutions RScript.",
-    "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
-    ]
-  },
-  {
-    "objectID": "15-Exercises.html#solutions-3",
-    "href": "15-Exercises.html#solutions-3",
-    "title": "Additional Exercises",
-    "section": "Solutions",
-    "text": "Solutions\n\ntbc\n\n\n\n\n\n\n\n\nLinke, F. (forthcoming). Introduction to Quantitative Methods in the Social Sciences. Oxford: Oxford University Press.\n\n\nLondon Data Store. (2013). Ward Profiles and Atlas. https://data.london.gov.uk/dataset/ward-profiles-and-atlas\n\n\nUniversity of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics. (2019). Crime Survey for England and Wales, 2013-2014: Unrestricted Access Teaching Dataset. https://doi.org/10.5255/UKDA-SN-8011-1",
+    "text": "Solutions\n\ntbc\n\n\n\n\n\n\n\n\nLinke, F. (forthcoming). Introduction to Quantitative Methods in the Social Sciences. Oxford: Oxford University Press.\n\n\nLondon Data Store. (2013). Ward Profiles and Atlas. https://data.london.gov.uk/dataset/ward-profiles-and-atlas",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
@@ -1224,7 +1174,7 @@
     "href": "15-Exercises.html#footnotes",
     "title": "Additional Exercises",
     "section": "",
-    "text": "These exercises are taken from Chapter 10 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 11 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 12 in Linke (forthcoming).↩︎",
+    "text": "These exercises are taken from Chapter 10 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 12 in Linke (forthcoming).↩︎",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
