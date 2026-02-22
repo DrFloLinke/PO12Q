@@ -1,7 +1,7 @@
 # *****************************************************************
 # PO12Q - Quantitative Political Analysis: Uncovering Relationships
 # Dr Flo Linke
-# Exercise Solutions - Transforming Variables
+# Week 9, Exercise Solutions - Transforming Variables
 # *****************************************************************
 
 # For this script to work properly, follow the these steps:

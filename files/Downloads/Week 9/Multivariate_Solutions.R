@@ -1,7 +1,7 @@
 # *****************************************************************
 # PO12Q - Quantitative Political Analysis: Uncovering Relationships
 # Dr Flo Linke
-# Exercise Solutions - Multivariate Regression
+# Week 9, Exercise Solutions - Multivariate Regression
 # *****************************************************************
 
 # For this script to work properly, follow the these steps:
