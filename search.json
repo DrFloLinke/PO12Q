@@ -750,6 +750,16 @@
     ]
   },
   {
+    "objectID": "10-PO12Q.html#the-gauss-markov-theorem-and-making-your-regression-blue",
+    "href": "10-PO12Q.html#the-gauss-markov-theorem-and-making-your-regression-blue",
+    "title": "Week 10",
+    "section": "The Gauss-Markov Theorem and Making your Regression BLUE",
+    "text": "The Gauss-Markov Theorem and Making your Regression BLUE\n\nAn estimator (such as \\(\\hat{\\beta}_{1}\\)) is considered the Best Linear Unbiased Estimator (BLUE) of \\(\\beta_{1}\\) if the following conditions are met:\n\n\\(\\hat{\\beta}_{1}\\) is a linear function of a random variable, such as the dependent variable \\(Y\\) in the regression model.\n\\(\\hat{\\beta}_{1}\\) is unbiased, that is, its average or expected value, \\(E(\\hat{\\beta}_{1})\\), is equal to the true value, \\(\\beta_{1}\\)\n\\(\\hat{\\beta}_{1}\\) has minimum variance in the class of all such linear unbiased estimators; an unbiased estimator with the least variance is known as an efficient estimator.\n\n\nFor estimators to be BLUE, the following of the Classical Linear Assumptions (CLA) need to hold:\n\nFunctional form (linearity in parameters)\nZero conditional mean error terms\nHomoscedasticity\nNo autocorrelation\nNo perfect multicollinearity (and \\(n &gt; k\\))\n\n\nReturn to each Exercise (1-4) and complete in the table below. For each cell, state whether the assumption is satisfied or violated:\n\n \n\n\n\n\n\nHeteroscedasticity\nNonlinearity\nCollinearity\n\n\n\n\nWhich Gauss-Markov assumption is violated?\n\n\n\n\n\nIs OLS still linear?\n\n\n\n\n\nIs OLS still unbiased?\n\n\n\n\n\nIs OLS still efficient?\n\n\n\n\n\nAre SEs correctly estimated?\n\n\n\n\n\n\n\n \nUse the app’s diagnostics to verify your answers empirically.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Week 10</span>"
+    ]
+  },
+  {
     "objectID": "10-PO12Q.html#testing-the-classical-linear-assumptions-in-r",
     "href": "10-PO12Q.html#testing-the-classical-linear-assumptions-in-r",
     "title": "Week 10",
