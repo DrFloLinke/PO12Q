@@ -1150,13 +1150,123 @@
     ]
   },
   {
+    "objectID": "14-In-Class Test Feedback.html",
+    "href": "14-In-Class Test Feedback.html",
+    "title": "In-Class Test Feedback",
+    "section": "",
+    "text": "Crosstabulations",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-1",
+    "href": "14-In-Class Test Feedback.html#question-1",
+    "title": "In-Class Test Feedback",
+    "section": "Question 1",
+    "text": "Question 1\nAssess whether each of the following statements about crosstabulations is true or false.\n\nThe marginal distributions refer to the row and column totals of the crosstabulation.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. Marginal distributions are the totals found in the margins of the table, showing the overall distribution of each variable separately.\n\n\n\n\nThe conditional distributions show the distribution of the response variable within categories of the explanatory variable.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. We saw that in the Titanic example, where the conditional distributions show the distribution of survival status conditional on sex — i.e., separately for men and women.\n\n\n\n\nWhen comparing groups in a sample, it is better to use percentages than absolute frequencies.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. Because groups may differ in size (e.g., 343 women vs. 638 men on the Titanic), percentages allow for a fair comparison of the distribution of the response variable across groups.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-2",
+    "href": "14-In-Class Test Feedback.html#question-2",
+    "title": "In-Class Test Feedback",
+    "section": "Question 2",
+    "text": "Question 2\nAssess whether each of the following statements about the \\(\\chi^2\\) test of independence is true or false.\n\nThe expected frequency for a cell is calculated as: \\(f_e = \\frac{\\text{row total} \\cdot \\text{column total}}{\\text{grand total}}\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. This formula gives the count we would expect in each cell if the two variables were independent — i.e., if \\(H_0\\) were true.\n\n\n\n\nA \\(\\chi^2\\) test statistic of 0 would indicate that the observed data are perfectly consistent with independence between the two variables in the sample.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. A value of \\(\\chi^2 = 0\\) means \\(f_o = f_e\\) in every cell, so the observed data match exactly what we would expect under independence. This is the minimum possible value of the test statistic.\n\n\n\n\nThe degrees of freedom for a \\(\\chi^2\\) test on a \\(2 \\cdot 2\\) table equal 4.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. The degrees of freedom are \\((r-1) \\cdot (c-1)\\). For a \\(2 \\cdot 2\\) table this is \\((2-1)(2-1) = 1\\). Once you freely choose one cell value, the marginal totals determine all remaining cells.\n\n\n\n\nThe \\(\\chi^2\\) distribution can take negative values when the observed frequencies are smaller than the expected frequencies.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. The \\(\\chi^2\\) test statistic squares the differences \\((f_o - f_e)^2\\), so every term is non-negative. The statistic is therefore always \\(\\geq 0\\), and the \\(\\chi^2\\) distribution is concentrated entirely on the positive part of the real line.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-1-1",
+    "href": "14-In-Class Test Feedback.html#question-1-1",
+    "title": "In-Class Test Feedback",
+    "section": "Question 1",
+    "text": "Question 1\nAssess whether each of the following statements about comparing two proportions is true or false.\n\nWhen conducting a significance test for the difference between two proportions, we use a pooled proportion \\(\\bar{\\pi}\\) to calculate the standard error under \\(H_0\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. Under the null hypothesis \\(\\pi_1 = \\pi_2\\), we assume both samples come from the same population. The pooled proportion \\(\\bar{\\pi}\\) combines the data from both groups to give a single estimate of this common proportion, which is then used to compute the pooled standard error \\(se_0\\).\n\n\n\n\nWe use a \\(z\\)-test rather than a \\(t\\)-test when comparing two proportions because the standard error is derived directly from the sample proportions and does not require estimating an additional variance parameter.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. For proportions, the variability is fully determined by \\(\\hat{\\pi}\\) itself — there is no separate population standard deviation to estimate. Because the standard error is treated as known, we can use the normal (\\(z\\)) distribution rather than the \\(t\\)-distribution.\n\n\n\n\nThe pooled proportion is calculated as the average of the two sample proportions: \\(\\bar{\\pi} = (\\hat{\\pi}_1 + \\hat{\\pi}_2) / 2\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. The pooled proportion is the total number of “successes” across both groups divided by the total sample size: \\(\\bar{\\pi} = (x_1 + x_2) / (n_1 + n_2)\\). Simply averaging the two proportions would give equal weight to both groups regardless of their sample sizes, which would be misleading when group sizes differ.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-2-1",
+    "href": "14-In-Class Test Feedback.html#question-2-1",
+    "title": "In-Class Test Feedback",
+    "section": "Question 2",
+    "text": "Question 2\nAssess whether each of the following statements about comparing two means is true or false.\n\nThe standard error of the difference between two sample means is \\(se = \\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. This formula combines the sampling variability from each group. It is used directly in Welch’s \\(t\\)-test and also serves as the basis for the confidence interval.\n\n\n\n\nIf the Levene test yields a \\(p\\)-value above 0.05, we should use Welch’s \\(t\\)-test.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. A \\(p\\)-value above 0.05 means we fail to reject the null hypothesis of equal variances. In that case, we assume equal variances and use the standard two-sample \\(t\\)-test with a pooled standard error. Welch’s \\(t\\)-test is used when the variances are found to be unequal.\n\n\n\n\nWhen comparing two means, we use the \\(t\\)-distribution rather than the \\(z\\)-distribution because the population standard deviations must be estimated from the sample.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. Unlike proportions — where the standard error is derived directly from \\(\\hat{\\pi}\\) — comparing means requires estimating the unknown population standard deviations from the sample (\\(s_1\\) and \\(s_2\\)). This additional estimation uncertainty is accounted for by using the \\(t\\)-distribution, which has heavier tails than the normal distribution.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-3",
+    "href": "14-In-Class Test Feedback.html#question-3",
+    "title": "In-Class Test Feedback",
+    "section": "Question 3",
+    "text": "Question 3\nA researcher surveys residents in two London boroughs about whether they support a ban on smoking in public parks. The sample proportions are \\(\\hat{\\pi}_1 = 0.68\\) (Borough A, \\(n_1 = 240\\)) and \\(\\hat{\\pi}_2 = 0.41\\) (Borough B, \\(n_2 = 310\\)). Assess whether each of the following statements is true or false.\n\nThe pooled standard error \\(se_0\\) will be larger than the unpooled standard error used for the confidence interval, because the pooled proportion \\(\\bar{\\pi} \\approx 0.53\\) is closer to 0.5 than either group proportion alone.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. The variance of a proportion \\(\\hat{\\pi}(1 - \\hat{\\pi})\\) is maximised at \\(\\hat{\\pi} = 0.5\\), where it equals 0.25. The further \\(\\hat{\\pi}\\) is from 0.5, the smaller the product becomes (e.g. \\(0.3 \\times 0.7 = 0.21\\), \\(0.1 \\times 0.9 = 0.09\\)). Here, the pooled proportion \\(\\bar{\\pi} = (240 \\cdot 0.68 + 310 \\cdot 0.41) / 550 \\approx 0.53\\) is much closer to 0.5 than either 0.68 or 0.41, so it produces a larger variance term. We can verify this by comparing the two standard errors:\n\nUnpooled: \\(se = \\sqrt{\\dfrac{0.68 \\cdot 0.32}{240} + \\dfrac{0.41 \\cdot 0.59}{310}} = \\sqrt{0.000907 + 0.000780} \\approx 0.0411\\)\nPooled: \\(se_0 = \\sqrt{0.53 \\cdot 0.47 \\cdot \\left(\\dfrac{1}{240} + \\dfrac{1}{310}\\right)} = \\sqrt{0.2491 \\cdot 0.00740} \\approx 0.0429\\)\n\n\n\n\n\nThe reason we use the unpooled standard error for the confidence interval is that we do not want to assume \\(\\pi_1 = \\pi_2\\) when estimating the size of the difference.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. A confidence interval aims to estimate the plausible range of \\(\\pi_1 - \\pi_2\\) without presupposing any particular value. If we pooled the proportions, we would be imposing the assumption that the two population proportions are equal — precisely the assumption we are trying to evaluate. The unpooled standard error respects each group’s observed variability and is therefore appropriate for the confidence interval.\n\n\n\n\nIf the researcher had obtained the same sample proportions (\\(\\hat{\\pi}_1 = 0.68\\) and \\(\\hat{\\pi}_2 = 0.41\\)) but from much larger samples, the \\(p\\)-value would remain the same because the observed difference has not changed.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. Larger samples reduce the standard error, which increases the \\(z\\)-statistic, which in turn produces a smaller \\(p\\)-value. The \\(p\\)-value depends not only on the size of the observed difference but also on how precisely that difference is estimated — and precision improves with larger samples.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-1-2",
+    "href": "14-In-Class Test Feedback.html#question-1-2",
+    "title": "In-Class Test Feedback",
+    "section": "Question 1",
+    "text": "Question 1\nAssess whether each of the following statements about the regression line is true or false.\n\nThe intercept \\(\\beta_0\\) is the predicted value of \\(y\\) when \\(x = 0\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. By definition, the intercept is the point at which the regression line crosses the \\(y\\)-axis, i.e. where \\(x = 0\\). Substituting \\(x = 0\\) into \\(y = \\beta_0 + \\beta_1 x\\) gives \\(y = \\beta_0\\).\n\n\n\n\nThe slope \\(\\beta_1\\) tells us the predicted change in \\(y\\) for a one-unit increase in \\(x\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. The slope is defined as rise over run. In a linear regression, it indicates how many units \\(y\\) changes (increases if \\(\\beta_1 &gt; 0\\), decreases if \\(\\beta_1 &lt; 0\\)) for every additional unit of \\(x\\).\n\n\n\n\nThe error term \\(\\epsilon_i\\) measures the distance between the observed value \\(y_i\\) and the mean \\(\\bar{y}\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. The error term \\(\\epsilon_i\\) measures the distance between the observed value \\(y_i\\) and the corresponding point on the regression line, \\(E(y_i | x_i)\\), not the mean \\(\\bar{y}\\). The distance from \\(y_i\\) to \\(\\bar{y}\\) is part of the Total Sum of Squares (TSS), which is a different concept.\n\n\n\n\nA residual \\(\\hat{\\epsilon}_i\\) is an estimate of the population error term \\(\\epsilon_i\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. Since we do not observe the population regression function (PRF), we estimate it with the sample regression function (SRF). The residual \\(\\hat{\\epsilon}_i = y_i - \\hat{y}_i\\) is the sample-based counterpart of the (generally unobserved) population error term \\(\\epsilon_i = y_i - E(y_i | x_i)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-2-2",
+    "href": "14-In-Class Test Feedback.html#question-2-2",
+    "title": "In-Class Test Feedback",
+    "section": "Question 2",
+    "text": "Question 2\nA student runs an OLS regression of exam scores (\\(y\\)) on hours of study (\\(x\\)) for a sample of 5 students, obtaining the fitted equation \\(\\hat{y}_i = 36.4 + 5.6x_i\\). The observed data are: \\(x = \\{2, 4, 6, 8, 10\\}\\) and \\(y = \\{48, 62, 68, 74, 98\\}\\). Assess whether each of the following statements is true or false.\n\nThe regression line passes through \\((\\bar{x}, \\bar{y}) = (6, 70)\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. The sample means are \\(\\bar{x} = (2+4+6+8+10)/5 = 6\\) and \\(\\bar{y} = (48+62+68+74+98)/5 = 70\\). Substituting into the fitted equation: \\(\\hat{y} = 36.4 + 5.6(6) = 70 = \\bar{y}\\). The line does indeed pass through the point of means, as guaranteed by OLS.\n\n\n\n\nA student who studied for 6 hours has a residual of zero, because 6 is the mean of \\(x\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. The fitted value at \\(x = 6\\) is \\(\\hat{y} = 36.4 + 5.6(6) = 70\\), but the observed value is \\(y = 68\\), so the residual is \\(68 - 70 = -2\\). The fact that the regression line passes through \\((\\bar{x}, \\bar{y})\\) does not mean the observation at \\(\\bar{x}\\) has a zero residual — it means the predicted value at \\(\\bar{x}\\) equals \\(\\bar{y}\\).\n\n\n\n\nThe correlation between the predicted values \\(\\hat{y}_i\\) and the residuals \\(\\hat{\\epsilon}_i\\) is positive, because students who score higher tend to have larger residuals.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. Regardless of what the data might suggest intuitively, the predicted values and the residuals are always uncorrelated in OLS. You can verify this:\n\\[\\begin{align*}\n\\sum \\hat{y}_i \\hat{\\epsilon}_i &= 47.6(0.4) + 58.8(3.2) + 70.0(-2.0) + 81.2(-7.2) + 92.4(5.6) \\\\\n&= 19.04 + 188.16 - 140.0 - 584.64 + 517.44 \\\\\n&= 0\n\\end{align*}\\]\nThis is guaranteed by the mathematical property \\(\\hat{\\mathbf{y}}' \\hat{\\boldsymbol{\\epsilon}} = \\mathbf{0}\\).",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-3-1",
+    "href": "14-In-Class Test Feedback.html#question-3-1",
+    "title": "In-Class Test Feedback",
+    "section": "Question 3",
+    "text": "Question 3\nAssess whether each of the following statements about \\(R^2\\) and the decomposition of variance is true or false.\n\nThe Total Sum of Squares (TSS) measures the total variation in \\(y\\) around the regression line.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. The TSS measures the total variation in \\(y\\) around the mean \\(\\bar{y}\\), not around the regression line. It is defined as \\(\\text{TSS} = \\sum (y_i - \\bar{y})^2\\). The variation around the regression line is captured by the Residual Sum of Squares (RSS).\n\n\n\n\n\\(R^2\\) can be interpreted as the proportion of the variation in \\(y\\) that is explained by the regression model.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. \\(R^2 = \\text{ESS} / \\text{TSS} = 1 - \\text{RSS}/\\text{TSS}\\). It tells us what fraction of the total variation in \\(y\\) is accounted for by the fitted regression, with the remainder being unexplained (residual) variation.\n\n\n\n\nAn \\(R^2\\) value close to 0 indicates that the regression model predicts \\(y\\) no better than simply using \\(\\bar{y}\\) for every observation.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. When \\(R^2 \\approx 0\\), the ESS is negligible relative to the TSS, meaning the regression line explains almost none of the variation. In this case, predicting \\(\\bar{y}\\) for every observation would perform roughly as well as the fitted model.\n\n\n\n\nIf \\(R^2 = 1\\), the residuals are all zero and every observation lies exactly on the regression line.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. \\(R^2 = 1\\) means \\(\\text{RSS} = 0\\), so \\(\\sum(y_i - \\hat{y}_i)^2 = 0\\). Since each squared term is non-negative, every individual residual must equal zero, and hence every observation sits exactly on the fitted line.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-4",
+    "href": "14-In-Class Test Feedback.html#question-4",
+    "title": "In-Class Test Feedback",
+    "section": "Question 4",
+    "text": "Question 4\nConsider the conditional expectation function \\(E(y_i | x_i) = \\beta_0 + \\beta_1 x_i\\). Assess whether each of the following statements is true or false.\n\n\\(E(y_i | x_i = 10) = \\beta_0 + 10\\beta_1\\) tells us the average value of \\(y\\) across all observations in the population.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. This is a conditional expectation — it tells us the average value of \\(y\\) only among those observations where \\(x_i = 10\\). The overall population average \\(E(y_i)\\) averages over all values of \\(x_i\\) and will generally differ.\n\n\n\n\nIf \\(\\beta_1 = 3\\), then an individual whose \\(x_i\\) increases by one unit will experience a 3-unit increase in \\(y_i\\).\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. \\(\\beta_1\\) describes the change in the conditional expectation \\(E(y_i | x_i)\\), not the change in any individual’s outcome. An individual’s actual change also depends on their error term. More precisely, \\(\\beta_1\\) tells us that the average of \\(y\\) is 3 units higher for observations where \\(x\\) is one unit higher.\n\n\n\n\nThe conditional expectation function describes a property of the population, whereas the fitted regression line \\(\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1 x_i\\) is an estimate of this function based on sample data.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. The CEF with \\(\\beta_0\\) and \\(\\beta_1\\) is a population quantity — it describes the true average relationship between \\(x\\) and \\(y\\). The SRF with \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) estimates this relationship from a particular sample, and will vary from sample to sample.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "14-In-Class Test Feedback.html#question-5",
+    "href": "14-In-Class Test Feedback.html#question-5",
+    "title": "In-Class Test Feedback",
+    "section": "Question 5",
+    "text": "Question 5\nA researcher estimates a bivariate OLS regression of GCSE scores on household income across London constituencies and finds a positive slope. Assess whether each of the following statements is true or false.\n\nA positive slope means that every constituency with above-average income also has above-average GCSE scores.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. A positive slope tells us about the average relationship: on average, higher income is associated with higher GCSE scores. Individual constituencies can and will deviate from this pattern — that is precisely what the error terms and residuals capture. For any given constituency, other factors may push GCSE scores above or below what income alone would predict.\n\n\n\n\nThe six mathematical properties of OLS (e.g. residuals summing to zero, the line passing through \\((\\bar{x}, \\bar{y})\\)) would still hold even if income had no real influence on GCSE scores.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nCorrect. The mathematical properties of OLS are algebraic consequences of minimising the sum of squared residuals. They hold for any dataset and any OLS fit, regardless of whether there is a genuine relationship between the variables. Even if GCSE scores were completely unrelated to income, the fitted regression line would still pass through \\((\\bar{x}, \\bar{y})\\), the residuals would still sum to zero, and so on. These properties tell us about the mechanics of the estimation method, not about whether the model is substantively meaningful.\n\n\n\n\nIf \\(R^2\\) is close to zero, we can conclude that there is no relationship whatsoever between household income and GCSE scores.\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIncorrect. A low \\(R^2\\) means that a linear regression of GCSE scores on income explains very little of the total variation — but this does not mean the relationship is absent. Whether a relationship exists is assessed by the significance of the coefficients, not by the size of \\(R^2\\): the slope \\(\\hat{\\beta}_1\\) could be statistically significant, indicating a real linear association. And even a small \\(R^2\\) can accompany a substantively meaningful effect — income could genuinely matter for GCSE scores while accounting for only a small share of the total variation, because many other factors are at play. A low \\(R^2\\) also does not rule out a non-linear relationship that a straight line simply fails to capture.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>In-Class Test Feedback</span>"
+    ]
+  },
+  {
     "objectID": "15-Exercises.html",
     "href": "15-Exercises.html",
     "title": "Additional Exercises",
     "section": "",
     "text": "Bivariate Regression\nFor this section you will be using the data set london_exercises. We will analyse patterns of crime in London1. The dataset contains several variables for each of the London wards, describing, amongst other things, demographics of their population and the number of crimes committed in each of them in 2015. A full codebook is provided in the following Table:\nThe data are taken from London Data Store (2013).",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
   },
   {
@@ -1166,7 +1276,7 @@
     "section": "Solutions",
     "text": "Solutions\nYou can find the solutions to these exercises in the Bivariate Solutions RScript.",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
   },
   {
@@ -1176,7 +1286,7 @@
     "section": "Solutions",
     "text": "Solutions\nYou can find the solutions to these exercises in the CLA RScript.\n\n\n\n\n\n\n\nLinke, F. (forthcoming). Introduction to Quantitative Methods in the Social Sciences. Oxford: Oxford University Press.\n\n\nLondon Data Store. (2013). Ward Profiles and Atlas. https://data.london.gov.uk/dataset/ward-profiles-and-atlas",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
   },
   {
@@ -1186,7 +1296,7 @@
     "section": "",
     "text": "These exercises are taken from Chapter 10 in Linke (forthcoming).↩︎\nThese exercises are taken from Chapter 12 in Linke (forthcoming).↩︎",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Additional Exercises</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Additional Exercises</span>"
     ]
   },
   {
@@ -1196,7 +1306,7 @@
     "section": "",
     "text": "List of References\n\n\nGOV.UK. (2013). National Statistics: Income and\ntax by Parliamentary Constituency. https://www.gov.uk/government/statistics/income-and-tax-by-parliamentary-constituency-2010-to-2011\n\n\nHouse of Commons Library. (n.d.). Data Dashboard.\nhttps://commonslibrary.parliament.uk/type/data-dashboard/\n\n\nLinke, F. (forthcoming). Introduction to\nQuantitative Methods in the Social Sciences. Oxford: Oxford\nUniversity Press.\n\n\nLondon Data Store. (2010). London Parliamentary Constituency\nProfiles 2010. https://data.london.gov.uk/dataset/london-parliamentary-constituency-profiles\n\n\nLondon Data Store. (2013). Ward Profiles and\nAtlas. https://data.london.gov.uk/dataset/ward-profiles-and-atlas\n\n\nMarshall, M. G., & Gurr, T. R. (2020). Polity V Project: Political Regime Characteristics and\nTransitions, 1800-2018. http://www.systemicpeace.org/inscrdata.html\n\n\nMiller, M., Boix, C., & Rosato, S. (2022). Boix-Miller-Rosato Dichotomous Coding of Democracy,\n1800-2020 (Version V1) [Data set]. Harvard Dataverse. https://doi.org/10.7910/DVN/FENWWR\n\n\nStimson, J. A. (n.d.). Professional Writing in\nPolitical Science: A Highly opinionated Essay. http://stimson.web.unc.edu/files/2018/02/Writing.pdf\n\n\nThe World Bank. (n.d.n.d.). World Development\nIndicators. https://datacatalog.worldbank.org/dataset/world-development-indicators\n\n\nUniversity of Manchester, Cathie Marsh Institute for Social Research\n(CMIST), UK Data Service, Office for National Statistics. (2019).\nCrime Survey for England and Wales, 2013-2014:\nUnrestricted Access Teaching Dataset. https://doi.org/10.5255/UKDA-SN-8011-1",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>List of References</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>List of References</span>"
     ]
   }
 ]
