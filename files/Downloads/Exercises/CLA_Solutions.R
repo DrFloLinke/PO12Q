@@ -236,35 +236,6 @@ coeftest(model_turnout, vcov = vcovHC(model_turnout, type = "HC3"))
 # The standard errors change, but this does not change our 
 # acceptance of significance for individual coefficients.
 
-
-
-
-# EXERCISE 5: Estimate a multivariate regression model for the 
-# relationship between house prices, income, age, inner borough 
-# status, and area. Conduct a full set of diagnostics.
-
-# 5a: Estimate the model.
-
-summary(model_house_price <- lm(houseprice ~
-                                  income + age + inner + area, 
-                                data = london))
-
-# 5b: Conduct diagnostics.
-
-# RESET test
-resettest(model_house_price)
-# Significant, incorrectly specified (see above).
-
-# Variance Inflation Factors
-vif(model_house_price)
-# No multicollinearity.
-
-# Breusch-Pagan test for heteroscedasticity
-bptest(model_house_price)
-# We have detected heteroscedasticity.
-
-# Heteroscedasticity-consistent standard errors
-coeftest(model_house_price, vcov = vcovHC(model_house_price, type = "HC3"))
-
-
+#
 # EOF
+#
