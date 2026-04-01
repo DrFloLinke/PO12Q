@@ -4,14 +4,16 @@
 # Exercise Solutions - Testing the CLA
 # *****************************************************************
 
-# For this script to work properly, follow the these steps:
-# 1. Create a folder as your working directory
-# 2. Set the working directory to this folder, and copy/paste the the 
-#    file path into the ROOT object in the user settings below
-# 3. Within that folder, create a subfolder called "data" 
-# 4. Within the "data" folder, create a subfolder called "raw"
-# 5. Download the "london_exercises_12.csv" file from the companion and
-#    save it in the "raw" folder
+### FOR THIS SCRIPT TO WORK PROPERLY, FOLLOW THESE STEPS:
+# 1. Create the folder structure shown below on your computer.
+# 2. Save the required data files inside the "raw" folder.
+# 3. Copy and paste your project folder path into the ROOT object below.
+
+### FOLDER STRUCTURE
+# project_folder/
+# ├── data/
+#     ├── raw/
+#         ├── london_exercises.csv
 
 
 # *****************************************************************
