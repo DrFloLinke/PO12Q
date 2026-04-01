@@ -1,11 +1,26 @@
-################################
-## SOLUTIONS, WEEK 10, PART 1 ##
-################################
+###########################################################
+# PO12Q: Introduction to Quantitative Political Analysis II
+# Dr Flo Linke
+# Week 10, Testing the Classical Linear Assumptions in R
+###########################################################
 
-setwd("~/OneDrive - University of Warwick/Warwick/Modules/PO12Q/Seminars/PO12Q_Seminar_Week 10/Solutions")
+
+# Set working directory
+setwd("")
+
+# Load packages
+library(tidyverse)
+library(car)
+library(lmtest)
+library(sandwich)
+
+
+#----------------
+# Exercises
+#----------------
 
 # 1. Load the data set `london.csv` as an object called "london"
-london <- read.csv("Data/london_11.csv")
+london <- read.csv("london_11.csv")
 
 #2. Subset the data to a random sample as follows:
 set.seed(123)
@@ -45,7 +60,7 @@ chisq <- 0.001857*N
 
 pchisq(chisq, df=1, lower.tail=FALSE)
 
-##>> The test is insignificant, and therefore we accept the null-hypothesis of homoscedasticity. We have not violated this assumption. 
+##>> The test is insignificant, and therefore we fail to reject the null-hypothesis of homoscedasticity. We have not violated this assumption. 
 
 #5. Breusch-Pagan Test with the `lmtest` package
 #a. Install and load the `lmtest` package
@@ -90,42 +105,40 @@ coeftest(model2, vcov = vcovHC(model2, type="HC3"))
 
 ## (Multi-)Collinearity
 
-#1. We will continue using the `london_sam` data frame. 
-#2. Regress GCSE scores on `income` and `idaci` in a multiple regression model. Interpret the results. 
+
+#1. Regress GCSE scores on `income` and `idaci` in a multiple regression model. Interpret the results. 
 
 model3 <- lm(gcse ~ income + idaci, data=london_sam)
 summary(model3)
 
-# 3. Install and load the `car` package.
+#2. Install and load the `car` package.
 
 library(car)
 
-#4. Calculate the Variance Inflation Factor (VIF) for this model as follows:
+#3. Calculate the Variance Inflation Factor (VIF) for this model as follows:
 
 vif(model3)
 
-#5. Interpret the results.
+#4. Interpret the results.
 ##>> VIF is <10, therefore we don't have collinearity.
 
-#6. Regress GCSE scores on `houseprice`. Store the results in an object called `model4`. Note the significance of the slope coefficient and interpret the results.
+#5. Regress GCSE scores on `houseprice`. Store the results in an object called `model4`. Note the significance of the slope coefficient and interpret the results.
 
 model4 <- lm(gcse ~ houseprice, data=london_sam)
 summary(model4)
 
-#7. Let's introduce some collinearity by estimating the following model:
+#6. Let's introduce some collinearity by estimating the following model:
 
 model5 <- lm(gcse ~ income + houseprice, data=london_sam)
 summary(model5)
 
-#8. Calculate the VIF for model 5. Interpret the results.
+#7. Calculate the VIF for model 5. Interpret the results.
 
 vif(model5)
 
-#9. Drawing on the results of Exercise 8, explain the significance of the slope coefficients of Model 1 (Exercise 3, Subsection 1.1) and Model 4 (Exercise 6 of this Subsection). 
+#8. Drawing on the results of Exercise 8, explain the significance of the slope coefficients of Model 1 (Exercise 3, Subsection 1.1) and Model 4 (Exercise 6 of this Subsection). 
 
 ##>> Individually the variables income and houseprice produce significant slope coefficients. Due to high collinearity between the two variables, the results in Model 5 render houseprice insignificant. Income is a better predictor of GCSE scores, because it produces a higher R-Squared measure than houseprice.
 
 
-## GAUSS MARKOV THEOREM
-
-## see Solutions pdf
+# EOF
