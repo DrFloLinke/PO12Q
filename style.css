@@ -711,6 +711,7 @@ header.navbar,
   background-color: var(--bg) !important;
 }
 
+
 /* Dropdown */
 #quarto-header .dropdown-menu,
 .navbar .dropdown-menu {
@@ -718,6 +719,29 @@ header.navbar,
   color: var(--fg) !important;
   border-color: var(--panel-2) !important;
 }
+
+/* Dropdown */
+
+/* Archives dropdown menu */
+#quarto-header .dropdown-menu {
+  background-color: #44496f !important;
+  border: 1px solid #C87339 !important;
+  border-radius: 5px !important;
+}
+
+#quarto-header .dropdown-menu .dropdown-item {
+  color: #e1e2ea !important;
+  background-color: transparent !important;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 350;
+}
+
+#quarto-header .dropdown-menu .dropdown-item:hover,
+#quarto-header .dropdown-menu .dropdown-item:focus {
+  background-color: #30344f !important;
+  color: #e1e2ea !important;
+}
+
 
 /* Toggler icon visible on dark bg */
 .navbar-toggler { border-color: var(--panel-2) !important; }
