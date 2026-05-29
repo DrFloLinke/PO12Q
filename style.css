@@ -1394,3 +1394,42 @@ div.callout-note .callout-header[aria-expanded="true"] .callout-btn-toggle::befo
   transform: rotate(90deg) translateY(0px);
 }
 
+/* ----------------------------------------
+   Justify main body paragraphs only
+---------------------------------------- */
+
+/* Justify paragraphs in the main content area */
+main.content > p,
+main.content > div > p,
+main.content section > p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* Exclude paragraphs in callouts, captions, tables, code outputs, sidebars */
+main.content .figure p,
+main.content .quarto-figure p,
+main.content figcaption,
+main.content .figure-caption,
+main.content caption,
+main.content .callout p,
+main.content div.bulb p,
+main.content div.warning p,
+main.content div.stop p,
+main.content div.puzzle p,
+main.content div.def p,
+main.content div.video p,
+main.content div.baser p,
+main.content div.flashcard p,
+main.content div.bluebox p,
+main.content div.compact p,
+main.content .cell-output p,
+main.content .sourceCode p,
+main.content table p,
+main.content blockquote p,
+main.content .footnotes p,
+main.content nav p,
+main.content aside p {
+  text-align: left;
+}
