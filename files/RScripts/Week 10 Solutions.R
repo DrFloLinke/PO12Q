@@ -1,8 +1,8 @@
-###########################################################
-# PO12Q: Introduction to Quantitative Political Analysis II
+# *****************************************************************
+# PO12Q: Quantitative Political Analysis: Uncovering Relationships
 # Dr Flo Linke
-# Week 10, Testing the Classical Linear Assumptions in R
-###########################################################
+# WEEK 10, Testing the Classical Linear Assumptions in R
+###################################################################
 
 
 # Set working directory

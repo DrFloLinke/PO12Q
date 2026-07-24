@@ -2,7 +2,7 @@
    Fonts
 ---------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@350;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Recursive:wght,MONO@375,1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap');
 
 /* ----------------------------------------
    Design tokens
@@ -16,6 +16,41 @@
   --panel: #44496f;
   --panel-2: #5a5f80;
   --hover: #393A3B;
+  
+  /* The core Mermaid formatting */
+  --mermaid-edge-color: var(--muted) !important; 
+  --mermaid-node-bg-color: transparent !important; 
+  --mermaid-node-fg-color: var(--fg) !important; 
+  --mermaid-fg-color: var(--fg) !important;
+  --mermaid-label-bg-color: transparent !important;
+  /* Force labels and lighter shades to your foreground color */
+  --mermaid-label-fg-color: var(--fg) !important;
+  --mermaid-label-bg-color: transparent !important;
+  --mermaid-fg-color--lighter: var(--fg) !important;
+  --mermaid-fg-color--lightest: var(--fg) !important;
+}
+
+/* 1. Force all HTML label elements to be transparent */
+.edgeLabel, 
+.edgeLabel *, 
+span.edgeLabel, 
+span.edgeLabel p {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. Force all SVG background rectangles behind the text to be transparent */
+g.edgeLabel rect, 
+.edgeLabel rect, 
+rect.label-container,
+.label rect {
+    fill: transparent !important;
+    fill-opacity: 0 !important;
+    stroke: transparent !important;
+    stroke-width: 0 !important;
 }
 
 /* ----------------------------------------
@@ -194,6 +229,17 @@ img { display: block; margin: auto; text-align: center; }
   font-size: 0.9em;
 }
 
+/* Centre figure and table captions */
+figcaption,
+.figure-caption,
+.quarto-float-caption,
+.quarto-float-caption-top,
+.quarto-float-caption-bottom,
+caption {
+  text-align: center !important;
+  padding-top: 1em !important;
+}
+
 /* ----------------------------------------
    Custom blocks
 ---------------------------------------- */
@@ -352,10 +398,22 @@ code, kbd, samp {
   background-color: var(--bg) !important;
   color: var(--fg) !important;
   font-family: "Recursive", sans-serif !important;
+  font-variation-settings: "MONO" 1 !important;
   padding: 0.15em 0.15em;
   font-size: 0.85em;
   box-shadow: none !important;
   border: none !important;
+}
+
+/* Inline code that is also a link → render in link orange, nothing else */
+main a code:not(pre code),
+main a:visited code:not(pre code),
+main a:hover code:not(pre code),
+main a:active code:not(pre code) {
+  color: var(--accent) !important;   /* hyperlink orange */
+  font-weight: 350;                  /* body weight, no bold */
+  text-decoration: none;             /* no underline */
+  /* keeps Recursive mono + the code background you already set */
 }
 
 /* ----------------------------------------
@@ -369,6 +427,7 @@ pre.sourceCode {
   padding: 1em;
   font-size: 0.9rem !important;
   font-family: "Recursive", sans-serif !important;
+  font-variation-settings: "MONO" 1 !important;
   line-height: 1.4 !important;
   white-space: pre-wrap !important;
   overflow-x: auto !important;
@@ -501,6 +560,7 @@ pre:not(.sourceCode) {
   border-radius: 6px;
   font-size: 0.9rem !important;
   font-family: "Recursive", sans-serif !important;
+  font-variation-settings: "MONO" 1 !important;
   line-height: 1.4 !important;
   white-space: pre-wrap !important;
   width: 100% !important;
@@ -520,11 +580,23 @@ table, th, td {
   background-color: var(--bg) !important;
   /* border-color: 1px solid #adbdd1 !important; */
   font-size: 0.9em;
+  vertical-align: top !important;
 }
 
 
 thead, caption { color: var(--fg) !important; }
-table { caption-side: bottom; }
+
+table {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+figcaption.quarto-float-caption-top {
+  margin-top: 0;
+  padding-top: 3em;       /* space above the caption — padding can't collapse away */
+  margin-bottom: 0.5em;   /* this part already worked */
+}
+
 
 /* Optional wrappers */
 .custom-html-table table,
@@ -711,6 +783,7 @@ header.navbar,
   background-color: var(--bg) !important;
 }
 
+
 /* Dropdown */
 #quarto-header .dropdown-menu,
 .navbar .dropdown-menu {
@@ -718,6 +791,29 @@ header.navbar,
   color: var(--fg) !important;
   border-color: var(--panel-2) !important;
 }
+
+/* Dropdown */
+
+/* Archives dropdown menu */
+#quarto-header .dropdown-menu {
+  background-color: #44496f !important;
+  border: 1px solid #C87339 !important;
+  border-radius: 5px !important;
+}
+
+#quarto-header .dropdown-menu .dropdown-item {
+  color: #e1e2ea !important;
+  background-color: transparent !important;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 350;
+}
+
+#quarto-header .dropdown-menu .dropdown-item:hover,
+#quarto-header .dropdown-menu .dropdown-item:focus {
+  background-color: #30344f !important;
+  color: #e1e2ea !important;
+}
+
 
 /* Toggler icon visible on dark bg */
 .navbar-toggler { border-color: var(--panel-2) !important; }
@@ -1370,3 +1466,42 @@ div.callout-note .callout-header[aria-expanded="true"] .callout-btn-toggle::befo
   transform: rotate(90deg) translateY(0px);
 }
 
+/* ----------------------------------------
+   Justify main body paragraphs only
+---------------------------------------- */
+
+/* Justify paragraphs in the main content area */
+main.content > p,
+main.content > div > p,
+main.content section > p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* Exclude paragraphs in callouts, captions, tables, code outputs, sidebars */
+main.content .figure p,
+main.content .quarto-figure p,
+main.content figcaption,
+main.content .figure-caption,
+main.content caption,
+main.content .callout p,
+main.content div.bulb p,
+main.content div.warning p,
+main.content div.stop p,
+main.content div.puzzle p,
+main.content div.def p,
+main.content div.video p,
+main.content div.baser p,
+main.content div.flashcard p,
+main.content div.bluebox p,
+main.content div.compact p,
+main.content .cell-output p,
+main.content .sourceCode p,
+main.content table p,
+main.content blockquote p,
+main.content .footnotes p,
+main.content nav p,
+main.content aside p {
+  text-align: left;
+}

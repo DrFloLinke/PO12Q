@@ -1,5 +1,8 @@
-# PO12Q, Worksheet Week 3, Exercise 1
-#####################################
+# *****************************************************************
+# PO12Q: Quantitative Political Analysis: Uncovering Relationships
+# Dr Flo Linke
+# WEEK 3 - EXERCISE 1
+# *****************************************************************
 
 # set working directory
 setwd("~/OneDrive - University of Warwick/Warwick/Modules/PO12Q/Seminars/PO12Q_Seminar_Week 3")
