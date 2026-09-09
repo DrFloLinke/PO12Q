@@ -49,7 +49,7 @@
 "stat_smooth","GGPLOT2","Add a smoothed conditional mean (the stat underlying geom_smooth)",""
 "resettest","lmtest","Ramsey’s RESET test for functional form of a regression model",""
 "poly","stats","Compute orthogonal polynomials (used for polynomial regression)",""
-"correlation_matrix","kim","Create a formatted correlation matrix of variables",""
+"correlation_matrix","corrtable","Create a formatted correlation matrix of variables",""
 "c","base","Combine values/vectors into a vector",""
 "knit_hooks","knitr","Get or set knitr hook functions for customising output",""
 "DescTools","DescTools","A package of miscellaneous functions for descriptive statistics and basic data analysis",""

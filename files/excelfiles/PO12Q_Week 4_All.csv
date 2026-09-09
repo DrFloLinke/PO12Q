@@ -24,4 +24,3 @@
 "c","base","Combine values/vectors into a vector",""
 "data.frame","base","Create a data.frame from vectors",""
 "summary","base","Obtain summary statistics or detailed regression output",""
-"read.csv","utils","Read a csv file to data frame. Specify stringsAsFactors = FALSE to keep all string columns as characters",""

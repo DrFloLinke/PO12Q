@@ -8,5 +8,4 @@
 "ifelse","base","Return a or b depending on the value of test",""
 "fct_relevel","forcats","Reorder factor levels by hand",""
 "median","stats","Get median of a vector",""
-"prop.table","base","Transform frequency table into table of proportions",""
 "log","base","log (default base = e)",""
