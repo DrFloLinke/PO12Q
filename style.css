@@ -1202,6 +1202,9 @@ table.tinytable tbody tr td:first-child {
 }
 
 
+/* -------------------------------------------------
+   tinytable borders: custom horizontal rules
+   ------------------------------------------------- */
 
 /* -------------------------------------------------
    tinytable borders: custom horizontal rules
@@ -1224,7 +1227,7 @@ table.tinytable tfoot td {
 
 /* ==== Full-width top rule across every tinytable ==== */
 table.tinytable thead tr:first-child th {
-  border-top: 2px solid #e1e2ea !important;
+  border-top: 3px double #e1e2ea !important;
 }
 
 
@@ -1266,7 +1269,8 @@ table.tinytable thead tr:first-child th {
 .tt-threeiv-nogof table.tinytable thead tr:last-child th,
 .tt-sixiv table.tinytable thead tr:last-child th,
 .tt-sixiv-nogof table.tinytable thead tr:last-child th,
-.tt-threeiv-grouping table.tinytable thead tr:last-child th {
+.tt-threeiv-grouping table.tinytable thead tr:last-child th,
+.tt-desc-5var table.tinytable thead tr:last-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 
@@ -1278,7 +1282,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-oneiv table.tinytable tbody tr:nth-child(6) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 1-IV without GOF */
@@ -1286,7 +1290,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-oneiv-nogof table.tinytable tbody tr:nth-child(5) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 2-IV */
@@ -1294,7 +1298,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-twoiv table.tinytable tbody tr:nth-child(9) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 2-IV without GOF */
@@ -1302,7 +1306,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-twoiv-nogof table.tinytable tbody tr:nth-child(7) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 3-IV */
@@ -1310,7 +1314,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-threeiv table.tinytable tbody tr:nth-child(11) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 3-IV without GOF */
@@ -1318,7 +1322,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-threeiv-nogof table.tinytable tbody tr:nth-child(9) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 3-IV with grouping */
@@ -1326,7 +1330,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-threeiv-grouping table.tinytable tbody tr:nth-child(10) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 6-IV */
@@ -1334,7 +1338,7 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-sixiv table.tinytable tbody tr:nth-child(17) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
 
 /* 6-IV without GOF */
@@ -1342,8 +1346,21 @@ table.tinytable thead tr:first-child th {
   border-bottom: 0.5px solid #e1e2ea !important;
 }
 .tt-sixiv-nogof table.tinytable tbody tr:nth-child(15) td {
-  border-bottom: 2px solid #e1e2ea !important;
+  border-bottom: 3px double #e1e2ea !important;
 }
+
+
+/* ===== Descriptive Statistics tables ===== */
+
+/* 5-variable datasummary:
+   - Single header row (N, Mean, SD, Min, P25, Median, P75, Max)
+   - 5 body rows, one per variable
+   - No internal separator; only closing bottom rule */
+.tt-desc-5var table.tinytable tbody tr:nth-child(5) td {
+  border-bottom: 3px double #e1e2ea !important;
+}
+
+
 
 /* ----------------------------------------
    Delayed (date-restricted) inline links
