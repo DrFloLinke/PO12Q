@@ -50,6 +50,16 @@
     ]
   },
   {
+    "objectID": "02-PO12Q.html#exercises",
+    "href": "02-PO12Q.html#exercises",
+    "title": "Week 2",
+    "section": "Exercises",
+    "text": "Exercises\n\nSet Linear, Target r = 0.60, n = 50. Record the Pearson r on the plot. Now set n = 300. How does r change, and what does this show about sample size?\nWith Linear, try r = 0.20, n = 60. Change Seed several times. How much does r bounce around, and why?\nChoose Quadratic, set Noise = 0.10, n = 200. Is r near zero despite a clear U-shape? Explain why.\nIncrease Noise until the U-shape is hard to see. At what point do the linear and LOESS fits become similarly uninformative?\nChoose Cubic, set Noise = 0.15, n = 200. Compare the linear line to the LOESS curve. Does the straight line understate the visible relationship?\nIncrease Noise gradually. How quickly does r decline as the pattern gets noisier? What does the LOESS curve reveal as noise grows?\nFor Cubic with moderate Noise, toggle Least-squares line on and off and compare to LOESS. How does the straight line mislead about strength or direction?\nIn Linear mode, when do the LOESS and linear fits essentially coincide, and why should they?\nFix a setting, for example Linear r = 0.40, n = 80, and change Seed a few times. How much does r vary? Repeat with n = 400 and compare.\nFor Cubic with low Noise, change Seed repeatedly. How stable is r across seeds?\nFind two scenarios with similar Pearson r but different shapes (for example, Linear versus Cubic with noise tuned). How do the plots and the LOESS curve help you tell them apart?\nWhen is Pearson’s r an adequate summary, and when would you favor a non-linear description?\nBased on what you see in the app, how would you justify using a non-linear model rather than a linear one?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
+    ]
+  },
+  {
     "objectID": "02-PO12Q.html#footnotes",
     "href": "02-PO12Q.html#footnotes",
     "title": "Week 2",
