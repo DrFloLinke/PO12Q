@@ -86,17 +86,19 @@ vdem <- select(vdem,
 datasummary(All(vdem) ~ N + Mean + SD + Min + P25 + Median + P75 + Max,
             data = vdem)
 
-## ------------------------------------------------------------------------
-## 1. Electoral Democracy Index and Liberal Democracy Index
 
-# 1a. Hypotheses
+## ------------------------------------------------------------------------
+## 1. The Electoral Democracy Index measures whether governments are chosen through free and fair elections, while the Liberal Democracy Index additionally measures civil liberties, the rule of law, and constraints on executive power. We want to find out the extent to which these two measures are related. 
+
+# a. State the null and alternative hypotheses for a Pearson correlation test.
+
 # H0: rho = 0. There is no linear relationship between the Electoral
 #     Democracy Index and the Liberal Democracy Index in the population.
 # H1: rho != 0. There is a linear relationship between the two indices
 #     in the population.
 
 
-# 1b. Scatter plot
+# b. Plot the relationship between the two variables in a scatter plot. 
 
 ggplot(vdem, aes(x = v2x_polyarchy, y = v2x_libdem)) +
   geom_point() +
@@ -105,7 +107,7 @@ ggplot(vdem, aes(x = v2x_polyarchy, y = v2x_libdem)) +
   theme_iqmss()
 
 
-# 1c. Pearson's correlation coefficient and significance test
+# c. Calculate Pearson's correlation coefficient and test for significance.
 
 correlation_matrix(
   vdem[,c("v2x_polyarchy","v2x_libdem")],
@@ -128,7 +130,7 @@ cor.test(
 )
 
 
-# 1d. Interpretation and assessment of the hypotheses
+# d. Interpret the results and assess the hypotheses from part a.
 
 # The correlation coefficient is highly statistically significant (p<0.001).
 # Its value is very close to one (0.9787249) and therefore indicates a strong,
@@ -139,7 +141,7 @@ cor.test(
 
 
 
-# 1e. Post-hoc statistical power
+# e. Conduct a test of statistical power for this coefficient and assess whether a post-hoc test such as this is useful in applied research.
 
 pwr.r.test(
   n = 179,
@@ -157,8 +159,7 @@ pwr.r.test(
 # the information of the p-value.
 
 
-# 1ef. Prospective power
-
+# f. Which sample size would be required to detect a correlation of $r=0.3$ with a power of 0.8 and a significance level of 0.05?
 
 pwr.r.test(
   r = 0.30,
@@ -174,16 +175,17 @@ pwr.r.test(
 
 
 ## ------------------------------------------------------------------------
-## 2. Liberal Democracy Index and Rule of Law Index
+## 2. To delve deeper into the relationship between democracy and rule of law, we want to find out the extent to which the Liberal Democracy Index is related to the Rule of Law Index. 
 
-# 2a. Hypotheses
+# a. State the null and alternative hypotheses for a Pearson correlation test.
+
 # H0: rho = 0. There is no linear relationship between the Liberal Democracy
 #     Index and the Rule of Law Index in the population.
 # H1: rho != 0. There is a linear relationship between the two indices in the
 #     population.
 
 
-# 2b. Scatter plot
+# b. Plot the relationship between the two variables in a scatter plot.
 
 ggplot(vdem, aes(x = v2x_libdem, y = v2xcl_rol)) +
   geom_point() +
@@ -192,7 +194,7 @@ ggplot(vdem, aes(x = v2x_libdem, y = v2xcl_rol)) +
   theme_iqmss()
 
 
-# 2c. Pearson's correlation coefficient and significance test
+# c. Calculate Pearson's correlation coefficient and test for significance.
 
 correlation_matrix(
   vdem[,c("v2x_libdem","v2xcl_rol")],
@@ -219,7 +221,7 @@ cor.test(
 # positive relationship between the two indices. 
 
 
-# 2d. A more suitable coefficient
+# d. Based on the scatter plot in part b), why might Pearson's correlation not be the most suitable coefficient? Choose a more suitable correlation coefficient and calculate it. Test for significance.
 
 # Pearson's correlation measures linear association. The scatter plot suggests
 # a curved and monotonic relationship. Spearman's correlation is more suitable
@@ -246,7 +248,7 @@ cor.test(
 )
 
 
-# 2e. Interpretation and assessment of the hypotheses
+# e. Interpret the results and assess the hypotheses from part a.
 
 # The correlation coefficient is highly statistically significant (p<0.001).
 # Its value is very close to one (0.9348255) and therefore indicates a strong,
@@ -258,18 +260,9 @@ cor.test(
 
 
 ## ------------------------------------------------------------------------
-## 3. Civil Society Participation and Liberal Democracy
+## 3. We would expect that liberal democracies enable their civil society to participate more freely than autocracies. To test this, we want to find out the extent to which the Civil Society Participation Index (`v2x_cspart`) is related to the Liberal Democracy Index (`v2x_libdem`).
 
-# 3a. Scatter plot
-
-ggplot(vdem, aes(x = v2x_libdem, y = v2x_cspart)) +
-  geom_point() +
-  # geom_smooth(method = 'lm',se = F,colour = '#e57726', linewidth=1.5)+
-  labs(x="Liberal Democracy Index", y="Civil Society Participation Index") +
-  theme_iqmss()
-
-
-# Add a LOESS line to examine the form of the relationship.
+# a. Plot the relationship between the two variables in a scatter plot, adding a LOESS line to examine the form of the relationship
 
 ggplot(vdem, aes(x = v2x_libdem, y = v2x_cspart)) +
   geom_point() +
@@ -282,7 +275,7 @@ ggplot(vdem, aes(x = v2x_libdem, y = v2x_cspart)) +
 
 
 
-# 3b. Pearson's coefficient
+# b. Calculate Pearson's correlation and drawing on the results of part a) explain why it might not be the most suitable coefficient.
 
 correlation_matrix(
   vdem[,c("v2x_libdem","v2x_cspart")],
@@ -309,7 +302,7 @@ cor.test(
 # here because it uses the ranks of individual observations.
 
 
-# 3c. Spearman's correlation coefficient and significance test
+# c. Calculate Spearman's correlation coefficient and test for significance.
 
 correlation_matrix(
   vdem[,c("v2x_libdem","v2x_cspart")],
@@ -331,7 +324,7 @@ cor.test(
 )
 
 
-# 3d. Comparison with Pearson's correlation
+# d. Explain what the application of Spearman's correlation has changed in comparison with Pearson's correlation.
 
 # Whilst the Pearson correlation came in at 0.7905285, Spearman's correlation
 # is higher at 0.8403842. This difference reflects the non-linearity of the 
@@ -343,9 +336,9 @@ cor.test(
 
 
 ## ------------------------------------------------------------------------
-## 4. Spearman's correlation with two ordinal variables
+## 4. To explore how Spearman's correlation works in the context of two ordinal variables, we will look at the relationship between the rule of law and civil society participation.
 
-# 4a. Recode the Rule of Law Index into four ordered categories.
+# a. Recode the variable `v2xcl_rol` into an ordered factor with four levels. Choose 0.25, 0.5, and 0.75 as cut points.
 
 vdem <- vdem %>%
   mutate(
@@ -367,7 +360,7 @@ vdem <- vdem %>%
 table(vdem$rule_law_factor, useNA = "ifany")
 
 
-# 4b. Apply the same procedure to the Civil Society Participation Index.
+# b. Apply the same procedure to `v2x_cspart`.
 
 vdem <- vdem %>%
   mutate(
@@ -389,7 +382,7 @@ vdem <- vdem %>%
 table(vdem$civil_society_factor, useNA = "ifany")
 
 
-# 4c. Assess the assumption of a monotonic relationship.
+# c. Is the assumption of a monotonic relationship between the two variables met? 
 
 q4_table <- table(
   vdem$rule_law_factor,
@@ -419,7 +412,7 @@ ggplot(vdem, aes(x = rule_law, y = civil_society)) +
 # smaller and less dense. 
 
 
-# 4d. Spearman's correlation coefficient and significance test
+# d. Calculate Spearman's correlation coefficient and test for significance.
 
 correlation_matrix(
   vdem[,c("rule_law","civil_society")],
@@ -450,16 +443,15 @@ cor.test(
 
 
 ## ------------------------------------------------------------------------
-## 5. Point-biserial correlation
+## 5. There is considerable debate in the democratization literature, whether democracy is an all-or-nothing affair.
+
+# a. Recode the variable `v2x_regime` into a dichotomous variable with two levels: democracy and autocracy. Choose the cut point between electoral autocracies and electoral democracies.
 
 # V-Dem's Regimes of the World variable is coded as:
 # 0 = closed autocracy
 # 1 = electoral autocracy
 # 2 = electoral democracy
 # 3 = liberal democracy
-
-# 5a. Recode it at the boundary between electoral autocracy and electoral
-# democracy: 0 = autocracy and 1 = democracy.
 
 vdem <- vdem %>%
   mutate(regime = recode(v2x_regime,
@@ -479,7 +471,7 @@ vdem <- vdem %>%
 table(vdem$v2x_regime, vdem$regime_factor, useNA = "ifany")
 
 
-# 5b. Point-biserial correlation
+# b. Calculate the point-biserial correlation coefficient between the dichotomized `v2x_regime` and the continuous `v2xcl_rol`. Test for significance.
 
 correlation_matrix(
   vdem[,c("regime","v2xcl_rol")],
@@ -520,8 +512,7 @@ vdem %>%
 # while for democracies it is 0.859. 
 
 
-# 5c. Spearman's correlation between the original ordinal regime variable and
-# the four-category rule-of-law variable.
+# c. Calculate Spearman's correlation for the variables `v2x_regime` and `rule_law`. Why is the point-biserial correlation coefficient different from Spearman's correlation coefficient in part c)?
 
 correlation_matrix(
   vdem[,c("v2x_regime","rule_law")],
@@ -558,16 +549,15 @@ cor.test(
 
 
 ## ------------------------------------------------------------------------
-## 6. Phi coefficient
+## 6. We suspect that the relationship between regime type and rule of law is quite pronounced at the high end of the rule of law index. To test this, we will dichotomize the rule of law index and compare it with the dichotomized regime variable.
 
-# 6a. Dichotomize rule of law using 0.75 as the cut-off point.
-# 0 = below 0.75; 1 = 0.75 or higher.
+# a. Turn the rule of law index into a binary variable, choosing 0.75 as the cut-off point.
 
 vdem <- vdem %>%
   mutate(rule_law_bin = as.integer(v2xcl_rol >= 0.75))
 
 
-# 6b. Cross-tabulation
+# b. Create a cross-tabulation between the dichotomized regime variable and the dichotomized rule of law variable. Is a direction of association apparent?
 
 q6_table_075 <- table(vdem$rule_law_bin, vdem$regime_factor)
 q6_table_075
@@ -579,8 +569,7 @@ round(prop.table(q6_table_075, margin = 1) * 100, 1)
 # than among autocracies.
 
 
-# 6c. Phi coefficient
-# For two variables coded 0 and 1, Pearson's correlation is the phi coefficient.
+# c. Calculate the phi coefficient and test for significance.
 
 correlation_matrix(
   vdem[,c("rule_law_bin","regime")],
@@ -609,7 +598,7 @@ cor.test(
 chisq.test(q6_table_075, correct = FALSE)
 
 
-# 6d. Interpretation
+# d. Compare the results of the test with your expectation from part b). Explain how the correlation coefficient corresponds to the conditional distributions in the crosstabulation, and why a test of significance is necessary to assess the relationship between two variables.
 
 # The correlation coefficient is highly statistically significant (p<0.001).
 # Its value is > 0.5 (0.7561555) which according to Cohen's conventions indicates
@@ -622,7 +611,7 @@ chisq.test(q6_table_075, correct = FALSE)
 # apparent difference in a sample can occur through sampling variation.
 
 
-# 6e. Repeat the analysis using 0.5 as the cut-off point.
+# e. Repeat steps a)–d) using 0.5 as the cut-off point for the rule of law index. How do the results differ and why?
 
 vdem <- vdem %>%
   mutate(rule_law_bin_05 = as.integer(v2xcl_rol >= 0.5))
