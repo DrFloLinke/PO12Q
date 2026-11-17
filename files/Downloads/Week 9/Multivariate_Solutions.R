@@ -278,7 +278,7 @@ crime$wraceatt <- droplevels(crime$wraceatt)
 # }
 
 # Recode crime variables so 0 indicates not worried and 3 indicates very worried.
-crime <- crime %>%
+crime <- crime |>
   mutate(wburgl = fct_relevel(wburgl,
                               "Not at all worried",
                               "Not very worried",
@@ -287,7 +287,7 @@ crime <- crime %>%
          wburgl.num = as.numeric(wburgl) - 1
          ) 
 
-crime <- crime %>%
+crime <- crime |>
   mutate(wmugged = fct_relevel(wmugged,
                               "Not at all worried",
                               "Not very worried",
@@ -296,7 +296,7 @@ crime <- crime %>%
          wmugged.num = as.numeric(wmugged) - 1
   )
 
-crime <- crime %>%
+crime <- crime |>
   mutate(wraped = fct_relevel(wraped,
                                "Not at all worried",
                                "Not very worried",
@@ -305,7 +305,7 @@ crime <- crime %>%
          wraped.num = as.numeric(wraped) - 1
   )
 
-crime <- crime %>%
+crime <- crime |>
   mutate(wattack = fct_relevel(wattack,
                                "Not at all worried",
                                "Not very worried",
@@ -314,7 +314,7 @@ crime <- crime %>%
          wattack.num = as.numeric(wattack) - 1
   )
 
-crime <- crime %>%
+crime <- crime |>
   mutate(wraceatt = fct_relevel(wraceatt,
                                "Not at all worried",
                                "Not very worried",
@@ -356,7 +356,7 @@ prop.table(edu.tab)
 # lower education levels."
 
 # educat3 as continuous variable
-crime <- crime %>%
+crime <- crime |>
   mutate(educat3 = fct_relevel(educat3,
                                 "None",
                                 "O level/GCSE",

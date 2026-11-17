@@ -96,7 +96,7 @@ london <- read.csv(file.path(RAW, "london_exercises.csv"), header = TRUE, string
 # to population of working age is often said to be related to crime. Generate
 # an unemployment rate variable for each of the wards.
 
-london <- london %>% 
+london <- london |> 
   mutate(unemp_rate = (adults - employed) / adults)
 
 # 9b: It is theorised that unemployment is a driving factor behind crime rates.

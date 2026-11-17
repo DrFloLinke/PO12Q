@@ -340,7 +340,7 @@ cor.test(
 
 # a. Recode the variable `v2xcl_rol` into an ordered factor with four levels. Choose 0.25, 0.5, and 0.75 as cut points.
 
-vdem <- vdem %>%
+vdem <- vdem |>
   mutate(
     rule_law = cut(
       v2xcl_rol,
@@ -362,7 +362,7 @@ table(vdem$rule_law_factor, useNA = "ifany")
 
 # b. Apply the same procedure to `v2x_cspart`.
 
-vdem <- vdem %>%
+vdem <- vdem |>
   mutate(
     civil_society = cut(
       v2x_cspart,
@@ -453,14 +453,14 @@ cor.test(
 # 2 = electoral democracy
 # 3 = liberal democracy
 
-vdem <- vdem %>%
+vdem <- vdem |>
   mutate(regime = recode(v2x_regime,
                          '0' = 0,
                          '1' = 0,
                          '2' = 1,
                          '3' = 1))
 
-vdem <- vdem %>%
+vdem <- vdem |>
   mutate(regime_factor = factor(
     regime,
     levels = c(0, 1),
@@ -495,8 +495,8 @@ cor.test(
 
 # Group means help interpret the sign of the point-biserial coefficient.
 
-vdem %>%
-  group_by(regime_factor) %>%
+vdem |>
+  group_by(regime_factor) |>
   summarise(
     n = sum(!is.na(v2xcl_rol)),
     mean_rule_law = mean(v2xcl_rol, na.rm = TRUE),
@@ -553,7 +553,7 @@ cor.test(
 
 # a. Turn the rule of law index into a binary variable, choosing 0.75 as the cut-off point.
 
-vdem <- vdem %>%
+vdem <- vdem |>
   mutate(rule_law_bin = as.integer(v2xcl_rol >= 0.75))
 
 
@@ -613,7 +613,7 @@ chisq.test(q6_table_075, correct = FALSE)
 
 # e. Repeat steps a)–d) using 0.5 as the cut-off point for the rule of law index. How do the results differ and why?
 
-vdem <- vdem %>%
+vdem <- vdem |>
   mutate(rule_law_bin_05 = as.integer(v2xcl_rol >= 0.5))
 
 q6_table_05 <- table(vdem$rule_law_bin_05, vdem$regime)
